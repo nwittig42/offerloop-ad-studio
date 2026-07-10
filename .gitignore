@@ -1,4 +1,4 @@
-assets/
+public/assets/
 out/
 node_modules/
-!assets/manifest.json
+!public/assets/manifest.json
