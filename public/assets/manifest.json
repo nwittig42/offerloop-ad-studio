@@ -1,6 +1,13 @@
 {
   "assets": [
     {
+      "filename": "assets/references/promo-saas-v2.mp4",
+      "kind": "reference",
+      "description": "Previous Offerloop Scout promo (vertical 720x1280, 50.7s, 30fps, NO audio track — built for muted autoplay). Three-act structure: dark cinematic intro/outro with Scout orb + serif brand lines, light UI-demo middle with rounded-sans blue captions at TOP of frame above centered device mockups, one live-action b-roll beat before the outro. Style reference only, never footage.",
+      "duration": 50.67,
+      "source": "dropped"
+    },
+    {
       "filename": "assets/figma/offerloop-wordmark.svg",
       "kind": "logo",
       "description": "Offerloop wordmark in Libre Baskerville, ink navy #112F54, vectorized from the Scout badge (no standalone logo exists in Figma yet)",
