@@ -1,6 +1,13 @@
 {
   "assets": [
     {
+      "filename": "assets/references/postsyncer-demo.mp4",
+      "kind": "reference",
+      "description": "PostSyncer SaaS demo (16:9 3840x2160, 107s, 60fps, with audio). Problem-agitate-solve arc: 'Endless tabs' / 'Notifications everywhere' pain intro -> 'Let us take over' -> logo reveal -> fast product-UI tour (calendar, AI compose, analytics) with big kinetic-typography interstitials ('Schedule once. Post everywhere.', 'Free up hours every week.', 'minutes With AI', 'inspiration'), animated word-level text effects, dark/light section alternation, social-proof stat cards (169.99K followers, 1.9M impressions), logo + URL end card. Style reference only, never footage.",
+      "duration": 107.09,
+      "source": "dropped"
+    },
+    {
       "filename": "assets/references/promo-saas-v2.mp4",
       "kind": "reference",
       "description": "Previous Offerloop Scout promo (vertical 720x1280, 50.7s, 30fps, NO audio track — built for muted autoplay). Three-act structure: dark cinematic intro/outro with Scout orb + serif brand lines, light UI-demo middle with rounded-sans blue captions at TOP of frame above centered device mockups, one live-action b-roll beat before the outro. Style reference only, never footage.",
