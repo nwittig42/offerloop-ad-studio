@@ -1,53 +1,38 @@
 import {Composition} from 'remotion';
-import {Welcome} from './compositions/Welcome';
+import {PlanPlayer} from './compositions/PlanPlayer';
+import {makePlanMetadata} from './plan/validate';
+import {planDurationInFrames, planFps} from './plan/timing';
+import type {EditPlan} from './plan/types';
+import {demoPlan} from '../plans/demo.plan';
 
-const FPS = 30;
+// Every composition is the generic PlanPlayer pointed at a plan file.
+// To ship a new video: add plans/<name>.plan.ts and point a slot at it here.
+const slots: Array<{id: string; width: number; height: number; plan: EditPlan}> = [
+  // Masters (16:9)
+  {id: 'TrueViewAd', width: 1920, height: 1080, plan: demoPlan},
+  {id: 'Explainer', width: 1920, height: 1080, plan: demoPlan},
+  // Cutdown formats
+  {id: 'CutdownVertical', width: 1080, height: 1920, plan: demoPlan},
+  {id: 'CutdownFeed', width: 1080, height: 1350, plan: demoPlan},
+  {id: 'CutdownSquare', width: 1080, height: 1080, plan: demoPlan},
+];
 
 export const Root: React.FC = () => {
   return (
     <>
-      {/* Masters (16:9) */}
-      <Composition
-        id="TrueViewAd"
-        component={Welcome}
-        durationInFrames={75 * FPS}
-        fps={FPS}
-        width={1920}
-        height={1080}
-      />
-      <Composition
-        id="Explainer"
-        component={Welcome}
-        durationInFrames={180 * FPS}
-        fps={FPS}
-        width={1920}
-        height={1080}
-      />
-      {/* Cutdown formats */}
-      <Composition
-        id="CutdownVertical"
-        component={Welcome}
-        durationInFrames={20 * FPS}
-        fps={FPS}
-        width={1080}
-        height={1920}
-      />
-      <Composition
-        id="CutdownFeed"
-        component={Welcome}
-        durationInFrames={20 * FPS}
-        fps={FPS}
-        width={1080}
-        height={1350}
-      />
-      <Composition
-        id="CutdownSquare"
-        component={Welcome}
-        durationInFrames={20 * FPS}
-        fps={FPS}
-        width={1080}
-        height={1080}
-      />
+      {slots.map(({id, width, height, plan}) => (
+        <Composition
+          key={id}
+          id={id}
+          component={PlanPlayer}
+          durationInFrames={planDurationInFrames(plan)}
+          fps={planFps(plan)}
+          width={width}
+          height={height}
+          defaultProps={{plan}}
+          calculateMetadata={makePlanMetadata(plan)}
+        />
+      ))}
     </>
   );
 };

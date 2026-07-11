@@ -1,0 +1,53 @@
+{
+  "assets": [
+    {
+      "filename": "assets/figma/offerloop-wordmark.svg",
+      "kind": "logo",
+      "description": "Offerloop wordmark in Libre Baskerville, ink navy #112F54, vectorized from the Scout badge (no standalone logo exists in Figma yet)",
+      "source": "figma",
+      "figmaNode": "2044:902"
+    },
+    {
+      "filename": "assets/figma/scout-mountain-summit.png",
+      "kind": "illustration",
+      "description": "Scout mascot planting an infinity flag on a mountain summit, transparent background, 2962x1794 — hero / end-card art",
+      "source": "figma",
+      "figmaNode": "1677:9411"
+    },
+    {
+      "filename": "assets/figma/scout-peekaboo-wave.png",
+      "kind": "illustration",
+      "description": "Scout mascot with backpack waving, transparent background, 683x1100",
+      "source": "figma",
+      "figmaNode": "1675:9163"
+    },
+    {
+      "filename": "assets/figma/scout-peekaboo-ledge.png",
+      "kind": "illustration",
+      "description": "Scout mascot peeking over a ledge and waving, transparent background, 1264x630",
+      "source": "figma",
+      "figmaNode": "1674:9160"
+    },
+    {
+      "filename": "assets/figma/scout-badge.png",
+      "kind": "illustration",
+      "description": "Scout badge card with Offerloop wordmark and SCOUT label, 802x1018",
+      "source": "figma",
+      "figmaNode": "2025:16161"
+    },
+    {
+      "filename": "assets/figma/mountains-forest-bg.png",
+      "kind": "background",
+      "description": "Watercolor mountains and forest panorama, 2172x724 — wide background strip",
+      "source": "figma",
+      "figmaNode": "1930:897"
+    },
+    {
+      "filename": "assets/figma/mountains-lake-bg.png",
+      "kind": "background",
+      "description": "Watercolor mountains and lake, 1676x654 — calm background plate",
+      "source": "figma",
+      "figmaNode": "1930:899"
+    }
+  ]
+}
