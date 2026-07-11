@@ -68,7 +68,13 @@ export type EndCardScene = SceneBase & {
   url?: string;
 };
 
-export type Scene = VideoScene | ImageScene | TitleScene | EndCardScene;
+export type MockupScene = SceneBase & {
+  type: 'mockup';
+  /** Key into src/components/mock registry (animated UI mockups). */
+  component: import('../components/mock').MockupName;
+};
+
+export type Scene = VideoScene | ImageScene | TitleScene | EndCardScene | MockupScene;
 
 export type AudioTrack = {
   src: AssetPath;

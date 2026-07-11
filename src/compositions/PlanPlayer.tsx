@@ -17,6 +17,7 @@ import {Captions} from '../components/Captions';
 import {EndCard} from '../components/EndCard';
 import {HookText} from '../components/HookText';
 import {LowerThird} from '../components/LowerThird';
+import {mockups} from '../components/mock';
 
 const FadeIn: React.FC<{enabled: boolean; children: React.ReactNode}> = ({enabled, children}) => {
   const frame = useCurrentFrame();
@@ -136,6 +137,10 @@ const SceneContent: React.FC<{scene: Scene}> = ({scene}) => {
       );
     case 'endCard':
       return <EndCard headline={scene.headline} cta={scene.cta} url={scene.url} />;
+    case 'mockup': {
+      const Mockup = mockups[scene.component];
+      return <Mockup />;
+    }
   }
 };
 
