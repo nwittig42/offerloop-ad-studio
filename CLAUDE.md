@@ -39,6 +39,6 @@ Content mix: real Offerloop screen recordings as the core, Higgsfield-generated 
 - Validate that every asset a plan references exists before rendering.
 - Commit plans/code/manifest after meaningful steps; never commit media.
 
-## State (2026-07-10)
+## State (2026-07-10, evening)
 
-Scaffold complete, Studio runs, placeholder compositions registered. Not yet built: Figma asset export (logo/illustrations), manifest tooling, edit-plan schema + player compositions, first video. Higgsfield account: Ultra plan.
+Edit-plan system built: `src/plan/` (schema in `types.ts`, duration helpers, asset validator wired into `calculateMetadata` — missing assets fail at Studio load), generic `PlanPlayer` composition plays any plan, components `Captions`/`HookText`/`LowerThird`/`EndCard` adapt to aspect ratio. All five composition slots currently play `plans/demo.plan.ts`. Figma sync done: scout illustrations + mountain backgrounds + wordmark SVG in `public/assets/figma/`, recorded in the manifest; theme has real typography (Lora headings, Google Sans Flex body — proprietary, Inter fallback — Libre Baskerville wordmark) and the primary 50–800 ramp. **No standalone logo exists in the Figma file** (the badge frame says "feel free to add logo!") — `offerloop-wordmark.svg` is the "Offerloop" text vectorized from the Scout badge; swap when a real logo lands. Fonts load via `@remotion/google-fonts` in `src/fonts.ts`. Next: script + build the TrueView ad (needs Nick's screen recordings and approved script). Higgsfield account: Ultra plan, 3000 credits as of last check.
