@@ -2,3 +2,4 @@ public/assets/*
 !public/assets/manifest.json
 out/
 node_modules/
+.env
