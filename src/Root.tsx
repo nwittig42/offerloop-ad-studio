@@ -5,12 +5,14 @@ import {planDurationInFrames, planFps} from './plan/timing';
 import type {EditPlan} from './plan/types';
 import {demoPlan} from '../plans/demo.plan';
 import {mockupShowcasePlan} from '../plans/mockup-showcase.plan';
+import {yetiUsingScoutPlan} from '../plans/yeti-using-scout.plan';
 
 // Every composition is the generic PlanPlayer pointed at a plan file.
 // To ship a new video: add plans/<name>.plan.ts and point a slot at it here.
 const slots: Array<{id: string; width: number; height: number; plan: EditPlan}> = [
   // Masters (16:9)
   {id: 'TrueViewAd', width: 1920, height: 1080, plan: demoPlan},
+  {id: 'YetiUsingScout', width: 1920, height: 1080, plan: yetiUsingScoutPlan},
   {id: 'MockupShowcase', width: 1920, height: 1080, plan: mockupShowcasePlan},
   {id: 'Explainer', width: 1920, height: 1080, plan: demoPlan},
   // Cutdown formats

@@ -460,6 +460,124 @@
       "model": "nano_banana_pro (2k, 16:9); image_references = yeti-canonical-face-front.png + yeti-canonical-face-profile.png",
       "job_id": "cb10a1d3-5bd6-4616-8d9f-128a7a1d3769",
       "prompt": "Wide medium shot in a university lecture hall: the fluffy white yeti from the reference images (cartoonish friendly face, grey muzzle, round amber eyes, shaggy cream fur, silver over-ear headphones around neck) sits at a wooden lecture desk with an open laptop in front of him, the laptop screen glowing with a soft green email window, his face lit by the screen with wide delighted eyes and a big grin, one paw raised mid-celebration; blurred students taking notes around him, professor far in the background, warm afternoon daylight through tall arched windows. Camera pulled back as the end frame of a zoom-out from the laptop screen. 35mm lens, f/2.2, photorealistic cozy film look, soft grain. No legible text anywhere."
+    },
+    {
+      "filename": "assets/generated/yeti-tommy-trojan-speak-v1.mp4",
+      "kind": "video",
+      "description": "Seedance animation of the Tommy Trojan speak still: yeti speaks the command into his phone, jaw moving, fur in breeze, students blurred. Scene 2 of yeti-using-scout. 1080p 16:9 silent.",
+      "duration": 4.04,
+      "source": "higgsfield",
+      "model": "seedance_2_0 (std, 1080p, 16:9, no audio; start_image = yeti-usc-tommy-trojan-speak-still-v2.png)",
+      "job_id": "ee07e98e-1ad8-4a56-8b99-8069bfd7026e",
+      "prompt": "The yeti holds the phone at his mouth and speaks a short command into it, jaw and muzzle moving naturally, slight head tilt, fur ruffling in a light breeze, students passing blurred in the background. Camera locked off, calm golden ambience, single continuous shot, photorealistic, no cuts."
+    },
+    {
+      "filename": "assets/generated/scout-chat-onit-v1.mp4",
+      "kind": "video",
+      "description": "Seedance animation of the 'On it — drafting your outreach.' chat still: typing dots pulse, orb swirls, slow push-in. Scene 4. 1080p 16:9 silent.",
+      "duration": 4.04,
+      "source": "higgsfield",
+      "model": "seedance_2_0 (std, 1080p, 16:9, no audio; start_image = scout-chat-onit-still-v1.png)",
+      "job_id": "4f82c13b-165f-4fb4-b039-7b4274f61891",
+      "prompt": "Static macro shot of the phone screen: the three-dot typing indicator pulses, the chat bubble settles, the blue orb avatar gently pulses and swirls with inner light, soft screen glow flickering on the surrounding fur. Camera pushes in very slowly. UI text stays crisp and unchanged, no cuts."
+    },
+    {
+      "filename": "assets/generated/scout-chat-emailing-doogle-v1.mp4",
+      "kind": "video",
+      "description": "Seedance animation of the 'Emailing 5 hiring managers at Doogle…' still: avatars light up along the progress line, send icon pulses, push-in. Scene 5. 1080p 16:9 silent.",
+      "duration": 4.04,
+      "source": "higgsfield",
+      "model": "seedance_2_0 (std, 1080p, 16:9, no audio; start_image = scout-chat-emailing-doogle-still-v1.png)",
+      "job_id": "2dc5f7f1-92b4-4064-971b-266eeb59b26d",
+      "prompt": "Static macro shot of the phone screen: the five circular avatars light up one by one along the progress line, the glowing paper-plane send icon pulses brighter, subtle light ripples across the dark UI. Camera pushes in slowly toward the send icon. UI text stays crisp and unchanged, no cuts."
+    },
+    {
+      "filename": "assets/generated/mail-icon-zoom-transition-v1.mp4",
+      "kind": "video",
+      "description": "Seedance animation: camera dives into the glowing send icon until blue light fills the frame — whip-zoom transition. Scene 6. 1080p 16:9 silent.",
+      "duration": 4.04,
+      "source": "higgsfield",
+      "model": "seedance_2_0 (std, 1080p, 16:9, no audio; start_image = mail-icon-zoom-transition-still-v1.png)",
+      "job_id": "59638328-8918-4fcd-920b-82e34d0b39f7",
+      "prompt": "Camera accelerates and dives straight into the glowing blue paper-plane icon, the icon flaring with lens bloom until blue light fills the entire frame at the end, pixel grid streaking past the edges with zoom motion blur. Fast whoosh transition feel, single continuous shot."
+    },
+    {
+      "filename": "assets/generated/mail-flight-city-day-v1.mp4",
+      "kind": "video",
+      "description": "Seedance animation: blue light-envelope streaks over sunlit LA, camera tracking, heavy motion blur. Scene 7. 1080p 16:9 silent.",
+      "duration": 4.04,
+      "source": "higgsfield",
+      "model": "seedance_2_0 (std, 1080p, 16:9, no audio; start_image = mail-flight-city-day-v1.png)",
+      "job_id": "f2b3b2cd-32fc-484b-bad8-c115a6d338f5",
+      "prompt": "The glowing blue envelope streaks across the bright sky above the sunlit skyscrapers, its long light trail rippling behind it, camera tracking alongside with slight shake, buildings sweeping past below with heavy motion blur, sun flare pulsing. Very high speed, single continuous shot."
+    },
+    {
+      "filename": "assets/generated/mail-lands-office-desk-day-v1.mp4",
+      "kind": "video",
+      "description": "Seedance animation: envelope sinks into the monitor with ripple rings, hiring manager leans in. Scene 8. 1080p 16:9 silent.",
+      "duration": 4.04,
+      "source": "higgsfield",
+      "model": "seedance_2_0 (std, 1080p, 16:9, no audio; start_image = mail-lands-office-desk-day-v1.png)",
+      "job_id": "e68226fd-3cf8-4fe6-a7d9-794174e54361",
+      "prompt": "The envelope of blue light sinks into the monitor screen and dissolves with soft radiating ripple rings, leaving an email notification glowing; the woman leans in toward the screen with a curious expression. Camera locked off, sunlight steady, single continuous shot, photorealistic."
+    },
+    {
+      "filename": "assets/generated/la-skyline-mail-trails-day-v1.mp4",
+      "kind": "video",
+      "description": "Seedance animation: blue trails arc down into LA towers one after another with pulse rings, camera pulls back and up. Scene 9. 1080p 16:9 silent.",
+      "duration": 5.04,
+      "source": "higgsfield",
+      "model": "seedance_2_0 (std, 1080p, 16:9, no audio; start_image = la-skyline-mail-trails-day-v1.png)",
+      "job_id": "41144c20-45b0-4f3f-b983-da46c8545cd4",
+      "prompt": "Aerial view: several luminous blue light-trails arc down from the sky one after another, each diving into a different office tower and bursting into a soft blue pulse ring where it enters, sun glinting off glass, faint haze drifting. Camera slowly pulls back and drifts upward, revealing more of the city. Single continuous shot."
+    },
+    {
+      "filename": "assets/generated/la-skyline-reply-green-day-v1.mp4",
+      "kind": "video",
+      "description": "Seedance animation: one tower pulses green with ring waves, camera dives toward it. Scene 10. 1080p 16:9 silent.",
+      "duration": 4.04,
+      "source": "higgsfield",
+      "model": "seedance_2_0 (std, 1080p, 16:9, no audio; start_image = la-skyline-reply-green-day-v1.png)",
+      "job_id": "97b59f7a-7ecb-4887-b917-507b8d158e45",
+      "prompt": "The dim blue trails fade further as the single office tower pulses bright green with expanding ring waves, the glow intensifying rhythmically; camera dives forward toward the green tower with accelerating zoom and motion blur at the frame edges. Single continuous shot."
+    },
+    {
+      "filename": "assets/generated/hiring-manager-reply-day-v1.mp4",
+      "kind": "video",
+      "description": "Seedance animation: she types the reply, green compose glow on her face, finishes with a confident key press. Scene 11. 1080p 16:9 silent.",
+      "duration": 4.04,
+      "source": "higgsfield",
+      "model": "seedance_2_0 (std, 1080p, 16:9, no audio; start_image = hiring-manager-reply-day-v1.png)",
+      "job_id": "5b809be8-8e26-4a4d-b21b-c181a95292bb",
+      "prompt": "The woman types the email reply, fingers moving naturally on the keyboard, the green-tinted compose window glowing softly on her face, she finishes with a slight confident smile and presses the final key. Camera locked off over her shoulder, daylight steady, single continuous shot, photorealistic."
+    },
+    {
+      "filename": "assets/generated/mail-return-campus-day-v1.mp4",
+      "kind": "video",
+      "description": "Seedance animation: green envelope arcs from the distant skyline toward campus, palms sway, camera pans. Scene 12. 1080p 16:9 silent.",
+      "duration": 4.04,
+      "source": "higgsfield",
+      "model": "seedance_2_0 (std, 1080p, 16:9, no audio; start_image = mail-return-campus-day-v1.png)",
+      "job_id": "d7bd27ee-dec8-4b48-a2c1-9fbf258a9870",
+      "prompt": "The green glowing envelope arcs across the bright sky from the distant skyline toward the campus in the foreground, its soft light trail curving behind it, palm trees swaying gently in warm midday light. Camera pans slightly to follow the envelope's arc. Single continuous shot."
+    },
+    {
+      "filename": "assets/generated/yeti-class-laptop-reply-v1.mp4",
+      "kind": "video",
+      "description": "Seedance animation: yeti reads the laptop, eyes widen, fist pump and grin, camera pulls back. Final scene 14. 1080p 16:9 silent.",
+      "duration": 5.04,
+      "source": "higgsfield",
+      "model": "seedance_2_0 (std, 1080p, 16:9, no audio; start_image = yeti-class-laptop-reply-still-v1.png)",
+      "job_id": "24998dc0-590b-43d0-9972-fd41010c8799",
+      "prompt": "The yeti reads the laptop screen, eyes widening with delight, then pumps his raised fist and grins wide, fur bouncing, headphones shifting slightly; nearby students glance over, blurred; the laptop's green glow flickers softly on his face. Camera slowly pulls back, widening the shot as the celebration lands. Single continuous shot, photorealistic."
+    },
+    {
+      "filename": "assets/generated/scout-ui-promo-clip-agent-beat-wide.mp4",
+      "kind": "video",
+      "description": "Widescreen (1920x1080) blur-padded version of scout-ui-promo-clip-agent-beat.mp4 — vertical promo clip centered over a blurred darkened copy of itself. Used as scene 3 of the yeti-using-scout plan.",
+      "duration": 13.5,
+      "source": "dropped",
+      "model": "ffmpeg blur-pad of scout-ui-promo-clip-agent-beat.mp4"
     }
   ]
 }
