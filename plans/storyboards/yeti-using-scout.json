@@ -1,6 +1,6 @@
 {
   "name": "yeti-using-scout",
-  "updatedAt": "2026-07-12T22:55:00.000Z",
+  "updatedAt": "2026-07-12T23:05:00.000Z",
   "scenes": [
     {
       "id": "s01",
@@ -50,8 +50,8 @@
     {
       "id": "s06",
       "title": "Mail streaks across the city",
-      "asset": "assets/generated/mail-flight-city-still-v1.png",
-      "description": "Light-envelope rockets over the dusk skyline, heavy motion blur — the 'gets a little blurry' beat.",
+      "asset": "assets/generated/mail-flight-city-day-v1.png",
+      "description": "Light-envelope rockets over sunlit downtown LA, heavy motion blur — the 'gets a little blurry' beat. Bright midday.",
       "vo": "",
       "durationSec": 2,
       "notes": "Animate with seedance; keep trail continuous into next shot."
@@ -59,26 +59,26 @@
     {
       "id": "s07",
       "title": "Lands on a professional's desktop",
-      "asset": "assets/generated/mail-lands-office-desk-still-v1.png",
-      "description": "Envelope of light lands in the hiring manager's monitor with a soft ripple; she leans in.",
+      "asset": "assets/generated/mail-lands-office-desk-day-v1.png",
+      "description": "Envelope of light lands in the hiring manager's monitor with a soft ripple; she leans in. Sunlit office, LA towers outside.",
       "vo": "",
       "durationSec": 2.5,
       "notes": ""
     },
     {
       "id": "s08",
-      "title": "Zoom out — map of outreach",
-      "asset": "assets/generated/map-outreach-trails-still-v1.png",
-      "description": "Pull back out of the office window into a stylized US night map; blue arcs fan out from LA, mails landing everywhere.",
+      "title": "Zoom out — LA skyline, mail into buildings",
+      "asset": "assets/generated/la-skyline-mail-trails-day-v1.png",
+      "description": "Pull back out of the office into a wide daytime aerial of the LA skyline; blue mail-trails arc down from the sky into different towers, pulsing where they enter.",
       "vo": "Caption idea: 'Scout reaches out. Everywhere.'",
       "durationSec": 3,
-      "notes": "Remotion can animate arcs procedurally on top if the gen video is too busy."
+      "notes": "Replaced the US-map beat per Nick — real daytime skyline instead of stylized map."
     },
     {
       "id": "s09",
-      "title": "One office lights up green",
-      "asset": "assets/generated/map-office-green-glow-still-v1.png",
-      "description": "The map dims; a single office icon pulses green — a reply. Camera dives toward it.",
+      "title": "One tower lights up green",
+      "asset": "assets/generated/la-skyline-reply-green-day-v1.png",
+      "description": "Same aerial: the trails fade, one tower pulses green — a reply. Camera dives toward it.",
       "vo": "",
       "durationSec": 2,
       "notes": "Green = reply/positive through the rest of the sequence."
@@ -86,17 +86,17 @@
     {
       "id": "s10",
       "title": "Hiring manager replies",
-      "asset": "assets/generated/hiring-manager-reply-still-v1.png",
-      "description": "Inside that office: the hiring manager types a reply, screen glow on her face.",
+      "asset": "assets/generated/hiring-manager-reply-day-v1.png",
+      "description": "Inside that tower: the same hiring manager types a reply, green-tinted compose window glowing on her screen. Daytime.",
       "vo": "",
       "durationSec": 2.5,
-      "notes": "REGEN CANDIDATE: green glow came out weak and she reads as a slightly different woman than s07."
+      "notes": "Same woman/office as s07 (chained as image reference)."
     },
     {
       "id": "s11",
       "title": "Reply travels back to campus",
-      "asset": "assets/generated/mail-return-campus-still-v1.png",
-      "description": "Green envelope arcs across a dawn sky from the city back toward the brick campus.",
+      "asset": "assets/generated/mail-return-campus-day-v1.png",
+      "description": "Green envelope arcs across the midday sky from downtown LA back toward the brick campus.",
       "vo": "",
       "durationSec": 2,
       "notes": ""

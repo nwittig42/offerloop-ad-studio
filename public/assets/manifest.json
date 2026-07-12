@@ -321,7 +321,7 @@
     {
       "filename": "assets/generated/mail-flight-city-still-v1.png",
       "kind": "image",
-      "description": "STILL (keyframe, scene 6): glowing blue light-envelope streaking over LA skyline at dusk, long light trail, heavy motion blur below, anamorphic look. The 'mail travels and gets blurry' beat.",
+      "description": "SUPERSEDED by mail-flight-city-day-v1.png (night/dusk version; Nick wants daytime). STILL (keyframe, scene 6): glowing blue light-envelope streaking over LA skyline at dusk, long light trail, heavy motion blur below, anamorphic look. The 'mail travels and gets blurry' beat.",
       "source": "higgsfield",
       "model": "nano_banana_pro (2k, 16:9)",
       "job_id": "ae26df1a-923c-4312-bf82-2a86972d2a73",
@@ -330,7 +330,7 @@
     {
       "filename": "assets/generated/mail-lands-office-desk-still-v1.png",
       "kind": "image",
-      "description": "STILL (keyframe, scene 7): glowing envelope landing into a monitor with blue ripple, professional woman (mid-30s, dark blazer) leaning in, corporate office at dusk, city skyline behind.",
+      "description": "SUPERSEDED by mail-lands-office-desk-day-v1.png (night/dusk version; Nick wants daytime). STILL (keyframe, scene 7): glowing envelope landing into a monitor with blue ripple, professional woman (mid-30s, dark blazer) leaning in, corporate office at dusk, city skyline behind.",
       "source": "higgsfield",
       "model": "nano_banana_pro (2k, 16:9)",
       "job_id": "c5ccb37d-d46a-4ed1-aa1a-e480cfcec299",
@@ -339,7 +339,7 @@
     {
       "filename": "assets/generated/map-outreach-trails-still-v1.png",
       "kind": "image",
-      "description": "STILL (keyframe, scene 8): stylized deep-navy US night map, blue arcs fanning from LA to office icons across the country, envelopes traveling the arcs with pulse rings. Brand navy/blue palette.",
+      "description": "SUPERSEDED by la-skyline-mail-trails-day-v1.png (night/dusk version; Nick wants daytime). STILL (keyframe, scene 8): stylized deep-navy US night map, blue arcs fanning from LA to office icons across the country, envelopes traveling the arcs with pulse rings. Brand navy/blue palette.",
       "source": "higgsfield",
       "model": "nano_banana_pro (2k, 16:9)",
       "job_id": "ec1344c6-5784-42b5-9961-056c9f473c4b",
@@ -348,7 +348,7 @@
     {
       "filename": "assets/generated/map-office-green-glow-still-v1.png",
       "kind": "image",
-      "description": "STILL (keyframe, scene 9): same navy map, one office icon pulsing bright green with radiating rings, camera starting to dive toward it. The 'one office lights up green' beat.",
+      "description": "SUPERSEDED by la-skyline-reply-green-day-v1.png (night/dusk version; Nick wants daytime). STILL (keyframe, scene 9): same navy map, one office icon pulsing bright green with radiating rings, camera starting to dive toward it. The 'one office lights up green' beat.",
       "source": "higgsfield",
       "model": "nano_banana_pro (2k, 16:9)",
       "job_id": "68266d71-ec65-4249-9061-9bb512f9b003",
@@ -357,7 +357,7 @@
     {
       "filename": "assets/generated/hiring-manager-reply-still-v1.png",
       "kind": "image",
-      "description": "STILL (keyframe, scene 10): the hiring manager typing a reply at night, compose window on monitor, desk lamp, rain-flecked window bokeh. NOTE: green screen-glow came out weak and woman differs slightly from the desk-landing shot — regen candidate.",
+      "description": "SUPERSEDED by hiring-manager-reply-day-v1.png (night/dusk version; Nick wants daytime). STILL (keyframe, scene 10): the hiring manager typing a reply at night, compose window on monitor, desk lamp, rain-flecked window bokeh. NOTE: green screen-glow came out weak and woman differs slightly from the desk-landing shot — regen candidate.",
       "source": "higgsfield",
       "model": "nano_banana_pro (2k, 16:9)",
       "job_id": "73186151-bf2e-4416-a0b5-2c718a9b0fb1",
@@ -366,7 +366,7 @@
     {
       "filename": "assets/generated/mail-return-campus-still-v1.png",
       "kind": "image",
-      "description": "STILL (keyframe, scene 11): green light-envelope arcing across dawn sky from distant city toward collegiate red-brick campus with palms (USC-like). The reply traveling back.",
+      "description": "SUPERSEDED by mail-return-campus-day-v1.png (night/dusk version; Nick wants daytime). STILL (keyframe, scene 11): green light-envelope arcing across dawn sky from distant city toward collegiate red-brick campus with palms (USC-like). The reply traveling back.",
       "source": "higgsfield",
       "model": "nano_banana_pro (2k, 16:9)",
       "job_id": "06146d75-db6d-46af-b543-0d334b7d1a6c",
@@ -388,6 +388,60 @@
       "duration": 13.5,
       "source": "dropped",
       "model": "ffmpeg clip of assets/references/promo-saas-v2.mp4"
+    },
+    {
+      "filename": "assets/generated/mail-flight-city-day-v1.png",
+      "kind": "image",
+      "description": "STILL (keyframe, yeti-using-scout scene 6): glowing blue light-envelope streaking over sunlit downtown LA in bright midday daylight, long trail, heavy motion blur below. Daytime replacement for mail-flight-city-still-v1.",
+      "source": "higgsfield",
+      "model": "nano_banana_pro (2k, 16:9)",
+      "job_id": "64ccdc1d-0e34-4845-a157-ec124a7f4e4e",
+      "prompt": "A small envelope made of glowing blue light streaking across a bright blue midday sky above downtown Los Angeles, long luminous light trail behind it, strong motion blur on the sunlit skyscrapers below, camera tracking alongside the envelope, anamorphic cinematic look, crisp daylight, warm sun flare, dreamy speed blur at frame edges. Sense of very high speed. Photorealistic with stylized light effects, no text."
+    },
+    {
+      "filename": "assets/generated/mail-lands-office-desk-day-v1.png",
+      "kind": "image",
+      "description": "STILL (keyframe, scene 7): sunlit office, hiring manager (mid-30s, dark blazer, low bun) at desk, glowing blue envelope landing into her monitor with ripple rings, LA towers through the windows. Daytime replacement for mail-lands-office-desk-still-v1. Also the character/set reference for hiring-manager-reply-day-v1.",
+      "source": "higgsfield",
+      "model": "nano_banana_pro (2k, 16:9)",
+      "job_id": "2b7450c8-8978-470a-8fa1-5b2b8faa0345",
+      "prompt": "Interior of a modern corporate office on a bright sunny day: a professional woman in her mid-30s, dark blazer, low bun, sits at a clean desk with a large monitor showing an email inbox; a small envelope of glowing blue light is landing into the center of her screen with soft radiating blue ripples; she leans in, curious. Floor-to-ceiling windows with a sunlit city skyline and blue sky behind, soft daylight filling the room. 35mm lens, f/2.8, photorealistic cinematic film look, soft grain. No legible text on the monitor."
+    },
+    {
+      "filename": "assets/generated/la-skyline-mail-trails-day-v1.png",
+      "kind": "image",
+      "description": "STILL (keyframe, scene 8): wide zoomed-out daytime aerial of downtown LA, several blue light-trails arcing down from the sky into different towers with pulse rings at entry. Replaces the stylized US-map shot (map-outreach-trails-still-v1) per Nick — real skyline instead of map.",
+      "source": "higgsfield",
+      "model": "nano_banana_pro (2k, 16:9)",
+      "job_id": "eb87d3a0-4a19-41a2-ad6b-af858dce4a9d",
+      "prompt": "Wide zoomed-out aerial shot of the downtown Los Angeles skyline on a bright clear day, blue sky, sunlit skyscrapers: several luminous blue light-trails arc down from high in the sky, each one diving into a different office tower with a soft blue pulse ring where it enters the building. Clean crisp daylight, cinematic aerial photography with stylized glowing light effects, slight haze on the horizon, palm-lined streets far below. Photorealistic, no text, no labels."
+    },
+    {
+      "filename": "assets/generated/la-skyline-reply-green-day-v1.png",
+      "kind": "image",
+      "description": "STILL (keyframe, scene 9): same daytime LA aerial (generated from the trails shot as reference), one tower glowing bright green with radiating rings — the reply. Replaces map-office-green-glow-still-v1.",
+      "source": "higgsfield",
+      "model": "nano_banana_pro (2k, 16:9); image_reference = la-skyline-mail-trails-day-v1 (job)",
+      "job_id": "47ea6630-8648-4254-8342-299f62715520",
+      "prompt": "Same wide daytime aerial of the downtown Los Angeles skyline as the reference image, same camera position and lighting: the blue light-trails now faded and dim, and one single office tower glowing bright green with soft radiating green pulse rings around it, clearly the focal point, camera beginning to dive toward that tower with subtle zoom motion blur at the frame edges. Bright clear day, photorealistic aerial with stylized light effects, no text, no labels."
+    },
+    {
+      "filename": "assets/generated/hiring-manager-reply-day-v1.png",
+      "kind": "image",
+      "description": "STILL (keyframe, scene 10): same woman/office as the desk-landing shot (used as image reference), daytime, typing a reply with a clearly visible green-tinted compose window glowing on screen. Replaces hiring-manager-reply-still-v1 and fixes its weak green + character drift.",
+      "source": "higgsfield",
+      "model": "nano_banana_pro (2k, 16:9); image_reference = mail-lands-office-desk-day-v1 (job)",
+      "job_id": "0e587f22-9d1a-4f16-8762-d55887225798",
+      "prompt": "Same professional woman, same blazer and low bun, same sunlit corporate office and desk as the reference image, moments later: over-the-shoulder shot of her typing an email reply, the monitor showing a clean email compose window with a clearly visible soft green glow radiating from the screen and tinting her face and hands, slight confident smile, bright daylight and blue-sky city skyline through the windows. 50mm lens, f/2.0 shallow depth of field, photorealistic cinematic. No legible text on the monitor."
+    },
+    {
+      "filename": "assets/generated/mail-return-campus-day-v1.png",
+      "kind": "image",
+      "description": "STILL (keyframe, scene 11): green light-envelope arcing across a bright midday sky from distant downtown LA back toward the red-brick campus with palms. Daytime replacement for mail-return-campus-still-v1.",
+      "source": "higgsfield",
+      "model": "nano_banana_pro (2k, 16:9)",
+      "job_id": "a644cacb-d62c-4569-8005-df5ca3b8bb12",
+      "prompt": "A small envelope of glowing soft-green light arcing across a bright clear daytime sky away from the distant downtown Los Angeles skyline toward a collegiate campus with red-brick buildings and palm trees in the foreground distance, long gentle light trail behind it, mild motion blur, wide cinematic establishing shot, warm midday sunlight, hopeful mood. Photorealistic with stylized light effects, no text."
     }
   ]
 }
