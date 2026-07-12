@@ -578,6 +578,16 @@
       "duration": 13.5,
       "source": "dropped",
       "model": "ffmpeg blur-pad of scout-ui-promo-clip-agent-beat.mp4"
+    },
+    {
+      "filename": "assets/generated/yeti-class-tell-classmates-v1.mp4",
+      "kind": "video",
+      "description": "Seedance animation (6s): yeti reads the laptop, eyes go wide, spins around to tell the students behind him ('Oh my god — wait, I got an interview!'), they react smiling, he turns back and points at the screen. Final live-action beat of yeti-using-scout. 1080p 16:9 silent.",
+      "duration": 6.04,
+      "source": "higgsfield",
+      "model": "seedance_2_0 (std, 1080p, 16:9, no audio; start_image = yeti-class-laptop-reply-still-v1.png)",
+      "job_id": "5d149ecb-51f2-4928-b624-e7252a37972a",
+      "prompt": "The yeti stares at the laptop screen as his eyes go wide with shock and joy, then he spins around in his seat to the students sitting behind him, gesturing excitedly at his laptop with both paws and mouthing words as if saying he just got an interview, the students behind react with surprised smiles; then he turns back and points at the screen. Energetic natural motion, camera locked off, single continuous shot, photorealistic, warm daylight."
     }
   ]
 }

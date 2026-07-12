@@ -1,132 +1,123 @@
 {
   "name": "yeti-using-scout",
-  "updatedAt": "2026-07-12T23:20:00.000Z",
+  "updatedAt": "2026-07-12T23:55:00.000Z",
   "scenes": [
     {
       "id": "s01",
-      "title": "Hook — yeti walks to class",
-      "asset": "assets/generated/yeti-walking-class-phone-v1.mp4",
-      "description": "Yeti crosses the quad with backpack + headphones, raises his phone to his mouth like a voice memo.",
-      "vo": "",
+      "title": "Open — voice command (side view)",
+      "asset": "assets/generated/yeti-tommy-trojan-speak-v1.mp4",
+      "description": "Cold open: side view at Tommy Trojan, yeti speaks the command into his phone. No text overlay.",
+      "vo": "Yeti (spoken, no caption): “Find me hiring managers at Doogle.”",
       "durationSec": 4,
-      "notes": "Existing clip (8.1s) — use roughly the first half; the phone-raise lands the cut into the next shot."
+      "notes": "Walking intro cut per Nick. Full 4s clip."
     },
     {
       "id": "s02",
-      "title": "Voice command at Tommy Trojan",
-      "asset": "assets/generated/yeti-usc-tommy-trojan-speak-still-v2.png",
-      "description": "Side profile at Tommy Trojan, speaking the command into the phone.",
-      "vo": "Yeti: “Find me hiring managers at Doogle.”",
-      "durationSec": 2.5,
-      "notes": "Animate via seedance start_image (stills-first workflow)."
+      "title": "Scout responds — on his phone",
+      "asset": "assets/generated/scout-chat-onit-v1.mp4",
+      "description": "Macro of the phone in his paw: 'On it — drafting your outreach.' types out. This IS what's on his phone.",
+      "vo": "",
+      "durationSec": 3.5,
+      "notes": "Standalone UI insert cut per Nick — phone content lives in these in-paw shots."
     },
     {
       "id": "s03",
-      "title": "Screen insert — Scout UI (promo clip)",
-      "asset": "assets/generated/scout-ui-promo-clip-agent-beat.mp4",
-      "description": "What plays on the phone: voice command → hiring-manager list → 'Ready to send — 5 emails' → send.",
+      "title": "Emailing 5 hiring managers",
+      "asset": "assets/generated/scout-chat-emailing-doogle-v1.mp4",
+      "description": "Avatars fill along the progress line, send icon glows.",
       "vo": "",
       "durationSec": 4,
-      "notes": "Clip = promo-saas-v2 9.5–23.0s. Says J.P. Morgan — either keep, or re-skin to Doogle with the src/components/mock/ UI in Remotion."
-    },
-    {
-      "id": "s04",
-      "title": "Zoom in — Scout responds",
-      "asset": "assets/generated/scout-chat-onit-still-v1.png",
-      "description": "Fast push-in on the screen as Scout's chat bubble types out.",
-      "vo": "Scout: “On it — drafting your outreach.”",
-      "durationSec": 2.5,
-      "notes": "Text already rendered in the still; can re-render crisp via Remotion mock if animated."
-    },
-    {
-      "id": "s05",
-      "title": "Scout — emailing hiring managers",
-      "asset": "assets/generated/scout-chat-emailing-doogle-still-v1.png",
-      "description": "Bubble updates; five avatar dots fill along a progress line; send icon starts to glow.",
-      "vo": "Scout: “Emailing 5 hiring managers at Doogle…”",
-      "durationSec": 2.5,
       "notes": ""
     },
     {
-      "id": "s06",
-      "title": "Whip-zoom into the send icon",
-      "asset": "assets/generated/mail-icon-zoom-transition-still-v1.png",
-      "description": "Camera dives into the glowing paper-plane icon until it fills frame — transition out of the UI world.",
+      "id": "s04",
+      "title": "Send — blur into the icon",
+      "asset": "assets/generated/mail-icon-zoom-transition-v1.mp4",
+      "description": "Dive into the send icon; clip ENDS in a full blue flare that match-cuts into the flight.",
       "vo": "",
-      "durationSec": 1.5,
-      "notes": "Whoosh SFX; match-cut to mail flight."
+      "durationSec": 4,
+      "notes": "Play full length — do not trim the flare."
+    },
+    {
+      "id": "s05",
+      "title": "Mail streaks over LA",
+      "asset": "assets/generated/mail-flight-city-day-v1.mp4",
+      "description": "Envelope rockets over sunlit LA, ends on sun-flare blur.",
+      "vo": "",
+      "durationSec": 4,
+      "notes": "Full length into the desk landing."
+    },
+    {
+      "id": "s06",
+      "title": "Lands on the hiring manager's desktop",
+      "asset": "assets/generated/mail-lands-office-desk-day-v1.mp4",
+      "description": "Envelope sinks into the monitor through the window light, ripple rings, she leans in.",
+      "vo": "",
+      "durationSec": 4,
+      "notes": ""
     },
     {
       "id": "s07",
-      "title": "Mail streaks across the city",
-      "asset": "assets/generated/mail-flight-city-day-v1.png",
-      "description": "Light-envelope rockets over sunlit downtown LA, heavy motion blur — the 'gets a little blurry' beat. Bright midday.",
+      "title": "Zoom out — LA skyline, mail into buildings",
+      "asset": "assets/generated/la-skyline-mail-trails-day-v1.mp4",
+      "description": "Wide daytime aerial: trails dive into towers, camera pulls back.",
       "vo": "",
-      "durationSec": 2,
-      "notes": "Animate with seedance; keep trail continuous into next shot."
+      "durationSec": 5,
+      "notes": ""
     },
     {
       "id": "s08",
-      "title": "Lands on a professional's desktop",
-      "asset": "assets/generated/mail-lands-office-desk-day-v1.png",
-      "description": "Envelope of light lands in the hiring manager's monitor with a soft ripple; she leans in. Sunlit office, LA towers outside.",
+      "title": "One tower lights up green",
+      "asset": "assets/generated/la-skyline-reply-green-day-v1.mp4",
+      "description": "One tower pulses green, camera dives toward it.",
       "vo": "",
-      "durationSec": 2.5,
+      "durationSec": 4,
       "notes": ""
     },
     {
       "id": "s09",
-      "title": "Zoom out — LA skyline, mail into buildings",
-      "asset": "assets/generated/la-skyline-mail-trails-day-v1.png",
-      "description": "Pull back out of the office into a wide daytime aerial of the LA skyline; blue mail-trails arc down from the sky into different towers, pulsing where they enter.",
-      "vo": "Caption idea: 'Scout reaches out. Everywhere.'",
-      "durationSec": 3,
-      "notes": "Replaced the US-map beat per Nick — real daytime skyline instead of stylized map."
-    },
-    {
-      "id": "s10",
-      "title": "One tower lights up green",
-      "asset": "assets/generated/la-skyline-reply-green-day-v1.png",
-      "description": "Same aerial: the trails fade, one tower pulses green — a reply. Camera dives toward it.",
-      "vo": "",
-      "durationSec": 2,
-      "notes": "Green = reply/positive through the rest of the sequence."
-    },
-    {
-      "id": "s11",
       "title": "Hiring manager replies",
-      "asset": "assets/generated/hiring-manager-reply-day-v1.png",
-      "description": "Inside that tower: the same hiring manager types a reply, green-tinted compose window glowing on her screen. Daytime.",
+      "asset": "assets/generated/hiring-manager-reply-day-v1.mp4",
+      "description": "She types the reply, green compose glow, confident final key press.",
       "vo": "",
-      "durationSec": 2.5,
-      "notes": "Same woman/office as s07 (chained as image reference)."
-    },
-    {
-      "id": "s12",
-      "title": "Reply travels back to campus",
-      "asset": "assets/generated/mail-return-campus-day-v1.png",
-      "description": "Green envelope arcs across the midday sky from downtown LA back toward the brick campus.",
-      "vo": "",
-      "durationSec": 2,
+      "durationSec": 4,
       "notes": ""
     },
     {
-      "id": "s13",
-      "title": "The reply — full frame",
-      "asset": "assets/generated/doogle-reply-email-screen-still-v1.png",
-      "description": "Hard cut to the actual email on his laptop: Sarah Chen at Doogle inviting Rylan to interview. Hold long enough to read.",
+      "id": "s10",
+      "title": "Reply flies back (same transition)",
+      "asset": "assets/generated/mail-return-campus-day-v1.mp4",
+      "description": "Green envelope arcs from the skyline back to campus — mirrors the outbound blur transition.",
       "vo": "",
-      "durationSec": 3,
-      "notes": "Text is legible in the still; can also re-render as a Remotion mock for pixel-perfect UI. Zoom-out starts from this frame."
+      "durationSec": 4,
+      "notes": "Full length so the arc lands before the cut."
     },
     {
-      "id": "s14",
-      "title": "Zoom out — yeti in class. End.",
-      "asset": "assets/generated/yeti-class-laptop-reply-still-v1.png",
-      "description": "Camera pulls back from the laptop screen to reveal the yeti in class, fist up, grinning. End frame → cut to end card.",
-      "vo": "Caption idea: 'Say it. Scout does it.'",
+      "id": "s11",
+      "title": "Yeti tells the class",
+      "asset": "assets/generated/yeti-class-tell-classmates-v1.mp4",
+      "description": "Cut straight to the yeti: eyes widen, he spins to the students behind him, then points at the screen.",
+      "vo": "Yeti: “Oh my god. Wait — I got an interview!”",
+      "durationSec": 6,
+      "notes": "New clip per Nick's ending."
+    },
+    {
+      "id": "s12",
+      "title": "...and shows the computer",
+      "asset": "assets/generated/doogle-reply-email-screen-still-v1.png",
+      "description": "Fade to the actual email full-frame; slow push-in.",
+      "vo": "",
       "durationSec": 3.5,
-      "notes": "REGEN CANDIDATE: face slightly off canonical. Zoom-out can also be done in Remotion: scale from s13 screen into this frame."
+      "notes": "Ken Burns in Remotion; text legible."
+    },
+    {
+      "id": "s13",
+      "title": "End card",
+      "asset": "",
+      "description": "Brand end card.",
+      "vo": "Say it. Scout does it. / Try Offerloop free / offerloop.ai",
+      "durationSec": 4,
+      "notes": "Rendered by Remotion endCard scene — no asset."
     }
   ]
 }
