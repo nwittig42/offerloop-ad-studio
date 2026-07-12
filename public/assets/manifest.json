@@ -159,6 +159,66 @@
       "model": "seedance_2_0 (std, 720p, 16:9; image_references = frame @5s of yeti-couch-swiping-v3.mp4)",
       "job_id": "57f0c5d3-e630-4508-ae45-b260a6521b95",
       "prompt": "A large friendly white yeti — the SAME yeti as in the image reference: shaggy long cream-white fur, dark claws, warm friendly face — walking to class across a green college quad among blurred students. He wears a modern backpack on his back and over-ear headphones on his head. Tracking shot following alongside him as he walks with a relaxed confident stride; mid-shot, he lifts a smartphone up to his mouth and speaks into it like a voice memo, natural arm movement, friendly expression while talking. Warm afternoon golden-hour sunlight, brick campus buildings and tree-lined walkways softly blurred behind him. Photorealistic, cinematic depth of field, smooth natural motion, high detail fur."
+    },
+    {
+      "filename": "assets/references/usc/usc-tommy-trojan.jpg",
+      "kind": "reference-image",
+      "description": "Tommy Trojan statue (full figure, sword and shield) with Bovard Administration tower behind, sunny day, portrait 1920x2229. Commons 'Tommy trojan statue on the USC campus - September 2024', CC0. USC campus reference for Higgsfield yeti-on-campus generations (style/location reference, not footage).",
+      "source": "wikimedia-commons"
+    },
+    {
+      "filename": "assets/references/usc/usc-bovard-dusk.jpg",
+      "kind": "reference-image",
+      "description": "Bovard Auditorium tower head-on at dusk across the hedged garden walkway, warm lamplight, 1920x1440. Commons, CC BY-SA 4.0 (EEJCC). USC campus reference for Higgsfield yeti-on-campus generations (style/location reference, not footage).",
+      "source": "wikimedia-commons"
+    },
+    {
+      "filename": "assets/references/usc/usc-bovard-across-quad.jpg",
+      "kind": "reference-image",
+      "description": "Bovard tower seen across Hahn Plaza/quad with lamppost foreground, students, fountain, brick walkways, blue sky, 1920x1440. Commons, CC BY-SA 3.0. USC campus reference for Higgsfield yeti-on-campus generations (style/location reference, not footage).",
+      "source": "wikimedia-commons"
+    },
+    {
+      "filename": "assets/references/usc/usc-doheny-library.jpg",
+      "kind": "reference-image",
+      "description": "Doheny Memorial Library front facade with palm trees and lawn walkway, warm late light, 1920x1440. Commons 'Doheny Memorial Library of USC', CC BY 3.0 (panoramio). USC campus reference for Higgsfield yeti-on-campus generations (style/location reference, not footage).",
+      "source": "wikimedia-commons"
+    },
+    {
+      "filename": "assets/references/usc/usc-doheny-interior.jpg",
+      "kind": "reference-image",
+      "description": "Doheny Library main reading room: coffered gilded ceiling, pendant lamps, long study tables, 1920x1440. Commons, CC BY-SA 4.0 (EEJCC). USC campus reference for Higgsfield yeti-on-campus generations (style/location reference, not footage).",
+      "source": "wikimedia-commons"
+    },
+    {
+      "filename": "assets/references/usc/usc-mudd-hall.jpg",
+      "kind": "reference-image",
+      "description": "Mudd Hall of Philosophy: Romanesque clock/bell tower and arched cloister, bikes, sunny, 1920x1440. Commons 'USC Mudd Hall', CC0 (EEJCC). USC campus reference for Higgsfield yeti-on-campus generations (style/location reference, not footage).",
+      "source": "wikimedia-commons"
+    },
+    {
+      "filename": "assets/references/usc/usc-alumni-park.jpg",
+      "kind": "reference-image",
+      "description": "Alumni Park lawn leading to Doheny Library entrance, palms and sycamores, golden light, 1920x1279. Commons 'USC Alumni Park', CC BY 3.0 (panoramio). USC campus reference for Higgsfield yeti-on-campus generations (style/location reference, not footage).",
+      "source": "wikimedia-commons"
+    },
+    {
+      "filename": "assets/references/usc/usc-vkc-building.jpg",
+      "kind": "reference-image",
+      "description": "Von KleinSmid Center: lit arched colonnade and VKC globe spire at blue hour, 1920x1344. Commons, CC BY 3.0 (panoramio). USC campus reference for Higgsfield yeti-on-campus generations (style/location reference, not footage).",
+      "source": "wikimedia-commons"
+    },
+    {
+      "filename": "assets/references/usc/usc-mccarthy-quad-crowd.jpg",
+      "kind": "reference-image",
+      "description": "McCarthy Quad at night during Springfest concert: crowd, stage, VKC globe tower lit, Leavey/Waite Phillips behind, 1920x1440. Commons 'USCSpringfest2005', public domain. USC campus reference for Higgsfield yeti-on-campus generations (style/location reference, not footage).",
+      "source": "wikimedia-commons"
+    },
+    {
+      "filename": "assets/references/usc/usc-student-union.jpg",
+      "kind": "reference-image",
+      "description": "Gwynn Wilson Student Union at dusk with fountain in foreground, Romanesque brick facade, warm lamps, 1920x1440. Commons, CC BY-SA 4.0. USC campus reference for Higgsfield yeti-on-campus generations (style/location reference, not footage).",
+      "source": "wikimedia-commons"
     }
   ]
 }
