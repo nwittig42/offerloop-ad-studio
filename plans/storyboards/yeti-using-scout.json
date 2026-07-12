@@ -1,0 +1,114 @@
+{
+  "name": "yeti-using-scout",
+  "updatedAt": "2026-07-12T22:55:00.000Z",
+  "scenes": [
+    {
+      "id": "s01",
+      "title": "OTS — yeti prompts Scout in class",
+      "asset": "assets/generated/yeti-scout-class-ots-still-v1.png",
+      "description": "Camera arcs from beside the yeti to directly behind him in the lecture hall; his phone fills center frame, Scout orb glowing.",
+      "vo": "Yeti (whispering): “Find me hiring managers at Doogle.”",
+      "durationSec": 3,
+      "notes": "Animate via seedance start_image. Composite scene-2 promo clip onto the phone screen in Remotion."
+    },
+    {
+      "id": "s02",
+      "title": "Screen insert — Scout UI (promo clip)",
+      "asset": "assets/generated/scout-ui-promo-clip-agent-beat.mp4",
+      "description": "What plays on the phone: voice command → hiring-manager list → 'Ready to send — 5 emails' → send.",
+      "vo": "",
+      "durationSec": 4,
+      "notes": "Clip = promo-saas-v2 9.5–23.0s. Says J.P. Morgan — either keep, or re-skin to Doogle with the src/components/mock/ UI in Remotion."
+    },
+    {
+      "id": "s03",
+      "title": "Zoom in — Scout responds",
+      "asset": "assets/generated/scout-chat-onit-still-v1.png",
+      "description": "Fast push-in on the screen as Scout's chat bubble types out.",
+      "vo": "Scout: “On it — drafting your outreach.”",
+      "durationSec": 2.5,
+      "notes": "Text already rendered in the still; can re-render crisp via Remotion mock if animated."
+    },
+    {
+      "id": "s04",
+      "title": "Scout — emailing hiring managers",
+      "asset": "assets/generated/scout-chat-emailing-doogle-still-v1.png",
+      "description": "Bubble updates; five avatar dots fill along a progress line; send icon starts to glow.",
+      "vo": "Scout: “Emailing 5 hiring managers at Doogle…”",
+      "durationSec": 2.5,
+      "notes": ""
+    },
+    {
+      "id": "s05",
+      "title": "Whip-zoom into the send icon",
+      "asset": "assets/generated/mail-icon-zoom-transition-still-v1.png",
+      "description": "Camera dives into the glowing paper-plane icon until it fills frame — transition out of the UI world.",
+      "vo": "",
+      "durationSec": 1.5,
+      "notes": "Whoosh SFX; match-cut to mail flight."
+    },
+    {
+      "id": "s06",
+      "title": "Mail streaks across the city",
+      "asset": "assets/generated/mail-flight-city-still-v1.png",
+      "description": "Light-envelope rockets over the dusk skyline, heavy motion blur — the 'gets a little blurry' beat.",
+      "vo": "",
+      "durationSec": 2,
+      "notes": "Animate with seedance; keep trail continuous into next shot."
+    },
+    {
+      "id": "s07",
+      "title": "Lands on a professional's desktop",
+      "asset": "assets/generated/mail-lands-office-desk-still-v1.png",
+      "description": "Envelope of light lands in the hiring manager's monitor with a soft ripple; she leans in.",
+      "vo": "",
+      "durationSec": 2.5,
+      "notes": ""
+    },
+    {
+      "id": "s08",
+      "title": "Zoom out — map of outreach",
+      "asset": "assets/generated/map-outreach-trails-still-v1.png",
+      "description": "Pull back out of the office window into a stylized US night map; blue arcs fan out from LA, mails landing everywhere.",
+      "vo": "Caption idea: 'Scout reaches out. Everywhere.'",
+      "durationSec": 3,
+      "notes": "Remotion can animate arcs procedurally on top if the gen video is too busy."
+    },
+    {
+      "id": "s09",
+      "title": "One office lights up green",
+      "asset": "assets/generated/map-office-green-glow-still-v1.png",
+      "description": "The map dims; a single office icon pulses green — a reply. Camera dives toward it.",
+      "vo": "",
+      "durationSec": 2,
+      "notes": "Green = reply/positive through the rest of the sequence."
+    },
+    {
+      "id": "s10",
+      "title": "Hiring manager replies",
+      "asset": "assets/generated/hiring-manager-reply-still-v1.png",
+      "description": "Inside that office: the hiring manager types a reply, screen glow on her face.",
+      "vo": "",
+      "durationSec": 2.5,
+      "notes": "REGEN CANDIDATE: green glow came out weak and she reads as a slightly different woman than s07."
+    },
+    {
+      "id": "s11",
+      "title": "Reply travels back to campus",
+      "asset": "assets/generated/mail-return-campus-still-v1.png",
+      "description": "Green envelope arcs across a dawn sky from the city back toward the brick campus.",
+      "vo": "",
+      "durationSec": 2,
+      "notes": ""
+    },
+    {
+      "id": "s12",
+      "title": "Yeti gets the interview",
+      "asset": "assets/generated/yeti-class-interview-popup-still-v1.png",
+      "description": "Back in class: popup slides in, yeti reads it wide-eyed and grins.",
+      "vo": "Email popup: “Hi Rylan — thank you for reaching out. We'd be glad to set up an interview for the Product Management role at Doogle. Would Thursday afternoon work? — Sarah, Doogle Recruiting”",
+      "durationSec": 3.5,
+      "notes": "Render the email card as a Remotion mock popup for legibility. REGEN CANDIDATE: yeti face slightly off canonical (heavier muzzle)."
+    }
+  ]
+}

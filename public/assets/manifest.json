@@ -281,6 +281,113 @@
       "source": "higgsfield",
       "model": "nano_banana_pro (2k, 16:9; refs = yeti-canonical-face-profile.png + USC location photo)",
       "job_id": "aa824d18-e4e9-4de4-bb4c-7228b6b8ffbb"
+    },
+    {
+      "filename": "assets/generated/yeti-scout-class-ots-still-v1.png",
+      "kind": "image",
+      "description": "STILL (keyframe, yeti-using-scout scene 1): OTS from behind canonical yeti in the back row of a lecture hall, phone in left paw, dark navy screen with glowing blue Scout orb, blurred students/professor ahead, warm window light. Screen gets the promo UI clip composited in Remotion.",
+      "source": "higgsfield",
+      "model": "nano_banana_pro (2k, 16:9); image_references = yeti-canonical-face-front.png + yeti-canonical-face-profile.png",
+      "job_id": "d33bea59-f546-40fc-a679-4fde5be5a8e2",
+      "prompt": "Over-the-shoulder shot from directly behind the fluffy white yeti from the reference images (shaggy cream fur, silver over-ear headphones around neck, tan backpack hanging on chair), seated in the back row of a university lecture hall, holding a smartphone upright in his left paw at center frame. The phone screen glows deep navy with a single luminous blue AI-agent orb interface, screen in sharp focus. Blurred rows of students and a distant professor by a projector screen ahead, warm afternoon light through tall windows. 35mm lens, f/2.0 shallow depth of field, photorealistic cozy film look, soft grain. No text anywhere except the phone screen, no logos."
+    },
+    {
+      "filename": "assets/generated/scout-chat-onit-still-v1.png",
+      "kind": "image",
+      "description": "STILL (keyframe, scene 3): macro of phone in furry paw, dark navy Scout chat UI, blue orb avatar, white bubble reading 'On it — drafting your outreach.' with typing dots. Text rendered crisply.",
+      "source": "higgsfield",
+      "model": "nano_banana_pro (2k, 16:9)",
+      "job_id": "91ef93ed-e284-412e-bc5f-92e01f89a6a8",
+      "prompt": "Extreme close-up of a smartphone screen held by a shaggy cream-white furry paw with short dark claws, screen filling most of the frame. Dark navy AI-agent chat interface: a glowing blue orb avatar at top center, one clean white chat bubble in a modern sans-serif font reading exactly \"On it — drafting your outreach.\" with a subtle three-dot typing indicator below it. Soft blue screen glow reflecting on the fur. Macro lens, crisp legible UI text, photorealistic, cinematic contrast. No other text on screen."
+    },
+    {
+      "filename": "assets/generated/scout-chat-emailing-doogle-still-v1.png",
+      "kind": "image",
+      "description": "STILL (keyframe, scene 4): macro of Scout chat UI, bubble reading 'Emailing 5 hiring managers at Doogle…', row of 5 avatar circles with progress line, glowing paper-plane send icon. Text rendered crisply.",
+      "source": "higgsfield",
+      "model": "nano_banana_pro (2k, 16:9)",
+      "job_id": "0406f5ae-03bc-4b7b-a13b-debb56979117",
+      "prompt": "Extreme close-up of the same dark navy AI-agent chat interface on a smartphone screen, filling the frame. A glowing blue orb avatar at top, one white chat bubble in a modern sans-serif font reading exactly \"Emailing 5 hiring managers at Doogle…\" and below it a row of five small circular avatar placeholders with a thin blue progress line, plus one glowing blue paper-plane send icon at the bottom center of the screen shining brighter than the rest of the UI. Macro lens, crisp legible UI text, photorealistic screen render, cinematic. No other text."
+    },
+    {
+      "filename": "assets/generated/mail-icon-zoom-transition-still-v1.png",
+      "kind": "image",
+      "description": "STILL (keyframe, scene 5 transition): macro dive into glowing blue paper-plane send icon lifting off the phone glass, OLED pixel grid at edges, zoom motion blur. Whip-zoom transition frame out of the phone UI.",
+      "source": "higgsfield",
+      "model": "nano_banana_pro (2k, 16:9)",
+      "job_id": "66b3993b-fcd4-4294-889a-7d90605fc61a",
+      "prompt": "Macro shot diving into a smartphone screen: a single paper-plane send icon glowing electric blue at dead center, lifting off the glass as a beam of light angled toward camera, faint OLED pixel grid visible at the extreme edges, dark navy chat UI blurred and stretching outward with zoom motion blur. Shallow depth of field, strong lens bloom on the icon, photorealistic with stylized light. Transition frame, sense of accelerating into the icon. No text."
+    },
+    {
+      "filename": "assets/generated/mail-flight-city-still-v1.png",
+      "kind": "image",
+      "description": "STILL (keyframe, scene 6): glowing blue light-envelope streaking over LA skyline at dusk, long light trail, heavy motion blur below, anamorphic look. The 'mail travels and gets blurry' beat.",
+      "source": "higgsfield",
+      "model": "nano_banana_pro (2k, 16:9)",
+      "job_id": "ae26df1a-923c-4312-bf82-2a86972d2a73",
+      "prompt": "A small envelope made of glowing blue light streaking across the sky above a city at dusk, long luminous light trail behind it, strong motion blur on the buildings below, camera tracking alongside the envelope, anamorphic cinematic look, deep navy sky, warm city-light bokeh, dreamy speed blur at frame edges. Sense of very high speed. Photorealistic with stylized light effects, no text."
+    },
+    {
+      "filename": "assets/generated/mail-lands-office-desk-still-v1.png",
+      "kind": "image",
+      "description": "STILL (keyframe, scene 7): glowing envelope landing into a monitor with blue ripple, professional woman (mid-30s, dark blazer) leaning in, corporate office at dusk, city skyline behind.",
+      "source": "higgsfield",
+      "model": "nano_banana_pro (2k, 16:9)",
+      "job_id": "c5ccb37d-d46a-4ed1-aa1a-e480cfcec299",
+      "prompt": "Interior of a modern corporate office at dusk: a professional woman in her mid-30s, dark blazer, sits at a clean desk with a large monitor showing an email inbox; a small envelope of glowing blue light is landing into the center of her screen with soft radiating blue ripples; she leans in, curious. Floor-to-ceiling windows with a city skyline behind, warm desk lamp, cool ambient dusk light. 35mm lens, f/2.8, photorealistic cinematic film look, soft grain. No legible text on the monitor."
+    },
+    {
+      "filename": "assets/generated/map-outreach-trails-still-v1.png",
+      "kind": "image",
+      "description": "STILL (keyframe, scene 8): stylized deep-navy US night map, blue arcs fanning from LA to office icons across the country, envelopes traveling the arcs with pulse rings. Brand navy/blue palette.",
+      "source": "higgsfield",
+      "model": "nano_banana_pro (2k, 16:9)",
+      "job_id": "ec1344c6-5784-42b5-9961-056c9f473c4b",
+      "prompt": "Stylized aerial night-map data visualization of the United States in deep navy blue with soft glowing topography: dozens of luminous blue arcs fanning out from one origin point in Los Angeles to small glowing office-building icons in cities across the map, tiny bright envelopes traveling along the arcs and landing with soft pulse rings. Clean modern motion-graphics style, cinematic glow, high contrast navy and electric blue palette, slight camera tilt for depth. No text, no labels."
+    },
+    {
+      "filename": "assets/generated/map-office-green-glow-still-v1.png",
+      "kind": "image",
+      "description": "STILL (keyframe, scene 9): same navy map, one office icon pulsing bright green with radiating rings, camera starting to dive toward it. The 'one office lights up green' beat.",
+      "source": "higgsfield",
+      "model": "nano_banana_pro (2k, 16:9)",
+      "job_id": "68266d71-ec65-4249-9061-9bb512f9b003",
+      "prompt": "Same stylized deep-navy night-map data visualization of the United States with dimmed blue arcs and office-building icons: one single office-building icon pulsing bright green with radiating green rings, clearly the focal point, camera beginning to dive toward it with subtle zoom motion blur at the frame edges. Clean modern motion-graphics style, cinematic glow, navy and electric blue palette with one green highlight. No text, no labels."
+    },
+    {
+      "filename": "assets/generated/hiring-manager-reply-still-v1.png",
+      "kind": "image",
+      "description": "STILL (keyframe, scene 10): the hiring manager typing a reply at night, compose window on monitor, desk lamp, rain-flecked window bokeh. NOTE: green screen-glow came out weak and woman differs slightly from the desk-landing shot — regen candidate.",
+      "source": "higgsfield",
+      "model": "nano_banana_pro (2k, 16:9)",
+      "job_id": "73186151-bf2e-4416-a0b5-2c718a9b0fb1",
+      "prompt": "Over-the-shoulder interior office night scene: the same professional woman in her mid-30s with a dark blazer typing an email reply at her desk, monitor showing a clean email compose window, a soft green notification glow from the screen lighting her face, slight confident smile, warm desk lamp and city-light bokeh through the window behind. 50mm lens, f/2.0 shallow depth of field, photorealistic cinematic, warm-cool contrast. No legible text on the monitor."
+    },
+    {
+      "filename": "assets/generated/mail-return-campus-still-v1.png",
+      "kind": "image",
+      "description": "STILL (keyframe, scene 11): green light-envelope arcing across dawn sky from distant city toward collegiate red-brick campus with palms (USC-like). The reply traveling back.",
+      "source": "higgsfield",
+      "model": "nano_banana_pro (2k, 16:9)",
+      "job_id": "06146d75-db6d-46af-b543-0d334b7d1a6c",
+      "prompt": "A small envelope of glowing soft-green light arcing across a dawn sky away from a distant city skyline toward a collegiate campus with red-brick buildings and palm trees in the foreground distance, long gentle light trail behind it, mild motion blur, wide cinematic establishing shot, warm golden dawn light, hopeful mood. Photorealistic with stylized light effects, no text."
+    },
+    {
+      "filename": "assets/generated/yeti-class-interview-popup-still-v1.png",
+      "kind": "image",
+      "description": "STILL (keyframe, scene 12): canonical-ish yeti at lecture desk reading phone with delighted wide eyes, green notification card glowing on screen. NOTE: face drifted slightly off canonical (muzzle heavier) — regen candidate; reply email text gets rendered as a Remotion mock popup for legibility.",
+      "source": "higgsfield",
+      "model": "nano_banana_pro (2k, 16:9); image_references = yeti-canonical-face-front.png + yeti-canonical-face-profile.png",
+      "job_id": "398df16e-a801-4ed0-b8f0-f2fd34ed14f8",
+      "prompt": "Medium shot of the fluffy white yeti from the reference images (cartoonish friendly face, grey muzzle, round amber eyes, shaggy cream fur, silver over-ear headphones around neck) seated at a lecture-hall desk among blurred students, holding his smartphone up and reading it with wide delighted eyes and a growing smile; the phone screen angled slightly toward camera shows a bright notification card glowing soft green with a small envelope icon, text on the card kept tiny and unreadable. Warm daylight through tall windows, 50mm lens, f/2.0, photorealistic cozy film look, soft grain. No text anywhere except the phone screen."
+    },
+    {
+      "filename": "assets/generated/scout-ui-promo-clip-agent-beat.mp4",
+      "kind": "video",
+      "description": "Scout agent UI beat clipped from promo-saas-v2.mp4 (9.5–23.0s): voice-command waveform → 'Find me hiring managers at J.P. Morgan' → 'Ready to send — 5 emails' list → Send all 5 → 'Done — 5 drafts ready'. Vertical 720x1280, 13.5s, silent. Intended as the phone-screen content composited into the yeti OTS lecture shot. NOTE: says J.P. Morgan; storyboard company is Doogle — re-skin via Remotion mock or keep JPM.",
+      "duration": 13.5,
+      "source": "dropped",
+      "model": "ffmpeg clip of assets/references/promo-saas-v2.mp4"
     }
   ]
 }
