@@ -5,7 +5,8 @@
   "description": "Prompt-driven ad video pipeline: Figma + Higgsfield + Remotion",
   "scripts": {
     "studio": "remotion studio",
-    "render": "remotion render"
+    "render": "remotion render",
+    "storyboard": "node tools/storyboard/server.mjs"
   },
   "dependencies": {
     "@remotion/cli": "^4.0.0",

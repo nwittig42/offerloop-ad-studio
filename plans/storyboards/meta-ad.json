@@ -1,0 +1,24 @@
+{
+  "scenes": [
+    {
+      "id": "s1",
+      "title": "Hook — yeti swipes",
+      "asset": "assets/generated/yeti-couch-swiping-v3.mp4",
+      "description": "Yeti on couch actively swiping job cards",
+      "vo": "Applying to jobs shouldn't feel like this",
+      "durationSec": 3.5,
+      "notes": "cut on the second swipe"
+    },
+    {
+      "id": "s2",
+      "title": "Campus descent b-roll",
+      "asset": "assets/generated/campus-earth-descent-v1.mp4",
+      "description": "",
+      "vo": "",
+      "durationSec": 8,
+      "notes": ""
+    }
+  ],
+  "name": "meta-ad",
+  "updatedAt": "2026-07-12T21:47:31.864Z"
+}
