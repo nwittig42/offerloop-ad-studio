@@ -1,6 +1,25 @@
 {
   "assets": [
     {
+      "filename": "assets/generated/yeti-couch-swiping-v3.mp4",
+      "kind": "video",
+      "description": "V3 of the yeti couch shot: same wide framing as v2, but with active Tinder-style swiping as the main action — thumb visibly drags cards, cards transition one by one, red-X/blue-send button row visible. App UI is Offerloop-like but not a pixel-perfect copy of the recording (fine blurred; check before using sharp). 10s 1920x1080 silent.",
+      "duration": 10.04,
+      "source": "higgsfield",
+      "model": "seedance_2_0 (std, 1080p, 16:9, no audio; image_references = v1 frame, video_references = Offerloop app screen recording)",
+      "job_id": "ba6edfb0-c576-4ec9-bf69-54ef55b353bd",
+      "prompt": "Over-the-shoulder shot from behind a large fluffy white yeti relaxing on a cozy couch, wide framing exactly like the image reference: lit stone fireplace, folding shoji screen, laptop on the wooden coffee table, warm lamplight, the yeti's furry shoulder framing the right side. The yeti holds a smartphone upright in its left paw showing the job-swiping app from the video reference (white job cards, red X and blue send buttons). MAIN ACTION, clearly visible for the whole shot: the yeti actively swipes job cards LEFT and RIGHT like Tinder — its thumb drags a card right and the card slides off the right edge to APPLY, then drags the next card left off the left edge to PASS, alternating, one swipe roughly every 1.5 seconds, each card visibly flying off screen and the next card snapping in behind it. After a right swipe the app briefly shows an applying confirmation. The paw and thumb motion is energetic and clearly readable. Camera stays locked off and static; everything else in the room is calm — flickering fire, gentle breathing. Photorealistic cozy film look, soft grain, silent, single continuous shot, no text overlays outside the phone screen."
+    },
+    {
+      "filename": "assets/generated/yeti-couch-swiping-v3-blurred.mp4",
+      "kind": "video",
+      "description": "Blurred + slightly darkened variant of yeti-couch-swiping-v3.mp4 (same ffmpeg recipe as v1/v2) — current pick for the website hero background.",
+      "duration": 10.04,
+      "source": "higgsfield",
+      "model": "seedance_2_0 + ffmpeg post",
+      "job_id": "ba6edfb0-c576-4ec9-bf69-54ef55b353bd"
+    },
+    {
       "filename": "assets/generated/yeti-couch-swiping-v2.mp4",
       "kind": "video",
       "description": "V2 of the yeti couch shot: camera pulled back wider (lit fireplace, shoji screen, laptop visible), yeti Tinder-swiping through the REAL Offerloop app UI on the phone (composited from Nick's screen recording via video reference). 10s 1920x1080 silent. Preferred website hero background.",
