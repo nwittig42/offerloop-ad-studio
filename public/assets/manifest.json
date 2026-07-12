@@ -219,6 +219,30 @@
       "kind": "reference-image",
       "description": "Gwynn Wilson Student Union at dusk with fountain in foreground, Romanesque brick facade, warm lamps, 1920x1440. Commons, CC BY-SA 4.0. USC campus reference for Higgsfield yeti-on-campus generations (style/location reference, not footage).",
       "source": "wikimedia-commons"
+    },
+    {
+      "filename": "assets/generated/yeti-usc-hahn-plaza-walk-still-v1.png",
+      "kind": "image",
+      "description": "STILL (keyframe candidate): yeti with backpack + silver headphones walking to class toward camera on Hahn Plaza, Bovard tower and fountain behind, students in bg, golden hour. 2752x1536. Generate-stills-first workflow: approved stills become seedance start_image for video.",
+      "source": "higgsfield",
+      "model": "nano_banana_pro (2k, 16:9; refs = yeti v3 frame + usc-bovard-across-quad.jpg)",
+      "job_id": "9cef02f5-fee1-4b37-b0d3-fef90cc9ef34"
+    },
+    {
+      "filename": "assets/generated/yeti-usc-doheny-phone-still-v1.png",
+      "kind": "image",
+      "description": "STILL (keyframe candidate): side view of yeti with backpack + headphones looking down at phone in front of Doheny Library, hedged garden path, golden hour. Note: 'Bose' logo visible on headphones. 2752x1536. Generate-stills-first workflow: approved stills become seedance start_image for video.",
+      "source": "higgsfield",
+      "model": "nano_banana_pro (2k, 16:9; refs = yeti v3 frame + usc-doheny-library.jpg)",
+      "job_id": "e1a3404e-3520-42ff-b31d-1b7f292c8971"
+    },
+    {
+      "filename": "assets/generated/yeti-usc-tommy-trojan-speak-still-v1.png",
+      "kind": "image",
+      "description": "STILL (keyframe candidate): yeti side-profile speaking into phone next to Tommy Trojan statue, Bovard brick behind, warm light. Note: 'Bose' logo visible on headphones. 2752x1536. Generate-stills-first workflow: approved stills become seedance start_image for video.",
+      "source": "higgsfield",
+      "model": "nano_banana_pro (2k, 16:9; refs = yeti v3 frame + usc-tommy-trojan.jpg)",
+      "job_id": "346442fa-164c-4057-847a-ba7467d0147a"
     }
   ]
 }
