@@ -149,6 +149,16 @@
       "model": "seedance_2_0 (std, 720p, 16:9; image_references = frame @5s of yeti-couch-swiping-v3.mp4)",
       "job_id": "bbd094c9-84ac-4c4f-9289-d215d9e679c2",
       "prompt": "Side profile medium shot of a large friendly white yeti — the SAME yeti as in the image reference: shaggy long cream-white fur, dark claws, warm friendly face — standing on a green college quad. He raises a smartphone up to his mouth as if speaking into it, natural relaxed arm movement, subtle head tilt. Warm cinematic golden-hour lighting, shallow focus, brick campus buildings and trees softly blurred behind him. Photorealistic, smooth natural motion, high detail fur."
+    },
+    {
+      "filename": "assets/generated/yeti-walking-class-phone-v1.mp4",
+      "kind": "video",
+      "description": "The friendly white yeti (same character reference as the quad shots) walking to class across the quad wearing a backpack and silver over-ear headphones, raises his smartphone to his mouth and talks into it like a voice memo. Note: he speaks early in the clip and lowers the phone while walking later, slightly reversed from the walk-then-speak brief. 8s 1280x720 (720p — upscale winners before final render), has generated audio track. VO to be layered in Remotion (ElevenLabs planned).",
+      "duration": 8.06,
+      "source": "higgsfield",
+      "model": "seedance_2_0 (std, 720p, 16:9; image_references = frame @5s of yeti-couch-swiping-v3.mp4)",
+      "job_id": "57f0c5d3-e630-4508-ae45-b260a6521b95",
+      "prompt": "A large friendly white yeti — the SAME yeti as in the image reference: shaggy long cream-white fur, dark claws, warm friendly face — walking to class across a green college quad among blurred students. He wears a modern backpack on his back and over-ear headphones on his head. Tracking shot following alongside him as he walks with a relaxed confident stride; mid-shot, he lifts a smartphone up to his mouth and speaks into it like a voice memo, natural arm movement, friendly expression while talking. Warm afternoon golden-hour sunlight, brick campus buildings and tree-lined walkways softly blurred behind him. Photorealistic, cinematic depth of field, smooth natural motion, high detail fur."
     }
   ]
 }
