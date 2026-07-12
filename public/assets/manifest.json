@@ -119,6 +119,36 @@
       "description": "Watercolor mountains and lake, 1676x654 — calm background plate",
       "source": "figma",
       "figmaNode": "1930:899"
+    },
+    {
+      "filename": "assets/generated/campus-earth-descent-v1.mp4",
+      "kind": "video",
+      "description": "Cosmic aerial descent: camera drops from high above the Earth through wispy clouds down to a sunlit college campus (green quads, brick buildings, tree-lined walkways), golden-hour light, motion blur. Opening hook shot before the yeti quad scenes. 8s 1280x720 (720p — upscale winners before final render), has generated audio track.",
+      "duration": 8.06,
+      "source": "higgsfield",
+      "model": "seedance_2_0 (std, 720p, 16:9, text-to-video)",
+      "job_id": "e96ef24e-1b6f-41a2-9c37-ba1d3125d3b4",
+      "prompt": "Cinematic aerial descent from high above the Earth, cosmic zoom swooping down through wispy clouds toward a sunlit college campus with green quads, brick buildings, and tree-lined walkways. Continuous downward push, camera racing toward the ground, smooth and fast like a satellite dropping into street level. Warm afternoon light, golden hour, shallow atmospheric haze. Photorealistic, high detail, dynamic motion blur on the descent."
+    },
+    {
+      "filename": "assets/generated/yeti-quad-phone-pushin-v1.mp4",
+      "kind": "video",
+      "description": "Friendly white yeti (matched to the couch-video yeti via a v3 frame as image reference: shaggy cream fur, dark claws) standing on a college quad looking down at a smartphone, slow push-in, golden hour, students blurred behind. Follows campus-earth-descent-v1. 5s 1280x720 (720p — upscale winners before final render), has generated audio track.",
+      "duration": 5.06,
+      "source": "higgsfield",
+      "model": "seedance_2_0 (std, 720p, 16:9; image_references = frame @5s of yeti-couch-swiping-v3.mp4)",
+      "job_id": "8776677e-5273-4d05-85ed-b2fc2969ccbd",
+      "prompt": "A large friendly white yeti — the SAME yeti as in the image reference: shaggy long cream-white fur, dark claws, big warm friendly expression — stands upright on a green college quad, holding a smartphone in one furry hand, looking down at it with a gentle, curious smile. Slow push-in toward the yeti, subtle handheld feel. Warm afternoon sunlight, golden hour, soft shadows, brick campus buildings and students blurred in the far background. Photorealistic, cinematic depth of field, high detail fur."
+    },
+    {
+      "filename": "assets/generated/yeti-quad-phone-raise-v1.mp4",
+      "kind": "video",
+      "description": "Side-profile medium shot of the same friendly white yeti on the quad raising the smartphone up toward his mouth as if speaking into it, subtle head tilt, golden hour, campus blurred behind. Follows yeti-quad-phone-pushin-v1. 5s 1280x720 (720p — upscale winners before final render), has generated audio track.",
+      "duration": 5.06,
+      "source": "higgsfield",
+      "model": "seedance_2_0 (std, 720p, 16:9; image_references = frame @5s of yeti-couch-swiping-v3.mp4)",
+      "job_id": "bbd094c9-84ac-4c4f-9289-d215d9e679c2",
+      "prompt": "Side profile medium shot of a large friendly white yeti — the SAME yeti as in the image reference: shaggy long cream-white fur, dark claws, warm friendly face — standing on a green college quad. He raises a smartphone up to his mouth as if speaking into it, natural relaxed arm movement, subtle head tilt. Warm cinematic golden-hour lighting, shallow focus, brick campus buildings and trees softly blurred behind him. Photorealistic, smooth natural motion, high detail fur."
     }
   ]
 }
