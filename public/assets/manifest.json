@@ -1,6 +1,25 @@
 {
   "assets": [
     {
+      "filename": "assets/generated/yeti-couch-swiping.mp4",
+      "kind": "video",
+      "description": "Over-the-shoulder shot of a fluffy white yeti lounging on a couch swiping job cards on a phone; stone fireplace, shoji screen, warm lamplight, laptop on table, shallow DOF, silent, 10s 1920x1080. Website hero background (sharp original). Mimics the sorce.jobs hero shot.",
+      "duration": 10.04,
+      "source": "higgsfield",
+      "model": "kling3_0 (pro, 16:9, sound off)",
+      "job_id": "db80ae8e-f6a5-4609-841f-80a8989e5fd5",
+      "prompt": "Over-the-shoulder cinematic shot from behind a large fluffy white yeti relaxing on a cozy couch, filmed from slightly above and behind its right shoulder. The yeti holds a smartphone up in its left paw and lazily swipes through job listing cards with its thumb. Warm inviting living room: rustic stone fireplace and a folding room-divider screen in the background, wooden coffee table with a laptop on the right, soft golden evening lamplight. The yeti's back and shoulder fur fill the right foreground softly out of focus; shallow depth of field, static locked-off camera, subtle natural motion only — swiping paw, slight head tilt, gentle breathing. Cozy, calm, photorealistic film look with soft grain. No text, no logos, single continuous shot."
+    },
+    {
+      "filename": "assets/generated/yeti-couch-swiping-blurred.mp4",
+      "kind": "video",
+      "description": "Blurred + slightly darkened variant of yeti-couch-swiping.mp4 (ffmpeg gblur sigma=6, brightness -0.04, sat 0.95, h264 faststart, silent) — ready to drop in as the website hero background.",
+      "duration": 10.04,
+      "source": "higgsfield",
+      "model": "kling3_0 + ffmpeg post",
+      "job_id": "db80ae8e-f6a5-4609-841f-80a8989e5fd5"
+    },
+    {
       "filename": "assets/references/postsyncer-demo.mp4",
       "kind": "reference",
       "description": "PostSyncer SaaS demo (16:9 3840x2160, 107s, 60fps, with audio). Problem-agitate-solve arc: 'Endless tabs' / 'Notifications everywhere' pain intro -> 'Let us take over' -> logo reveal -> fast product-UI tour (calendar, AI compose, analytics) with big kinetic-typography interstitials ('Schedule once. Post everywhere.', 'Free up hours every week.', 'minutes With AI', 'inspiration'), animated word-level text effects, dark/light section alternation, social-proof stat cards (169.99K followers, 1.9M impressions), logo + URL end card. Style reference only, never footage.",
