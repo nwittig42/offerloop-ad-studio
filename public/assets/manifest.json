@@ -1,6 +1,25 @@
 {
   "assets": [
     {
+      "filename": "assets/generated/yeti-couch-swiping-v2.mp4",
+      "kind": "video",
+      "description": "V2 of the yeti couch shot: camera pulled back wider (lit fireplace, shoji screen, laptop visible), yeti Tinder-swiping through the REAL Offerloop app UI on the phone (composited from Nick's screen recording via video reference). 10s 1920x1080 silent. Preferred website hero background.",
+      "duration": 10.04,
+      "source": "higgsfield",
+      "model": "seedance_2_0 (std, 1080p, 16:9, no audio; image_references = v1 frame, video_references = Offerloop app screen recording)",
+      "job_id": "bb3693e0-f016-4cff-9375-be6dba249302",
+      "prompt": "Recreate the exact scene from the image reference — an over-the-shoulder shot from behind a large fluffy white yeti relaxing on a cozy couch in a warm living room with a stone fireplace, folding shoji screen, laptop on the wooden coffee table, and soft golden lamplight — but pull the camera back noticeably wider, showing more of the couch, the room and the yeti's body. The yeti holds a smartphone upright in its left paw. The phone screen shows exactly the mobile app from the video reference: the Offerloop job-swiping app with white job cards, and it must stay clearly visible and legible. The yeti swipes through the job cards like Tinder — quick relaxed thumb flicks, cards sliding off left and right, occasionally tapping the blue send button. Static locked-off camera, shallow depth of field on the room (phone screen sharp), subtle natural motion only: the swiping paw, gentle breathing, slight head tilt. Cozy, calm, photorealistic film look with soft grain. No text overlays, no logos other than what appears on the phone screen, single continuous shot."
+    },
+    {
+      "filename": "assets/generated/yeti-couch-swiping-v2-blurred.mp4",
+      "kind": "video",
+      "description": "Blurred + slightly darkened variant of yeti-couch-swiping-v2.mp4 (ffmpeg gblur sigma=6, brightness -0.04, sat 0.95, h264 faststart, silent) — website hero background, ready to ship.",
+      "duration": 10.04,
+      "source": "higgsfield",
+      "model": "seedance_2_0 + ffmpeg post",
+      "job_id": "bb3693e0-f016-4cff-9375-be6dba249302"
+    },
+    {
       "filename": "assets/generated/yeti-couch-swiping.mp4",
       "kind": "video",
       "description": "Over-the-shoulder shot of a fluffy white yeti lounging on a couch swiping job cards on a phone; stone fireplace, shoji screen, warm lamplight, laptop on table, shallow DOF, silent, 10s 1920x1080. Website hero background (sharp original). Mimics the sorce.jobs hero shot.",
