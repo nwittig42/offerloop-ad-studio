@@ -243,6 +243,44 @@
       "source": "higgsfield",
       "model": "nano_banana_pro (2k, 16:9; refs = yeti v3 frame + usc-tommy-trojan.jpg)",
       "job_id": "346442fa-164c-4057-847a-ba7467d0147a"
+    },
+    {
+      "filename": "assets/generated/yeti-canonical-face-front.png",
+      "kind": "image",
+      "description": "CANONICAL YETI CHARACTER REFERENCE (front 3/4): frame @2.5s of yeti-quad-phone-pushin-v1.mp4 — cartoonish friendly face, grey muzzle, round amber eyes, shaggy cream fur, dark claws, silver headphones, tan backpack. USE THIS (plus the profile frame) as the character reference for ALL future yeti generations. Higgsfield media_id 0726ba24-cfbe-4217-9f1f-8520557b6b72.",
+      "source": "higgsfield",
+      "model": "frame extract (ffmpeg)"
+    },
+    {
+      "filename": "assets/generated/yeti-canonical-face-profile.png",
+      "kind": "image",
+      "description": "CANONICAL YETI CHARACTER REFERENCE (side profile, speaking pose): frame @3s of yeti-quad-phone-raise-v1.mp4. Companion to yeti-canonical-face-front.png. Higgsfield media_id 11346ccb-4f35-4d24-b490-0114938b0c05.",
+      "source": "higgsfield",
+      "model": "frame extract (ffmpeg)"
+    },
+    {
+      "filename": "assets/generated/yeti-usc-hahn-plaza-walk-still-v2.png",
+      "kind": "image",
+      "description": "STILL v2 (keyframe candidate): CANONICAL yeti (matches quad videos) with backpack + unbranded headphones walking to class on Hahn Plaza, Bovard tower + fountain behind, students in bg, golden hour. Replaces v1 (wrong yeti face). 2752x1536.",
+      "source": "higgsfield",
+      "model": "nano_banana_pro (2k, 16:9; refs = yeti-canonical-face-front.png + USC location photo)",
+      "job_id": "8f9697de-8082-45f0-b55b-09ed96848fdd"
+    },
+    {
+      "filename": "assets/generated/yeti-usc-doheny-phone-still-v2.png",
+      "kind": "image",
+      "description": "STILL v2 (keyframe candidate): CANONICAL yeti close-medium shot looking at phone in front of Doheny Library, palms, golden hour. Replaces v1 (wrong yeti face). 2752x1536.",
+      "source": "higgsfield",
+      "model": "nano_banana_pro (2k, 16:9; refs = yeti-canonical-face-front.png + USC location photo)",
+      "job_id": "1df23568-0085-42a1-8f2b-b5bec0a206f4"
+    },
+    {
+      "filename": "assets/generated/yeti-usc-tommy-trojan-speak-still-v2.png",
+      "kind": "image",
+      "description": "STILL v2 (keyframe candidate): CANONICAL yeti side-profile speaking into phone next to Tommy Trojan statue, Bovard behind. Replaces v1 (wrong yeti face). 2752x1536.",
+      "source": "higgsfield",
+      "model": "nano_banana_pro (2k, 16:9; refs = yeti-canonical-face-profile.png + USC location photo)",
+      "job_id": "aa824d18-e4e9-4de4-bb4c-7228b6b8ffbb"
     }
   ]
 }
