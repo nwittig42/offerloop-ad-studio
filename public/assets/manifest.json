@@ -285,7 +285,7 @@
     {
       "filename": "assets/generated/yeti-scout-class-ots-still-v1.png",
       "kind": "image",
-      "description": "STILL (keyframe, yeti-using-scout scene 1): OTS from behind canonical yeti in the back row of a lecture hall, phone in left paw, dark navy screen with glowing blue Scout orb, blurred students/professor ahead, warm window light. Screen gets the promo UI clip composited in Remotion.",
+      "description": "UNUSED in yeti-using-scout board after restructure (board now opens with the walking-to-class clip + Tommy Trojan voice-command still). STILL (keyframe, yeti-using-scout scene 1): OTS from behind canonical yeti in the back row of a lecture hall, phone in left paw, dark navy screen with glowing blue Scout orb, blurred students/professor ahead, warm window light. Screen gets the promo UI clip composited in Remotion.",
       "source": "higgsfield",
       "model": "nano_banana_pro (2k, 16:9); image_references = yeti-canonical-face-front.png + yeti-canonical-face-profile.png",
       "job_id": "d33bea59-f546-40fc-a679-4fde5be5a8e2",
@@ -375,7 +375,7 @@
     {
       "filename": "assets/generated/yeti-class-interview-popup-still-v1.png",
       "kind": "image",
-      "description": "STILL (keyframe, scene 12): canonical-ish yeti at lecture desk reading phone with delighted wide eyes, green notification card glowing on screen. NOTE: face drifted slightly off canonical (muzzle heavier) — regen candidate; reply email text gets rendered as a Remotion mock popup for legibility.",
+      "description": "UNUSED in yeti-using-scout board after restructure (ending is now the full-frame reply email on his laptop + class zoom-out). STILL (keyframe, scene 12): canonical-ish yeti at lecture desk reading phone with delighted wide eyes, green notification card glowing on screen. NOTE: face drifted slightly off canonical (muzzle heavier) — regen candidate; reply email text gets rendered as a Remotion mock popup for legibility.",
       "source": "higgsfield",
       "model": "nano_banana_pro (2k, 16:9); image_references = yeti-canonical-face-front.png + yeti-canonical-face-profile.png",
       "job_id": "398df16e-a801-4ed0-b8f0-f2fd34ed14f8",
@@ -442,6 +442,24 @@
       "model": "nano_banana_pro (2k, 16:9)",
       "job_id": "a644cacb-d62c-4569-8005-df5ca3b8bb12",
       "prompt": "A small envelope of glowing soft-green light arcing across a bright clear daytime sky away from the distant downtown Los Angeles skyline toward a collegiate campus with red-brick buildings and palm trees in the foreground distance, long gentle light trail behind it, mild motion blur, wide cinematic establishing shot, warm midday sunlight, hopeful mood. Photorealistic with stylized light effects, no text."
+    },
+    {
+      "filename": "assets/generated/doogle-reply-email-screen-still-v1.png",
+      "kind": "image",
+      "description": "STILL (yeti-using-scout ending, scene 13): full-frame Gmail-style email client, opened reply from 'Sarah Chen — Doogle Recruiting', subject 'Product Management Role at Doogle — Interview', body 'Hi Rylan — thank you for reaching out. We'd be glad to set up an interview…Thursday afternoon…' with soft green glow card. Text rendered crisp and legible — usable as the actual on-screen content before the zoom-out.",
+      "source": "higgsfield",
+      "model": "nano_banana_pro (2k, 16:9)",
+      "job_id": "ea8665b1-423c-4cf6-89e6-036da0f911e9",
+      "prompt": "Full-frame screenshot-style shot of a clean modern email client filling the entire frame, light theme, one opened email. Sender name \"Sarah Chen — Doogle Recruiting\". Subject line reads exactly \"Product Management Role at Doogle — Interview\". Email body text reads exactly \"Hi Rylan — thank you for reaching out. We'd be glad to set up an interview for the Product Management role at Doogle. Would Thursday afternoon work?\" followed by the signature \"Sarah Chen, Doogle Recruiting\". Crisp legible modern sans-serif UI font, subtle soft green highlight glow around the email card, minimal toolbar and inbox list blurred at the left edge. Flat straight-on screen view, high resolution UI render, no other text."
+    },
+    {
+      "filename": "assets/generated/yeti-class-laptop-reply-still-v1.png",
+      "kind": "image",
+      "description": "STILL (yeti-using-scout final frame, scene 14): canonical-ish yeti at a lecture-hall desk, open laptop glowing with green email window, fist raised in celebration, delighted grin, students/professor blurred, warm daylight. End frame of the zoom-out from the email screen. NOTE: face still drifts slightly off canonical — regen candidate.",
+      "source": "higgsfield",
+      "model": "nano_banana_pro (2k, 16:9); image_references = yeti-canonical-face-front.png + yeti-canonical-face-profile.png",
+      "job_id": "cb10a1d3-5bd6-4616-8d9f-128a7a1d3769",
+      "prompt": "Wide medium shot in a university lecture hall: the fluffy white yeti from the reference images (cartoonish friendly face, grey muzzle, round amber eyes, shaggy cream fur, silver over-ear headphones around neck) sits at a wooden lecture desk with an open laptop in front of him, the laptop screen glowing with a soft green email window, his face lit by the screen with wide delighted eyes and a big grin, one paw raised mid-celebration; blurred students taking notes around him, professor far in the background, warm afternoon daylight through tall arched windows. Camera pulled back as the end frame of a zoom-out from the laptop screen. 35mm lens, f/2.2, photorealistic cozy film look, soft grain. No legible text anywhere."
     }
   ]
 }
