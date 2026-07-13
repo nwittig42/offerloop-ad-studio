@@ -49,7 +49,12 @@ const OverlayRenderer: React.FC<{overlay: Overlay; sceneFrames: number}> = ({
   return (
     <Sequence from={from} durationInFrames={durationInFrames}>
       {overlay.kind === 'hookText' ? (
-        <HookText text={overlay.text} position={overlay.position} color={overlay.color} />
+        <HookText
+          text={overlay.text}
+          position={overlay.position}
+          color={overlay.color}
+          wordByWord={overlay.wordByWord}
+        />
       ) : overlay.kind === 'timer' ? (
         <TimerCounter
           prefix={overlay.prefix}
@@ -81,6 +86,8 @@ const SceneContent: React.FC<{scene: Scene}> = ({scene}) => {
             width: '100%',
             height: '100%',
             objectFit: scene.fit ?? 'cover',
+            filter: scene.blur ? `blur(${scene.blur}px)` : undefined,
+            transform: scene.blur ? 'scale(1.06)' : undefined,
           }}
         />
       );

@@ -21,6 +21,8 @@ export type Overlay =
       position?: 'center' | 'top' | 'bottom';
       /** CSS color; defaults to white. */
       color?: string;
+      /** Reveal the text one word at a time. */
+      wordByWord?: boolean;
     }
   | {
       kind: 'lowerThird';
@@ -56,6 +58,8 @@ export type VideoScene = SceneBase & {
   trimStartSec?: number;
   muted?: boolean;
   fit?: 'cover' | 'contain';
+  /** Gaussian blur in px (background-plate look); slightly scales up to hide soft edges. */
+  blur?: number;
 };
 
 export type ImageScene = SceneBase & {

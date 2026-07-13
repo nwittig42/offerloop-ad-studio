@@ -40,10 +40,21 @@ export const trueViewPlan: EditPlan = {
     },
     {
       id: 'hundreds-of-hours',
-      type: 'title',
+      type: 'video',
+      src: 'assets/generated/nick-desk-timelapse-v1.mp4',
       durationSec: 3,
-      title: 'Hundreds of hours of boring, repetitive work.',
-      subtitle: 'With no response.',
+      muted: true,
+      fit: 'cover',
+      blur: 7,
+      transitionIn: 'fade',
+      overlays: [
+        {
+          kind: 'hookText',
+          text: 'Hundreds of hours of boring, repetitive work.',
+          wordByWord: true,
+          startSec: 0.2,
+        },
+      ],
     },
     {
       // Higgsfield-generated rejection inbox (nano banana).

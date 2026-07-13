@@ -1,16 +1,20 @@
 import {AbsoluteFill, interpolate, spring, useCurrentFrame, useVideoConfig} from 'remotion';
 import {colors, fonts} from '../../brand/theme';
 
+const WORD_STAGGER_FRAMES = 6;
+
 export const HookText: React.FC<{
   text: string;
   position?: 'center' | 'top' | 'bottom';
   color?: string;
-}> = ({text, position = 'center', color = colors.white}) => {
+  wordByWord?: boolean;
+}> = ({text, position = 'center', color = colors.white, wordByWord = false}) => {
   const frame = useCurrentFrame();
   const {fps, width, height} = useVideoConfig();
   const isVertical = height > width;
   const enter = spring({frame, fps, config: {damping: 200, stiffness: 120}});
   const y = interpolate(enter, [0, 1], [24, 0]);
+  const words = text.split(' ');
 
   return (
     <AbsoluteFill
@@ -37,7 +41,28 @@ export const HookText: React.FC<{
           textShadow: '0 2px 24px rgba(17, 47, 84, 0.35)',
         }}
       >
-        {text}
+        {wordByWord
+          ? words.map((word, i) => {
+              const pop = spring({
+                frame: frame - i * WORD_STAGGER_FRAMES,
+                fps,
+                config: {damping: 200, stiffness: 140},
+              });
+              return (
+                <span
+                  key={i}
+                  style={{
+                    display: 'inline-block',
+                    whiteSpace: 'pre',
+                    opacity: Math.max(0, pop),
+                    transform: `translateY(${(1 - Math.max(0, pop)) * 26}px)`,
+                  }}
+                >
+                  {word + (i < words.length - 1 ? ' ' : '')}
+                </span>
+              );
+            })
+          : text}
       </div>
     </AbsoluteFill>
   );
