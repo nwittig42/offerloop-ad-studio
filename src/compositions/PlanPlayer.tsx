@@ -73,7 +73,8 @@ const OverlayRenderer: React.FC<{overlay: Overlay; sceneFrames: number}> = ({
 };
 
 const SceneContent: React.FC<{scene: Scene}> = ({scene}) => {
-  const {width, height, fps} = useVideoConfig();
+  const {width, height, fps, durationInFrames} = useVideoConfig();
+  const frame = useCurrentFrame();
   const isVertical = height > width;
 
   switch (scene.type) {
@@ -129,11 +130,14 @@ const SceneContent: React.FC<{scene: Scene}> = ({scene}) => {
             style={{
               fontFamily: fonts.heading,
               fontWeight: 700,
-              fontSize: width * (isVertical ? 0.085 : 0.055),
+              fontSize: width * (isVertical ? 0.085 : 0.055) * (scene.sizeScale ?? 1),
               letterSpacing: '-0.02em',
               color: colors.white,
               textAlign: 'center',
               lineHeight: 1.15,
+              transform: scene.grow
+                ? `scale(${interpolate(frame, [0, durationInFrames], [1, 1.45])})`
+                : undefined,
             }}
           >
             {scene.title}

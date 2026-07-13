@@ -77,6 +77,8 @@ export const trueViewPlan: EditPlan = {
       type: 'title',
       durationSec: 1.2,
       title: 'F*** that.',
+      sizeScale: 2.2,
+      grow: true,
     },
     {
       // Cinematic real-UI dashboard shot carries both turn lines.

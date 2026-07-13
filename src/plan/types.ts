@@ -79,6 +79,10 @@ export type TitleScene = SceneBase & {
   type: 'title';
   title: string;
   subtitle?: string;
+  /** Font-size multiplier on the default title size. */
+  sizeScale?: number;
+  /** Continuously scale the title up over the scene (punch-in feel). */
+  grow?: boolean;
 };
 
 export type EndCardScene = SceneBase & {
