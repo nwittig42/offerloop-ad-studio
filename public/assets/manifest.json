@@ -707,6 +707,73 @@
       "source": "higgsfield",
       "model": "seedance_2_0 (std, 1080p, 16:9; video_references = Google Chrome.mp4)",
       "job_id": "49a84ac3-da9f-4683-9350-4651fd4ad4cd"
+    },
+    {
+      "filename": "assets/generated/scout-demo-1-prompt-apply.png",
+      "kind": "image",
+      "description": "STILL: Ask Scout chat (real UI ref) — user asks 'apply to 15 entry-level PM roles at tech companies in SF', Scout 'On it — finding roles and applying…' + spinner + progress bar. Text crisp. 2752x1536. ('Prep for meengs' pill garbled, minor.)",
+      "source": "higgsfield",
+      "model": "nano_banana_pro (2k, 16:9, real-UI reference)",
+      "job_id": "86cbcb0f-863e-4fc1-905f-3f2406f0191a"
+    },
+    {
+      "filename": "assets/generated/scout-demo-1-prompt-apply.mp4",
+      "kind": "video",
+      "description": "ANIMATED: spinner rotates, progress bar fills (gradient shimmer). Text holds through full 5s. 1280x720 kling turbo, start_image = still.",
+      "source": "higgsfield",
+      "model": "kling3_0_turbo (720p, start_image)",
+      "job_id": "737c5f74-6ff7-4944-be32-38ef06011a7d",
+      "duration": 5.0
+    },
+    {
+      "filename": "assets/generated/scout-demo-2-done-view.png",
+      "kind": "image",
+      "description": "STILL: Scout reply 'Done ✅ I applied to all 15 roles with your tailored resume.' + 'View applications' button with cursor. Text crisp. 2752x1536.",
+      "source": "higgsfield",
+      "model": "nano_banana_pro (2k, 16:9, real-UI reference)",
+      "job_id": "bb1d724b-2424-41f0-affe-5ad4d42c6fa4"
+    },
+    {
+      "filename": "assets/generated/scout-demo-2-done-view.mp4",
+      "kind": "video",
+      "description": "ANIMATED: cursor clicks the View applications button (pressed state). Text holds. 1280x720 kling turbo.",
+      "source": "higgsfield",
+      "model": "kling3_0_turbo (720p, start_image)",
+      "job_id": "ac2e5b56-f3f7-4e17-9f0f-adc79fe4dbed",
+      "duration": 5.0
+    },
+    {
+      "filename": "assets/generated/scout-demo-3-applications.png",
+      "kind": "image",
+      "description": "STILL: Applications page (real table UI ref) — 15 SF tech PM roles (stripe, airbnb, openai, figma, notion, salesforce, dropbox, uber, lyft, doordash, plaid, brex, rippling, databricks, instacart), every STATUS 'applied ✓'. Clean. Used with Remotion kenBurns (no AI animation needed). 2752x1536.",
+      "source": "higgsfield",
+      "model": "nano_banana_pro (2k, 16:9, real-UI reference)",
+      "job_id": "ad5e8594-a8b2-4529-8581-bf5c968fe75d"
+    },
+    {
+      "filename": "assets/generated/scout-demo-4-prompt-email.png",
+      "kind": "image",
+      "description": "STILL: chat — user asks 'email 3 people on each of those teams introducing myself + coffee chat', Scout 'Writing 45 personalized emails…' + 'Placing drafts in your Gmail…' progress. Text crisp. 2752x1536.",
+      "source": "higgsfield",
+      "model": "nano_banana_pro (2k, 16:9, real-UI reference)",
+      "job_id": "2d1534ae-654b-4abb-bf4f-b7baa53398de"
+    },
+    {
+      "filename": "assets/generated/scout-demo-4-prompt-email.mp4",
+      "kind": "video",
+      "description": "ANIMATED: spinner + progress bar fills toward full. Text holds. 1280x720 kling turbo.",
+      "source": "higgsfield",
+      "model": "kling3_0_turbo (720p, start_image)",
+      "job_id": "1e0d5424-eaac-4f4f-8fce-9ab96c9b886a",
+      "duration": 5.0
+    },
+    {
+      "filename": "assets/generated/scout-demo-5-gmail-drafts.png",
+      "kind": "image",
+      "description": "STILL: Gmail Drafts (45) in Chrome — coffee-chat drafts to Sarah Kim (Stripe), James Park (Airbnb), Priya Patel (OpenAI), Alex Chen (Figma), Maria Lopez (Notion), David Wu (Salesforce)... Top ~8 rows clean; some lower rows have garbled names ('Jioe Wu (Fgma)') — keep push-in framed on top half. Used with Remotion kenBurns. 2752x1536.",
+      "source": "higgsfield",
+      "model": "nano_banana_pro (2k, 16:9, real-UI reference)",
+      "job_id": "69f6a6d1-aaf6-43f8-8522-08ba1909f50a"
     }
   ]
 }

@@ -118,5 +118,57 @@ export const trueViewPlan: EditPlan = {
       transitionIn: 'fade',
       title: 'So how does it work?',
     },
+
+    // ---- ACT 3: Scout demo (stills-first Higgsfield builds on real UI) ----
+    // Hard cuts between demo beats on purpose: reads like real app navigation.
+    {
+      id: 'demo-prompt-apply',
+      type: 'video',
+      src: 'assets/generated/scout-demo-1-prompt-apply.mp4',
+      durationSec: 3.5,
+      muted: true,
+      fit: 'cover',
+      transitionIn: 'fade',
+    },
+    {
+      id: 'demo-done-view',
+      type: 'video',
+      src: 'assets/generated/scout-demo-2-done-view.mp4',
+      durationSec: 2.5,
+      muted: true,
+      fit: 'cover',
+    },
+    {
+      id: 'demo-applications',
+      type: 'image',
+      src: 'assets/generated/scout-demo-3-applications.png',
+      durationSec: 3,
+      kenBurns: true,
+    },
+    {
+      id: 'demo-prompt-email',
+      type: 'video',
+      src: 'assets/generated/scout-demo-4-prompt-email.mp4',
+      durationSec: 3.5,
+      muted: true,
+      fit: 'cover',
+    },
+    {
+      id: 'demo-gmail-drafts',
+      type: 'image',
+      src: 'assets/generated/scout-demo-5-gmail-drafts.png',
+      durationSec: 3,
+      kenBurns: true,
+      overlays: [
+        {
+          kind: 'hookText',
+          text: '45 drafts. Ready to send.',
+          color: '#1E2D4D',
+          sizeScale: 1.2,
+          startSec: 0.8,
+          position: 'bottom',
+        },
+      ],
+    },
   ],
 };
