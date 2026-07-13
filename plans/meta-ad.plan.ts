@@ -60,10 +60,15 @@ export const metaAdPlan: EditPlan = {
     },
     {
       id: 'b4-turn',
-      type: 'title',
-      durationSec: 4,
+      type: 'video',
+      src: 'assets/generated/offerloop-ui-dashboard-cinematic-v1.mp4',
+      durationSec: 5,
+      muted: true,
+      fit: 'cover',
       transitionIn: 'fade',
-      title: 'Let Scout take care of all of it.',
+      overlays: [
+        {kind: 'hookText', text: 'Let Scout take care of all of it.', startSec: 0.5, endSec: 5, position: 'bottom'},
+      ],
     },
     {
       id: 'b5-logo-hero',
@@ -86,19 +91,28 @@ export const metaAdPlan: EditPlan = {
     {
       id: 'b7-find-people',
       type: 'video',
-      src: WALKTHROUGH,
-      trimStartSec: 177.5,
-      durationSec: 3.5,
+      src: 'assets/generated/offerloop-ui-find-cinematic-v1.mp4',
+      durationSec: 5,
       muted: true,
       fit: 'cover',
       transitionIn: 'fade',
-      overlays: [{kind: 'hookText', text: 'DONE ✓', startSec: 2.4, endSec: 3.5}],
+      overlays: [
+        {kind: 'hookText', text: 'Find and email anyone.', startSec: 0.4, endSec: 3.2, position: 'bottom'},
+        {kind: 'hookText', text: 'DONE ✓', startSec: 3.6, endSec: 5},
+      ],
     },
     {
       id: 'b8-hiring-manager',
-      type: 'mockup',
-      component: 'emailDraft',
-      durationSec: 6.2,
+      type: 'video',
+      src: 'assets/generated/offerloop-ui-draft-cinematic-v2.mp4',
+      durationSec: 5,
+      muted: true,
+      fit: 'cover',
+      transitionIn: 'fade',
+      overlays: [
+        {kind: 'hookText', text: 'Even the hiring manager.', startSec: 0.4, endSec: 3.2, position: 'bottom'},
+        {kind: 'hookText', text: 'DONE ✓', startSec: 3.6, endSec: 5},
+      ],
     },
     {
       // Placeholder until Nick's founder piece + walk-out land.

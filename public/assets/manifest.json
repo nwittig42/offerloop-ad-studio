@@ -612,6 +612,33 @@
       "model": "seedance_2_0 (std, 1080p, 16:9; image_references = frame @1s of IMG_2818.MOV)",
       "job_id": "311f73c5-12c3-473c-8891-025c5ff8a706",
       "prompt": "Timelapse: man works at dorm desk, daylight fades to night, desk lamp clicks on, coffee cups accumulate (full prompt in job)."
+    },
+    {
+      "filename": "assets/generated/offerloop-ui-dashboard-cinematic-v1.mp4",
+      "kind": "video",
+      "description": "Cinematic product shot for B4: real Offerloop dashboard ('What should we work on today?' + Scout task cards) as a glossy floating panel in a curved navy studio, slow drift, prompt box types 'Find software roles...'. Headline and cards crisp; small card text slightly soft. First take flagged nsfw (false positive), reworded prompt passed. 5s 1920x1080, generated audio (muted in plan). Source ref = cropped UI frame from Nick's product walkthrough.",
+      "duration": 5.0,
+      "source": "higgsfield",
+      "model": "seedance_2_0 (std, 1080p, 16:9; image_references = cropped walkthrough UI frame)",
+      "job_id": "502e8766-b091-43b5-b2b1-a5e3781e5ead"
+    },
+    {
+      "filename": "assets/generated/offerloop-ui-find-cinematic-v1.mp4",
+      "kind": "video",
+      "description": "Cinematic product shot for B7: real 'Who do you want to meet?' search UI ('Auditor at EY in Portland') as glossy tilted 3D panel in navy space, push-in + cursor toward Find people. Hero text crisp; tiny top-bar text garbled (off-focus, acceptable). 5s 1920x1080, generated audio (muted in plan). Source ref = cropped UI frame from Nick's product walkthrough.",
+      "duration": 5.0,
+      "source": "higgsfield",
+      "model": "seedance_2_0 (std, 1080p, 16:9; image_references = cropped walkthrough UI frame)",
+      "job_id": "168a83cd-b0ce-4756-85ba-5948bf90c49a"
+    },
+    {
+      "filename": "assets/generated/offerloop-ui-draft-cinematic-v2.mp4",
+      "kind": "video",
+      "description": "Cinematic product shot for B8: outreach results UI ('1 person found', 'Draft 1 email', 'Placing drafts in your Gmail...', Jill Huber Manager EY card) as glossy floating panel, gentle drift, full panel in frame. Hero elements crisp; sidebar filter labels garbled (small/off-focus). v1 rejected + deleted: camera went too close and invented a misspelled 'Offergloop' wordmark. 5s 1920x1080, generated audio (muted in plan). Source ref = cropped UI frame from Nick's product walkthrough.",
+      "duration": 5.0,
+      "source": "higgsfield",
+      "model": "seedance_2_0 (std, 1080p, 16:9; image_references = cropped walkthrough UI frame)",
+      "job_id": "0c3b6065-ca04-4dd7-a6a7-6f7e8b2e74b2"
     }
   ]
 }
