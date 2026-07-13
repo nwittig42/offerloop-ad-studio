@@ -1,11 +1,11 @@
 import type {EditPlan} from '../src/plan/types';
 
-// Meta ad, script v3 (narrated). Storyboard: plans/storyboards/meta-ad.json.
-// VO: Nick's take 1, pre-sliced per beat into assets/recordings/vo/ (see manifest
-// entry for TKE.m4a for the slice map). Beats B3 and B9 show placeholder titles
-// until Nick's filmed footage (desk timelapse, founder piece, walk-out) lands in
-// assets/recordings/. B4 contains the uncensored "F that." read; swap/bleep the
-// b4 slice before any paid Meta spend.
+// Meta ad, script v3. Storyboard: plans/storyboards/meta-ad.json.
+// No VO: Nick removed his narration entirely (2026-07-13) — the cut runs on
+// visuals + on-screen type alone (music can be added as a plan audio track
+// later). The old VO slices still exist in assets/recordings/vo/ if ever
+// wanted again. Beats B3 and B9 show placeholder titles until Nick's filmed
+// footage (desk timelapse, founder piece, walk-out) lands in assets/recordings/.
 const WALKTHROUGH =
   'assets/generated/Offerloop Pricing Student Plans for College Networking 13 July 2026.mp4';
 
@@ -124,17 +124,5 @@ export const metaAdPlan: EditPlan = {
       cta: 'Use Offerloop',
       url: 'offerloop.ai',
     },
-  ],
-  audio: [
-    {src: 'assets/recordings/vo/meta-b1.wav', startSec: starts.b1 + 0.1},
-    {src: 'assets/recordings/vo/meta-b2.wav', startSec: starts.b2},
-    {src: 'assets/recordings/vo/meta-b3.wav', startSec: starts.b3 + 0.1},
-    {src: 'assets/recordings/vo/meta-b4.wav', startSec: starts.b4 + 0.2},
-    {src: 'assets/recordings/vo/meta-b6.wav', startSec: starts.b6 + 0.2},
-    {src: 'assets/recordings/vo/meta-b7.wav', startSec: starts.b7 + 0.2},
-    {src: 'assets/recordings/vo/meta-b8.wav', startSec: starts.b8 + 0.1},
-    {src: 'assets/recordings/vo/meta-b9.wav', startSec: starts.b9 + 0.2},
-    {src: 'assets/recordings/vo/meta-b10.wav', startSec: starts.b10},
-    {src: 'assets/recordings/vo/meta-b11.wav', startSec: starts.b11 + 0.3},
   ],
 };
