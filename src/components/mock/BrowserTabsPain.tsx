@@ -4,11 +4,11 @@ import {MockStage} from './MockStage';
 
 const TABS = [
   'LinkedIn — 84 jobs',
-  'Indeed — Analyst roles',
-  'Handshake',
-  'cover-letter-v7-FINAL.docx',
-  'Resume_2026_v3.pdf',
-  'Gmail — Inbox (47)',
+  'Job Tracker — Google Sheets',
+  'ChatGPT — cover letter v9',
+  'Gmail — Inbox (147)',
+  'LinkedIn — Connect requests',
+  'ChatGPT — resume bullets',
 ];
 
 const INK = colors.ink;
@@ -35,7 +35,7 @@ export const BrowserTabsPain: React.FC = () => {
           opacity: headIn,
         }}
       >
-        Endless tabs…
+        So much busy work…
       </div>
 
       <div
