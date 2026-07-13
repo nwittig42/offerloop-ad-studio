@@ -1,0 +1,15 @@
+{
+  "name": "saas-vid-1---trueview",
+  "scenes": [
+    {
+      "id": "zb2fuv8",
+      "title": "Cold open — full-time job",
+      "asset": null,
+      "description": "Reused meta-ad B1: \"Getting a job / is a full-time job in itself.\" holds alone on brand background (~2s), then the browser slams in from below and chaos tabs spawn (LinkedIn Jobs, Sheets tracker, ChatGPT, Gmail). Silent — VO enters in a later scene.",
+      "vo": "",
+      "durationSec": "6",
+      "notes": "Remotion mock component `browserTabsPain` (no asset file — free to iterate). Plan: plans/trueview.plan.ts, scene cold-open-tabs."
+    }
+  ],
+  "updatedAt": "2026-07-13T00:00:00.000Z"
+}
