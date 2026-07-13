@@ -23,6 +23,10 @@ export type Overlay =
       color?: string;
       /** Reveal the text one word at a time. */
       wordByWord?: boolean;
+      /** Reveal the text one character at a time (typewriter). */
+      typewriter?: boolean;
+      /** Font-size multiplier on the default hook size (e.g. 1.8 = much larger). */
+      sizeScale?: number;
     }
   | {
       kind: 'lowerThird';

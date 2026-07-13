@@ -23,10 +23,10 @@ export const trueViewPlan: EditPlan = {
       component: 'coldOpenTabs',
       durationSec: 6.6,
       overlays: [
-        {kind: 'hookText', text: 'Network.', color: '#1E2D4D', startSec: 2.4, endSec: 3.6},
-        {kind: 'hookText', text: 'Track.', color: '#1E2D4D', startSec: 3.7, endSec: 4.7},
-        {kind: 'hookText', text: 'Apply.', color: '#1E2D4D', startSec: 4.8, endSec: 5.7},
-        {kind: 'hookText', text: 'Repeat.', color: '#1E2D4D', startSec: 5.8, endSec: 6.6},
+        {kind: 'hookText', text: 'Network.', color: '#1E2D4D', typewriter: true, sizeScale: 1.9, startSec: 2.4, endSec: 3.6},
+        {kind: 'hookText', text: 'Track.', color: '#1E2D4D', typewriter: true, sizeScale: 1.9, startSec: 3.7, endSec: 4.7},
+        {kind: 'hookText', text: 'Apply.', color: '#1E2D4D', typewriter: true, sizeScale: 1.9, startSec: 4.8, endSec: 5.7},
+        {kind: 'hookText', text: 'Repeat.', color: '#1E2D4D', typewriter: true, sizeScale: 1.9, startSec: 5.8, endSec: 6.6},
       ],
     },
     {
