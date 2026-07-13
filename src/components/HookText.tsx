@@ -12,6 +12,7 @@ export const HookText: React.FC<{
   wordByWord?: boolean;
   typewriter?: boolean;
   sizeScale?: number;
+  offsetY?: number;
 }> = ({
   text,
   position = 'center',
@@ -19,6 +20,7 @@ export const HookText: React.FC<{
   wordByWord = false,
   typewriter = false,
   sizeScale = 1,
+  offsetY = 0,
 }) => {
   const frame = useCurrentFrame();
   const {fps, width, height} = useVideoConfig();
@@ -42,7 +44,7 @@ export const HookText: React.FC<{
       <div
         style={{
           opacity: enter,
-          transform: `translateY(${y}px)`,
+          transform: `translateY(${y + offsetY}px)`,
           fontFamily: fonts.heading,
           fontWeight: 700,
           fontSize: width * (isVertical ? 0.085 : 0.052) * sizeScale,

@@ -93,6 +93,7 @@ export const trueViewPlan: EditPlan = {
         {
           kind: 'hookText',
           text: 'Just let Scout take care of it.',
+          offsetY: 70,
           startSec: 0.3,
           endSec: 2.5,
           position: 'bottom',
@@ -102,6 +103,7 @@ export const trueViewPlan: EditPlan = {
           text: 'A fully autonomous assistant that handles all your networking and job-search busywork.',
           wordByWord: true,
           sizeScale: 0.75,
+          offsetY: 70,
           startSec: 2.7,
           endSec: 5,
           position: 'bottom',

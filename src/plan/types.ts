@@ -27,6 +27,8 @@ export type Overlay =
       typewriter?: boolean;
       /** Font-size multiplier on the default hook size (e.g. 1.8 = much larger). */
       sizeScale?: number;
+      /** Push the text down (+) or up (-) in px from its default position. */
+      offsetY?: number;
     }
   | {
       kind: 'lowerThird';

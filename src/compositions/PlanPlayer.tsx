@@ -57,6 +57,7 @@ const OverlayRenderer: React.FC<{overlay: Overlay; sceneFrames: number}> = ({
           wordByWord={overlay.wordByWord}
           typewriter={overlay.typewriter}
           sizeScale={overlay.sizeScale}
+          offsetY={overlay.offsetY}
         />
       ) : overlay.kind === 'timer' ? (
         <TimerCounter
