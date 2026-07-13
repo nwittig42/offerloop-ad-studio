@@ -602,6 +602,16 @@
       "description": "Nick's meta-ad VO take 1 (47.4s, mono 48kHz AAC). Off-script improvements kept: 'especially now in this job market, it's rough' (B1), 'Fuck that.' record-scratch beat at 20.4-20.8s (PROFANITY: paid-Meta risk, pickup planned), 'pain in the ass' (B2). B8 has no trailing 'Done.'. Slice map (sec): B1 0.7-6.3, B2 6.3-13.1, B3 14.6-19.4, B3.5 20.4-20.8, B4 21.6-23.7, B6 25.1-26.8, B7 27.5-30.2, B8 30.8-36.5, B9 37.0-43.7, B10 44.7-46.0, B11 46.0-46.7. Transcribed with whisper-cpp base.en.",
       "duration": 47.42,
       "source": "dropped"
+    },
+    {
+      "filename": "assets/generated/nick-desk-timelapse-v1.mp4",
+      "kind": "video",
+      "description": "B3 timelapse: Nick (identity from IMG_2818.MOV frame) grinding at his dorm desk; daylight fades to night, desk lamp clicks on ~6s, coffee cups accumulate. Locked-off, photorealistic, good likeness. 8s 1920x1080 with generated audio (muted in plan). Timer overlay ('Hour 1-147') is Remotion, not baked in. Vertical original IMG_2818.MOV stays in Downloads for the 9:16 cutdown.",
+      "duration": 8.08,
+      "source": "higgsfield",
+      "model": "seedance_2_0 (std, 1080p, 16:9; image_references = frame @1s of IMG_2818.MOV)",
+      "job_id": "311f73c5-12c3-473c-8891-025c5ff8a706",
+      "prompt": "Timelapse: man works at dorm desk, daylight fades to night, desk lamp clicks on, coffee cups accumulate (full prompt in job)."
     }
   ]
 }

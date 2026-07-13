@@ -46,13 +46,17 @@ export const metaAdPlan: EditPlan = {
       ],
     },
     {
-      // Placeholder until Nick's desk timelapse lands.
       id: 'b3-hours',
-      type: 'title',
+      type: 'video',
+      src: 'assets/generated/nick-desk-timelapse-v1.mp4',
       durationSec: 5.2,
+      muted: true,
+      fit: 'cover',
       transitionIn: 'fade',
-      title: 'Hundreds of hours.',
-      subtitle: 'Wasted on repetitive busywork.',
+      overlays: [
+        {kind: 'timer', prefix: 'Hour', from: 1, to: 147, startSec: 0.2, endSec: 5.2, position: 'top'},
+        {kind: 'hookText', text: 'Hundreds of hours.', startSec: 2.6, endSec: 5.2},
+      ],
     },
     {
       id: 'b4-turn',

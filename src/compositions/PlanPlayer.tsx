@@ -17,6 +17,7 @@ import {Captions} from '../components/Captions';
 import {EndCard} from '../components/EndCard';
 import {HookText} from '../components/HookText';
 import {LowerThird} from '../components/LowerThird';
+import {TimerCounter} from '../components/TimerCounter';
 import {mockups} from '../components/mock';
 
 const FadeIn: React.FC<{enabled: boolean; children: React.ReactNode}> = ({enabled, children}) => {
@@ -49,6 +50,13 @@ const OverlayRenderer: React.FC<{overlay: Overlay; sceneFrames: number}> = ({
     <Sequence from={from} durationInFrames={durationInFrames}>
       {overlay.kind === 'hookText' ? (
         <HookText text={overlay.text} position={overlay.position} />
+      ) : overlay.kind === 'timer' ? (
+        <TimerCounter
+          prefix={overlay.prefix}
+          from={overlay.from}
+          to={overlay.to}
+          position={overlay.position}
+        />
       ) : (
         <LowerThird title={overlay.title} subtitle={overlay.subtitle} />
       )}

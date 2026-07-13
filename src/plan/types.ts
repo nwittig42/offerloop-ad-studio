@@ -26,6 +26,16 @@ export type Overlay =
       subtitle?: string;
       startSec?: number;
       endSec?: number;
+    }
+  | {
+      kind: 'timer';
+      /** Rendered as `${prefix} ${n}`, n counting from → to over the overlay window. */
+      prefix?: string;
+      from: number;
+      to: number;
+      startSec?: number;
+      endSec?: number;
+      position?: 'center' | 'top' | 'bottom';
     };
 
 type SceneBase = {
