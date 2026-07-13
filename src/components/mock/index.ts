@@ -1,4 +1,5 @@
 import {BrowserTabsPain} from './BrowserTabsPain';
+import {ColdOpenTabs} from './ColdOpenTabs';
 import {BusyworkMontage} from './BusyworkMontage';
 import {RejectionsPain} from './RejectionsPain';
 import {JobCardApply} from './JobCardApply';
@@ -10,6 +11,7 @@ import {StatStack} from './StatStack';
 /** Animated mock-UI scenes; plans reference these by key via `type: 'mockup'`. */
 export const mockups = {
   browserTabsPain: BrowserTabsPain,
+  coldOpenTabs: ColdOpenTabs,
   busyworkMontage: BusyworkMontage,
   rejectionsPain: RejectionsPain,
   jobCardApply: JobCardApply,

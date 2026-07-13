@@ -13,29 +13,20 @@ export const trueViewPlan: EditPlan = {
   fps: 30,
   scenes: [
     {
-      // Meta-ad B1 cold open, cut at 1.8s — the browser in that mock enters at
-      // frame 55, so ending here keeps only the kinetic type ("Getting a job
-      // is a full-time job in itself.") and the real footage below replaces
-      // the mock browser.
-      id: 'cold-open-line',
+      // Combined cold open: "Getting a job is a full-time job in itself."
+      // holds center, then glides to the top while Nick's REAL Chrome
+      // recording (LinkedIn → ChatGPT → Sheets → LinkedIn Jobs) slides in
+      // from below as a framed window — the mock's transition, real pixels.
+      // Window lands ~2.2s; word pops ride the real tab switches after that.
+      id: 'cold-open-tabs',
       type: 'mockup',
-      component: 'browserTabsPain',
-      durationSec: 1.8,
-    },
-    {
-      // Nick's real Chrome recording: LinkedIn profile → ChatGPT outreach
-      // draft → Sheets tracker → LinkedIn Jobs → motion blur out.
-      id: 'real-tabs',
-      type: 'video',
-      src: 'assets/generated/Google Chrome.mp4',
-      durationSec: 4.4,
-      muted: true,
-      fit: 'cover',
+      component: 'coldOpenTabs',
+      durationSec: 6.6,
       overlays: [
-        {kind: 'hookText', text: 'Network.', color: '#1E2D4D', startSec: 0.2, endSec: 1.4},
-        {kind: 'hookText', text: 'Track.', color: '#1E2D4D', startSec: 1.5, endSec: 2.5},
-        {kind: 'hookText', text: 'Apply.', color: '#1E2D4D', startSec: 2.6, endSec: 3.5},
-        {kind: 'hookText', text: 'Repeat.', color: '#1E2D4D', startSec: 3.6, endSec: 4.4},
+        {kind: 'hookText', text: 'Network.', color: '#1E2D4D', startSec: 2.4, endSec: 3.6},
+        {kind: 'hookText', text: 'Track.', color: '#1E2D4D', startSec: 3.7, endSec: 4.7},
+        {kind: 'hookText', text: 'Apply.', color: '#1E2D4D', startSec: 4.8, endSec: 5.7},
+        {kind: 'hookText', text: 'Repeat.', color: '#1E2D4D', startSec: 5.8, endSec: 6.6},
       ],
     },
     {
