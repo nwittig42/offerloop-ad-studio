@@ -121,20 +121,37 @@ export const trueViewPlan: EditPlan = {
 
     // ---- ACT 3: Scout demo (stills-first Higgsfield builds on real UI) ----
     // Hard cuts between demo beats on purpose: reads like real app navigation.
+    // AI clips are trimmed to their clean windows (they invent text later on).
     {
-      id: 'demo-prompt-apply',
+      // Cursor glides up and clicks into the dashboard prompt box.
+      id: 'demo-open-chat',
       type: 'video',
-      src: 'assets/generated/scout-demo-1-prompt-apply.mp4',
-      durationSec: 3.5,
+      src: 'assets/generated/scout-demo-0-open-chat.mp4',
+      durationSec: 2.2,
       muted: true,
       fit: 'cover',
       transitionIn: 'fade',
     },
     {
+      // Remotion typewriter over the crisp still (AI typing overran to junk).
+      id: 'demo-typing',
+      type: 'mockup',
+      component: 'scoutTypingIntro',
+      durationSec: 2.2,
+    },
+    {
+      id: 'demo-prompt-apply',
+      type: 'video',
+      src: 'assets/generated/scout-demo-1-prompt-apply.mp4',
+      durationSec: 2,
+      muted: true,
+      fit: 'cover',
+    },
+    {
       id: 'demo-done-view',
       type: 'video',
       src: 'assets/generated/scout-demo-2-done-view.mp4',
-      durationSec: 2.5,
+      durationSec: 2,
       muted: true,
       fit: 'cover',
     },
@@ -142,14 +159,15 @@ export const trueViewPlan: EditPlan = {
       id: 'demo-applications',
       type: 'image',
       src: 'assets/generated/scout-demo-3-applications.png',
-      durationSec: 3,
+      durationSec: 2,
       kenBurns: true,
     },
     {
-      id: 'demo-prompt-email',
+      // Second ask + contacts surfacing (clip clean through ~2s only).
+      id: 'demo-contacts',
       type: 'video',
-      src: 'assets/generated/scout-demo-4-prompt-email.mp4',
-      durationSec: 3.5,
+      src: 'assets/generated/scout-demo-4b-contacts.mp4',
+      durationSec: 2,
       muted: true,
       fit: 'cover',
     },
@@ -157,7 +175,7 @@ export const trueViewPlan: EditPlan = {
       id: 'demo-gmail-drafts',
       type: 'image',
       src: 'assets/generated/scout-demo-5-gmail-drafts.png',
-      durationSec: 3,
+      durationSec: 2.2,
       kenBurns: true,
       overlays: [
         {
@@ -165,7 +183,7 @@ export const trueViewPlan: EditPlan = {
           text: '45 drafts. Ready to send.',
           color: '#1E2D4D',
           sizeScale: 1.2,
-          startSec: 0.8,
+          startSec: 0.5,
           position: 'bottom',
         },
       ],

@@ -774,6 +774,49 @@
       "source": "higgsfield",
       "model": "nano_banana_pro (2k, 16:9, real-UI reference)",
       "job_id": "69f6a6d1-aaf6-43f8-8522-08ba1909f50a"
+    },
+    {
+      "filename": "assets/generated/scout-demo-0-open-chat.mp4",
+      "kind": "video",
+      "description": "ANIMATED: dashboard, cursor glides up and clicks into the prompt box, caret blinks. CLEAN 0-2.2s ONLY (invents input text after ~2.5s); plan trims to 2.2s. 1280x720 kling turbo, start_image = dashboard crop.",
+      "source": "higgsfield",
+      "model": "kling3_0_turbo (720p, start_image)",
+      "job_id": "77be37e4-ee23-4d2c-bf5c-080672a4659b",
+      "duration": 5.0
+    },
+    {
+      "filename": "assets/generated/scout-demo-0b-typing.png",
+      "kind": "image",
+      "description": "STILL: Ask Scout fresh chat with the apply prompt fully typed in the input box + caret. Basis for the Remotion ScoutTypingIntro mock (mask + typewriter). 2752x1536.",
+      "source": "higgsfield",
+      "model": "nano_banana_pro (2k, 16:9, real-UI reference)",
+      "job_id": "7ffc3461-5f13-4a8f-8d5a-d4b61046811d"
+    },
+    {
+      "filename": "assets/generated/scout-demo-0b-typing.mp4",
+      "kind": "video",
+      "description": "REJECTED: AI typing overran the sentence into junk chars by ~1s. Replaced by Remotion ScoutTypingIntro. Kept for reference.",
+      "source": "higgsfield",
+      "model": "kling3_0_turbo (720p, start_image)",
+      "job_id": "1c1513c9-92d4-4db1-a422-18e562eb2366",
+      "duration": 5.0
+    },
+    {
+      "filename": "assets/generated/scout-demo-4b-contacts.png",
+      "kind": "image",
+      "description": "STILL: chat — email-3-people ask + Scout 'Found 45 people across your 15 teams — drafting intros now…' + 3 contact cards (Sarah Kim/Stripe, James Park/Airbnb, Priya Patel/OpenAI, verified-email badges) + 'Placing drafts in your Gmail…'. Crisp. 2752x1536.",
+      "source": "higgsfield",
+      "model": "nano_banana_pro (2k, 16:9, real-UI reference)",
+      "job_id": "1a774472-504a-41e0-b293-971ab7428c39"
+    },
+    {
+      "filename": "assets/generated/scout-demo-4b-contacts.mp4",
+      "kind": "video",
+      "description": "ANIMATED: contact cards settle in. CLEAN 0-2s ONLY (names morph to mush by ~3s); plan trims to 2s. 1280x720 kling turbo.",
+      "source": "higgsfield",
+      "model": "kling3_0_turbo (720p, start_image)",
+      "job_id": "d0160e56-ad7d-483c-90fd-27a7b9498ae6",
+      "duration": 5.0
     }
   ]
 }

@@ -1,5 +1,6 @@
 import {BrowserTabsPain} from './BrowserTabsPain';
 import {ColdOpenTabs} from './ColdOpenTabs';
+import {ScoutTypingIntro} from './ScoutTypingIntro';
 import {BusyworkMontage} from './BusyworkMontage';
 import {RejectionsPain} from './RejectionsPain';
 import {JobCardApply} from './JobCardApply';
@@ -12,6 +13,7 @@ import {StatStack} from './StatStack';
 export const mockups = {
   browserTabsPain: BrowserTabsPain,
   coldOpenTabs: ColdOpenTabs,
+  scoutTypingIntro: ScoutTypingIntro,
   busyworkMontage: BusyworkMontage,
   rejectionsPain: RejectionsPain,
   jobCardApply: JobCardApply,
