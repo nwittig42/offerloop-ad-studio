@@ -1,150 +1,18 @@
 import type {EditPlan} from '../src/plan/types';
 
-// Meta ad, script v3. Storyboard: plans/storyboards/meta-ad.json.
-// No VO: Nick removed his narration entirely (2026-07-13) — the cut runs on
-// visuals + on-screen type alone (music can be added as a plan audio track
-// later). The old VO slices still exist in assets/recordings/vo/ if ever
-// wanted again. Beats B3 and B9 show placeholder titles until Nick's filmed
-// footage (desk timelapse, founder piece, walk-out) lands in assets/recordings/.
-const WALKTHROUGH =
-  'assets/generated/Offerloop Pricing Student Plans for College Networking 13 July 2026.mp4';
-
-// Timeline starts per scene (sum of prior durations); audio slices align to these.
-const starts = {
-  b1: 0,
-  b2: 6,
-  b3: 13.2,
-  b4: 18.4,
-  b5: 22.4,
-  b6: 25.4,
-  b7: 28.4,
-  b8: 31.9,
-  b9: 38.1,
-  b10: 45.3,
-  b11: 47.1,
-};
-
+// RESTARTED 2026-07-13 (script v5): the ad is now cut from real footage Nick
+// uploads — no mock-UI scenes. This stub keeps the MetaAd composition loadable
+// in Studio; scenes get added as footage lands in assets/recordings/.
 export const metaAdPlan: EditPlan = {
   id: 'meta-ad',
   fps: 30,
   scenes: [
     {
-      id: 'b1-tabs',
-      type: 'mockup',
-      component: 'browserTabsPain',
-      durationSec: 6,
-    },
-    {
-      // Rapid-fire tab montage: job board doomscroll → endless tracker sheet
-      // → LinkedIn profile scan → ChatGPT cold-email regenerate loop. Hard
-      // cuts, ~1.25s per tab.
-      id: 'b2-busywork',
-      type: 'mockup',
-      component: 'busyworkMontage',
-      durationSec: 5,
-    },
-    {
-      // PLACEHOLDER — Nick films: head on the desk while ChatGPT grinds
-      // another rewrite. Drop into assets/recordings/ and swap this scene
-      // for a video scene.
-      id: 'b2b-headdesk',
+      id: 'awaiting-footage',
       type: 'title',
-      durationSec: 2,
-      title: '[Nick films: head on desk,',
-      subtitle: 'ChatGPT rewrite grinding on the screen]',
-    },
-    {
-      id: 'b3-hours',
-      type: 'video',
-      src: 'assets/generated/nick-desk-timelapse-v1.mp4',
-      durationSec: 5.2,
-      muted: true,
-      fit: 'cover',
-      transitionIn: 'fade',
-      overlays: [
-        {kind: 'timer', prefix: 'Hour', from: 1, to: 147, startSec: 0.2, endSec: 5.2, position: 'top'},
-        {kind: 'hookText', text: 'Hundreds of hours.', startSec: 2.6, endSec: 5.2},
-      ],
-    },
-    {
-      id: 'b4-turn',
-      type: 'video',
-      src: 'assets/generated/offerloop-ui-dashboard-cinematic-v1.mp4',
-      durationSec: 5,
-      muted: true,
-      fit: 'cover',
-      transitionIn: 'fade',
-      overlays: [
-        {kind: 'hookText', text: 'Let Scout take care of all of it.', startSec: 0.5, endSec: 5, position: 'bottom'},
-      ],
-    },
-    {
-      id: 'b5-logo-hero',
-      type: 'image',
       durationSec: 3,
-      transitionIn: 'fade',
-      src: 'assets/figma/offerloop-wordmark.svg',
-      fit: 'contain',
-      backgroundColor: '#F5F6F8',
-      overlays: [
-        {kind: 'hookText', text: 'Search. Reach out. Get hired.', startSec: 1.1, endSec: 3, position: 'bottom'},
-      ],
-    },
-    {
-      id: 'b6-apply',
-      type: 'mockup',
-      component: 'jobCardApply',
-      durationSec: 3,
-    },
-    {
-      id: 'b7-find-people',
-      type: 'video',
-      src: 'assets/generated/offerloop-ui-find-cinematic-v1.mp4',
-      durationSec: 5,
-      muted: true,
-      fit: 'cover',
-      transitionIn: 'fade',
-      overlays: [
-        {kind: 'hookText', text: 'Find and email anyone.', startSec: 0.4, endSec: 3.2, position: 'bottom'},
-        {kind: 'hookText', text: 'DONE ✓', startSec: 3.6, endSec: 5},
-      ],
-    },
-    {
-      id: 'b8-hiring-manager',
-      type: 'video',
-      src: 'assets/generated/offerloop-ui-draft-cinematic-v2.mp4',
-      durationSec: 5,
-      muted: true,
-      fit: 'cover',
-      transitionIn: 'fade',
-      overlays: [
-        {kind: 'hookText', text: 'Even the hiring manager.', startSec: 0.4, endSec: 3.2, position: 'bottom'},
-        {kind: 'hookText', text: 'DONE ✓', startSec: 3.6, endSec: 5},
-      ],
-    },
-    {
-      // Placeholder until Nick's founder piece + walk-out land.
-      id: 'b9-founders',
-      type: 'title',
-      durationSec: 7.2,
-      transitionIn: 'fade',
-      title: 'Built by college students,',
-      subtitle: 'for everyone still in the hunt.',
-    },
-    {
-      id: 'b10-time-back',
-      type: 'title',
-      durationSec: 1.8,
-      title: 'Get your time back.',
-    },
-    {
-      id: 'b11-end',
-      type: 'endCard',
-      durationSec: 3,
-      transitionIn: 'fade',
-      headline: 'Land your dream job in a fraction of the time',
-      cta: 'Use Offerloop',
-      url: 'offerloop.ai',
+      title: 'Meta ad — restarting from real footage.',
+      subtitle: 'Waiting on Nick’s uploads (see plans/meta-ad.script.md).',
     },
   ],
 };
