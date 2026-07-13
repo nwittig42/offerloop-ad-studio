@@ -588,6 +588,13 @@
       "model": "seedance_2_0 (std, 1080p, 16:9, no audio; start_image = yeti-class-laptop-reply-still-v1.png)",
       "job_id": "5d149ecb-51f2-4928-b624-e7252a37972a",
       "prompt": "The yeti stares at the laptop screen as his eyes go wide with shock and joy, then he spins around in his seat to the students sitting behind him, gesturing excitedly at his laptop with both paws and mouthing words as if saying he just got an interview, the students behind react with surprised smiles; then he turns back and points at the screen. Energetic natural motion, camera locked off, single continuous shot, photorealistic, warm daylight."
+    },
+    {
+      "filename": "assets/generated/Offerloop Pricing Student Plans for College Networking 13 July 2026.mp4",
+      "kind": "recording",
+      "description": "Nick's Loom-style walkthrough of the real offerloop.ai product (243s 1240x720 30fps, narrated, webcam bubble bottom-left, personal browser tabs visible). Coverage: dashboard 'What should we work on today?' + Scout task cards (~0-15s), Ask Scout chat 'Find 10 people at Google that are USC alumni' (~16s), My Network people/companies/hiring-managers table (~32s), Inbox with pipeline stages + recommended reply (~60s), 'Who do you want to meet?' search (~120s), search result -> Draft 1 email -> 'Placing drafts in your Gmail' (~180s), Resume Workshop live PDF preview + Tailor to a job (~230s). Use with content-area crop (avoid webcam bubble + browser chrome) for meta-ad beats B6-B8.",
+      "duration": 242.97,
+      "source": "dropped"
     }
   ]
 }

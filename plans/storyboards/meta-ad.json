@@ -1,24 +1,105 @@
 {
   "scenes": [
     {
-      "id": "s1",
-      "title": "Hook — yeti swipes",
-      "asset": "assets/generated/yeti-couch-swiping-v3.mp4",
-      "description": "Yeti on couch actively swiping job cards",
-      "vo": "Applying to jobs shouldn't feel like this",
-      "durationSec": 3.5,
-      "notes": "cut on the second swipe"
+      "id": "b1",
+      "title": "B1 Hook: endless tabs",
+      "asset": "",
+      "description": "Mock browser, tabs spawn fast: LinkedIn Jobs, Google Sheets job tracker, ChatGPT cover letter, Gmail. Cursor darts. Type: 'busy work'. [Remotion mock browser]",
+      "vo": "There's a lot of busy work when it comes to getting a job.",
+      "durationSec": 4,
+      "notes": "Remotion. Must work as standalone hook for cutdowns."
     },
     {
-      "id": "s2",
-      "title": "Campus descent b-roll",
-      "asset": "assets/generated/campus-earth-descent-v1.mp4",
-      "description": "",
+      "id": "b2",
+      "title": "B2 Busywork montage",
+      "asset": "",
+      "description": "One idea per shot ~1s: Finding=job board doomscroll · Resume=resume-v7-FINAL-final.docx save dialog · Cover letter=ChatGPT regenerating · Networking=LinkedIn Connect clicks · Applying=Workday login. Word stamps each shot. [Remotion mocks]",
+      "vo": "Finding the job, writing the resume, the cover letter, networking, and even applying to it.",
+      "durationSec": 6,
+      "notes": "Remotion."
+    },
+    {
+      "id": "b3",
+      "title": "B3 Hundreds of hours",
+      "asset": "",
+      "description": "Nick desk timelapse day-to-night, coffee cups pile up. Insert: iOS screen-time card (LinkedIn 11h · Sheets 6h · ChatGPT 9h). Big type: 'Hundreds of hours.'",
+      "vo": "Hundreds of hours wasted on boring, repetitive work to get that offer.",
+      "durationSec": 6,
+      "notes": "NICK FILMS timelapse. Screen-time card Remotion."
+    },
+    {
+      "id": "b4",
+      "title": "B4 Turn: let Scout take over",
+      "asset": "",
+      "description": "All tabs/sheets/docs sweep off screen leaving one clean Offerloop window on #F5F6F8. Beat of calm.",
+      "vo": "Instead, let Scout take care of it.",
+      "durationSec": 4,
+      "notes": "Remotion."
+    },
+    {
+      "id": "b5",
+      "title": "B5 Logo hero",
+      "asset": "assets/figma/offerloop-wordmark.svg",
+      "description": "Wordmark assembles letter by letter, hero line: Search. Reach out. Get hired.",
       "vo": "",
+      "durationSec": 4,
+      "notes": "Music swell, no VO. Remotion."
+    },
+    {
+      "id": "b6",
+      "title": "B6 Apply: ON IT",
+      "asset": "assets/generated/Offerloop Pricing Student Plans for College Networking 13 July 2026.mp4",
+      "description": "Tilted 3D product UI, job card swipe right, green stamp ON IT. Crop content area (avoid webcam bubble).",
+      "vo": "Need to apply to something? On it.",
+      "durationSec": 7,
+      "notes": "Footage: Job Board/Applications sections; fallback Remotion mock."
+    },
+    {
+      "id": "b7",
+      "title": "B7 Find & email people: DONE",
+      "asset": "assets/generated/Offerloop Pricing Student Plans for College Networking 13 July 2026.mp4",
+      "description": "'Who do you want to meet?' search types itself (Auditor at EY in Portland), 1 person found, Draft 1 email, 'Placing drafts in your Gmail...', stamp DONE (bigger).",
+      "vo": "Find and email people at a company? Done.",
+      "durationSec": 7,
+      "notes": "Footage ~120-185s. Strongest product beat."
+    },
+    {
+      "id": "b8",
+      "title": "B8 Hiring manager: DONE",
+      "asset": "assets/generated/Offerloop Pricing Student Plans for College Networking 13 July 2026.mp4",
+      "description": "My Network 'Hiring Managers 23' tab, contact card zooms, badge glints, Gmail draft sends, stamp DONE (screen-filling).",
+      "vo": "It'll even find the exact hiring manager for the position. Done.",
+      "durationSec": 6,
+      "notes": "Footage ~32s + ~60s; fallback Remotion mock."
+    },
+    {
+      "id": "b9",
+      "title": "B9 Founders",
+      "asset": "",
+      "description": "Nick to camera, lower-third 'Nick · cofounder'. On 'Now anyone can' cut to laptop close + golden-hour walk-out.",
+      "vo": "As college students, we built this for ourselves, to save time on the job search. Now anyone can land their dream job in a fraction of the time.",
       "durationSec": 8,
-      "notes": ""
+      "notes": "NICK FILMS both shots."
+    },
+    {
+      "id": "b10",
+      "title": "B10 Get your time back",
+      "asset": "",
+      "description": "Screen-time card returns: 'Job hunt: 40 min this week.' Optional timelapse reversing behind.",
+      "vo": "Get your time back.",
+      "durationSec": 4,
+      "notes": "Remotion. Bookends B3."
+    },
+    {
+      "id": "b11",
+      "title": "B11 End card",
+      "asset": "assets/figma/offerloop-wordmark.svg",
+      "description": "Wordmark + summit scout peeking + offerloop.ai. Fade out.",
+      "vo": "Use Offerloop.",
+      "durationSec": 4,
+      "notes": "Remotion, existing Figma assets."
     }
   ],
   "name": "meta-ad",
-  "updatedAt": "2026-07-12T21:47:31.864Z"
+  "updatedAt": "2026-07-13T17:44:08.202Z"
 }

@@ -1,88 +1,97 @@
-# Meta Ad — Script v2 (PostSyncer-style)
+# Meta Ad — Script v3 (narrated, PostSyncer-style)
 
-**Status:** Draft v2 — beat-for-beat adaptation of `assets/references/postsyncer-demo.mp4` for Offerloop, incorporating Nick's v1 themes.
-**Format:** Master at 16:9, cut down to 4:5 / 9:16 / 1:1 for Meta.
-**Sound:** Music-driven with kinetic on-screen text (like the reference — it has zero VO; every line is typography). Works muted by design. VO can be layered later if wanted.
-**Pending inputs:** Nick's Loom walkthrough of the site (real product footage will replace mock-UI beats where possible).
+**Status:** Approved by Nick 2026-07-13. Supersedes v2 (kinetic-type-only version, see git history).
+**Format:** Master at 16:9 (~60s), cut down to 4:5 / 9:16 / 1:1 for Meta.
+**Sound:** Nick's VO throughout + kinetic on-screen type punching key words (works muted).
+**Storyboard:** `plans/storyboards/meta-ad.json` (view with `npm run storyboard`).
+**Product footage:** `assets/generated/Offerloop Pricing Student Plans for College Networking 13 July 2026.mp4` (content-area crop; see manifest for shot map).
+**Still needed from Nick:** VO recording of all lines; desk timelapse (B3); founder piece to camera (B9a); laptop close + golden-hour walk-out (B9b).
 
 ---
 
-## Reference structure → Offerloop mapping
+## Act 1: The busywork (0:00 to 0:16)
 
-PostSyncer's arc: pain (tabs/notifications/chaos) → "Let us take over." → logo hero → 5 feature chapters with kinetic-typography interstitials → social-proof stats → challenge + CTA → logo/URL card. Dark and light chapters alternate; product UI shots are tilted in 3D perspective; accent words are colored; one idea per shot.
+**B1 (0:00 to 0:04)**
+VO: "There's a lot of busy work when it comes to getting a job."
+Type: **busy work** stamps in.
+Visual: clean browser cold open, then tabs spawn fast: LinkedIn Jobs, Google Sheets "Job Tracker, 213 rows", ChatGPT "write a cover letter for...", Gmail. Cursor darts, tabs shrink as they multiply.
+Source: Remotion mock browser component.
 
-## Beat-by-beat script (~75s master)
+**B2 (0:04 to 0:10)**
+VO: "Finding the job, writing the resume, the cover letter, networking, and even applying to it."
+Visual: rapid-fire, one idea per shot, ~1s each, each word stamping as type:
+- **Finding**: job board doomscroll
+- **Resume**: save dialog for `resume-v7-FINAL-final.docx`
+- **Cover letter**: ChatGPT regenerating yet again
+- **Networking**: LinkedIn Connect clicks piling up
+- **Applying**: a Workday login page
+Source: Remotion mocks.
 
-### ACT 1 — PAIN (0:00–0:12) · light, then dark
+**B3 (0:10 to 0:16)**
+VO: "Hundreds of hours wasted on boring, repetitive work to get that offer."
+Type: **Hundreds of hours.** big kinetic stamp.
+Visual: timelapse of Nick at his desk, day to night, coffee cups accumulating. Insert card: iOS-style screen time report, "LinkedIn 11h · Sheets 6h · ChatGPT 9h".
+Source: Nick films timelapse; screen time card is Remotion.
 
-**B1 (0:00–0:04) — "Endless tabs…"** *(light)*
-Browser window, tabs multiplying rapidly: LinkedIn Jobs → Indeed → Handshake → `cover-letter-v7-FINAL.docx` → resume template → Gmail. Cursor darts between them.
-> On-screen: **Endless tabs…**
+## Act 2: The turn (0:16 to 0:24)
 
-**B2 (0:04–0:08) — "Rejections everywhere."** *(dark navy)*
-Floating email/notification cards drift on dark: "Thank you for applying…", "Unfortunately…", "Application received — 400+ applicants", LinkedIn connection requests piling, red badge counters ticking up (247…512).
-> On-screen: **Rejections everywhere.**
+**B4 (0:16 to 0:20)**
+VO: "Instead, let Scout take care of it."
+Visual: every tab, sheet and doc sweeps off screen, leaving one clean Offerloop window on brand background `#F5F6F8`. Beat of calm.
+Source: Remotion.
 
-**B3 (0:08–0:12) — the stat** *(dark, glitch/kinetic text)*
-Scattered-letter kinetic assembly, PostSyncer "chaos?" style:
-> On-screen: **8+ hours a week. For months. This is the job hunt.**
+**B5 (0:20 to 0:24)**
+VO: none (music swell).
+Visual: Offerloop wordmark assembles letter by letter, hero card: **Search. Reach out. Get hired.**
+Source: Remotion, existing wordmark SVG.
 
-### ACT 2 — TURN (0:12–0:20) · light → brand gradient
+## Act 3: Three "done" beats (0:24 to 0:44)
 
-**B4 (0:12–0:14) — the turn** *(clean light frame, single line)*
-> On-screen: **Let Scout take over.**
+**B6 (0:24 to 0:31)**
+VO: "Need to apply to something? On it."
+Visual: tilted 3D product UI, job card swipes right, green stamp **ON IT ✓**.
+Source: walkthrough footage (Job Board / Applications section) or Remotion mock.
 
-**B5 (0:14–0:20) — logo hero** *(primary→ink gradient)*
-Offerloop wordmark assembles (letter-by-letter like "Meet → PostSyncer"), then hero card:
-> On-screen: **Offerloop** / **The all-in-one tool to** / **Search. Reach out. Get hired.**
+**B7 (0:31 to 0:38)**
+VO: "Find and email people at a company? Done."
+Visual: "Who do you want to meet?" search types itself ("Auditor at EY in Portland" beat exists in footage), contact cards fan out with school badges, drafts write themselves, "Placing drafts in your Gmail..." moment, stamp **DONE ✓** (bigger).
+Source: walkthrough footage ~120s to 185s.
 
-### ACT 3 — FEATURE CHAPTERS (0:20–0:58) · alternating light/dark, tilted UI shots
+**B8 (0:38 to 0:44)**
+VO: "It'll even find the exact hiring manager for the position. Done."
+Visual: My Network "Hiring Managers 23" tab, one contact card zooms in, "Hiring Manager" badge glints, Gmail draft fires off, stamp **DONE ✓** (biggest, screen-filling).
+Source: walkthrough footage ~32s + ~60s (Inbox hiring managers tab) or Remotion mock.
 
-**B6 (0:20–0:28) — Apply instantly** *(light)*
-Interstitial: **See a job you want? Scout applies** ***instantly*.** (accent word in primary blue)
-Then tilted product UI: job card → swipe right → "Application sent ✓" state. (Footage from Loom, else mock UI.)
+## Act 4: Founders and close (0:44 to 1:00)
 
-**B7 (0:28–0:38) — Find & email real people** *(light)*
-Interstitial: **Find the right people at** ***any company*.**
-Search "Goldman Sachs analysts" typing with cursor → contact cards fan out (name, role, school badge) → **…and Scout emails them. Done.** Draft composer writes itself from the resume.
+**B9 (0:44 to 0:52)**
+VO: "As college students, we built this for ourselves, to save time on the job search. Now anyone can land their dream job in a fraction of the time."
+Visual: first half, Nick on camera, casual, talking to the lens, lower-third "Nick · cofounder". On "Now anyone can", cut to Nick closing the laptop and walking out into golden hour.
+Source: Nick films both shots.
 
-**B8 (0:38–0:46) — Even the hiring manager** *(dark)*
-Interstitial: **Even the** ***hiring manager*.**
-Tilted Gmail-style draft: "Your Move from CareFirst to Horizon Industries…", Send button pulses → sent. "Sent from your own Gmail" chip.
+**B10 (0:52 to 0:56)**
+VO: "Get your time back."
+Type: **Get your time back.**
+Visual: the Act 1 screen time card returns with tiny numbers: "Job hunt: 40 min this week." Optional: the desk timelapse running in reverse behind it.
+Source: Remotion.
 
-**B9 (0:46–0:52) — Free up your week** *(light — verbatim PostSyncer line, it's perfect for us)*
-Interstitial: **Free up** ***hours*** **every week.**
-Inbox view filling with ready drafts / replies ("Your turn" filter), calendar-density feel.
-
-**B10 (0:52–0:58) — Proof stats** *(light, lavender panel + stat stack)*
-Wavy growth lines → stat cards punch in one by one:
-> **47** EMAILS SENT · **12** REPLIES · **5** COFFEE CHATS · **1** OFFER
-> On-screen: **Real results. Real time back.**
-
-### ACT 4 — CLOSE (0:58–1:12) · dark
-
-**B11 (0:58–1:04) — challenge** *(stacked kinetic type, "WHY SETTLE FOR LESS" style)*
-> On-screen: **WHY GRIND** / **FOR MONTHS?** → beat → **Outcompete your peers.**
-
-**B12 (1:04–1:08) — CTA**
-> On-screen: **Start your job hunt** [**TODAY.**] (pill highlight on TODAY, like the reference)
-
-**B13 (1:08–1:12) — end card**
-Offerloop wordmark + summit scout peeking (small), **offerloop.ai**. Fade out.
+**B11 (0:56 to 1:00)**
+VO: "Use Offerloop."
+Visual: end card, Offerloop wordmark, summit scout peeking, **offerloop.ai**.
+Source: Remotion, existing Figma assets.
 
 ---
 
 ## Cutdown notes (Meta)
 
-- 9:16 / 4:5: interstitial type scales up, tilted UI shots re-crop to device-tall; B6–B8 are the three strongest standalone 15s cuts (hook B1/B2 + one chapter + CTA).
-- Keep every beat ≤ 6s; Meta average watch is ~3–6s, so B1+B2 must work as a self-contained hook.
+- 9:16 / 4:5: B1+B3 hook, one done-beat, B10+B11 close makes the 15s cut. Type scales up, UI shots re-crop device-tall.
+- Keep every beat ≤ 6s; B1 must work as a self-contained hook.
 
 ## Claims to verify before paid spend
 
-- "8+ hours a week, for months" — find citable source (or soften to "hours every week").
-- Stat-stack numbers (47/12/5/1) — replace with real user numbers or mark as illustrative.
+- "Hundreds of hours" — find citable source or soften to "hours every week".
 
-## Nick's draft v1 (verbatim, for reference)
+## Archive: Nick's draft v1 (verbatim)
 
 There's a lot of busy work when it comes to getting a job. Finding the job, writing the cover letter, resume, emailing and networking, and even applying to the job. Experts say the average person in the job hunt spends 8 hours a week minimum to land a competitive role and this can last for months.
 
