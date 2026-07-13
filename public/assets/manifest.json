@@ -673,6 +673,31 @@
       "model": "nano_banana_2 (16:9, 1k)",
       "job_id": "285696c4-638d-4ad2-a179-fb31df98548d",
       "prompt": "Realistic screen capture of a Gmail inbox in list view, completely filled with job application rejection emails. Every row is from a different company (use fictional company names like Meridian Capital, Northgate Consulting, Bluepeak Partners, Ashford & Co, Silverline Group, Harborview Advisory, Crestline Analytics, Vantage Point, Redwood Strategies, Ironbridge Partners) with subject lines like 'Update on your application', 'Your application to Meridian Capital', 'Thank you for your interest', 'Application Status', and visible preview text snippets reading 'Unfortunately, we have decided to move forward with other candidates...', 'We regret to inform you...', 'After careful consideration...', 'We received a large number of qualified applicants...'. At least 12 rows visible, dense and overwhelming. Clean modern email client UI, white background, left sidebar with Inbox (47) highlighted, crisp legible text, flat UI design, no people, 16:9 desktop screenshot look."
+    },
+    {
+      "filename": "assets/generated/gmail-rejections-browser-v1.png",
+      "kind": "image",
+      "description": "4K photo-style render: MacBook displaying Chrome + Gmail inbox where all ~17 rows are job rejections (Google, Meta, Goldman, Deloitte/Workday, McKinsey, Amazon, JPMorgan, Apple, Microsoft, Netflix, Salesforce...). Text mostly crisp; a few mid-list previews garbled. 5504x3072. Source for the cropped plate.",
+      "source": "higgsfield",
+      "model": "nano_banana_pro (4k, 16:9, text-to-image)",
+      "job_id": "3ef14672-5785-46fe-a3e4-59dc755bb431"
+    },
+    {
+      "filename": "assets/generated/gmail-rejections-browser-crop-v1.png",
+      "kind": "image",
+      "description": "Browser-window-only 16:9 crop (4760x2677) of gmail-rejections-browser-v1.png — clean full-Chrome Gmail rejection inbox plate. Used in trueview 'rejection-inbox' scene with Remotion kenBurns push-in + 'For no response.' word pops.",
+      "source": "higgsfield",
+      "model": "nano_banana_pro + ffmpeg crop",
+      "job_id": "3ef14672-5785-46fe-a3e4-59dc755bb431"
+    },
+    {
+      "filename": "assets/generated/gmail-rejections-scroll-v1.mp4",
+      "kind": "video",
+      "description": "REJECTED take: kling3_0_turbo scroll animation of the Gmail rejection inbox (start_image = crop). First ~2s fine, then scroll reveals AI-invented rows of text mush. 5s 1280x720. Do not use; kept for reference. Remotion kenBurns on the 4K still replaced it.",
+      "duration": 5.04,
+      "source": "higgsfield",
+      "model": "kling3_0_turbo (720p, 16:9, start_image)",
+      "job_id": "22648dbb-8eb5-4812-ad11-fa11d8449ee2"
     }
   ]
 }

@@ -48,13 +48,25 @@ export const trueViewPlan: EditPlan = {
       ],
     },
     {
-      // Higgsfield-generated rejection inbox (nano banana).
+      // 4K nano-banana Gmail-in-Chrome full of rejections; slow Remotion
+      // push-in (the AI scroll clip degraded into text mush and was rejected —
+      // see gmail-rejections-scroll-v1.mp4 manifest note).
       id: 'rejection-inbox',
       type: 'image',
-      src: 'assets/generated/rejection-inbox-v1.png',
-      durationSec: 3.5,
+      src: 'assets/generated/gmail-rejections-browser-crop-v1.png',
+      durationSec: 3,
       kenBurns: true,
       transitionIn: 'fade',
+      overlays: [
+        {
+          kind: 'hookText',
+          text: 'For no response.',
+          color: '#1E2D4D',
+          wordByWord: true,
+          sizeScale: 1.5,
+          startSec: 0.3,
+        },
+      ],
     },
   ],
 };
