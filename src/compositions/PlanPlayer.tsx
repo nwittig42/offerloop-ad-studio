@@ -4,15 +4,16 @@ import {
   Img,
   OffthreadVideo,
   Sequence,
-  Series,
   interpolate,
   staticFile,
   useCurrentFrame,
   useVideoConfig,
 } from 'remotion';
+import {TransitionSeries, linearTiming} from '@remotion/transitions';
+import {fade} from '@remotion/transitions/fade';
 import {colors, fonts} from '../../brand/theme';
 import type {EditPlan, Overlay, Scene} from '../plan/types';
-import {sceneDurationInFrames} from '../plan/timing';
+import {CROSSFADE_FRAMES, sceneDurationInFrames} from '../plan/timing';
 import {Captions} from '../components/Captions';
 import {EndCard} from '../components/EndCard';
 import {HookText} from '../components/HookText';
@@ -209,22 +210,36 @@ export const PlanPlayer: React.FC<{plan: EditPlan}> = ({plan}) => {
   const {fps} = useVideoConfig();
   return (
     <AbsoluteFill style={{backgroundColor: colors.secondaryDark}}>
-      <Series>
-        {plan.scenes.map((scene) => {
+      <TransitionSeries>
+        {plan.scenes.flatMap((scene, index) => {
           const frames = sceneDurationInFrames(scene, fps);
-          return (
-            <Series.Sequence key={scene.id} durationInFrames={frames}>
-              <FadeIn enabled={scene.transitionIn === 'fade'}>
+          // 'fade' on a non-first scene = true crossfade with the previous
+          // scene (no dip to the stage background); on the first scene it's a
+          // fade up from the stage.
+          const crossfade = index > 0 && scene.transitionIn === 'fade';
+          const sequence = (
+            <TransitionSeries.Sequence key={scene.id} durationInFrames={frames}>
+              <FadeIn enabled={index === 0 && scene.transitionIn === 'fade'}>
                 <SceneContent scene={scene} />
                 {scene.overlays?.map((overlay, i) => (
                   <OverlayRenderer key={i} overlay={overlay} sceneFrames={frames} />
                 ))}
                 {scene.captions ? <Captions cues={scene.captions} /> : null}
               </FadeIn>
-            </Series.Sequence>
+            </TransitionSeries.Sequence>
           );
+          return crossfade
+            ? [
+                <TransitionSeries.Transition
+                  key={`${scene.id}-x`}
+                  presentation={fade()}
+                  timing={linearTiming({durationInFrames: CROSSFADE_FRAMES})}
+                />,
+                sequence,
+              ]
+            : [sequence];
         })}
-      </Series>
+      </TransitionSeries>
       <PlanAudio plan={plan} />
     </AbsoluteFill>
   );
