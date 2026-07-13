@@ -1,8 +1,8 @@
-# Meta Ad — Script v3 (narrated, PostSyncer-style)
+# Meta Ad — Script v4 (silent, type-driven, PostSyncer-style)
 
-**Status:** Approved by Nick 2026-07-13. Supersedes v2 (kinetic-type-only version, see git history).
+**Status:** v4 per Nick 2026-07-13: VO removed entirely; opening line changed to "Getting a job is a full-time job in itself." VO lines below are kept as the source for on-screen type only.
 **Format:** Master at 16:9 (~60s), cut down to 4:5 / 9:16 / 1:1 for Meta.
-**Sound:** Nick's VO throughout + kinetic on-screen type punching key words (works muted).
+**Sound:** No narration. Kinetic on-screen type carries the story (music bed optional, added later as a plan audio track).
 **Storyboard:** `plans/storyboards/meta-ad.json` (view with `npm run storyboard`).
 **Product footage:** `assets/generated/Offerloop Pricing Student Plans for College Networking 13 July 2026.mp4` (content-area crop; see manifest for shot map).
 **Still needed from Nick:** VO recording of all lines; desk timelapse (B3); founder piece to camera (B9a); laptop close + golden-hour walk-out (B9b).
@@ -11,11 +11,10 @@
 
 ## Act 1: The busywork (0:00 to 0:16)
 
-**B1 (0:00 to 0:04)**
-VO: "There's a lot of busy work when it comes to getting a job."
-Type: **busy work** stamps in.
-Visual: clean browser cold open, then tabs spawn fast: LinkedIn Jobs, Google Sheets "Job Tracker, 213 rows", ChatGPT "write a cover letter for...", Gmail. Cursor darts, tabs shrink as they multiply.
-Source: Remotion mock browser component.
+**B1 (0:00 to 0:06)**
+Type (cold open, nothing else on screen): **Getting a job** / **is a *full-time job* in itself.** — "full-time job" in primary blue.
+Visual: the line holds alone on brand background for ~2s, then glides to the top as the browser window slams in from below and tabs spawn fast: LinkedIn Jobs, Google Sheets "Job Tracker", ChatGPT cover letter, Gmail. The chaos is the proof of the claim.
+Source: Remotion mock browser component (`browserTabsPain`).
 
 **B2 (0:04 to 0:10)**
 VO: "Finding the job, writing the resume, the cover letter, networking, and even applying to it."

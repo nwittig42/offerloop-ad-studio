@@ -14,41 +14,58 @@ const TABS = [
 const INK = colors.ink;
 const GRAYTXT = '#6B7385';
 
-/** "Endless tabs…" pain shot: browser chrome, tabs popping in one by one. */
+// Cold open: the claim lands alone, then the browser slams in as the proof.
+const BROWSER_IN = 55; // frame the browser window enters
+
+/** Opening shot: "Getting a job is a full-time job in itself." → tab chaos. */
 export const BrowserTabsPain: React.FC = () => {
   const frame = useCurrentFrame();
   const {fps} = useVideoConfig();
-  const headIn = spring({frame, fps, config: {damping: 200}});
+  const line1In = spring({frame, fps, config: {damping: 200}});
+  const line2In = spring({frame: frame - 14, fps, config: {damping: 200, stiffness: 130}});
+  // headline glides from center stage to the top as the browser enters
+  const settle = spring({frame: frame - BROWSER_IN, fps, config: {damping: 200}});
+  const headTop = interpolate(settle, [0, 1], [360, 56]);
+  const headScale = interpolate(settle, [0, 1], [1, 0.62]);
+  const browserIn = spring({frame: frame - BROWSER_IN - 6, fps, config: {damping: 200, stiffness: 90}});
+  const tabFrame = frame - BROWSER_IN - 14; // tabs start after the window lands
 
   return (
     <MockStage backgroundColor={colors.background}>
       <div
         style={{
           position: 'absolute',
-          top: 70,
+          top: headTop,
           width: '100%',
           textAlign: 'center',
           fontFamily: fonts.body,
           fontWeight: 700,
-          fontSize: 76,
           color: INK,
-          opacity: headIn,
+          transform: `scale(${headScale})`,
+          transformOrigin: 'center top',
         }}
       >
-        So much busy work…
+        <div style={{fontSize: 110, opacity: line1In, transform: `translateY(${(1 - line1In) * 30}px)`}}>
+          Getting a job
+        </div>
+        <div style={{fontSize: 110, opacity: Math.max(0, line2In), transform: `translateY(${(1 - Math.max(0, line2In)) * 30}px)`}}>
+          is a <span style={{color: colors.primary}}>full-time job</span> in itself.
+        </div>
       </div>
 
       <div
         style={{
           position: 'absolute',
           left: 80,
-          top: 210,
+          top: 300,
           width: 1760,
           height: 830,
           background: '#fff',
           borderRadius: 18,
           boxShadow: '0 16px 48px rgba(18,31,64,0.18)',
           overflow: 'hidden',
+          opacity: Math.max(0, browserIn),
+          transform: `translateY(${(1 - Math.max(0, browserIn)) * 400}px)`,
         }}
       >
         {/* tab bar */}
@@ -68,7 +85,7 @@ export const BrowserTabsPain: React.FC = () => {
             />
           ))}
           {TABS.map((label, i) => {
-            const pop = spring({frame: frame - 8 - i * 7, fps, config: {damping: 200, stiffness: 160}});
+            const pop = spring({frame: tabFrame - i * 7, fps, config: {damping: 200, stiffness: 160}});
             return (
               <div
                 key={label}
@@ -120,7 +137,7 @@ export const BrowserTabsPain: React.FC = () => {
         </div>
         {/* job list skeleton */}
         {Array.from({length: 5}, (_, i) => {
-          const rowIn = interpolate(frame - 10 - i * 3, [0, 10], [0, 1], {
+          const rowIn = interpolate(tabFrame - 2 - i * 3, [0, 10], [0, 1], {
             extrapolateLeft: 'clamp',
             extrapolateRight: 'clamp',
           });
