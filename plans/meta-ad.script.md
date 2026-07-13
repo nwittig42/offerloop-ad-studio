@@ -16,15 +16,15 @@ Type (cold open, nothing else on screen): **Getting a job** / **is a *full-time 
 Visual: the line holds alone on brand background for ~2s, then glides to the top as the browser window slams in from below and tabs spawn fast: LinkedIn Jobs, Google Sheets "Job Tracker", ChatGPT cover letter, Gmail. The chaos is the proof of the claim.
 Source: Remotion mock browser component (`browserTabsPain`).
 
-**B2 (0:04 to 0:10)**
-VO: "Finding the job, writing the resume, the cover letter, networking, and even applying to it."
-Visual: rapid-fire, one idea per shot, ~1s each, each word stamping as type:
-- **Finding**: job board doomscroll
-- **Resume**: save dialog for `resume-v7-FINAL-final.docx`
-- **Cover letter**: ChatGPT regenerating yet again
-- **Networking**: LinkedIn Connect clicks piling up
-- **Applying**: a Workday login page
-Source: Remotion mocks.
+**B2 (0:06 to 0:11) — busywork tab montage**
+Rapid-fire montage inside one browser window, PostSyncer tab feel: the active tab jumps on every HARD cut (no fades), ~1.25s per tab, ~5s total. The feeling is overwhelm.
+1. **Job board** — fast doomscroll down a listings page, roles flying by (Higgsfield-generated page capture, Remotion scroll).
+2. **Networking tracker — Google Sheets** — endless downward scroll: names, companies, status, last contacted; it never ends (Remotion-built sheet).
+3. **LinkedIn profile** — fully populated profile, quick hunt-for-a-contact scan (Higgsfield-generated capture, Remotion pan).
+4. **ChatGPT** — the same cold email re-prompted over and over, "Draft 8 · still not right", Regenerate flashing (Remotion typing loop).
+
+**B2b (0:11 to 0:13) — land the joke** *(Nick films)*
+Live action: Nick at the desk, head hitting the table while the ChatGPT rewrite grinds on screen. Placeholder title in the plan until footage lands in `assets/recordings/`.
 
 **B3 (0:10 to 0:16)**
 VO: "Hundreds of hours wasted on boring, repetitive work to get that offer."

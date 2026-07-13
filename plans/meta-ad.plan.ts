@@ -35,15 +35,23 @@ export const metaAdPlan: EditPlan = {
       durationSec: 6,
     },
     {
-      // TODO replace with dedicated busywork-montage mock (5 micro-shots).
+      // Rapid-fire tab montage: job board doomscroll → endless tracker sheet
+      // → LinkedIn profile scan → ChatGPT cold-email regenerate loop. Hard
+      // cuts, ~1.25s per tab.
       id: 'b2-busywork',
       type: 'mockup',
-      component: 'rejectionsPain',
-      durationSec: 7.2,
-      overlays: [
-        {kind: 'hookText', text: 'Resume. Cover letter. Networking.', startSec: 1.2, endSec: 4.2},
-        {kind: 'hookText', text: 'And the application itself.', startSec: 4.2, endSec: 7.0},
-      ],
+      component: 'busyworkMontage',
+      durationSec: 5,
+    },
+    {
+      // PLACEHOLDER — Nick films: head on the desk while ChatGPT grinds
+      // another rewrite. Drop into assets/recordings/ and swap this scene
+      // for a video scene.
+      id: 'b2b-headdesk',
+      type: 'title',
+      durationSec: 2,
+      title: '[Nick films: head on desk,',
+      subtitle: 'ChatGPT rewrite grinding on the screen]',
     },
     {
       id: 'b3-hours',

@@ -1,6 +1,24 @@
 {
   "assets": [
     {
+      "filename": "assets/generated/jobboard-scroll-tall.png",
+      "kind": "image",
+      "description": "Tall job-board listings page capture (14+ entry-level role cards, salary chips, Easy Apply buttons), 1536x2752 — scrolled fast by the busyworkMontage mock, beat 1",
+      "source": "higgsfield",
+      "model": "nano_banana_pro (9:16, 2k)",
+      "job_id": "bb455fd7-7078-4898-8348-0c1558069143",
+      "prompt": "Clean full-page screenshot of a modern job board website, tall vertical page capture. Long list of at least 14 job listing cards..."
+    },
+    {
+      "filename": "assets/generated/linkedin-profile-tall.png",
+      "kind": "image",
+      "description": "Tall LinkedIn-style profile capture (Marcus Webb, IB Analyst at Marshall Wace, USC '23; About/Experience/Education sections), 1536x2752 — panned by the busyworkMontage mock, beat 3",
+      "source": "higgsfield",
+      "model": "nano_banana_pro (9:16, 2k)",
+      "job_id": "4291a694-8ca7-409d-904f-eb7ec97432c7",
+      "prompt": "Clean full-page screenshot of a professional networking site profile page, LinkedIn-style layout, tall vertical capture..."
+    },
+    {
       "filename": "assets/generated/yeti-couch-swiping-v3.mp4",
       "kind": "video",
       "description": "V3 of the yeti couch shot: same wide framing as v2, but with active Tinder-style swiping as the main action — thumb visibly drags cards, cards transition one by one, red-X/blue-send button row visible. App UI is Offerloop-like but not a pixel-perfect copy of the recording (fine blurred; check before using sharp). 10s 1920x1080 silent.",
