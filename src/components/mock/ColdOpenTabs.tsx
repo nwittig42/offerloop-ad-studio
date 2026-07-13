@@ -72,7 +72,7 @@ export const ColdOpenTabs: React.FC = () => {
       >
         <Sequence from={WINDOW_IN + 6} layout="none">
           <OffthreadVideo
-            src={staticFile('assets/generated/Google Chrome.mp4')}
+            src={staticFile('assets/generated/chrome-tabs-cinematic-v1.mp4')}
             muted
             style={{width: '100%', height: '100%', objectFit: 'cover'}}
           />

@@ -698,6 +698,15 @@
       "source": "higgsfield",
       "model": "kling3_0_turbo (720p, 16:9, start_image)",
       "job_id": "22648dbb-8eb5-4812-ad11-fa11d8449ee2"
+    },
+    {
+      "filename": "assets/generated/chrome-tabs-cinematic-v1.mp4",
+      "kind": "video",
+      "description": "Higgsfield remake of Nick's real Chrome tab-switching recording (video reference = Google Chrome.mp4): same tabs and page order (Giovanna Hughes LinkedIn, ChatGPT outreach draft, Teacher Outreach sheet, LinkedIn Jobs, Workday sign-in) with smooth cinematic tab transitions, gliding oversized cursor, motion-blur pans between pages. Text crisp on settled pages. Used inside ColdOpenTabs component (original recording kept as fallback). 5s 1920x1080.",
+      "duration": 5.06,
+      "source": "higgsfield",
+      "model": "seedance_2_0 (std, 1080p, 16:9; video_references = Google Chrome.mp4)",
+      "job_id": "49a84ac3-da9f-4683-9350-4651fd4ad4cd"
     }
   ]
 }
