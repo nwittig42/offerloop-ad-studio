@@ -67,5 +67,52 @@ export const trueViewPlan: EditPlan = {
         },
       ],
     },
+
+    // ---- ACT 2: the turn ----
+    {
+      // Record scratch. HARD CUT (no fade on purpose) from the rejection
+      // inbox to a dark screen. Censored for ad review; Nick's VO says it
+      // uncensored if the organic cut ever gets narration.
+      id: 'f-that',
+      type: 'title',
+      durationSec: 1.2,
+      title: 'F*** that.',
+    },
+    {
+      // Cinematic real-UI dashboard shot carries both turn lines.
+      id: 'turn-scout',
+      type: 'video',
+      src: 'assets/generated/offerloop-ui-dashboard-cinematic-v1.mp4',
+      durationSec: 5,
+      muted: true,
+      fit: 'cover',
+      transitionIn: 'fade',
+      overlays: [
+        {
+          kind: 'hookText',
+          text: 'Just let Scout take care of it.',
+          startSec: 0.3,
+          endSec: 2.5,
+          position: 'bottom',
+        },
+        {
+          kind: 'hookText',
+          text: 'A fully autonomous assistant that handles all your networking and job-search busywork.',
+          wordByWord: true,
+          sizeScale: 0.75,
+          startSec: 2.7,
+          endSec: 5,
+          position: 'bottom',
+        },
+      ],
+    },
+    {
+      // Tee up Act 3 (proof beats).
+      id: 'how-it-works',
+      type: 'title',
+      durationSec: 1.5,
+      transitionIn: 'fade',
+      title: 'So how does it work?',
+    },
   ],
 };
