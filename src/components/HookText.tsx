@@ -1,7 +1,7 @@
 import {AbsoluteFill, interpolate, spring, useCurrentFrame, useVideoConfig} from 'remotion';
 import {colors, fonts} from '../../brand/theme';
 
-const WORD_STAGGER_FRAMES = 6;
+const WORD_STAGGER_FRAMES = 4;
 
 const TYPE_FRAMES_PER_CHAR = 3;
 

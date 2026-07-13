@@ -14,26 +14,25 @@ export const trueViewPlan: EditPlan = {
   scenes: [
     {
       // Combined cold open: "Getting a job is a full-time job in itself."
-      // holds center, then glides to the top while Nick's REAL Chrome
-      // recording (LinkedIn → ChatGPT → Sheets → LinkedIn Jobs) slides in
-      // from below as a framed window — the mock's transition, real pixels.
-      // Window lands ~2.2s; word pops ride the real tab switches after that.
+      // holds center, glides to the top as the real Chrome window slides in,
+      // then FADES OUT and Network/Track/Apply/Repeat pop in its place at the
+      // top. Window lands ~1.5s; pacing tightened across the board.
       id: 'cold-open-tabs',
       type: 'mockup',
       component: 'coldOpenTabs',
-      durationSec: 6.6,
+      durationSec: 5.2,
       overlays: [
-        {kind: 'hookText', text: 'Network.', color: '#1E2D4D', sizeScale: 1.5, startSec: 2.4, endSec: 3.6},
-        {kind: 'hookText', text: 'Track.', color: '#1E2D4D', sizeScale: 1.5, startSec: 3.7, endSec: 4.7},
-        {kind: 'hookText', text: 'Apply.', color: '#1E2D4D', sizeScale: 1.5, startSec: 4.8, endSec: 5.7},
-        {kind: 'hookText', text: 'Repeat.', color: '#1E2D4D', sizeScale: 1.5, startSec: 5.8, endSec: 6.6},
+        {kind: 'hookText', text: 'Network.', color: '#1E2D4D', sizeScale: 1.5, position: 'top', startSec: 1.7, endSec: 2.5},
+        {kind: 'hookText', text: 'Track.', color: '#1E2D4D', sizeScale: 1.5, position: 'top', startSec: 2.6, endSec: 3.4},
+        {kind: 'hookText', text: 'Apply.', color: '#1E2D4D', sizeScale: 1.5, position: 'top', startSec: 3.5, endSec: 4.3},
+        {kind: 'hookText', text: 'Repeat.', color: '#1E2D4D', sizeScale: 1.5, position: 'top', startSec: 4.4, endSec: 5.2},
       ],
     },
     {
       id: 'hundreds-of-hours',
       type: 'video',
       src: 'assets/generated/nick-desk-timelapse-v1.mp4',
-      durationSec: 3,
+      durationSec: 2.4,
       muted: true,
       fit: 'cover',
       blur: 7,
@@ -54,7 +53,7 @@ export const trueViewPlan: EditPlan = {
       id: 'rejection-inbox',
       type: 'image',
       src: 'assets/generated/gmail-rejections-browser-crop-v1.png',
-      durationSec: 3,
+      durationSec: 2.4,
       kenBurns: true,
       transitionIn: 'fade',
       overlays: [

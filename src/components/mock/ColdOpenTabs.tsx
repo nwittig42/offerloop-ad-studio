@@ -12,17 +12,23 @@ import {MockStage} from './MockStage';
 
 // TrueView cold open: the claim lands alone, then glides to the top while the
 // REAL Chrome recording (not a mock) slides in from below as a framed window.
-const WINDOW_IN = 55; // frame the recording window enters (matches old mock feel)
+const WINDOW_IN = 38; // frame the recording window enters (tightened pacing)
+const HEADLINE_OUT = WINDOW_IN + 8; // headline hands the top spot to the word pops
 
 export const ColdOpenTabs: React.FC = () => {
   const frame = useCurrentFrame();
   const {fps} = useVideoConfig();
   const line1In = spring({frame, fps, config: {damping: 200}});
-  const line2In = spring({frame: frame - 14, fps, config: {damping: 200, stiffness: 130}});
-  // headline glides from center stage to the top as the window enters
+  const line2In = spring({frame: frame - 10, fps, config: {damping: 200, stiffness: 130}});
+  // headline glides from center stage to the top as the window enters,
+  // then fades out so the Network/Track/Apply/Repeat pops own the top spot
   const settle = spring({frame: frame - WINDOW_IN, fps, config: {damping: 200}});
   const headTop = interpolate(settle, [0, 1], [360, 56]);
   const headScale = interpolate(settle, [0, 1], [1, 0.62]);
+  const headOut = interpolate(frame, [HEADLINE_OUT, HEADLINE_OUT + 10], [1, 0], {
+    extrapolateLeft: 'clamp',
+    extrapolateRight: 'clamp',
+  });
   const windowIn = spring({frame: frame - WINDOW_IN - 6, fps, config: {damping: 200, stiffness: 90}});
 
   return (
@@ -36,6 +42,7 @@ export const ColdOpenTabs: React.FC = () => {
           fontFamily: fonts.body,
           fontWeight: 700,
           color: colors.ink,
+          opacity: headOut,
           transform: `scale(${headScale})`,
           transformOrigin: 'center top',
         }}
