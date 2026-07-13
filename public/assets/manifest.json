@@ -817,6 +817,67 @@
       "model": "kling3_0_turbo (720p, start_image)",
       "job_id": "d0160e56-ad7d-483c-90fd-27a7b9498ae6",
       "duration": 5.0
+    },
+    {
+      "filename": "assets/recordings/scout-typing-real.mp4",
+      "kind": "recording",
+      "description": "Nick's real capture: typing 'Apply to 15 jobs that a Product Management Roles in San Francisco at tech c...' into the live dashboard prompt box, floating Chrome window on blue desktop. 28.6s 1748x1080. Content reference for the cinematic OTS typing beat.",
+      "duration": 28.63,
+      "source": "dropped"
+    },
+    {
+      "filename": "assets/generated/scout-cine-1-typing-ots.mp4",
+      "kind": "video",
+      "description": "CINEMATIC beat 1: over-the-shoulder night shot, hands typing on laptop, real dashboard on screen ('What should we work on today?' crisp, 'Apply to jobs tha|' typing), shallow DOF. Some small invented UI clutter at angle (unreadable, reads as DOF). video ref = scout-typing-real.mp4. 6s 1080p.",
+      "duration": 6.0,
+      "source": "higgsfield",
+      "model": "seedance_2_0 (std, 1080p, 16:9)",
+      "job_id": "07ebacb0-1036-4193-aeea-a1b39204b147"
+    },
+    {
+      "filename": "assets/generated/scout-cine-2-responding.mp4",
+      "kind": "video",
+      "description": "REJECTED take: cinematic close-up of Scout reply card had a garbled second line ('Caii Sout'). Replaced by v2.",
+      "duration": 5.0,
+      "source": "higgsfield",
+      "model": "seedance_2_0 (std, 1080p, 16:9)",
+      "job_id": "a9654b80-534e-4754-abd5-359590e4cdfd"
+    },
+    {
+      "filename": "assets/generated/scout-cine-2-responding-v2.mp4",
+      "kind": "video",
+      "description": "CINEMATIC beat 2: single floating Scout reply card ('On it — finding roles and applying…' + spinner + progress bar) in navy warp-particle space, slow drift. Clean. 5s 1080p.",
+      "duration": 5.0,
+      "source": "higgsfield",
+      "model": "seedance_2_0 (std, 1080p, 16:9)",
+      "job_id": "f9e07f78-3ad1-4bd7-87d9-ad1c26304c6d"
+    },
+    {
+      "filename": "assets/generated/scout-cine-3-applications.mp4",
+      "kind": "video",
+      "description": "CINEMATIC beat 3: applications table as glowing tablet panel, rows + green 'applied ✓' pills popping in. Top rows crisp; some lower-row garble in vignette. First take flagged nsfw (false positive), reworded prompt passed. 5s 1080p.",
+      "duration": 5.0,
+      "source": "higgsfield",
+      "model": "seedance_2_0 (std, 1080p, 16:9)",
+      "job_id": "6c616b77-317a-43f9-ac3e-2487480fe469"
+    },
+    {
+      "filename": "assets/generated/scout-cine-4-network.mp4",
+      "kind": "video",
+      "description": "CINEMATIC beat 4: professional network constellation — glowing blue lines connecting dozens of circular headshot avatars in dark navy space, emails traveling outward. The money shot. 6s 1080p.",
+      "duration": 6.0,
+      "source": "higgsfield",
+      "model": "seedance_2_0 (std, 1080p, 16:9)",
+      "job_id": "d99fbe03-363e-4b46-b8c4-d59a7206fad2"
+    },
+    {
+      "filename": "assets/generated/scout-cine-5-drafts.mp4",
+      "kind": "video",
+      "description": "CINEMATIC beat 5: Gmail drafts at steep cinematic angle, push across 'Quick coffee chat?' rows (Sarah Kim/Stripe etc. crisp up front, garble in deep DOF background). 5s 1080p.",
+      "duration": 5.0,
+      "source": "higgsfield",
+      "model": "seedance_2_0 (std, 1080p, 16:9)",
+      "job_id": "606b907c-dbeb-4254-9c4a-4d6f06828ecc"
     }
   ]
 }

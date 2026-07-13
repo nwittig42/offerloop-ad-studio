@@ -119,73 +119,64 @@ export const trueViewPlan: EditPlan = {
       title: 'So how does it work?',
     },
 
-    // ---- ACT 3: Scout demo (stills-first Higgsfield builds on real UI) ----
-    // Hard cuts between demo beats on purpose: reads like real app navigation.
-    // AI clips are trimmed to their clean windows (they invent text later on).
+    // ---- ACT 3: cinematic Scout walkthrough (Nick's brief 2026-07-13) ----
+    // Crossfades between beats; this is the reveal, so it breathes slightly
+    // more than the intro montage. Content anchored to real footage/UI refs.
     {
-      // Cursor glides up and clicks into the dashboard prompt box.
-      id: 'demo-open-chat',
+      // Beat 1: over-the-shoulder typing shot (video ref = Nick's real
+      // typing capture assets/recordings/scout-typing-real.mp4).
+      id: 'cine-typing',
       type: 'video',
-      src: 'assets/generated/scout-demo-0-open-chat.mp4',
-      durationSec: 2.2,
+      src: 'assets/generated/scout-cine-1-typing-ots.mp4',
+      durationSec: 4.5,
       muted: true,
       fit: 'cover',
       transitionIn: 'fade',
     },
     {
-      // Remotion typewriter over the crisp still (AI typing overran to junk).
-      id: 'demo-typing',
-      type: 'mockup',
-      component: 'scoutTypingIntro',
-      durationSec: 2.2,
-    },
-    {
-      id: 'demo-prompt-apply',
+      // Beat 2: Scout responds — floating reply card, warp-particle space.
+      id: 'cine-responding',
       type: 'video',
-      src: 'assets/generated/scout-demo-1-prompt-apply.mp4',
-      durationSec: 2,
+      src: 'assets/generated/scout-cine-2-responding-v2.mp4',
+      durationSec: 3,
       muted: true,
       fit: 'cover',
+      transitionIn: 'fade',
     },
     {
-      id: 'demo-done-view',
+      // Beat 3: applications landing, rows + applied ✓ pills popping in.
+      id: 'cine-applications',
       type: 'video',
-      src: 'assets/generated/scout-demo-2-done-view.mp4',
-      durationSec: 2,
+      src: 'assets/generated/scout-cine-3-applications.mp4',
+      durationSec: 4,
       muted: true,
       fit: 'cover',
+      transitionIn: 'fade',
     },
     {
-      id: 'demo-applications',
-      type: 'image',
-      src: 'assets/generated/scout-demo-3-applications.png',
-      durationSec: 2,
-      kenBurns: true,
-    },
-    {
-      // Second ask + contacts surfacing (clip clean through ~2s only).
-      id: 'demo-contacts',
+      // Beat 4: outreach going out — the network lighting up.
+      id: 'cine-network',
       type: 'video',
-      src: 'assets/generated/scout-demo-4b-contacts.mp4',
-      durationSec: 2,
+      src: 'assets/generated/scout-cine-4-network.mp4',
+      durationSec: 4.5,
       muted: true,
       fit: 'cover',
-    },
-    {
-      id: 'demo-gmail-drafts',
-      type: 'image',
-      src: 'assets/generated/scout-demo-5-gmail-drafts.png',
-      durationSec: 2.2,
-      kenBurns: true,
+      transitionIn: 'fade',
       overlays: [
-        {
-          kind: 'hookText',
-          text: '45 drafts. Ready to send.',
-          color: '#1E2D4D',
-          sizeScale: 1.2,
-          startSec: 0.5,
-          position: 'bottom',
-        },
+        {kind: 'hookText', text: '45 people. Emailed.', startSec: 2.6, endSec: 4.5},
+      ],
+    },
+    {
+      // Beat 5: proof in the inbox — Gmail drafts, the receipts.
+      id: 'cine-drafts',
+      type: 'video',
+      src: 'assets/generated/scout-cine-5-drafts.mp4',
+      durationSec: 4,
+      muted: true,
+      fit: 'cover',
+      transitionIn: 'fade',
+      overlays: [
+        {kind: 'hookText', text: 'The receipts.', startSec: 2.4, endSec: 4, position: 'bottom'},
       ],
     },
   ],
