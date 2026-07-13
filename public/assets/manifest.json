@@ -595,6 +595,13 @@
       "description": "Nick's Loom-style walkthrough of the real offerloop.ai product (243s 1240x720 30fps, narrated, webcam bubble bottom-left, personal browser tabs visible). Coverage: dashboard 'What should we work on today?' + Scout task cards (~0-15s), Ask Scout chat 'Find 10 people at Google that are USC alumni' (~16s), My Network people/companies/hiring-managers table (~32s), Inbox with pipeline stages + recommended reply (~60s), 'Who do you want to meet?' search (~120s), search result -> Draft 1 email -> 'Placing drafts in your Gmail' (~180s), Resume Workshop live PDF preview + Tailor to a job (~230s). Use with content-area crop (avoid webcam bubble + browser chrome) for meta-ad beats B6-B8.",
       "duration": 242.97,
       "source": "dropped"
+    },
+    {
+      "filename": "assets/recordings/TKE.m4a",
+      "kind": "audio",
+      "description": "Nick's meta-ad VO take 1 (47.4s, mono 48kHz AAC). Off-script improvements kept: 'especially now in this job market, it's rough' (B1), 'Fuck that.' record-scratch beat at 20.4-20.8s (PROFANITY: paid-Meta risk, pickup planned), 'pain in the ass' (B2). B8 has no trailing 'Done.'. Slice map (sec): B1 0.7-6.3, B2 6.3-13.1, B3 14.6-19.4, B3.5 20.4-20.8, B4 21.6-23.7, B6 25.1-26.8, B7 27.5-30.2, B8 30.8-36.5, B9 37.0-43.7, B10 44.7-46.0, B11 46.0-46.7. Transcribed with whisper-cpp base.en.",
+      "duration": 47.42,
+      "source": "dropped"
     }
   ]
 }

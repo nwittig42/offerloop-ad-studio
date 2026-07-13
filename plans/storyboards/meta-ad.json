@@ -5,36 +5,36 @@
       "title": "B1 Hook: endless tabs",
       "asset": "",
       "description": "Mock browser, tabs spawn fast: LinkedIn Jobs, Google Sheets job tracker, ChatGPT cover letter, Gmail. Cursor darts. Type: 'busy work'. [Remotion mock browser]",
-      "vo": "There's a lot of busy work when it comes to getting a job.",
-      "durationSec": 4,
-      "notes": "Remotion. Must work as standalone hook for cutdowns."
+      "vo": "There's a lot of busy work when it comes to getting a job, especially now in this job market. It's rough.",
+      "durationSec": 6.0,
+      "notes": "Remotion. Must work as standalone hook for cutdowns. | VO 0.7-6.3 | audio: assets/recordings/TKE.m4a"
     },
     {
       "id": "b2",
       "title": "B2 Busywork montage",
       "asset": "",
       "description": "One idea per shot ~1s: Finding=job board doomscroll · Resume=resume-v7-FINAL-final.docx save dialog · Cover letter=ChatGPT regenerating · Networking=LinkedIn Connect clicks · Applying=Workday login. Word stamps each shot. [Remotion mocks]",
-      "vo": "Finding the job, writing the resume, the cover letter, networking, and even applying to it.",
-      "durationSec": 6,
-      "notes": "Remotion."
+      "vo": "You have to find the job, write the resume, the cover letter, network with people in the office, and even applying to it is a huge pain in the ass.",
+      "durationSec": 7.0,
+      "notes": "Remotion. | VO 6.3-13.1 | audio: assets/recordings/TKE.m4a"
     },
     {
       "id": "b3",
       "title": "B3 Hundreds of hours",
       "asset": "",
       "description": "Nick desk timelapse day-to-night, coffee cups pile up. Insert: iOS screen-time card (LinkedIn 11h · Sheets 6h · ChatGPT 9h). Big type: 'Hundreds of hours.'",
-      "vo": "Hundreds of hours wasted on boring, repetitive work to get that offer.",
-      "durationSec": 6,
-      "notes": "NICK FILMS timelapse. Screen-time card Remotion."
+      "vo": "Hundreds of hours are wasted on boring, repetitive work just to get that one offer.",
+      "durationSec": 5.0,
+      "notes": "NICK FILMS timelapse. Screen-time card Remotion. | VO 14.6-19.4 | audio: assets/recordings/TKE.m4a"
     },
     {
       "id": "b4",
       "title": "B4 Turn: let Scout take over",
       "asset": "",
       "description": "All tabs/sheets/docs sweep off screen leaving one clean Offerloop window on #F5F6F8. Beat of calm.",
-      "vo": "Instead, let Scout take care of it.",
-      "durationSec": 4,
-      "notes": "Remotion."
+      "vo": "Fuck that. Instead, let Scout take care of all of it.",
+      "durationSec": 4.0,
+      "notes": "Remotion. | VO 20.4-20.8 ('Fuck that.' record-scratch, bleep for paid) + 21.6-23.7 | audio: assets/recordings/TKE.m4a"
     },
     {
       "id": "b5",
@@ -42,44 +42,44 @@
       "asset": "assets/figma/offerloop-wordmark.svg",
       "description": "Wordmark assembles letter by letter, hero line: Search. Reach out. Get hired.",
       "vo": "",
-      "durationSec": 4,
-      "notes": "Music swell, no VO. Remotion."
+      "durationSec": 3.0,
+      "notes": "Music swell, no VO. Remotion. | music swell, no VO | audio: assets/recordings/TKE.m4a"
     },
     {
       "id": "b6",
       "title": "B6 Apply: ON IT",
       "asset": "assets/generated/Offerloop Pricing Student Plans for College Networking 13 July 2026.mp4",
       "description": "Tilted 3D product UI, job card swipe right, green stamp ON IT. Crop content area (avoid webcam bubble).",
-      "vo": "Need to apply to something? On it.",
-      "durationSec": 7,
-      "notes": "Footage: Job Board/Applications sections; fallback Remotion mock."
+      "vo": "You need to apply to something? Done.",
+      "durationSec": 3.0,
+      "notes": "Footage: Job Board/Applications sections; fallback Remotion mock. | VO 25.1-26.8 | audio: assets/recordings/TKE.m4a"
     },
     {
       "id": "b7",
       "title": "B7 Find & email people: DONE",
       "asset": "assets/generated/Offerloop Pricing Student Plans for College Networking 13 July 2026.mp4",
       "description": "'Who do you want to meet?' search types itself (Auditor at EY in Portland), 1 person found, Draft 1 email, 'Placing drafts in your Gmail...', stamp DONE (bigger).",
-      "vo": "Find and email people at a company? Done.",
-      "durationSec": 7,
-      "notes": "Footage ~120-185s. Strongest product beat."
+      "vo": "You need to find and email people in an office? Done.",
+      "durationSec": 3.5,
+      "notes": "Footage ~120-185s. Strongest product beat. | VO 27.5-30.2 | audio: assets/recordings/TKE.m4a"
     },
     {
       "id": "b8",
       "title": "B8 Hiring manager: DONE",
       "asset": "assets/generated/Offerloop Pricing Student Plans for College Networking 13 July 2026.mp4",
       "description": "My Network 'Hiring Managers 23' tab, contact card zooms, badge glints, Gmail draft sends, stamp DONE (screen-filling).",
-      "vo": "It'll even find the exact hiring manager for the position. Done.",
-      "durationSec": 6,
-      "notes": "Footage ~32s + ~60s; fallback Remotion mock."
+      "vo": "It'll even find the exact hiring manager for that position and email them introducing yourself.",
+      "durationSec": 6.0,
+      "notes": "Footage ~32s + ~60s; fallback Remotion mock. | VO 30.8-36.5, no trailing 'Done', visual stamp carries it | audio: assets/recordings/TKE.m4a"
     },
     {
       "id": "b9",
       "title": "B9 Founders",
       "asset": "",
       "description": "Nick to camera, lower-third 'Nick · cofounder'. On 'Now anyone can' cut to laptop close + golden-hour walk-out.",
-      "vo": "As college students, we built this for ourselves, to save time on the job search. Now anyone can land their dream job in a fraction of the time.",
-      "durationSec": 8,
-      "notes": "NICK FILMS both shots."
+      "vo": "As college students, we built this for ourselves to save time on the job search. Now anyone can land their dream job in a fraction of the time.",
+      "durationSec": 7.5,
+      "notes": "NICK FILMS both shots. | VO 37.0-43.7 | audio: assets/recordings/TKE.m4a"
     },
     {
       "id": "b10",
@@ -87,8 +87,8 @@
       "asset": "",
       "description": "Screen-time card returns: 'Job hunt: 40 min this week.' Optional timelapse reversing behind.",
       "vo": "Get your time back.",
-      "durationSec": 4,
-      "notes": "Remotion. Bookends B3."
+      "durationSec": 2.0,
+      "notes": "Remotion. Bookends B3. | VO 44.7-46.0 | audio: assets/recordings/TKE.m4a"
     },
     {
       "id": "b11",
@@ -96,10 +96,10 @@
       "asset": "assets/figma/offerloop-wordmark.svg",
       "description": "Wordmark + summit scout peeking + offerloop.ai. Fade out.",
       "vo": "Use Offerloop.",
-      "durationSec": 4,
-      "notes": "Remotion, existing Figma assets."
+      "durationSec": 3.0,
+      "notes": "Remotion, existing Figma assets. | VO 46.0-46.7, check for clipping; end card holds after | audio: assets/recordings/TKE.m4a"
     }
   ],
   "name": "meta-ad",
-  "updatedAt": "2026-07-13T17:44:08.202Z"
+  "updatedAt": "2026-07-13T18:02:58.027Z"
 }
