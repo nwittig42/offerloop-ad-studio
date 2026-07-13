@@ -657,6 +657,22 @@
       "source": "higgsfield",
       "model": "seedance_2_0 (std, 1080p, 16:9; image_references = cropped walkthrough UI frame)",
       "job_id": "0c3b6065-ca04-4dd7-a6a7-6f7e8b2e74b2"
+    },
+    {
+      "filename": "assets/generated/Google Chrome.mp4",
+      "kind": "recording",
+      "description": "Nick's real Chrome tab-cycling capture for the TrueView Act 1 busywork beat: LinkedIn profile (Giovanna Hughes) -> ChatGPT outreach draft -> Google Sheets networking tracker (marshall.usc.edu emails) -> LinkedIn Jobs listings -> motion-blur out. Tab switches at ~1.0s, ~1.5s, ~2.5s. 1860x1080 60fps, muted in plan.",
+      "duration": 4.43,
+      "source": "dropped"
+    },
+    {
+      "filename": "assets/generated/rejection-inbox-v1.png",
+      "kind": "image",
+      "description": "Gmail-style inbox filled with 15 rejection emails from fictional firms (Meridian Capital, Northgate Consulting, Bluepeak Partners...), preview snippets all 'Unfortunately...'/'We regret to inform you...'. Sidebar Inbox (47). Crisp legible text, clean flat UI. TrueView Act 1 'no response' beat. 1376x768.",
+      "source": "higgsfield",
+      "model": "nano_banana_2 (16:9, 1k)",
+      "job_id": "285696c4-638d-4ad2-a179-fb31df98548d",
+      "prompt": "Realistic screen capture of a Gmail inbox in list view, completely filled with job application rejection emails. Every row is from a different company (use fictional company names like Meridian Capital, Northgate Consulting, Bluepeak Partners, Ashford & Co, Silverline Group, Harborview Advisory, Crestline Analytics, Vantage Point, Redwood Strategies, Ironbridge Partners) with subject lines like 'Update on your application', 'Your application to Meridian Capital', 'Thank you for your interest', 'Application Status', and visible preview text snippets reading 'Unfortunately, we have decided to move forward with other candidates...', 'We regret to inform you...', 'After careful consideration...', 'We received a large number of qualified applicants...'. At least 12 rows visible, dense and overwhelming. Clean modern email client UI, white background, left sidebar with Inbox (47) highlighted, crisp legible text, flat UI design, no people, 16:9 desktop screenshot look."
     }
   ]
 }

@@ -5,10 +5,37 @@
       "id": "zb2fuv8",
       "title": "Cold open — full-time job",
       "asset": null,
-      "description": "Reused meta-ad B1: \"Getting a job / is a full-time job in itself.\" holds alone on brand background (~2s), then the browser slams in from below and chaos tabs spawn (LinkedIn Jobs, Sheets tracker, ChatGPT, Gmail). Silent — VO enters in a later scene.",
+      "description": "Meta-ad B1 kinetic type only: \"Getting a job / is a full-time job in itself.\" lands on brand background, hard cut before the mock browser enters (component cut at 1.8s).",
       "vo": "",
-      "durationSec": "6",
-      "notes": "Remotion mock component `browserTabsPain` (no asset file — free to iterate). Plan: plans/trueview.plan.ts, scene cold-open-tabs."
+      "durationSec": "1.8",
+      "notes": "Remotion mock `browserTabsPain`, trimmed to the type-only portion. Plan scene: cold-open-line."
+    },
+    {
+      "id": "real-tabs",
+      "title": "Real Chrome tabs + Network/Track/Apply/Repeat",
+      "asset": "assets/generated/Google Chrome.mp4",
+      "description": "Nick's real Chrome capture: LinkedIn profile → ChatGPT outreach draft → Sheets tracker → LinkedIn Jobs → blur out. hookText pops synced to tab switches: Network (0.2–1.4), Track (1.5–2.5), Apply (2.6–3.5), Repeat (3.6–4.4).",
+      "vo": "",
+      "durationSec": "4.4",
+      "notes": "Muted, fit cover. Pop timings from frame analysis of the recording."
+    },
+    {
+      "id": "hundreds-hours",
+      "title": "Hundreds of hours card",
+      "asset": null,
+      "description": "Title card: \"Hundreds of hours of boring, repetitive work.\" / subtitle \"With no response.\"",
+      "vo": "",
+      "durationSec": "3",
+      "notes": "Plan scene: hundreds-of-hours."
+    },
+    {
+      "id": "rejection-inbox",
+      "title": "Rejection inbox",
+      "asset": "assets/generated/rejection-inbox-v1.png",
+      "description": "Higgsfield (nano banana) Gmail-style inbox stacked with 15 rejection emails from fictional firms, slow ken-burns push-in, fade in.",
+      "vo": "",
+      "durationSec": "3.5",
+      "notes": "Job 285696c4. Regenerate with different firms/text on request."
     }
   ],
   "updatedAt": "2026-07-13T00:00:00.000Z"
