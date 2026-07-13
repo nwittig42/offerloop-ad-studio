@@ -3,7 +3,7 @@ import {colors, fonts} from '../../brand/theme';
 
 const WORD_STAGGER_FRAMES = 6;
 
-const TYPE_FRAMES_PER_CHAR = 2.5;
+const TYPE_FRAMES_PER_CHAR = 3;
 
 export const HookText: React.FC<{
   text: string;
