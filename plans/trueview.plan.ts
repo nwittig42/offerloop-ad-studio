@@ -32,10 +32,10 @@ export const trueViewPlan: EditPlan = {
       muted: true,
       fit: 'cover',
       overlays: [
-        {kind: 'hookText', text: 'Network.', startSec: 0.2, endSec: 1.4},
-        {kind: 'hookText', text: 'Track.', startSec: 1.5, endSec: 2.5},
-        {kind: 'hookText', text: 'Apply.', startSec: 2.6, endSec: 3.5},
-        {kind: 'hookText', text: 'Repeat.', startSec: 3.6, endSec: 4.4},
+        {kind: 'hookText', text: 'Network.', color: '#1E2D4D', startSec: 0.2, endSec: 1.4},
+        {kind: 'hookText', text: 'Track.', color: '#1E2D4D', startSec: 1.5, endSec: 2.5},
+        {kind: 'hookText', text: 'Apply.', color: '#1E2D4D', startSec: 2.6, endSec: 3.5},
+        {kind: 'hookText', text: 'Repeat.', color: '#1E2D4D', startSec: 3.6, endSec: 4.4},
       ],
     },
     {

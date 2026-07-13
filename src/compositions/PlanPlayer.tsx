@@ -49,7 +49,7 @@ const OverlayRenderer: React.FC<{overlay: Overlay; sceneFrames: number}> = ({
   return (
     <Sequence from={from} durationInFrames={durationInFrames}>
       {overlay.kind === 'hookText' ? (
-        <HookText text={overlay.text} position={overlay.position} />
+        <HookText text={overlay.text} position={overlay.position} color={overlay.color} />
       ) : overlay.kind === 'timer' ? (
         <TimerCounter
           prefix={overlay.prefix}
@@ -161,7 +161,13 @@ const PlanAudio: React.FC<{plan: EditPlan}> = ({plan}) => {
         const trackFrames = durationInFrames - from;
         const fadeFrames = Math.round((track.fadeOutSec ?? 0) * fps);
         return (
-          <Sequence key={i} from={from} durationInFrames={trackFrames}>
+          <Sequence
+            key={i}
+            from={from}
+            durationInFrames={trackFrames}
+            style={{
+              translate: "30.4px 0px"
+            }}>
             <Audio
               src={staticFile(track.src)}
               trimBefore={

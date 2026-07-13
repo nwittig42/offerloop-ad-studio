@@ -19,6 +19,8 @@ export type Overlay =
       startSec?: number;
       endSec?: number;
       position?: 'center' | 'top' | 'bottom';
+      /** CSS color; defaults to white. */
+      color?: string;
     }
   | {
       kind: 'lowerThird';
