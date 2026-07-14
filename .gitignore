@@ -3,3 +3,4 @@ public/assets/*
 out/
 node_modules/
 .env
+.gstack/
