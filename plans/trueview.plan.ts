@@ -56,16 +56,6 @@ export const trueViewPlan: EditPlan = {
       durationSec: 2.4,
       kenBurns: true,
       transitionIn: 'fade',
-      overlays: [
-        {
-          kind: 'hookText',
-          text: 'For no response.',
-          color: '#1E2D4D',
-          wordByWord: true,
-          sizeScale: 1.5,
-          startSec: 0.8,
-        },
-      ],
     },
 
     // ---- ACT 2: the turn ----
