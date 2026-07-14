@@ -22,10 +22,10 @@ export const trueViewPlan: EditPlan = {
       component: 'coldOpenTabs',
       durationSec: 5.2,
       overlays: [
-        {kind: 'hookText', text: 'Network.', color: '#1E2D4D', sizeScale: 1.5, position: 'top', startSec: 1.7, endSec: 2.5},
-        {kind: 'hookText', text: 'Track.', color: '#1E2D4D', sizeScale: 1.5, position: 'top', startSec: 2.6, endSec: 3.4},
-        {kind: 'hookText', text: 'Apply.', color: '#1E2D4D', sizeScale: 1.5, position: 'top', startSec: 3.5, endSec: 4.3},
-        {kind: 'hookText', text: 'Repeat.', color: '#1E2D4D', sizeScale: 1.5, position: 'top', startSec: 4.4, endSec: 5.2},
+        {kind: 'hookText', text: 'Networking', color: '#1E2D4D', sizeScale: 1.5, position: 'top', startSec: 1.7, endSec: 2.5},
+        {kind: 'hookText', text: 'Tracking', color: '#1E2D4D', sizeScale: 1.5, position: 'top', startSec: 2.6, endSec: 3.4},
+        {kind: 'hookText', text: 'Applying', color: '#1E2D4D', sizeScale: 1.5, position: 'top', startSec: 3.5, endSec: 4.3},
+        {kind: 'hookText', text: 'Repeat', color: '#1E2D4D', sizeScale: 1.5, position: 'top', startSec: 4.4, endSec: 5.2},
       ],
     },
     {
