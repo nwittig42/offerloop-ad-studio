@@ -42,7 +42,7 @@ export const trueViewPlan: EditPlan = {
           kind: 'hookText',
           text: 'Hundreds of hours of boring, repetitive work.',
           wordByWord: true,
-          startSec: 0.2,
+          startSec: 0.7,
         },
       ],
     },
@@ -63,27 +63,29 @@ export const trueViewPlan: EditPlan = {
           color: '#1E2D4D',
           wordByWord: true,
           sizeScale: 1.5,
-          startSec: 0.3,
+          startSec: 0.8,
         },
       ],
     },
 
     // ---- ACT 2: the turn ----
     {
-      // Cinematic real-UI dashboard shot carries both turn lines.
+      // Cinematic real-UI dashboard shot carries both turn lines. HARD CUT
+      // on purpose — crossfading two bright full-screen UIs double-exposes
+      // into mush, and the music drop lands exactly on this cut.
       id: 'turn-scout',
       type: 'video',
       src: 'assets/generated/offerloop-ui-dashboard-cinematic-v1.mp4',
       durationSec: 5,
       muted: true,
       fit: 'cover',
-      transitionIn: 'fade',
+      transitionIn: 'none',
       overlays: [
         {
           kind: 'hookText',
           text: 'Just let Scout take care of it.',
           offsetY: 70,
-          startSec: 0.3,
+          startSec: 0.8,
           endSec: 2.5,
           position: 'bottom',
         },
@@ -103,7 +105,7 @@ export const trueViewPlan: EditPlan = {
       // Tee up Act 3 (proof beats).
       id: 'how-it-works',
       type: 'title',
-      durationSec: 1.5,
+      durationSec: 2.2,
       transitionIn: 'fade',
       title: 'So how does it work?',
     },
@@ -189,15 +191,8 @@ export const trueViewPlan: EditPlan = {
     },
 
     // ---- ACT 4: close ----
-    {
-      // The payoff line, alone on brand background.
-      id: 'get-time-back',
-      type: 'title',
-      durationSec: 2,
-      transitionIn: 'fade',
-      title: 'Get your time back.',
-      grow: true,
-    },
+    // (No separate 'Get your time back.' title card — crossfading it into an
+    // end card with the same headline doubled the text mid-blend.)
     {
       // Wordmark → headline → CTA → summit art.
       id: 'end-card',
@@ -211,12 +206,12 @@ export const trueViewPlan: EditPlan = {
   ],
   audio: [
     {
-      // Music bed: the drop (22.6s into the file, Nick's pick) stays pinned
-      // to the Act 2 turn at timeline 7.0s ('turn-scout' start with 1s
-      // crossfade overlaps), with 6s of the track's lead-up in front of it.
-      // Keep startSec = 7.0 - (22.6 - trimStartSec) if either number moves.
+      // Music bed: the drop (22.6s into the file, Nick's pick) lands exactly
+      // on the hard cut into 'turn-scout' at timeline 8.667s, with 6s of the
+      // track's lead-up in front of it.
+      // Keep startSec = 8.667 - (22.6 - trimStartSec) if either number moves.
       src: 'assets/generated/Timeless (Instrumental).mp3',
-      startSec: 1.0,
+      startSec: 2.67,
       trimStartSec: 16.6,
       fadeInSec: 2,
       fadeOutSec: 3,

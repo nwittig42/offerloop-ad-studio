@@ -36,16 +36,21 @@ const KenBurns: React.FC<{enabled: boolean; children: React.ReactNode}> = ({enab
   return <AbsoluteFill style={{transform: `scale(${scale})`}}>{children}</AbsoluteFill>;
 };
 
-const OverlayRenderer: React.FC<{overlay: Overlay; sceneFrames: number}> = ({
-  overlay,
-  sceneFrames,
-}) => {
+const OverlayRenderer: React.FC<{
+  overlay: Overlay;
+  sceneFrames: number;
+  /** Overlays must be gone by this frame (scene end minus any crossfade). */
+  maxFrames?: number;
+}> = ({overlay, sceneFrames, maxFrames}) => {
   const {fps} = useVideoConfig();
+  const cap = maxFrames ?? sceneFrames;
   const from = Math.round((overlay.startSec ?? 0) * fps);
-  const durationInFrames =
+  if (from >= cap) return null;
+  const requested =
     overlay.endSec === undefined
       ? sceneFrames - from
-      : Math.max(1, Math.round((overlay.endSec - (overlay.startSec ?? 0)) * fps));
+      : Math.round((overlay.endSec - (overlay.startSec ?? 0)) * fps);
+  const durationInFrames = Math.max(1, Math.min(requested, cap - from));
 
   return (
     <Sequence from={from} durationInFrames={durationInFrames}>
@@ -234,12 +239,21 @@ export const PlanPlayer: React.FC<{plan: EditPlan}> = ({plan}) => {
           // scene (no dip to the stage background); on the first scene it's a
           // fade up from the stage.
           const crossfade = index > 0 && scene.transitionIn === 'fade';
+          // Text must clear the frame before the next scene starts blending
+          // in, or the crossfade shows both scenes' overlays at once.
+          const nextFades = plan.scenes[index + 1]?.transitionIn === 'fade';
+          const overlayCap = frames - (nextFades ? CROSSFADE_FRAMES : 0);
           const sequence = (
             <TransitionSeries.Sequence key={scene.id} durationInFrames={frames}>
               <FadeIn enabled={index === 0 && scene.transitionIn === 'fade'}>
                 <SceneContent scene={scene} />
                 {scene.overlays?.map((overlay, i) => (
-                  <OverlayRenderer key={i} overlay={overlay} sceneFrames={frames} />
+                  <OverlayRenderer
+                    key={i}
+                    overlay={overlay}
+                    sceneFrames={frames}
+                    maxFrames={overlayCap}
+                  />
                 ))}
                 {scene.captions ? <Captions cues={scene.captions} /> : null}
               </FadeIn>
