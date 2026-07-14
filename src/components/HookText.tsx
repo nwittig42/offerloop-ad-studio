@@ -5,6 +5,9 @@ const WORD_STAGGER_FRAMES = 4;
 
 const TYPE_FRAMES_PER_CHAR = 3;
 
+/** Fade the whole line out over the last N frames of its window. */
+const EXIT_FRAMES = 10;
+
 export const HookText: React.FC<{
   text: string;
   position?: 'center' | 'top' | 'bottom';
@@ -13,6 +16,8 @@ export const HookText: React.FC<{
   typewriter?: boolean;
   sizeScale?: number;
   offsetY?: number;
+  /** Overlay window length; enables the exit fade. */
+  durationInFrames?: number;
 }> = ({
   text,
   position = 'center',
@@ -21,11 +26,21 @@ export const HookText: React.FC<{
   typewriter = false,
   sizeScale = 1,
   offsetY = 0,
+  durationInFrames,
 }) => {
   const frame = useCurrentFrame();
   const {fps, width, height} = useVideoConfig();
   const isVertical = height > width;
   const enter = spring({frame, fps, config: {damping: 200, stiffness: 120}});
+  const exit =
+    durationInFrames === undefined
+      ? 1
+      : interpolate(
+          frame,
+          [durationInFrames - EXIT_FRAMES, durationInFrames],
+          [1, 0],
+          {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'},
+        );
   const y = interpolate(enter, [0, 1], [24, 0]);
   const words = text.split(' ');
   const typedChars = Math.max(0, Math.floor(frame / TYPE_FRAMES_PER_CHAR));
@@ -43,7 +58,7 @@ export const HookText: React.FC<{
     >
       <div
         style={{
-          opacity: enter,
+          opacity: enter * exit,
           transform: `translateY(${y + offsetY}px)`,
           fontFamily: fonts.heading,
           fontWeight: 700,

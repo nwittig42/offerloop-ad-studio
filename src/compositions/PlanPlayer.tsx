@@ -58,6 +58,7 @@ const OverlayRenderer: React.FC<{overlay: Overlay; sceneFrames: number}> = ({
           typewriter={overlay.typewriter}
           sizeScale={overlay.sizeScale}
           offsetY={overlay.offsetY}
+          durationInFrames={durationInFrames}
         />
       ) : overlay.kind === 'timer' ? (
         <TimerCounter
@@ -193,19 +194,23 @@ const PlanAudio: React.FC<{plan: EditPlan}> = ({plan}) => {
               volume={(f) => {
                 const base = track.volume ?? 1;
                 let v = base;
+                // Squared ramps: linear gain sounds like a jump-in/-out because
+                // perceived loudness is roughly logarithmic.
                 if (fadeInFrames > 0) {
-                  v *= interpolate(f, [0, fadeInFrames], [0, 1], {
+                  const t = interpolate(f, [0, fadeInFrames], [0, 1], {
                     extrapolateLeft: 'clamp',
                     extrapolateRight: 'clamp',
                   });
+                  v *= t * t;
                 }
                 if (fadeFrames > 0) {
-                  v *= interpolate(
+                  const t = interpolate(
                     f,
                     [trackFrames - fadeFrames, trackFrames],
                     [1, 0],
                     {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'},
                   );
+                  v *= t * t;
                 }
                 return v;
               }}
