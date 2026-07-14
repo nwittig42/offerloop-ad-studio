@@ -46,18 +46,6 @@ export const trueViewPlan: EditPlan = {
         },
       ],
     },
-    {
-      // 4K nano-banana Gmail-in-Chrome full of rejections; slow Remotion
-      // push-in (the AI scroll clip degraded into text mush and was rejected —
-      // see gmail-rejections-scroll-v1.mp4 manifest note).
-      id: 'rejection-inbox',
-      type: 'image',
-      src: 'assets/generated/gmail-rejections-browser-crop-v1.png',
-      durationSec: 2.4,
-      kenBurns: true,
-      transitionIn: 'fade',
-    },
-
     // ---- ACT 2: the turn ----
     {
       // Cinematic real-UI dashboard shot carries both turn lines. HARD CUT
