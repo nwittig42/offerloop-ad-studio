@@ -121,6 +121,9 @@ export const trueViewPlan: EditPlan = {
       muted: true,
       fit: 'cover',
       transitionIn: 'fade',
+      overlays: [
+        {kind: 'hookText', text: 'Just ask.', offsetY: 70, startSec: 1.5, endSec: 4.5, position: 'bottom'},
+      ],
     },
     {
       // Beat 2: Scout responds — floating reply card, warp-particle space.
@@ -141,6 +144,9 @@ export const trueViewPlan: EditPlan = {
       muted: true,
       fit: 'cover',
       transitionIn: 'fade',
+      overlays: [
+        {kind: 'hookText', text: '15 roles. Applied.', startSec: 2.2, endSec: 4},
+      ],
     },
     {
       // Beat 3b: second prompt typed live and held — "Email three people on
@@ -177,6 +183,30 @@ export const trueViewPlan: EditPlan = {
       muted: true,
       fit: 'cover',
       transitionIn: 'fade',
+      overlays: [
+        {kind: 'hookText', text: 'Personalized drafts. In your Gmail.', offsetY: 70, startSec: 2, endSec: 4, position: 'bottom'},
+      ],
+    },
+
+    // ---- ACT 4: close ----
+    {
+      // The payoff line, alone on brand background.
+      id: 'get-time-back',
+      type: 'title',
+      durationSec: 2,
+      transitionIn: 'fade',
+      title: 'Get your time back.',
+      grow: true,
+    },
+    {
+      // Wordmark → headline → CTA → summit art.
+      id: 'end-card',
+      type: 'endCard',
+      durationSec: 5,
+      transitionIn: 'fade',
+      headline: 'Get your time back.',
+      cta: 'Go land the offer',
+      url: 'offerloop.ai',
     },
   ],
 };
