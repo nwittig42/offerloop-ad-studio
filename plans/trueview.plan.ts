@@ -176,17 +176,15 @@ export const trueViewPlan: EditPlan = {
     },
 
     // ---- ACT 4: close ----
-    // (No separate 'Get your time back.' title card — crossfading it into an
-    // end card with the same headline doubled the text mid-blend.)
     {
-      // Wordmark → headline → CTA → summit art.
-      id: 'end-card',
-      type: 'endCard',
-      durationSec: 5,
+      // Simple close: the Offerloop logo, nothing else.
+      id: 'logo-close',
+      type: 'image',
+      src: 'assets/generated/offerloop_logo2.png',
+      durationSec: 4,
       transitionIn: 'fade',
-      headline: 'Get your time back.',
-      cta: 'Go land the offer',
-      url: 'offerloop.ai',
+      fit: 'contain',
+      backgroundColor: '#FFFFFF',
     },
   ],
 };

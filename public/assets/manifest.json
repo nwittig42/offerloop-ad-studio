@@ -932,6 +932,12 @@
       "job_id": "dcde29e4-a824-4a97-92fb-1328d75e5f19"
     },
     {
+      "filename": "assets/generated/offerloop_logo2.png",
+      "kind": "image",
+      "description": "Offerloop logo (full-color mark + wordmark on white, 612x408) — dropped in by Nick. Closes the TrueView ad as scene 'logo-close'.",
+      "source": "dropped"
+    },
+    {
       "filename": "assets/generated/Timeless (Instrumental).mp3",
       "kind": "audio",
       "description": "Music bed for the TrueView ad — 'Timeless' instrumental, dropped in by Nick. Starts at 13.4s ('So how does it work?') in trueview.plan.ts with a 3s fade-out.",
