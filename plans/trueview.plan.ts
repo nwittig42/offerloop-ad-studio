@@ -124,6 +124,9 @@ export const trueViewPlan: EditPlan = {
       muted: true,
       fit: 'cover',
       transitionIn: 'fade',
+      overlays: [
+        {kind: 'hookText', text: "It's that easy.", startSec: 2.0},
+      ],
     },
     {
       // Beat 3b: second prompt typed live and held — "Email three people on
