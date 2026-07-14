@@ -1,4 +1,4 @@
-import {spring, useCurrentFrame, useVideoConfig} from 'remotion';
+import {interpolate, spring, useCurrentFrame, useVideoConfig} from 'remotion';
 import {colors, fonts} from '../../../brand/theme';
 import {MockStage} from './MockStage';
 
@@ -13,6 +13,10 @@ const CARDS = [
   {icon: 'doc', title: 'Tailor your resume', sub: 'Match any job description'},
   {icon: 'people', title: 'Track everything', sub: 'Contacts & conversations'},
 ] as const;
+
+const GLOW_START = 34; // frame the sweep begins
+const GLOW_STEP = 7; // frames between cards lighting up
+const GLOW_LEN = 26; // how long a card stays lit
 
 const Icon: React.FC<{name: (typeof CARDS)[number]['icon']}> = ({name}) => {
   const s = {
@@ -77,49 +81,90 @@ const Icon: React.FC<{name: (typeof CARDS)[number]['icon']}> = ({name}) => {
 };
 
 /**
- * The product's "SCOUT CAN" capability grid, cards popping in staggered,
- * then the breadth line lands: one agent, all of it.
+ * Cinematic take on the dashboard's "SCOUT CAN" grid: dark navy space,
+ * cards float in on a tilted 3D plane, then an indigo glow sweeps across
+ * them one by one before the breadth line lands. Text is Remotion-crisp —
+ * the Higgsfield takes garbled the card copy (jobs b4f37329 / 846bf688).
  */
 export const ScoutCanGrid: React.FC = () => {
   const frame = useCurrentFrame();
   const {fps} = useVideoConfig();
-  const headIn = spring({frame: frame - CARDS.length * 5 - 14, fps, config: {damping: 200}});
+  const headIn = spring({frame: frame - GLOW_START - 8 * GLOW_STEP - 6, fps, config: {damping: 200}});
+  const drift = interpolate(frame, [0, 300], [1, 1.06]);
 
   return (
-    <MockStage backgroundColor={colors.background}>
+    <MockStage backgroundColor={colors.secondaryDark}>
+      {/* deep-space backdrop: soft radial key light + vignette */}
       <div
         style={{
           position: 'absolute',
-          top: 130,
-          left: 0,
-          width: '100%',
+          inset: 0,
+          background:
+            'radial-gradient(ellipse 70% 55% at 50% 34%, rgba(74,96,168,0.45), rgba(30,45,77,0) 70%), linear-gradient(180deg, #16233E 0%, #1E2D4D 55%, #101B31 100%)',
+        }}
+      />
+      {/* diagonal light streak, echoing the cine beats */}
+      <div
+        style={{
+          position: 'absolute',
+          top: -200,
+          left: 380,
+          width: 340,
+          height: 1500,
+          transform: 'rotate(24deg)',
+          background:
+            'linear-gradient(90deg, rgba(182,195,232,0) 0%, rgba(182,195,232,0.10) 50%, rgba(182,195,232,0) 100%)',
+        }}
+      />
+      <div
+        style={{
+          position: 'absolute',
+          inset: 0,
           display: 'flex',
           justifyContent: 'center',
+          perspective: 1400,
         }}
       >
         <div
           style={{
+            position: 'absolute',
+            top: 120,
             display: 'grid',
             gridTemplateColumns: 'repeat(4, 380px)',
             gap: 26,
+            transform: `rotateX(9deg) rotateY(-4deg) scale(${drift})`,
+            transformStyle: 'preserve-3d',
           }}
         >
           {CARDS.map((c, i) => {
-            const enter = spring({frame: frame - i * 5, fps, config: {damping: 200, stiffness: 130}});
+            const enter = spring({frame: frame - i * 4, fps, config: {damping: 200, stiffness: 120}});
+            // indigo glow sweeping across the grid, one card at a time
+            const glow = interpolate(
+              frame,
+              [
+                GLOW_START + i * GLOW_STEP,
+                GLOW_START + i * GLOW_STEP + 8,
+                GLOW_START + i * GLOW_STEP + GLOW_LEN,
+                GLOW_START + i * GLOW_STEP + GLOW_LEN + 14,
+              ],
+              [0, 1, 0.55, 0.25],
+              {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'},
+            );
             return (
               <div
                 key={c.title}
                 style={{
                   height: 210,
                   borderRadius: 22,
-                  background: '#fff',
-                  boxShadow: '0 16px 40px rgba(18,31,64,0.12)',
+                  background: `rgba(255,255,255,${0.9 + 0.1 * glow})`,
+                  border: `2px solid rgba(182,195,232,${0.25 + 0.75 * glow})`,
+                  boxShadow: `0 24px 60px rgba(6,12,26,0.55), 0 0 ${40 * glow}px rgba(122,150,230,${0.75 * glow}), inset 0 0 ${26 * glow}px rgba(160,180,240,${0.35 * glow})`,
                   display: 'flex',
                   alignItems: 'center',
                   gap: 22,
                   padding: '0 30px',
                   opacity: enter,
-                  transform: `translateY(${(1 - enter) * 40}px) scale(${0.9 + 0.1 * enter})`,
+                  transform: `translateY(${(1 - enter) * 90}px) translateZ(${glow * 34}px)`,
                   fontFamily: fonts.body,
                 }}
               >
@@ -128,7 +173,7 @@ export const ScoutCanGrid: React.FC = () => {
                     width: 64,
                     height: 64,
                     borderRadius: 16,
-                    background: '#EEF1FA',
+                    background: `rgba(228,233,248,${0.85 + 0.15 * glow})`,
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
@@ -141,7 +186,7 @@ export const ScoutCanGrid: React.FC = () => {
                   <div style={{fontWeight: 700, fontSize: 30, color: colors.ink, lineHeight: 1.2}}>
                     {c.title}
                   </div>
-                  <div style={{fontWeight: 500, fontSize: 21, color: '#6B7385', marginTop: 6}}>
+                  <div style={{fontWeight: 500, fontSize: 21, color: '#5D677E', marginTop: 6}}>
                     {c.sub}
                   </div>
                 </div>
@@ -153,14 +198,15 @@ export const ScoutCanGrid: React.FC = () => {
       <div
         style={{
           position: 'absolute',
-          top: 750,
+          top: 764,
           width: '100%',
           textAlign: 'center',
           fontFamily: fonts.heading,
           fontWeight: 700,
-          fontSize: 82,
+          fontSize: 86,
           letterSpacing: '-0.02em',
-          color: colors.ink,
+          color: '#fff',
+          textShadow: '0 2px 30px rgba(10,18,38,0.6)',
           opacity: headIn,
           transform: `translateY(${(1 - headIn) * 24}px)`,
         }}
