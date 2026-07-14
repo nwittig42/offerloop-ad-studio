@@ -168,6 +168,16 @@ export const trueViewPlan: EditPlan = {
       ],
     },
 
+    {
+      // Breadth beat: the real dashboard's SCOUT CAN grid, animated — the
+      // ad proved apply + email; this says it does everything else too.
+      id: 'scout-can',
+      type: 'mockup',
+      component: 'scoutCanGrid',
+      durationSec: 4.5,
+      transitionIn: 'fade',
+    },
+
     // ---- ACT 4: close ----
     // (No separate 'Get your time back.' title card — crossfading it into an
     // end card with the same headline doubled the text mid-blend.)

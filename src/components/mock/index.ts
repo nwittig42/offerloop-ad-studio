@@ -8,6 +8,7 @@ import {FindContacts} from './FindContacts';
 import {EmailDraft} from './EmailDraft';
 import {InboxDrafts} from './InboxDrafts';
 import {StatStack} from './StatStack';
+import {ScoutCanGrid} from './ScoutCanGrid';
 
 /** Animated mock-UI scenes; plans reference these by key via `type: 'mockup'`. */
 export const mockups = {
@@ -21,6 +22,7 @@ export const mockups = {
   emailDraft: EmailDraft,
   inboxDrafts: InboxDrafts,
   statStack: StatStack,
+  scoutCanGrid: ScoutCanGrid,
 } as const;
 
 export type MockupName = keyof typeof mockups;
