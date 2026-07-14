@@ -70,17 +70,6 @@ export const trueViewPlan: EditPlan = {
 
     // ---- ACT 2: the turn ----
     {
-      // Record scratch. HARD CUT (no fade on purpose) from the rejection
-      // inbox to a dark screen. Censored for ad review; Nick's VO says it
-      // uncensored if the organic cut ever gets narration.
-      id: 'f-that',
-      type: 'title',
-      durationSec: 1.2,
-      title: 'F*** that.',
-      sizeScale: 2.2,
-      grow: true,
-    },
-    {
       // Cinematic real-UI dashboard shot carries both turn lines.
       id: 'turn-scout',
       type: 'video',
