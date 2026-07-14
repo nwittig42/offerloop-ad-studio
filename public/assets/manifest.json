@@ -930,6 +930,13 @@
       "source": "higgsfield",
       "model": "seedance_2_0 (std, 1080p, 16:9)",
       "job_id": "dcde29e4-a824-4a97-92fb-1328d75e5f19"
+    },
+    {
+      "filename": "assets/generated/Timeless (Instrumental).mp3",
+      "kind": "audio",
+      "description": "Music bed for the TrueView ad — 'Timeless' instrumental, dropped in by Nick. Starts at 13.4s ('So how does it work?') in trueview.plan.ts with a 3s fade-out.",
+      "duration": 256.01,
+      "source": "dropped"
     }
   ]
 }

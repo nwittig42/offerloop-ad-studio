@@ -209,4 +209,14 @@ export const trueViewPlan: EditPlan = {
       url: 'offerloop.ai',
     },
   ],
+  audio: [
+    {
+      // Music bed from the Act 3 reveal onward. 13.4s = timeline start of
+      // 'how-it-works' (scene sums minus the 0.4s crossfade overlaps) —
+      // recompute if any earlier scene's duration changes.
+      src: 'assets/generated/Timeless (Instrumental).mp3',
+      startSec: 13.4,
+      fadeOutSec: 3,
+    },
+  ],
 };
