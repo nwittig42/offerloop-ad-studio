@@ -175,6 +175,7 @@ const PlanAudio: React.FC<{plan: EditPlan}> = ({plan}) => {
         const from = Math.round((track.startSec ?? 0) * fps);
         const trackFrames = durationInFrames - from;
         const fadeFrames = Math.round((track.fadeOutSec ?? 0) * fps);
+        const fadeInFrames = Math.round((track.fadeInSec ?? 0) * fps);
         return (
           <Sequence
             key={i}
@@ -191,16 +192,22 @@ const PlanAudio: React.FC<{plan: EditPlan}> = ({plan}) => {
               loop={track.loop}
               volume={(f) => {
                 const base = track.volume ?? 1;
-                if (fadeFrames <= 0) return base;
-                return (
-                  base *
-                  interpolate(
+                let v = base;
+                if (fadeInFrames > 0) {
+                  v *= interpolate(f, [0, fadeInFrames], [0, 1], {
+                    extrapolateLeft: 'clamp',
+                    extrapolateRight: 'clamp',
+                  });
+                }
+                if (fadeFrames > 0) {
+                  v *= interpolate(
                     f,
                     [trackFrames - fadeFrames, trackFrames],
                     [1, 0],
                     {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'},
-                  )
-                );
+                  );
+                }
+                return v;
               }}
             />
           </Sequence>

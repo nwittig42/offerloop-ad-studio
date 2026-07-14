@@ -8,7 +8,7 @@ export const sceneDurationInFrames = (scene: Scene, fps: number): number =>
   Math.round(scene.durationSec * fps);
 
 /** Frames a 'fade' transition overlaps the previous scene (true crossfade). */
-export const CROSSFADE_FRAMES = 12;
+export const CROSSFADE_FRAMES = 20;
 
 export const planDurationInFrames = (plan: EditPlan): number => {
   const fps = planFps(plan);

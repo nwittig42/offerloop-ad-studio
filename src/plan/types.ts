@@ -109,6 +109,8 @@ export type AudioTrack = {
   /** Seconds into the source file to start playback. */
   trimStartSec?: number;
   volume?: number;
+  /** Fade in over the first N seconds of the track's window. */
+  fadeInSec?: number;
   /** Fade out over the last N seconds of the track's window. */
   fadeOutSec?: number;
   /** Loop (for music beds shorter than the video). */
