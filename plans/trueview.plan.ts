@@ -125,7 +125,7 @@ export const trueViewPlan: EditPlan = {
       fit: 'cover',
       transitionIn: 'fade',
       overlays: [
-        {kind: 'hookText', text: "It's that easy.", startSec: 2.0},
+        {kind: 'hookText', text: "It's that easy.", color: '#1E2D4D', startSec: 2.0},
       ],
     },
     {
@@ -140,6 +140,15 @@ export const trueViewPlan: EditPlan = {
       muted: true,
       fit: 'cover',
       transitionIn: 'fade',
+      overlays: [
+        {
+          kind: 'hookText',
+          text: 'Email anyone. Anytime.',
+          offsetY: 70,
+          startSec: 3.8,
+          position: 'bottom',
+        },
+      ],
     },
     {
       // Beat 4: outreach going out — the network lighting up.
