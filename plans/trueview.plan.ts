@@ -188,9 +188,6 @@ export const trueViewPlan: EditPlan = {
       muted: true,
       fit: 'cover',
       transitionIn: 'fade',
-      overlays: [
-        {kind: 'hookText', text: 'The receipts.', startSec: 2.4, endSec: 4, position: 'bottom'},
-      ],
     },
   ],
 };
