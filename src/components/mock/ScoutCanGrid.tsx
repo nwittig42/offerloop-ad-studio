@@ -14,7 +14,7 @@ const CARDS = [
   {icon: 'people', title: 'Track everything', sub: 'Contacts & conversations'},
 ] as const;
 
-const GLOW_START = 34; // frame the sweep begins
+const GLOW_START = 52; // frame the sweep begins (after headline + cards land)
 const GLOW_STEP = 7; // frames between cards lighting up
 const GLOW_LEN = 26; // how long a card stays lit
 
@@ -89,7 +89,8 @@ const Icon: React.FC<{name: (typeof CARDS)[number]['icon']}> = ({name}) => {
 export const ScoutCanGrid: React.FC = () => {
   const frame = useCurrentFrame();
   const {fps} = useVideoConfig();
-  const headIn = spring({frame: frame - GLOW_START - 8 * GLOW_STEP - 6, fps, config: {damping: 200}});
+  // Headline leads; the cards are the payoff and close the beat.
+  const headIn = spring({frame, fps, config: {damping: 200}});
   const drift = interpolate(frame, [0, 300], [1, 1.06]);
 
   return (
@@ -128,7 +129,7 @@ export const ScoutCanGrid: React.FC = () => {
         <div
           style={{
             position: 'absolute',
-            top: 120,
+            top: 320,
             display: 'grid',
             gridTemplateColumns: 'repeat(4, 380px)',
             gap: 26,
@@ -137,7 +138,7 @@ export const ScoutCanGrid: React.FC = () => {
           }}
         >
           {CARDS.map((c, i) => {
-            const enter = spring({frame: frame - i * 4, fps, config: {damping: 200, stiffness: 120}});
+            const enter = spring({frame: frame - 16 - i * 4, fps, config: {damping: 200, stiffness: 120}});
             // indigo glow sweeping across the grid, one card at a time
             const glow = interpolate(
               frame,
@@ -198,12 +199,12 @@ export const ScoutCanGrid: React.FC = () => {
       <div
         style={{
           position: 'absolute',
-          top: 764,
+          top: 118,
           width: '100%',
           textAlign: 'center',
           fontFamily: fonts.heading,
           fontWeight: 700,
-          fontSize: 86,
+          fontSize: 78,
           letterSpacing: '-0.02em',
           color: '#fff',
           textShadow: '0 2px 30px rgba(10,18,38,0.6)',
@@ -211,7 +212,7 @@ export const ScoutCanGrid: React.FC = () => {
           transform: `translateY(${(1 - headIn) * 24}px)`,
         }}
       >
-        One agent. All of it.
+        One assistant. Every part of the job hunt.
       </div>
     </MockStage>
   );
