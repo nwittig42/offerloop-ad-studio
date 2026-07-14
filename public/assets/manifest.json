@@ -878,6 +878,58 @@
       "source": "higgsfield",
       "model": "seedance_2_0 (std, 1080p, 16:9)",
       "job_id": "606b907c-dbeb-4254-9c4a-4d6f06828ecc"
+    },
+    {
+      "filename": "assets/generated/scout-cine-3b-typing-email.mp4",
+      "kind": "video",
+      "description": "FALLBACK take (beat 3b, second-prompt typing OTS): typing clean until ~4s, then the hold garbles. video ref = real typing capture (media 8309db06-e682-4577-b835-272e1c2ff323). 8s 1080p.",
+      "duration": 8.06,
+      "source": "higgsfield",
+      "model": "seedance_2_0 (std, 1080p, 16:9)"
+    },
+    {
+      "filename": "assets/generated/scout-cine-3b-typing-email-v2.mp4",
+      "kind": "video",
+      "description": "REJECTED take (beat 3b): perfect steady hold but typed line reads 'email 3 3 people' (doubled digit). 8s 1080p.",
+      "duration": 8.06,
+      "source": "higgsfield",
+      "model": "seedance_2_0 (std, 1080p, 16:9)"
+    },
+    {
+      "filename": "assets/generated/scout-cine-3b-typing-email-v3.mp4",
+      "kind": "video",
+      "description": "REJECTED take (beat 3b): typed line reads 'email threee people on veach team' (tripled e, corrupted 'each') plus a ghost 'Great:' line above the input for the whole clip. 8s 1080p.",
+      "duration": 8.06,
+      "source": "higgsfield",
+      "model": "seedance_2_0 (std, 1080p, 16:9)",
+      "job_id": "821e8b97-30d7-4798-82cd-9fd25e18f3cb"
+    },
+    {
+      "filename": "assets/generated/scout-cine-3b-typing-email-v4.mp4",
+      "kind": "video",
+      "description": "REJECTED take (beat 3b): hold reads 'Now email three people on each teation o ntig...' (corrupted tail + trailing gibberish). 8s 1080p.",
+      "duration": 8.06,
+      "source": "higgsfield",
+      "model": "seedance_2_0 (std, 1080p, 16:9)",
+      "job_id": "3c601490-c116-48a6-b31c-052fe954bc12"
+    },
+    {
+      "filename": "assets/generated/scout-cine-3b-typing-email-v5.mp4",
+      "kind": "video",
+      "description": "REJECTED take (beat 3b): hold reads 'Great, now email 33 people on eaiach teat' (doubled digit again + corrupted 'each team'). 8s 1080p.",
+      "duration": 8.06,
+      "source": "higgsfield",
+      "model": "seedance_2_0 (std, 1080p, 16:9)",
+      "job_id": "055ee51a-06e8-4721-86d5-4f7be4460f40"
+    },
+    {
+      "filename": "assets/generated/scout-cine-3b-typing-email-v6.mp4",
+      "kind": "video",
+      "description": "CINEMATIC beat 3b (WINNER, in trueview plan as 'cine-typing-email'): daylight OTS shot, second prompt typed live — 'Email three people on each team|' letter-perfect, complete by ~6.3s, clean ~1.8s hold with blinking cursor to the final frame. Minor invented-UI clutter: duplicated 'Job Board' sidebar row. From a count:4 batch on the shortened sentence; sibling variants rejected (0abe6655 garbled hold, 2bafdf05 garbled hold, 5eb14199 false-positive nsfw). video ref = real typing capture (media 8309db06). 8s 1080p.",
+      "duration": 8.06,
+      "source": "higgsfield",
+      "model": "seedance_2_0 (std, 1080p, 16:9)",
+      "job_id": "dcde29e4-a824-4a97-92fb-1328d75e5f19"
     }
   ]
 }

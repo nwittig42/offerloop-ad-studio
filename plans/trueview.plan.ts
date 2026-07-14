@@ -154,6 +154,19 @@ export const trueViewPlan: EditPlan = {
       transitionIn: 'fade',
     },
     {
+      // Beat 3b: second prompt typed live and held — "Email three people on
+      // each team|" lands letter-perfect (trim skips the first 2s of typing
+      // so the scene ends on the ~1.8s clean hold).
+      id: 'cine-typing-email',
+      type: 'video',
+      src: 'assets/generated/scout-cine-3b-typing-email-v6.mp4',
+      durationSec: 6,
+      trimStartSec: 2,
+      muted: true,
+      fit: 'cover',
+      transitionIn: 'fade',
+    },
+    {
       // Beat 4: outreach going out — the network lighting up.
       id: 'cine-network',
       type: 'video',
