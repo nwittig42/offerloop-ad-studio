@@ -3,7 +3,7 @@
     {
       "filename": "assets/generated/jobboard-scroll-tall.png",
       "kind": "image",
-      "description": "Tall job-board listings page capture (14+ entry-level role cards, salary chips, Easy Apply buttons), 1536x2752 — scrolled fast by the busyworkMontage mock, beat 1",
+      "description": "Tall job-board listings page capture (14+ entry-level role cards, salary chips, Easy Apply buttons), 1536x2752 \u2014 scrolled fast by the busyworkMontage mock, beat 1",
       "source": "higgsfield",
       "model": "nano_banana_pro (9:16, 2k)",
       "job_id": "bb455fd7-7078-4898-8348-0c1558069143",
@@ -12,7 +12,7 @@
     {
       "filename": "assets/generated/linkedin-profile-tall.png",
       "kind": "image",
-      "description": "Tall LinkedIn-style profile capture (Marcus Webb, IB Analyst at Marshall Wace, USC '23; About/Experience/Education sections), 1536x2752 — panned by the busyworkMontage mock, beat 3",
+      "description": "Tall LinkedIn-style profile capture (Marcus Webb, IB Analyst at Marshall Wace, USC '23; About/Experience/Education sections), 1536x2752 \u2014 panned by the busyworkMontage mock, beat 3",
       "source": "higgsfield",
       "model": "nano_banana_pro (9:16, 2k)",
       "job_id": "4291a694-8ca7-409d-904f-eb7ec97432c7",
@@ -21,17 +21,17 @@
     {
       "filename": "assets/generated/yeti-couch-swiping-v3.mp4",
       "kind": "video",
-      "description": "V3 of the yeti couch shot: same wide framing as v2, but with active Tinder-style swiping as the main action — thumb visibly drags cards, cards transition one by one, red-X/blue-send button row visible. App UI is Offerloop-like but not a pixel-perfect copy of the recording (fine blurred; check before using sharp). 10s 1920x1080 silent.",
+      "description": "V3 of the yeti couch shot: same wide framing as v2, but with active Tinder-style swiping as the main action \u2014 thumb visibly drags cards, cards transition one by one, red-X/blue-send button row visible. App UI is Offerloop-like but not a pixel-perfect copy of the recording (fine blurred; check before using sharp). 10s 1920x1080 silent.",
       "duration": 10.04,
       "source": "higgsfield",
       "model": "seedance_2_0 (std, 1080p, 16:9, no audio; image_references = v1 frame, video_references = Offerloop app screen recording)",
       "job_id": "ba6edfb0-c576-4ec9-bf69-54ef55b353bd",
-      "prompt": "Over-the-shoulder shot from behind a large fluffy white yeti relaxing on a cozy couch, wide framing exactly like the image reference: lit stone fireplace, folding shoji screen, laptop on the wooden coffee table, warm lamplight, the yeti's furry shoulder framing the right side. The yeti holds a smartphone upright in its left paw showing the job-swiping app from the video reference (white job cards, red X and blue send buttons). MAIN ACTION, clearly visible for the whole shot: the yeti actively swipes job cards LEFT and RIGHT like Tinder — its thumb drags a card right and the card slides off the right edge to APPLY, then drags the next card left off the left edge to PASS, alternating, one swipe roughly every 1.5 seconds, each card visibly flying off screen and the next card snapping in behind it. After a right swipe the app briefly shows an applying confirmation. The paw and thumb motion is energetic and clearly readable. Camera stays locked off and static; everything else in the room is calm — flickering fire, gentle breathing. Photorealistic cozy film look, soft grain, silent, single continuous shot, no text overlays outside the phone screen."
+      "prompt": "Over-the-shoulder shot from behind a large fluffy white yeti relaxing on a cozy couch, wide framing exactly like the image reference: lit stone fireplace, folding shoji screen, laptop on the wooden coffee table, warm lamplight, the yeti's furry shoulder framing the right side. The yeti holds a smartphone upright in its left paw showing the job-swiping app from the video reference (white job cards, red X and blue send buttons). MAIN ACTION, clearly visible for the whole shot: the yeti actively swipes job cards LEFT and RIGHT like Tinder \u2014 its thumb drags a card right and the card slides off the right edge to APPLY, then drags the next card left off the left edge to PASS, alternating, one swipe roughly every 1.5 seconds, each card visibly flying off screen and the next card snapping in behind it. After a right swipe the app briefly shows an applying confirmation. The paw and thumb motion is energetic and clearly readable. Camera stays locked off and static; everything else in the room is calm \u2014 flickering fire, gentle breathing. Photorealistic cozy film look, soft grain, silent, single continuous shot, no text overlays outside the phone screen."
     },
     {
       "filename": "assets/generated/yeti-couch-swiping-v3-blurred.mp4",
       "kind": "video",
-      "description": "Blurred + slightly darkened variant of yeti-couch-swiping-v3.mp4 (same ffmpeg recipe as v1/v2) — current pick for the website hero background.",
+      "description": "Blurred + slightly darkened variant of yeti-couch-swiping-v3.mp4 (same ffmpeg recipe as v1/v2) \u2014 current pick for the website hero background.",
       "duration": 10.04,
       "source": "higgsfield",
       "model": "seedance_2_0 + ffmpeg post",
@@ -45,12 +45,12 @@
       "source": "higgsfield",
       "model": "seedance_2_0 (std, 1080p, 16:9, no audio; image_references = v1 frame, video_references = Offerloop app screen recording)",
       "job_id": "bb3693e0-f016-4cff-9375-be6dba249302",
-      "prompt": "Recreate the exact scene from the image reference — an over-the-shoulder shot from behind a large fluffy white yeti relaxing on a cozy couch in a warm living room with a stone fireplace, folding shoji screen, laptop on the wooden coffee table, and soft golden lamplight — but pull the camera back noticeably wider, showing more of the couch, the room and the yeti's body. The yeti holds a smartphone upright in its left paw. The phone screen shows exactly the mobile app from the video reference: the Offerloop job-swiping app with white job cards, and it must stay clearly visible and legible. The yeti swipes through the job cards like Tinder — quick relaxed thumb flicks, cards sliding off left and right, occasionally tapping the blue send button. Static locked-off camera, shallow depth of field on the room (phone screen sharp), subtle natural motion only: the swiping paw, gentle breathing, slight head tilt. Cozy, calm, photorealistic film look with soft grain. No text overlays, no logos other than what appears on the phone screen, single continuous shot."
+      "prompt": "Recreate the exact scene from the image reference \u2014 an over-the-shoulder shot from behind a large fluffy white yeti relaxing on a cozy couch in a warm living room with a stone fireplace, folding shoji screen, laptop on the wooden coffee table, and soft golden lamplight \u2014 but pull the camera back noticeably wider, showing more of the couch, the room and the yeti's body. The yeti holds a smartphone upright in its left paw. The phone screen shows exactly the mobile app from the video reference: the Offerloop job-swiping app with white job cards, and it must stay clearly visible and legible. The yeti swipes through the job cards like Tinder \u2014 quick relaxed thumb flicks, cards sliding off left and right, occasionally tapping the blue send button. Static locked-off camera, shallow depth of field on the room (phone screen sharp), subtle natural motion only: the swiping paw, gentle breathing, slight head tilt. Cozy, calm, photorealistic film look with soft grain. No text overlays, no logos other than what appears on the phone screen, single continuous shot."
     },
     {
       "filename": "assets/generated/yeti-couch-swiping-v2-blurred.mp4",
       "kind": "video",
-      "description": "Blurred + slightly darkened variant of yeti-couch-swiping-v2.mp4 (ffmpeg gblur sigma=6, brightness -0.04, sat 0.95, h264 faststart, silent) — website hero background, ready to ship.",
+      "description": "Blurred + slightly darkened variant of yeti-couch-swiping-v2.mp4 (ffmpeg gblur sigma=6, brightness -0.04, sat 0.95, h264 faststart, silent) \u2014 website hero background, ready to ship.",
       "duration": 10.04,
       "source": "higgsfield",
       "model": "seedance_2_0 + ffmpeg post",
@@ -64,12 +64,12 @@
       "source": "higgsfield",
       "model": "kling3_0 (pro, 16:9, sound off)",
       "job_id": "db80ae8e-f6a5-4609-841f-80a8989e5fd5",
-      "prompt": "Over-the-shoulder cinematic shot from behind a large fluffy white yeti relaxing on a cozy couch, filmed from slightly above and behind its right shoulder. The yeti holds a smartphone up in its left paw and lazily swipes through job listing cards with its thumb. Warm inviting living room: rustic stone fireplace and a folding room-divider screen in the background, wooden coffee table with a laptop on the right, soft golden evening lamplight. The yeti's back and shoulder fur fill the right foreground softly out of focus; shallow depth of field, static locked-off camera, subtle natural motion only — swiping paw, slight head tilt, gentle breathing. Cozy, calm, photorealistic film look with soft grain. No text, no logos, single continuous shot."
+      "prompt": "Over-the-shoulder cinematic shot from behind a large fluffy white yeti relaxing on a cozy couch, filmed from slightly above and behind its right shoulder. The yeti holds a smartphone up in its left paw and lazily swipes through job listing cards with its thumb. Warm inviting living room: rustic stone fireplace and a folding room-divider screen in the background, wooden coffee table with a laptop on the right, soft golden evening lamplight. The yeti's back and shoulder fur fill the right foreground softly out of focus; shallow depth of field, static locked-off camera, subtle natural motion only \u2014 swiping paw, slight head tilt, gentle breathing. Cozy, calm, photorealistic film look with soft grain. No text, no logos, single continuous shot."
     },
     {
       "filename": "assets/generated/yeti-couch-swiping-blurred.mp4",
       "kind": "video",
-      "description": "Blurred + slightly darkened variant of yeti-couch-swiping.mp4 (ffmpeg gblur sigma=6, brightness -0.04, sat 0.95, h264 faststart, silent) — ready to drop in as the website hero background.",
+      "description": "Blurred + slightly darkened variant of yeti-couch-swiping.mp4 (ffmpeg gblur sigma=6, brightness -0.04, sat 0.95, h264 faststart, silent) \u2014 ready to drop in as the website hero background.",
       "duration": 10.04,
       "source": "higgsfield",
       "model": "kling3_0 + ffmpeg post",
@@ -85,7 +85,7 @@
     {
       "filename": "assets/references/promo-saas-v2.mp4",
       "kind": "reference",
-      "description": "Previous Offerloop Scout promo (vertical 720x1280, 50.7s, 30fps, NO audio track — built for muted autoplay). Three-act structure: dark cinematic intro/outro with Scout orb + serif brand lines, light UI-demo middle with rounded-sans blue captions at TOP of frame above centered device mockups, one live-action b-roll beat before the outro. Style reference only, never footage.",
+      "description": "Previous Offerloop Scout promo (vertical 720x1280, 50.7s, 30fps, NO audio track \u2014 built for muted autoplay). Three-act structure: dark cinematic intro/outro with Scout orb + serif brand lines, light UI-demo middle with rounded-sans blue captions at TOP of frame above centered device mockups, one live-action b-roll beat before the outro. Style reference only, never footage.",
       "duration": 50.67,
       "source": "dropped"
     },
@@ -99,7 +99,7 @@
     {
       "filename": "assets/figma/scout-mountain-summit.png",
       "kind": "illustration",
-      "description": "Scout mascot planting an infinity flag on a mountain summit, transparent background, 2962x1794 — hero / end-card art",
+      "description": "Scout mascot planting an infinity flag on a mountain summit, transparent background, 2962x1794 \u2014 hero / end-card art",
       "source": "figma",
       "figmaNode": "1677:9411"
     },
@@ -127,21 +127,21 @@
     {
       "filename": "assets/figma/mountains-forest-bg.png",
       "kind": "background",
-      "description": "Watercolor mountains and forest panorama, 2172x724 — wide background strip",
+      "description": "Watercolor mountains and forest panorama, 2172x724 \u2014 wide background strip",
       "source": "figma",
       "figmaNode": "1930:897"
     },
     {
       "filename": "assets/figma/mountains-lake-bg.png",
       "kind": "background",
-      "description": "Watercolor mountains and lake, 1676x654 — calm background plate",
+      "description": "Watercolor mountains and lake, 1676x654 \u2014 calm background plate",
       "source": "figma",
       "figmaNode": "1930:899"
     },
     {
       "filename": "assets/generated/campus-earth-descent-v1.mp4",
       "kind": "video",
-      "description": "Cosmic aerial descent: camera drops from high above the Earth through wispy clouds down to a sunlit college campus (green quads, brick buildings, tree-lined walkways), golden-hour light, motion blur. Opening hook shot before the yeti quad scenes. 8s 1280x720 (720p — upscale winners before final render), has generated audio track.",
+      "description": "Cosmic aerial descent: camera drops from high above the Earth through wispy clouds down to a sunlit college campus (green quads, brick buildings, tree-lined walkways), golden-hour light, motion blur. Opening hook shot before the yeti quad scenes. 8s 1280x720 (720p \u2014 upscale winners before final render), has generated audio track.",
       "duration": 8.06,
       "source": "higgsfield",
       "model": "seedance_2_0 (std, 720p, 16:9, text-to-video)",
@@ -151,32 +151,32 @@
     {
       "filename": "assets/generated/yeti-quad-phone-pushin-v1.mp4",
       "kind": "video",
-      "description": "Friendly white yeti (matched to the couch-video yeti via a v3 frame as image reference: shaggy cream fur, dark claws) standing on a college quad looking down at a smartphone, slow push-in, golden hour, students blurred behind. Follows campus-earth-descent-v1. 5s 1280x720 (720p — upscale winners before final render), has generated audio track.",
+      "description": "Friendly white yeti (matched to the couch-video yeti via a v3 frame as image reference: shaggy cream fur, dark claws) standing on a college quad looking down at a smartphone, slow push-in, golden hour, students blurred behind. Follows campus-earth-descent-v1. 5s 1280x720 (720p \u2014 upscale winners before final render), has generated audio track.",
       "duration": 5.06,
       "source": "higgsfield",
       "model": "seedance_2_0 (std, 720p, 16:9; image_references = frame @5s of yeti-couch-swiping-v3.mp4)",
       "job_id": "8776677e-5273-4d05-85ed-b2fc2969ccbd",
-      "prompt": "A large friendly white yeti — the SAME yeti as in the image reference: shaggy long cream-white fur, dark claws, big warm friendly expression — stands upright on a green college quad, holding a smartphone in one furry hand, looking down at it with a gentle, curious smile. Slow push-in toward the yeti, subtle handheld feel. Warm afternoon sunlight, golden hour, soft shadows, brick campus buildings and students blurred in the far background. Photorealistic, cinematic depth of field, high detail fur."
+      "prompt": "A large friendly white yeti \u2014 the SAME yeti as in the image reference: shaggy long cream-white fur, dark claws, big warm friendly expression \u2014 stands upright on a green college quad, holding a smartphone in one furry hand, looking down at it with a gentle, curious smile. Slow push-in toward the yeti, subtle handheld feel. Warm afternoon sunlight, golden hour, soft shadows, brick campus buildings and students blurred in the far background. Photorealistic, cinematic depth of field, high detail fur."
     },
     {
       "filename": "assets/generated/yeti-quad-phone-raise-v1.mp4",
       "kind": "video",
-      "description": "Side-profile medium shot of the same friendly white yeti on the quad raising the smartphone up toward his mouth as if speaking into it, subtle head tilt, golden hour, campus blurred behind. Follows yeti-quad-phone-pushin-v1. 5s 1280x720 (720p — upscale winners before final render), has generated audio track.",
+      "description": "Side-profile medium shot of the same friendly white yeti on the quad raising the smartphone up toward his mouth as if speaking into it, subtle head tilt, golden hour, campus blurred behind. Follows yeti-quad-phone-pushin-v1. 5s 1280x720 (720p \u2014 upscale winners before final render), has generated audio track.",
       "duration": 5.06,
       "source": "higgsfield",
       "model": "seedance_2_0 (std, 720p, 16:9; image_references = frame @5s of yeti-couch-swiping-v3.mp4)",
       "job_id": "bbd094c9-84ac-4c4f-9289-d215d9e679c2",
-      "prompt": "Side profile medium shot of a large friendly white yeti — the SAME yeti as in the image reference: shaggy long cream-white fur, dark claws, warm friendly face — standing on a green college quad. He raises a smartphone up to his mouth as if speaking into it, natural relaxed arm movement, subtle head tilt. Warm cinematic golden-hour lighting, shallow focus, brick campus buildings and trees softly blurred behind him. Photorealistic, smooth natural motion, high detail fur."
+      "prompt": "Side profile medium shot of a large friendly white yeti \u2014 the SAME yeti as in the image reference: shaggy long cream-white fur, dark claws, warm friendly face \u2014 standing on a green college quad. He raises a smartphone up to his mouth as if speaking into it, natural relaxed arm movement, subtle head tilt. Warm cinematic golden-hour lighting, shallow focus, brick campus buildings and trees softly blurred behind him. Photorealistic, smooth natural motion, high detail fur."
     },
     {
       "filename": "assets/generated/yeti-walking-class-phone-v1.mp4",
       "kind": "video",
-      "description": "The friendly white yeti (same character reference as the quad shots) walking to class across the quad wearing a backpack and silver over-ear headphones, raises his smartphone to his mouth and talks into it like a voice memo. Note: he speaks early in the clip and lowers the phone while walking later, slightly reversed from the walk-then-speak brief. 8s 1280x720 (720p — upscale winners before final render), has generated audio track. VO to be layered in Remotion (ElevenLabs planned).",
+      "description": "The friendly white yeti (same character reference as the quad shots) walking to class across the quad wearing a backpack and silver over-ear headphones, raises his smartphone to his mouth and talks into it like a voice memo. Note: he speaks early in the clip and lowers the phone while walking later, slightly reversed from the walk-then-speak brief. 8s 1280x720 (720p \u2014 upscale winners before final render), has generated audio track. VO to be layered in Remotion (ElevenLabs planned).",
       "duration": 8.06,
       "source": "higgsfield",
       "model": "seedance_2_0 (std, 720p, 16:9; image_references = frame @5s of yeti-couch-swiping-v3.mp4)",
       "job_id": "57f0c5d3-e630-4508-ae45-b260a6521b95",
-      "prompt": "A large friendly white yeti — the SAME yeti as in the image reference: shaggy long cream-white fur, dark claws, warm friendly face — walking to class across a green college quad among blurred students. He wears a modern backpack on his back and over-ear headphones on his head. Tracking shot following alongside him as he walks with a relaxed confident stride; mid-shot, he lifts a smartphone up to his mouth and speaks into it like a voice memo, natural arm movement, friendly expression while talking. Warm afternoon golden-hour sunlight, brick campus buildings and tree-lined walkways softly blurred behind him. Photorealistic, cinematic depth of field, smooth natural motion, high detail fur."
+      "prompt": "A large friendly white yeti \u2014 the SAME yeti as in the image reference: shaggy long cream-white fur, dark claws, warm friendly face \u2014 walking to class across a green college quad among blurred students. He wears a modern backpack on his back and over-ear headphones on his head. Tracking shot following alongside him as he walks with a relaxed confident stride; mid-shot, he lifts a smartphone up to his mouth and speaks into it like a voice memo, natural arm movement, friendly expression while talking. Warm afternoon golden-hour sunlight, brick campus buildings and tree-lined walkways softly blurred behind him. Photorealistic, cinematic depth of field, smooth natural motion, high detail fur."
     },
     {
       "filename": "assets/references/usc/usc-tommy-trojan.jpg",
@@ -265,7 +265,7 @@
     {
       "filename": "assets/generated/yeti-canonical-face-front.png",
       "kind": "image",
-      "description": "CANONICAL YETI CHARACTER REFERENCE (front 3/4): frame @2.5s of yeti-quad-phone-pushin-v1.mp4 — cartoonish friendly face, grey muzzle, round amber eyes, shaggy cream fur, dark claws, silver headphones, tan backpack. USE THIS (plus the profile frame) as the character reference for ALL future yeti generations. Higgsfield media_id 0726ba24-cfbe-4217-9f1f-8520557b6b72.",
+      "description": "CANONICAL YETI CHARACTER REFERENCE (front 3/4): frame @2.5s of yeti-quad-phone-pushin-v1.mp4 \u2014 cartoonish friendly face, grey muzzle, round amber eyes, shaggy cream fur, dark claws, silver headphones, tan backpack. USE THIS (plus the profile frame) as the character reference for ALL future yeti generations. Higgsfield media_id 0726ba24-cfbe-4217-9f1f-8520557b6b72.",
       "source": "higgsfield",
       "model": "frame extract (ffmpeg)"
     },
@@ -312,20 +312,20 @@
     {
       "filename": "assets/generated/scout-chat-onit-still-v1.png",
       "kind": "image",
-      "description": "STILL (keyframe, scene 3): macro of phone in furry paw, dark navy Scout chat UI, blue orb avatar, white bubble reading 'On it — drafting your outreach.' with typing dots. Text rendered crisply.",
+      "description": "STILL (keyframe, scene 3): macro of phone in furry paw, dark navy Scout chat UI, blue orb avatar, white bubble reading 'On it \u2014 drafting your outreach.' with typing dots. Text rendered crisply.",
       "source": "higgsfield",
       "model": "nano_banana_pro (2k, 16:9)",
       "job_id": "91ef93ed-e284-412e-bc5f-92e01f89a6a8",
-      "prompt": "Extreme close-up of a smartphone screen held by a shaggy cream-white furry paw with short dark claws, screen filling most of the frame. Dark navy AI-agent chat interface: a glowing blue orb avatar at top center, one clean white chat bubble in a modern sans-serif font reading exactly \"On it — drafting your outreach.\" with a subtle three-dot typing indicator below it. Soft blue screen glow reflecting on the fur. Macro lens, crisp legible UI text, photorealistic, cinematic contrast. No other text on screen."
+      "prompt": "Extreme close-up of a smartphone screen held by a shaggy cream-white furry paw with short dark claws, screen filling most of the frame. Dark navy AI-agent chat interface: a glowing blue orb avatar at top center, one clean white chat bubble in a modern sans-serif font reading exactly \"On it \u2014 drafting your outreach.\" with a subtle three-dot typing indicator below it. Soft blue screen glow reflecting on the fur. Macro lens, crisp legible UI text, photorealistic, cinematic contrast. No other text on screen."
     },
     {
       "filename": "assets/generated/scout-chat-emailing-doogle-still-v1.png",
       "kind": "image",
-      "description": "STILL (keyframe, scene 4): macro of Scout chat UI, bubble reading 'Emailing 5 hiring managers at Doogle…', row of 5 avatar circles with progress line, glowing paper-plane send icon. Text rendered crisply.",
+      "description": "STILL (keyframe, scene 4): macro of Scout chat UI, bubble reading 'Emailing 5 hiring managers at Doogle\u2026', row of 5 avatar circles with progress line, glowing paper-plane send icon. Text rendered crisply.",
       "source": "higgsfield",
       "model": "nano_banana_pro (2k, 16:9)",
       "job_id": "0406f5ae-03bc-4b7b-a13b-debb56979117",
-      "prompt": "Extreme close-up of the same dark navy AI-agent chat interface on a smartphone screen, filling the frame. A glowing blue orb avatar at top, one white chat bubble in a modern sans-serif font reading exactly \"Emailing 5 hiring managers at Doogle…\" and below it a row of five small circular avatar placeholders with a thin blue progress line, plus one glowing blue paper-plane send icon at the bottom center of the screen shining brighter than the rest of the UI. Macro lens, crisp legible UI text, photorealistic screen render, cinematic. No other text."
+      "prompt": "Extreme close-up of the same dark navy AI-agent chat interface on a smartphone screen, filling the frame. A glowing blue orb avatar at top, one white chat bubble in a modern sans-serif font reading exactly \"Emailing 5 hiring managers at Doogle\u2026\" and below it a row of five small circular avatar placeholders with a thin blue progress line, plus one glowing blue paper-plane send icon at the bottom center of the screen shining brighter than the rest of the UI. Macro lens, crisp legible UI text, photorealistic screen render, cinematic. No other text."
     },
     {
       "filename": "assets/generated/mail-icon-zoom-transition-still-v1.png",
@@ -375,7 +375,7 @@
     {
       "filename": "assets/generated/hiring-manager-reply-still-v1.png",
       "kind": "image",
-      "description": "SUPERSEDED by hiring-manager-reply-day-v1.png (night/dusk version; Nick wants daytime). STILL (keyframe, scene 10): the hiring manager typing a reply at night, compose window on monitor, desk lamp, rain-flecked window bokeh. NOTE: green screen-glow came out weak and woman differs slightly from the desk-landing shot — regen candidate.",
+      "description": "SUPERSEDED by hiring-manager-reply-day-v1.png (night/dusk version; Nick wants daytime). STILL (keyframe, scene 10): the hiring manager typing a reply at night, compose window on monitor, desk lamp, rain-flecked window bokeh. NOTE: green screen-glow came out weak and woman differs slightly from the desk-landing shot \u2014 regen candidate.",
       "source": "higgsfield",
       "model": "nano_banana_pro (2k, 16:9)",
       "job_id": "73186151-bf2e-4416-a0b5-2c718a9b0fb1",
@@ -393,7 +393,7 @@
     {
       "filename": "assets/generated/yeti-class-interview-popup-still-v1.png",
       "kind": "image",
-      "description": "UNUSED in yeti-using-scout board after restructure (ending is now the full-frame reply email on his laptop + class zoom-out). STILL (keyframe, scene 12): canonical-ish yeti at lecture desk reading phone with delighted wide eyes, green notification card glowing on screen. NOTE: face drifted slightly off canonical (muzzle heavier) — regen candidate; reply email text gets rendered as a Remotion mock popup for legibility.",
+      "description": "UNUSED in yeti-using-scout board after restructure (ending is now the full-frame reply email on his laptop + class zoom-out). STILL (keyframe, scene 12): canonical-ish yeti at lecture desk reading phone with delighted wide eyes, green notification card glowing on screen. NOTE: face drifted slightly off canonical (muzzle heavier) \u2014 regen candidate; reply email text gets rendered as a Remotion mock popup for legibility.",
       "source": "higgsfield",
       "model": "nano_banana_pro (2k, 16:9); image_references = yeti-canonical-face-front.png + yeti-canonical-face-profile.png",
       "job_id": "398df16e-a801-4ed0-b8f0-f2fd34ed14f8",
@@ -402,7 +402,7 @@
     {
       "filename": "assets/generated/scout-ui-promo-clip-agent-beat.mp4",
       "kind": "video",
-      "description": "Scout agent UI beat clipped from promo-saas-v2.mp4 (9.5–23.0s): voice-command waveform → 'Find me hiring managers at J.P. Morgan' → 'Ready to send — 5 emails' list → Send all 5 → 'Done — 5 drafts ready'. Vertical 720x1280, 13.5s, silent. Intended as the phone-screen content composited into the yeti OTS lecture shot. NOTE: says J.P. Morgan; storyboard company is Doogle — re-skin via Remotion mock or keep JPM.",
+      "description": "Scout agent UI beat clipped from promo-saas-v2.mp4 (9.5\u201323.0s): voice-command waveform \u2192 'Find me hiring managers at J.P. Morgan' \u2192 'Ready to send \u2014 5 emails' list \u2192 Send all 5 \u2192 'Done \u2014 5 drafts ready'. Vertical 720x1280, 13.5s, silent. Intended as the phone-screen content composited into the yeti OTS lecture shot. NOTE: says J.P. Morgan; storyboard company is Doogle \u2014 re-skin via Remotion mock or keep JPM.",
       "duration": 13.5,
       "source": "dropped",
       "model": "ffmpeg clip of assets/references/promo-saas-v2.mp4"
@@ -428,7 +428,7 @@
     {
       "filename": "assets/generated/la-skyline-mail-trails-day-v1.png",
       "kind": "image",
-      "description": "STILL (keyframe, scene 8): wide zoomed-out daytime aerial of downtown LA, several blue light-trails arcing down from the sky into different towers with pulse rings at entry. Replaces the stylized US-map shot (map-outreach-trails-still-v1) per Nick — real skyline instead of map.",
+      "description": "STILL (keyframe, scene 8): wide zoomed-out daytime aerial of downtown LA, several blue light-trails arcing down from the sky into different towers with pulse rings at entry. Replaces the stylized US-map shot (map-outreach-trails-still-v1) per Nick \u2014 real skyline instead of map.",
       "source": "higgsfield",
       "model": "nano_banana_pro (2k, 16:9)",
       "job_id": "eb87d3a0-4a19-41a2-ad6b-af858dce4a9d",
@@ -437,7 +437,7 @@
     {
       "filename": "assets/generated/la-skyline-reply-green-day-v1.png",
       "kind": "image",
-      "description": "STILL (keyframe, scene 9): same daytime LA aerial (generated from the trails shot as reference), one tower glowing bright green with radiating rings — the reply. Replaces map-office-green-glow-still-v1.",
+      "description": "STILL (keyframe, scene 9): same daytime LA aerial (generated from the trails shot as reference), one tower glowing bright green with radiating rings \u2014 the reply. Replaces map-office-green-glow-still-v1.",
       "source": "higgsfield",
       "model": "nano_banana_pro (2k, 16:9); image_reference = la-skyline-mail-trails-day-v1 (job)",
       "job_id": "47ea6630-8648-4254-8342-299f62715520",
@@ -464,16 +464,16 @@
     {
       "filename": "assets/generated/doogle-reply-email-screen-still-v1.png",
       "kind": "image",
-      "description": "STILL (yeti-using-scout ending, scene 13): full-frame Gmail-style email client, opened reply from 'Sarah Chen — Doogle Recruiting', subject 'Product Management Role at Doogle — Interview', body 'Hi Rylan — thank you for reaching out. We'd be glad to set up an interview…Thursday afternoon…' with soft green glow card. Text rendered crisp and legible — usable as the actual on-screen content before the zoom-out.",
+      "description": "STILL (yeti-using-scout ending, scene 13): full-frame Gmail-style email client, opened reply from 'Sarah Chen \u2014 Doogle Recruiting', subject 'Product Management Role at Doogle \u2014 Interview', body 'Hi Rylan \u2014 thank you for reaching out. We'd be glad to set up an interview\u2026Thursday afternoon\u2026' with soft green glow card. Text rendered crisp and legible \u2014 usable as the actual on-screen content before the zoom-out.",
       "source": "higgsfield",
       "model": "nano_banana_pro (2k, 16:9)",
       "job_id": "ea8665b1-423c-4cf6-89e6-036da0f911e9",
-      "prompt": "Full-frame screenshot-style shot of a clean modern email client filling the entire frame, light theme, one opened email. Sender name \"Sarah Chen — Doogle Recruiting\". Subject line reads exactly \"Product Management Role at Doogle — Interview\". Email body text reads exactly \"Hi Rylan — thank you for reaching out. We'd be glad to set up an interview for the Product Management role at Doogle. Would Thursday afternoon work?\" followed by the signature \"Sarah Chen, Doogle Recruiting\". Crisp legible modern sans-serif UI font, subtle soft green highlight glow around the email card, minimal toolbar and inbox list blurred at the left edge. Flat straight-on screen view, high resolution UI render, no other text."
+      "prompt": "Full-frame screenshot-style shot of a clean modern email client filling the entire frame, light theme, one opened email. Sender name \"Sarah Chen \u2014 Doogle Recruiting\". Subject line reads exactly \"Product Management Role at Doogle \u2014 Interview\". Email body text reads exactly \"Hi Rylan \u2014 thank you for reaching out. We'd be glad to set up an interview for the Product Management role at Doogle. Would Thursday afternoon work?\" followed by the signature \"Sarah Chen, Doogle Recruiting\". Crisp legible modern sans-serif UI font, subtle soft green highlight glow around the email card, minimal toolbar and inbox list blurred at the left edge. Flat straight-on screen view, high resolution UI render, no other text."
     },
     {
       "filename": "assets/generated/yeti-class-laptop-reply-still-v1.png",
       "kind": "image",
-      "description": "STILL (yeti-using-scout final frame, scene 14): canonical-ish yeti at a lecture-hall desk, open laptop glowing with green email window, fist raised in celebration, delighted grin, students/professor blurred, warm daylight. End frame of the zoom-out from the email screen. NOTE: face still drifts slightly off canonical — regen candidate.",
+      "description": "STILL (yeti-using-scout final frame, scene 14): canonical-ish yeti at a lecture-hall desk, open laptop glowing with green email window, fist raised in celebration, delighted grin, students/professor blurred, warm daylight. End frame of the zoom-out from the email screen. NOTE: face still drifts slightly off canonical \u2014 regen candidate.",
       "source": "higgsfield",
       "model": "nano_banana_pro (2k, 16:9); image_references = yeti-canonical-face-front.png + yeti-canonical-face-profile.png",
       "job_id": "cb10a1d3-5bd6-4616-8d9f-128a7a1d3769",
@@ -492,7 +492,7 @@
     {
       "filename": "assets/generated/scout-chat-onit-v1.mp4",
       "kind": "video",
-      "description": "Seedance animation of the 'On it — drafting your outreach.' chat still: typing dots pulse, orb swirls, slow push-in. Scene 4. 1080p 16:9 silent.",
+      "description": "Seedance animation of the 'On it \u2014 drafting your outreach.' chat still: typing dots pulse, orb swirls, slow push-in. Scene 4. 1080p 16:9 silent.",
       "duration": 4.04,
       "source": "higgsfield",
       "model": "seedance_2_0 (std, 1080p, 16:9, no audio; start_image = scout-chat-onit-still-v1.png)",
@@ -502,7 +502,7 @@
     {
       "filename": "assets/generated/scout-chat-emailing-doogle-v1.mp4",
       "kind": "video",
-      "description": "Seedance animation of the 'Emailing 5 hiring managers at Doogle…' still: avatars light up along the progress line, send icon pulses, push-in. Scene 5. 1080p 16:9 silent.",
+      "description": "Seedance animation of the 'Emailing 5 hiring managers at Doogle\u2026' still: avatars light up along the progress line, send icon pulses, push-in. Scene 5. 1080p 16:9 silent.",
       "duration": 4.04,
       "source": "higgsfield",
       "model": "seedance_2_0 (std, 1080p, 16:9, no audio; start_image = scout-chat-emailing-doogle-still-v1.png)",
@@ -512,7 +512,7 @@
     {
       "filename": "assets/generated/mail-icon-zoom-transition-v1.mp4",
       "kind": "video",
-      "description": "Seedance animation: camera dives into the glowing send icon until blue light fills the frame — whip-zoom transition. Scene 6. 1080p 16:9 silent.",
+      "description": "Seedance animation: camera dives into the glowing send icon until blue light fills the frame \u2014 whip-zoom transition. Scene 6. 1080p 16:9 silent.",
       "duration": 4.04,
       "source": "higgsfield",
       "model": "seedance_2_0 (std, 1080p, 16:9, no audio; start_image = mail-icon-zoom-transition-still-v1.png)",
@@ -592,7 +592,7 @@
     {
       "filename": "assets/generated/scout-ui-promo-clip-agent-beat-wide.mp4",
       "kind": "video",
-      "description": "Widescreen (1920x1080) blur-padded version of scout-ui-promo-clip-agent-beat.mp4 — vertical promo clip centered over a blurred darkened copy of itself. Used as scene 3 of the yeti-using-scout plan.",
+      "description": "Widescreen (1920x1080) blur-padded version of scout-ui-promo-clip-agent-beat.mp4 \u2014 vertical promo clip centered over a blurred darkened copy of itself. Used as scene 3 of the yeti-using-scout plan.",
       "duration": 13.5,
       "source": "dropped",
       "model": "ffmpeg blur-pad of scout-ui-promo-clip-agent-beat.mp4"
@@ -600,7 +600,7 @@
     {
       "filename": "assets/generated/yeti-class-tell-classmates-v1.mp4",
       "kind": "video",
-      "description": "Seedance animation (6s): yeti reads the laptop, eyes go wide, spins around to tell the students behind him ('Oh my god — wait, I got an interview!'), they react smiling, he turns back and points at the screen. Final live-action beat of yeti-using-scout. 1080p 16:9 silent.",
+      "description": "Seedance animation (6s): yeti reads the laptop, eyes go wide, spins around to tell the students behind him ('Oh my god \u2014 wait, I got an interview!'), they react smiling, he turns back and points at the screen. Final live-action beat of yeti-using-scout. 1080p 16:9 silent.",
       "duration": 6.04,
       "source": "higgsfield",
       "model": "seedance_2_0 (std, 1080p, 16:9, no audio; start_image = yeti-class-laptop-reply-still-v1.png)",
@@ -685,7 +685,7 @@
     {
       "filename": "assets/generated/gmail-rejections-browser-crop-v1.png",
       "kind": "image",
-      "description": "Browser-window-only 16:9 crop (4760x2677) of gmail-rejections-browser-v1.png — clean full-Chrome Gmail rejection inbox plate. Used in trueview 'rejection-inbox' scene with Remotion kenBurns push-in + 'For no response.' word pops.",
+      "description": "Browser-window-only 16:9 crop (4760x2677) of gmail-rejections-browser-v1.png \u2014 clean full-Chrome Gmail rejection inbox plate. Used in trueview 'rejection-inbox' scene with Remotion kenBurns push-in + 'For no response.' word pops.",
       "source": "higgsfield",
       "model": "nano_banana_pro + ffmpeg crop",
       "job_id": "3ef14672-5785-46fe-a3e4-59dc755bb431"
@@ -711,7 +711,7 @@
     {
       "filename": "assets/generated/scout-demo-1-prompt-apply.png",
       "kind": "image",
-      "description": "STILL: Ask Scout chat (real UI ref) — user asks 'apply to 15 entry-level PM roles at tech companies in SF', Scout 'On it — finding roles and applying…' + spinner + progress bar. Text crisp. 2752x1536. ('Prep for meengs' pill garbled, minor.)",
+      "description": "STILL: Ask Scout chat (real UI ref) \u2014 user asks 'apply to 15 entry-level PM roles at tech companies in SF', Scout 'On it \u2014 finding roles and applying\u2026' + spinner + progress bar. Text crisp. 2752x1536. ('Prep for meengs' pill garbled, minor.)",
       "source": "higgsfield",
       "model": "nano_banana_pro (2k, 16:9, real-UI reference)",
       "job_id": "86cbcb0f-863e-4fc1-905f-3f2406f0191a"
@@ -728,7 +728,7 @@
     {
       "filename": "assets/generated/scout-demo-2-done-view.png",
       "kind": "image",
-      "description": "STILL: Scout reply 'Done ✅ I applied to all 15 roles with your tailored resume.' + 'View applications' button with cursor. Text crisp. 2752x1536.",
+      "description": "STILL: Scout reply 'Done \u2705 I applied to all 15 roles with your tailored resume.' + 'View applications' button with cursor. Text crisp. 2752x1536.",
       "source": "higgsfield",
       "model": "nano_banana_pro (2k, 16:9, real-UI reference)",
       "job_id": "bb1d724b-2424-41f0-affe-5ad4d42c6fa4"
@@ -745,7 +745,7 @@
     {
       "filename": "assets/generated/scout-demo-3-applications.png",
       "kind": "image",
-      "description": "STILL: Applications page (real table UI ref) — 15 SF tech PM roles (stripe, airbnb, openai, figma, notion, salesforce, dropbox, uber, lyft, doordash, plaid, brex, rippling, databricks, instacart), every STATUS 'applied ✓'. Clean. Used with Remotion kenBurns (no AI animation needed). 2752x1536.",
+      "description": "STILL: Applications page (real table UI ref) \u2014 15 SF tech PM roles (stripe, airbnb, openai, figma, notion, salesforce, dropbox, uber, lyft, doordash, plaid, brex, rippling, databricks, instacart), every STATUS 'applied \u2713'. Clean. Used with Remotion kenBurns (no AI animation needed). 2752x1536.",
       "source": "higgsfield",
       "model": "nano_banana_pro (2k, 16:9, real-UI reference)",
       "job_id": "ad5e8594-a8b2-4529-8581-bf5c968fe75d"
@@ -753,7 +753,7 @@
     {
       "filename": "assets/generated/scout-demo-4-prompt-email.png",
       "kind": "image",
-      "description": "STILL: chat — user asks 'email 3 people on each of those teams introducing myself + coffee chat', Scout 'Writing 45 personalized emails…' + 'Placing drafts in your Gmail…' progress. Text crisp. 2752x1536.",
+      "description": "STILL: chat \u2014 user asks 'email 3 people on each of those teams introducing myself + coffee chat', Scout 'Writing 45 personalized emails\u2026' + 'Placing drafts in your Gmail\u2026' progress. Text crisp. 2752x1536.",
       "source": "higgsfield",
       "model": "nano_banana_pro (2k, 16:9, real-UI reference)",
       "job_id": "2d1534ae-654b-4abb-bf4f-b7baa53398de"
@@ -770,7 +770,7 @@
     {
       "filename": "assets/generated/scout-demo-5-gmail-drafts.png",
       "kind": "image",
-      "description": "STILL: Gmail Drafts (45) in Chrome — coffee-chat drafts to Sarah Kim (Stripe), James Park (Airbnb), Priya Patel (OpenAI), Alex Chen (Figma), Maria Lopez (Notion), David Wu (Salesforce)... Top ~8 rows clean; some lower rows have garbled names ('Jioe Wu (Fgma)') — keep push-in framed on top half. Used with Remotion kenBurns. 2752x1536.",
+      "description": "STILL: Gmail Drafts (45) in Chrome \u2014 coffee-chat drafts to Sarah Kim (Stripe), James Park (Airbnb), Priya Patel (OpenAI), Alex Chen (Figma), Maria Lopez (Notion), David Wu (Salesforce)... Top ~8 rows clean; some lower rows have garbled names ('Jioe Wu (Fgma)') \u2014 keep push-in framed on top half. Used with Remotion kenBurns. 2752x1536.",
       "source": "higgsfield",
       "model": "nano_banana_pro (2k, 16:9, real-UI reference)",
       "job_id": "69f6a6d1-aaf6-43f8-8522-08ba1909f50a"
@@ -804,7 +804,7 @@
     {
       "filename": "assets/generated/scout-demo-4b-contacts.png",
       "kind": "image",
-      "description": "STILL: chat — email-3-people ask + Scout 'Found 45 people across your 15 teams — drafting intros now…' + 3 contact cards (Sarah Kim/Stripe, James Park/Airbnb, Priya Patel/OpenAI, verified-email badges) + 'Placing drafts in your Gmail…'. Crisp. 2752x1536.",
+      "description": "STILL: chat \u2014 email-3-people ask + Scout 'Found 45 people across your 15 teams \u2014 drafting intros now\u2026' + 3 contact cards (Sarah Kim/Stripe, James Park/Airbnb, Priya Patel/OpenAI, verified-email badges) + 'Placing drafts in your Gmail\u2026'. Crisp. 2752x1536.",
       "source": "higgsfield",
       "model": "nano_banana_pro (2k, 16:9, real-UI reference)",
       "job_id": "1a774472-504a-41e0-b293-971ab7428c39"
@@ -846,7 +846,7 @@
     {
       "filename": "assets/generated/scout-cine-2-responding-v2.mp4",
       "kind": "video",
-      "description": "CINEMATIC beat 2: single floating Scout reply card ('On it — finding roles and applying…' + spinner + progress bar) in navy warp-particle space, slow drift. Clean. 5s 1080p.",
+      "description": "CINEMATIC beat 2: single floating Scout reply card ('On it \u2014 finding roles and applying\u2026' + spinner + progress bar) in navy warp-particle space, slow drift. Clean. 5s 1080p.",
       "duration": 5.0,
       "source": "higgsfield",
       "model": "seedance_2_0 (std, 1080p, 16:9)",
@@ -855,7 +855,7 @@
     {
       "filename": "assets/generated/scout-cine-3-applications.mp4",
       "kind": "video",
-      "description": "CINEMATIC beat 3: applications table as glowing tablet panel, rows + green 'applied ✓' pills popping in. Top rows crisp; some lower-row garble in vignette. First take flagged nsfw (false positive), reworded prompt passed. 5s 1080p.",
+      "description": "CINEMATIC beat 3: applications table as glowing tablet panel, rows + green 'applied \u2713' pills popping in. Top rows crisp; some lower-row garble in vignette. First take flagged nsfw (false positive), reworded prompt passed. 5s 1080p.",
       "duration": 5.0,
       "source": "higgsfield",
       "model": "seedance_2_0 (std, 1080p, 16:9)",
@@ -864,7 +864,7 @@
     {
       "filename": "assets/generated/scout-cine-4-network.mp4",
       "kind": "video",
-      "description": "CINEMATIC beat 4: professional network constellation — glowing blue lines connecting dozens of circular headshot avatars in dark navy space, emails traveling outward. The money shot. 6s 1080p.",
+      "description": "CINEMATIC beat 4: professional network constellation \u2014 glowing blue lines connecting dozens of circular headshot avatars in dark navy space, emails traveling outward. The money shot. 6s 1080p.",
       "duration": 6.0,
       "source": "higgsfield",
       "model": "seedance_2_0 (std, 1080p, 16:9)",
@@ -925,7 +925,7 @@
     {
       "filename": "assets/generated/scout-cine-3b-typing-email-v6.mp4",
       "kind": "video",
-      "description": "CINEMATIC beat 3b (WINNER, in trueview plan as 'cine-typing-email'): daylight OTS shot, second prompt typed live — 'Email three people on each team|' letter-perfect, complete by ~6.3s, clean ~1.8s hold with blinking cursor to the final frame. Minor invented-UI clutter: duplicated 'Job Board' sidebar row. From a count:4 batch on the shortened sentence; sibling variants rejected (0abe6655 garbled hold, 2bafdf05 garbled hold, 5eb14199 false-positive nsfw). video ref = real typing capture (media 8309db06). 8s 1080p.",
+      "description": "CINEMATIC beat 3b (WINNER, in trueview plan as 'cine-typing-email'): daylight OTS shot, second prompt typed live \u2014 'Email three people on each team|' letter-perfect, complete by ~6.3s, clean ~1.8s hold with blinking cursor to the final frame. Minor invented-UI clutter: duplicated 'Job Board' sidebar row. From a count:4 batch on the shortened sentence; sibling variants rejected (0abe6655 garbled hold, 2bafdf05 garbled hold, 5eb14199 false-positive nsfw). video ref = real typing capture (media 8309db06). 8s 1080p.",
       "duration": 8.06,
       "source": "higgsfield",
       "model": "seedance_2_0 (std, 1080p, 16:9)",
@@ -934,14 +934,32 @@
     {
       "filename": "assets/generated/offerloop_logo2.png",
       "kind": "image",
-      "description": "Offerloop logo (full-color mark + wordmark on white, 612x408) — dropped in by Nick. Closes the TrueView ad as scene 'logo-close'.",
+      "description": "Offerloop logo (full-color mark + wordmark on white, 612x408) \u2014 dropped in by Nick. Closes the TrueView ad as scene 'logo-close'.",
       "source": "dropped"
     },
     {
       "filename": "assets/generated/Timeless (Instrumental).mp3",
       "kind": "audio",
-      "description": "Music bed for the TrueView ad — 'Timeless' instrumental, dropped in by Nick. Starts at 13.4s ('So how does it work?') in trueview.plan.ts with a 3s fade-out.",
+      "description": "Music bed for the TrueView ad \u2014 'Timeless' instrumental, dropped in by Nick. Starts at 13.4s ('So how does it work?') in trueview.plan.ts with a 3s fade-out.",
       "duration": 256.01,
+      "source": "dropped"
+    },
+    {
+      "filename": "assets/references/google/google-nano-banana-demo.mp4",
+      "kind": "reference",
+      "description": "Google 'Nano Banana 2' launch demo (640x360, 80.7s, 24fps, VO). Presenter-led product demo: 2s rapid output montage cold open (8 cuts in 2s: tennis photo, illustration, voxel animals) -> PM presenter full-frame with lower-third -> chaptered full-screen UI recordings (Gemini app, AI Studio, NotebookLM, Flow, Storybook) with presenter as small rounded PiP bubble bottom-right, 4-13s holds, cuts only at chapter boundaries -> presenter sign-off -> Google logo on white, ~8s hold with audio fading from 70s. Steady VO-driven -18 to -22 LUFS. Analyzed 2026-07-13; learnings codified in .claude/skills/ad-* skills.",
+      "source": "dropped"
+    },
+    {
+      "filename": "assets/references/google/google-ai-mode-film.mp4",
+      "kind": "reference",
+      "description": "Google 'Introducing AI Mode' product film (640x360, 97s, 24fps, music only + on-screen lines). Continuous motion-graphics film: ZERO hard cuts in 97s (scene-detect finds one event, the dark->light mode flip ~51s) \u2014 camera glides/morphs across oversized dark-mode UI cards on charcoal canvas with heavily-blurred aurora glow blobs in the 4 Google colors. 'Introducing AI Mode' inside a drawn circle ring in first 8s; kinetic type on a curved thread ('whatever is on your mind' as nodes on a path); query keywords tinted in brand colors; blue selection highlights on answers; single-verb beats. Music one long crescendo: hushed -30 LUFS open building to -14 peak at 82-92s, soft close. Tiny disclaimers bottom. Analyzed 2026-07-13; learnings in .claude/skills/ad-* skills.",
+      "source": "dropped"
+    },
+    {
+      "filename": "assets/references/google/google-gemini-era-anthem.mp4",
+      "kind": "reference",
+      "description": "Google 'Welcome to the Gemini era' brand anthem (640x360, 60s, 29.97fps, music-driven). Fast-cut montage: near-silent 2-3s cold open on the iconic white Google homepage -> logo morphs, chips pop around it (8 cuts in ~1.1s at 5.4-6.5s) as music slams in (-13.7 LUFS by 5s) -> cut every 1.5-5s, each shot a complete micro-story (prompt -> generating -> result: 'draw kersploooooosh' pill, Gmail summarize, AI Overview, Photos Ask, Lens) interleaved with candid joyful real-people footage (podcaster, athletes, whiteboard cat drawing) -> dark end card 'Welcome to the Gemini era' (gradient keyword) -> sparkle -> Google logo; audio drops at 57s for quiet 3s hold. Analyzed 2026-07-13; learnings in .claude/skills/ad-* skills.",
       "source": "dropped"
     }
   ]
