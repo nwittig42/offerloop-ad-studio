@@ -211,14 +211,13 @@ export const trueViewPlan: EditPlan = {
   ],
   audio: [
     {
-      // Music bed from the Act 2 turn onward. 7.0s = timeline start of
-      // 'turn-scout' (scene sums minus the 1s crossfade overlaps) —
-      // recompute if any earlier scene's duration or CROSSFADE_FRAMES changes.
+      // Music bed: the drop (22.6s into the file, Nick's pick) stays pinned
+      // to the Act 2 turn at timeline 7.0s ('turn-scout' start with 1s
+      // crossfade overlaps), with 6s of the track's lead-up in front of it.
+      // Keep startSec = 7.0 - (22.6 - trimStartSec) if either number moves.
       src: 'assets/generated/Timeless (Instrumental).mp3',
-      startSec: 7.0,
-      // Skip the quiet intro — the section Nick picked (22.6s into the file)
-      // eases in over 2s (squared ramp) instead of slamming.
-      trimStartSec: 22.6,
+      startSec: 1.0,
+      trimStartSec: 16.6,
       fadeInSec: 2,
       fadeOutSec: 3,
     },
