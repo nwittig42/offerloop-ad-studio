@@ -216,6 +216,9 @@ export const trueViewPlan: EditPlan = {
       // recompute if any earlier scene's duration changes.
       src: 'assets/generated/Timeless (Instrumental).mp3',
       startSec: 13.4,
+      // Skip the quiet intro — the section Nick picked (timeline ~36s on the
+      // untrimmed bed = 22.6s into the file) now lands right on the card.
+      trimStartSec: 22.6,
       fadeOutSec: 3,
     },
   ],
