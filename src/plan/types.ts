@@ -66,6 +66,11 @@ export type VideoScene = SceneBase & {
   fit?: 'cover' | 'contain';
   /** Gaussian blur in px (background-plate look); slightly scales up to hide soft edges. */
   blur?: number;
+  /**
+   * Slow push-in, on by default — constant motion keeps crossfades from
+   * feeling like a slideshow. Set false to opt out.
+   */
+  push?: boolean;
 };
 
 export type ImageScene = SceneBase & {

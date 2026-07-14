@@ -1,6 +1,7 @@
 import {
   AbsoluteFill,
   Audio,
+  Easing,
   Img,
   OffthreadVideo,
   Sequence,
@@ -9,8 +10,11 @@ import {
   useCurrentFrame,
   useVideoConfig,
 } from 'remotion';
+import type {
+  TransitionPresentation,
+  TransitionPresentationComponentProps,
+} from '@remotion/transitions';
 import {TransitionSeries, linearTiming} from '@remotion/transitions';
-import {fade} from '@remotion/transitions/fade';
 import {colors, fonts} from '../../brand/theme';
 import type {EditPlan, Overlay, Scene} from '../plan/types';
 import {CROSSFADE_FRAMES, sceneDurationInFrames} from '../plan/timing';
@@ -20,6 +24,29 @@ import {HookText} from '../components/HookText';
 import {LowerThird} from '../components/LowerThird';
 import {TimerCounter} from '../components/TimerCounter';
 import {mockups} from '../components/mock';
+
+/**
+ * Crossfade that also settles the incoming scene from a slight zoom — with
+ * the per-scene push-in this keeps both layers moving through every blend,
+ * which is what makes dissolves read as fluid instead of slideshow-y.
+ */
+const FadeZoomInner: React.FC<
+  TransitionPresentationComponentProps<Record<string, never>>
+> = ({children, presentationDirection, presentationProgress}) => {
+  const entering = presentationDirection === 'entering';
+  const opacity = entering ? presentationProgress : 1;
+  const scale = entering ? 1.045 - 0.045 * presentationProgress : 1;
+  return (
+    <AbsoluteFill style={{opacity, transform: `scale(${scale})`}}>
+      {children}
+    </AbsoluteFill>
+  );
+};
+
+const fadeZoom = (): TransitionPresentation<Record<string, never>> => ({
+  component: FadeZoomInner,
+  props: {},
+});
 
 const FadeIn: React.FC<{enabled: boolean; children: React.ReactNode}> = ({enabled, children}) => {
   const frame = useCurrentFrame();
@@ -86,22 +113,32 @@ const SceneContent: React.FC<{scene: Scene}> = ({scene}) => {
 
   switch (scene.type) {
     case 'video':
-      return (
-        <OffthreadVideo
-          src={staticFile(scene.src)}
-          trimBefore={
-            scene.trimStartSec ? Math.round(scene.trimStartSec * fps) : undefined
-          }
-          muted={scene.muted ?? true}
-          style={{
-            width: '100%',
-            height: '100%',
-            objectFit: scene.fit ?? 'cover',
-            filter: scene.blur ? `blur(${scene.blur}px)` : undefined,
-            transform: scene.blur ? 'scale(1.06)' : undefined,
-          }}
-        />
-      );
+      {
+        // Constant slow push-in (unless opted out) so there's always motion
+        // carrying through the crossfades. Blur plates keep their fixed
+        // overscan on top of it.
+        const push =
+          scene.push === false
+            ? 1
+            : interpolate(frame, [0, durationInFrames], [1, 1.06]);
+        const overscan = scene.blur ? 1.06 : 1;
+        return (
+          <OffthreadVideo
+            src={staticFile(scene.src)}
+            trimBefore={
+              scene.trimStartSec ? Math.round(scene.trimStartSec * fps) : undefined
+            }
+            muted={scene.muted ?? true}
+            style={{
+              width: '100%',
+              height: '100%',
+              objectFit: scene.fit ?? 'cover',
+              filter: scene.blur ? `blur(${scene.blur}px)` : undefined,
+              transform: `scale(${push * overscan})`,
+            }}
+          />
+        );
+      }
     case 'image':
       return (
         <AbsoluteFill
@@ -263,8 +300,11 @@ export const PlanPlayer: React.FC<{plan: EditPlan}> = ({plan}) => {
             ? [
                 <TransitionSeries.Transition
                   key={`${scene.id}-x`}
-                  presentation={fade()}
-                  timing={linearTiming({durationInFrames: CROSSFADE_FRAMES})}
+                  presentation={fadeZoom()}
+                  timing={linearTiming({
+                    durationInFrames: CROSSFADE_FRAMES,
+                    easing: Easing.inOut(Easing.ease),
+                  })}
                 />,
                 sequence,
               ]
