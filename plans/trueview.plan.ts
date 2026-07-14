@@ -206,13 +206,13 @@ export const trueViewPlan: EditPlan = {
   ],
   audio: [
     {
-      // Music bed: the drop (22.6s into the file, Nick's pick) lands exactly
-      // on the hard cut into 'turn-scout' at timeline 8.667s, with 6s of the
-      // track's lead-up in front of it.
-      // Keep startSec = 8.667 - (22.6 - trimStartSec) if either number moves.
+      // Music bed: one continuous track under the whole video, playing from
+      // frame 0. The drop (22.6s into the file, Nick's pick) lands exactly on
+      // the hard cut into 'turn-scout' at timeline 8.667s.
+      // Keep trimStartSec = 22.6 - 8.667 if the cut moves.
       src: 'assets/generated/Timeless (Instrumental).mp3',
-      startSec: 2.67,
-      trimStartSec: 16.6,
+      startSec: 0,
+      trimStartSec: 13.93,
       fadeInSec: 2,
       fadeOutSec: 3,
     },
