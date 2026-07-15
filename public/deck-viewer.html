@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Deck Viewer — Offerloop</title>
+<style>
+  :root { --rail: 232px; --bg: #202124; --panel: #2b2c2f; }
+  * { box-sizing: border-box; margin: 0; }
+  body { height: 100vh; display: flex; background: var(--bg); font-family: Inter, system-ui, sans-serif; overflow: hidden; }
+
+  /* left thumbnail rail, Google Slides style */
+  #rail { width: var(--rail); height: 100%; overflow-y: auto; background: var(--panel);
+    border-right: 1px solid #000; padding: 12px 10px; }
+  .thumb { display: flex; gap: 8px; margin-bottom: 12px; cursor: pointer; }
+  .thumb .n { color: #9aa0a6; font-size: 12px; width: 16px; text-align: right; padding-top: 2px; }
+  .thumb .frame { position: relative; flex: 1; aspect-ratio: 980 / 552; border-radius: 4px; overflow: hidden;
+    outline: 2px solid transparent; background: #0D1424; }
+  .thumb.active .frame { outline-color: #8ab4f8; }
+  .thumb .frame iframe { width: 980px; height: 552px; border: 0; transform-origin: 0 0; pointer-events: none; }
+  .thumb .frame .hit { position: absolute; inset: 0; }
+
+  /* main stage */
+  #stage { flex: 1; height: 100%; display: flex; align-items: center; justify-content: center; position: relative; }
+  #stagewrap { position: relative; box-shadow: 0 8px 40px #000c; border-radius: 6px; overflow: hidden; background: #0D1424; }
+  #stagewrap iframe { width: 980px; height: 552px; border: 0; transform-origin: 0 0; display: block; }
+
+  #bar { position: absolute; bottom: 14px; left: 50%; transform: translateX(-50%); display: flex; gap: 6px;
+    background: #000a; border-radius: 99px; padding: 6px 14px; color: #e8eaed; font-size: 13px; align-items: center; }
+  #bar button { background: none; border: 0; color: #e8eaed; font-size: 16px; cursor: pointer; padding: 0 6px; }
+  #bar button:hover { color: #8ab4f8; }
+</style>
+</head>
+<body>
+  <nav id="rail"></nav>
+  <main id="stage">
+    <div id="stagewrap"><iframe id="main" src="/1"></iframe></div>
+    <div id="bar">
+      <button id="prev" title="Previous">‹</button>
+      <span id="label">1 / ?</span>
+      <button id="next" title="Next">›</button>
+      <span style="color:#9aa0a6; margin-left: 10px">zoom</span>
+      <button id="zoomout">−</button>
+      <button id="zoomin">+</button>
+    </div>
+  </main>
+
+<script>
+const SLIDES = 13;              // update when the deck grows
+let current = 1;
+let zoom = 0.82;                // "a little more zoomed out" — fraction of available stage space
+
+const rail = document.getElementById('rail');
+const main = document.getElementById('main');
+const wrap = document.getElementById('stagewrap');
+const label = document.getElementById('label');
+
+for (let i = 1; i <= SLIDES; i++) {
+  const t = document.createElement('div');
+  t.className = 'thumb'; t.id = 'thumb-' + i;
+  t.innerHTML = `<div class="n">${i}</div>
+    <div class="frame"><iframe loading="lazy" src="/${i}?embedded=true"></iframe><div class="hit"></div></div>`;
+  t.onclick = () => go(i);
+  rail.appendChild(t);
+}
+
+function fitThumbs() {
+  document.querySelectorAll('.thumb .frame').forEach(f => {
+    const s = f.clientWidth / 980;
+    f.querySelector('iframe').style.transform = `scale(${s})`;
+  });
+}
+
+function fitStage() {
+  const availW = window.innerWidth - rail.offsetWidth;
+  const availH = window.innerHeight;
+  const s = Math.min(availW / 980, availH / 552) * zoom;
+  wrap.style.width = 980 * s + 'px';
+  wrap.style.height = 552 * s + 'px';
+  main.style.transform = `scale(${s})`;
+}
+
+function go(i) {
+  current = Math.min(SLIDES, Math.max(1, i));
+  main.src = '/' + current + '?embedded=true';
+  label.textContent = current + ' / ' + SLIDES;
+  document.querySelectorAll('.thumb').forEach(t => t.classList.remove('active'));
+  const t = document.getElementById('thumb-' + current);
+  t.classList.add('active');
+  t.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+}
+
+document.getElementById('prev').onclick = () => go(current - 1);
+document.getElementById('next').onclick = () => go(current + 1);
+document.getElementById('zoomin').onclick = () => { zoom = Math.min(1, zoom + 0.06); fitStage(); };
+document.getElementById('zoomout').onclick = () => { zoom = Math.max(0.4, zoom - 0.06); fitStage(); };
+window.addEventListener('keydown', e => {
+  if (e.key === 'ArrowRight' || e.key === 'ArrowDown' || e.key === ' ') go(current + 1);
+  if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') go(current - 1);
+});
+window.addEventListener('resize', () => { fitStage(); fitThumbs(); });
+
+go(1); fitStage(); fitThumbs();
+</script>
+</body>
+</html>
