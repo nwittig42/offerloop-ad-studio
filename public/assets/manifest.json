@@ -979,6 +979,15 @@
       "model": "nano_banana_pro (1k, 16:9; refs = Scout home screen crop from promo-saas-v2 t=4s + yeti-quad-phone-to-mouth-glasses-backpack-still-v1.png)",
       "prompt": "Bird's-eye view straight down: same yeti (glasses, navy backpack) holding smartphone face-up, screen legible showing the dark-blue Scout app UI in a responding state \u2014 transcribed voice command \"Apply to jobs and email employees at those companies\" with status \"On it \u2014 applying & drafting emails...\"; grass, brick walkway edge, students in corner, golden afternoon light.",
       "job_id": "3bc4f692-a279-4d91-a55a-786da113b78e"
+    },
+    {
+      "filename": "assets/generated/scout-voice-campus/yeti-couch-ots-swipe-apply-still-v2.png",
+      "kind": "image",
+      "description": "STILL v2 (keyframe candidate): over-the-shoulder from behind the canonical yeti (glasses, no backpack) on his couch at home in warm evening lamplight, thumb mid swipe-right-to-apply; phone shows the promo swipe UI \u2014 Technology Intern @ Marshall Wace card (k pill, Internship tags, 9 swipes ready) sliding right with blue glow and next card behind. Minor screen-text nits: \"pre rata\", credits pill reads 4E20, small job-description garble. v1 discarded (heavy text garble). 1376x768.",
+      "source": "higgsfield",
+      "model": "nano_banana_pro (1k, 16:9; refs = swipe-card screen crop from promo-saas-v2 t=20.5s + yeti-quad-phone-to-mouth-glasses-backpack-still-v1.png)",
+      "prompt": "Over-the-shoulder from behind the yeti (glasses) on a cozy couch at evening, holding phone; screen reproduces the Offerloop swipe UI exactly (Technology Intern, Marshall Wace, $150,000 pro rata pill, Internship pills, action row, bottom nav); other thumb mid swipe-right-to-apply, card nudged right with blue trailing glow.",
+      "job_id": "cfd56394-52a8-41ee-9614-203acea4e134"
     }
   ]
 }
