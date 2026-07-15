@@ -997,6 +997,16 @@
       "model": "nano_banana_pro (1k, 16:9; refs = yeti-canonical-face-front.png + yeti-quad-phone-to-mouth-glasses-backpack-still-v1.png)",
       "prompt": "University classroom, front three-quarter angle across the desk: canonical yeti with round black glasses at his laptop, screen revealing Gmail notification \"Interview Invitation \u2014 Jane Street\"; his face lighting up ecstatic (huge eyes, open-mouth grin, fists up), classmate leaning over starting to smile, warm daylight, shallow depth of field.",
       "job_id": "48341c63-8635-400c-b4dc-e88f7634a7ee"
+    },
+    {
+      "filename": "assets/generated/scout-voice-campus/yeti-couch-swipe-apply-pass-v1.mp4",
+      "kind": "video",
+      "duration": 5.04,
+      "description": "CLIP (Tinder-for-jobs beat, silent, 1080p 16:9): animated from yeti-couch-ots-swipe-apply-still-v2 \u2014 OTS behind yeti (glasses) on couch; thumb swipes the Marshall Wace card RIGHT, green \"Applied\" check-toast pops, next card snaps in; second swipe dismisses a card and another appears. Camera locked, UI stable at video scale (close zoom shows repeated \"Technology Intern\" titles + small-text garble on intermediate cards).",
+      "source": "higgsfield",
+      "model": "seedance_2_0 (std, 1080p, 5s, no audio; start_image = yeti-couch-ots-swipe-apply-still-v2.png)",
+      "prompt": "Locked OTS: thumb swipes job card right \u2014 slides off with blue glow, green Applied toast, next card snaps in; head tilt, swipe left \u2014 card dismissed with faint red tint, another card in; tiny satisfied nod; snappy Tinder-style swipes, UI crisp.",
+      "job_id": "6886b274-48d1-4c8b-b927-a0ae87c29dd7"
     }
   ]
 }
