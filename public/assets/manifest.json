@@ -961,6 +961,15 @@
       "kind": "reference",
       "description": "Google 'Welcome to the Gemini era' brand anthem (640x360, 60s, 29.97fps, music-driven). Fast-cut montage: near-silent 2-3s cold open on the iconic white Google homepage -> logo morphs, chips pop around it (8 cuts in ~1.1s at 5.4-6.5s) as music slams in (-13.7 LUFS by 5s) -> cut every 1.5-5s, each shot a complete micro-story (prompt -> generating -> result: 'draw kersploooooosh' pill, Gmail summarize, AI Overview, Photos Ask, Lens) interleaved with candid joyful real-people footage (podcaster, athletes, whiteboard cat drawing) -> dark end card 'Welcome to the Gemini era' (gradient keyword) -> sparkle -> Google logo; audio drops at 57s for quiet 3s hold. Analyzed 2026-07-13; learnings in .claude/skills/ad-* skills.",
       "source": "dropped"
+    },
+    {
+      "filename": "assets/generated/yeti-quad-phone-to-mouth-glasses-backpack-still-v1.png",
+      "kind": "image",
+      "description": "STILL v1 (keyframe candidate): CANONICAL yeti in 3/4 side angle on campus quad lifting phone to his mouth (voice-command-to-Scout beat from promo-saas-v2), wearing round black glasses and a navy backpack; brick buildings + students behind, golden afternoon light. 1376x768.",
+      "source": "higgsfield",
+      "model": "nano_banana_pro (1k, 16:9; refs = yeti-canonical-face-front.png + yeti-canonical-face-profile.png + usc-bovard-across-quad.jpg)",
+      "prompt": "Cinematic live-action still on a sunny university campus quad (red-brick Romanesque buildings, brick walkway, green lawn, students in soft-focus background). Canonical yeti with round black-rimmed glasses and navy backpack, lifting a smartphone up to his mouth like speaking a voice command, mouth slightly open mid-sentence. Camera off to the side, 3/4 side profile at chest height. Warm golden afternoon sunlight, shallow depth of field.",
+      "job_id": "f39eab65-ad6e-49cc-a05c-75fe9932cb1c"
     }
   ]
 }
