@@ -1007,6 +1007,15 @@
       "model": "seedance_2_0 (std, 1080p, 5s, no audio; start_image = yeti-couch-ots-swipe-apply-still-v2.png)",
       "prompt": "Locked OTS: thumb swipes job card right \u2014 slides off with blue glow, green Applied toast, next card snaps in; head tilt, swipe left \u2014 card dismissed with faint red tint, another card in; tiny satisfied nod; snappy Tinder-style swipes, UI crisp.",
       "job_id": "6886b274-48d1-4c8b-b927-a0ae87c29dd7"
+    },
+    {
+      "filename": "assets/generated/scout-voice-campus/scout-can-feature-grid-dark-v2.png",
+      "kind": "image",
+      "description": "SaaS-styled restyle of the \"Scout can\" website feature grid (from Nick screenshot): dark navy canvas, indigo/periwinkle glow-as-light, misty pine silhouette at bottom, serif headline \"One assistant. The entire job search.\" with italic gradient accent, 4x2 glassmorphic cards (all eight titles/subtitles rendered exactly), hero glow outline on Apply to jobs. All text crisp. v1 discarded (hard-edged glow blob). 2752x1536.",
+      "source": "higgsfield",
+      "model": "nano_banana_pro (2k, 16:9, text-only prompt from screenshot transcription)",
+      "prompt": "Premium dark-mode SaaS section per ad-lighting skill: #0D1424 canvas, edgeless indigo/periwinkle haze behind content, faint misty pines at bottom edge; eyebrow SCOUT CAN; serif headline One assistant. / italic gradient The entire job search.; eight floating glass cards with icon chips and exact card copy; hero gradient-outline glow on Apply to jobs.",
+      "job_id": "ae699f23-5648-44d4-bd82-3871ce7b259a"
     }
   ]
 }
