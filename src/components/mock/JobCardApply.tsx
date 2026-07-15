@@ -103,7 +103,7 @@ export const JobCardApply: React.FC = () => {
           transform: `translateY(${(1 - Math.max(0, toastIn)) * 40}px)`,
         }}
       >
-        <span>✓</span> Application sent — Scout handled it
+        <span>✓</span> Application sent. Scout handled it
       </div>
     </MockStage>
   );

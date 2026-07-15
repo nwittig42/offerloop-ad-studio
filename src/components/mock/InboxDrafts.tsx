@@ -6,11 +6,11 @@ const GRAYTXT = '#6B7385';
 
 const ROWS = [
   {who: 'Sarah Kim', what: 'Re: Coffee chat next week?', tag: 'Your turn', tagBg: '#FBEAEA', tagColor: '#DB382E'},
-  {who: 'Emily Dawson', what: 'Draft ready — Technology Analyst program', tag: 'Draft ready', tagBg: '#E9EBF2', tagColor: '#4A60A8'},
+  {who: 'Emily Dawson', what: 'Draft ready: Technology Analyst program', tag: 'Draft ready', tagBg: '#E9EBF2', tagColor: '#4A60A8'},
   {who: 'Marcus Webb', what: 'Happy to intro you to our staffing lead', tag: 'Replied', tagBg: '#E0F2E4', tagColor: '#218547'},
-  {who: 'Priya Shah', what: 'Draft ready — Equity Research coffee chat', tag: 'Draft ready', tagBg: '#E9EBF2', tagColor: '#4A60A8'},
+  {who: 'Priya Shah', what: 'Draft ready: Equity Research coffee chat', tag: 'Draft ready', tagBg: '#E9EBF2', tagColor: '#4A60A8'},
   {who: 'Jane Street Recruiting', what: 'Re: Rotational Trading Desk Operations', tag: 'Replied', tagBg: '#E0F2E4', tagColor: '#218547'},
-  {who: 'David Osei', what: 'Draft ready — Alumni outreach, McKinsey', tag: 'Draft ready', tagBg: '#E9EBF2', tagColor: '#4A60A8'},
+  {who: 'David Osei', what: 'Draft ready: Alumni outreach, McKinsey', tag: 'Draft ready', tagBg: '#E9EBF2', tagColor: '#4A60A8'},
 ];
 
 /** One inbox: every outreach thread with its status, rows cascading in. */

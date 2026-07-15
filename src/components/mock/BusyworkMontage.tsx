@@ -10,10 +10,10 @@ const GRAYTXT = '#6B7385';
 const BEAT_FRAMES = 38;
 
 const TABS = [
-  {label: 'Job Board — 1,240 results', url: 'jobs.example.com/search?q=analyst&level=entry'},
-  {label: 'Networking Tracker — Google Sheets', url: 'docs.google.com/spreadsheets/d/1kT…/edit#gid=0'},
-  {label: 'LinkedIn — Marcus Webb', url: 'linkedin.com/in/marcus-webb-usc'},
-  {label: 'ChatGPT — cold email v9', url: 'chatgpt.com/c/68f2…'},
+  {label: 'Job Board: 1,240 results', url: 'jobs.example.com/search?q=analyst&level=entry'},
+  {label: 'Networking Tracker: Google Sheets', url: 'docs.google.com/spreadsheets/d/1kT…/edit#gid=0'},
+  {label: 'LinkedIn: Marcus Webb', url: 'linkedin.com/in/marcus-webb-usc'},
+  {label: 'ChatGPT: cold email v9', url: 'chatgpt.com/c/68f2…'},
 ];
 
 const SHEET_PEOPLE = [
@@ -32,7 +32,7 @@ const SHEET_PEOPLE = [
 ];
 
 const CHATGPT_REPLY =
-  'Subject: Quick question from a USC junior\n\nHi Sarah — I came across your path from USC to Goldman and it stood out to me. I’m exploring banking recruiting this fall and would love 15 minutes to hear how you approached it…';
+  'Subject: Quick question from a USC junior\n\nHi Sarah, I came across your path from USC to Goldman and it stood out to me. I’m exploring banking recruiting this fall and would love 15 minutes to hear how you approached it…';
 
 const STATUS_COLOR: Record<string, string> = {
   Emailed: '#218547',

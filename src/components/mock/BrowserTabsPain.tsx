@@ -3,12 +3,12 @@ import {colors, fonts} from '../../../brand/theme';
 import {MockStage} from './MockStage';
 
 const TABS = [
-  'LinkedIn — 84 jobs',
-  'Job Tracker — Google Sheets',
-  'ChatGPT — cover letter v9',
-  'Gmail — Inbox (147)',
-  'LinkedIn — Connect requests',
-  'ChatGPT — resume bullets',
+  'LinkedIn: 84 jobs',
+  'Job Tracker: Google Sheets',
+  'ChatGPT: cover letter v9',
+  'Gmail: Inbox (147)',
+  'LinkedIn: Connect requests',
+  'ChatGPT: resume bullets',
 ];
 
 const INK = colors.ink;

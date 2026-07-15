@@ -80,7 +80,7 @@ export const FindContacts: React.FC = () => {
               {p.school}
             </div>
             <div style={{margin: '30px auto 0', width: 380, padding: '18px 0', borderRadius: 32, background: colors.primary, color: '#fff', fontWeight: 700, fontSize: 24}}>
-              Email — draft ready
+              Email: draft ready
             </div>
             <div style={{marginTop: 22, fontSize: 20, fontWeight: 500, color: p.statusColor}}>{p.status}</div>
           </div>

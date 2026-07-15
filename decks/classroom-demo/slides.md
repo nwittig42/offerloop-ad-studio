@@ -1,7 +1,7 @@
 ---
 theme: default
 title: Offerloop Classroom Demo
-info: Offerloop classroom demo deck — web-native rebuild of the original .pptx
+info: Offerloop classroom demo deck: web-native rebuild of the original .pptx
 colorSchema: dark
 transition: fade
 fonts:
@@ -18,7 +18,7 @@ mdc: true
   <div class="content grid grid-cols-[3fr_2fr] items-center gap-12">
     <div>
       <h1 class="serif text-6xl leading-tight text-warm">The fully autonomous job-search assistant.</h1>
-      <p class="mt-8 text-xl text-muted max-w-130">Offerloop finds the roles, finds the people, writes the outreach in your voice, and tracks every conversation — so you land better offers, faster.</p>
+      <p class="mt-8 text-xl text-muted max-w-130">Offerloop finds the roles, finds the people, writes the outreach in your voice, and tracks every conversation, so you land better offers, faster.</p>
       <p class="mt-16 text-sm text-muted" style="text-shadow: 0 1px 14px #0D1424, 0 0 6px #0D1424">Presented by <span class="text-warm">[Your name]</span> · Offerloop Campus Ambassador</p>
     </div>
     <div class="flex justify-center">
@@ -71,7 +71,7 @@ mdc: true
 <div class="slide">
   <div class="content">
     <h1 class="serif text-5xl text-warm max-w-190">You don't stand out on paper.<br/>You stand out <em class="accent">through people.</em></h1>
-    <p class="text-xl text-muted mt-6 max-w-160">Referrals and warm intros are the real front door. The people who land the offer aren't the best applicants — they're the ones who built a connection first.</p>
+    <p class="text-xl text-muted mt-6 max-w-160">Referrals and warm intros are the real front door. The people who land the offer aren't the best applicants. They're the ones who built a connection first.</p>
     <div class="grid grid-cols-2 gap-8 mt-14 max-w-180">
       <div class="card text-center py-10"><p class="serif text-7xl accent">52×</p><p class="card-sub mt-3">more likely to get hired through a referral or personal connection</p></div>
       <div class="card text-center py-10"><p class="serif text-7xl accent">&lt;1%</p><p class="card-sub mt-3">of job seekers actually get a referral before they apply</p></div>
@@ -146,7 +146,7 @@ mdc: true
       <div class="chat">
         <p class="serif text-lg text-slate-800 mb-3">Ask Scout</p>
         <div class="bubble-user">Hey, go ahead and apply to all 15.</div>
-        <div class="bubble-scout">On it — applying to 15 matched roles now…</div>
+        <div class="bubble-scout">On it, applying to 15 matched roles now…</div>
         <div class="job"><span class="mono">MW</span><div><b>Technology Intern</b><i>Marshall Wace</i></div><em>✓ Applied</em></div>
         <div class="job"><span class="mono">1X</span><div><b>AI Residency Intern</b><i>1X</i></div><em>✓ Applied</em></div>
         <div class="job"><span class="mono">Ai</span><div><b>Growth Account Executive</b><i>Airbyte</i></div><em>✓ Applied</em></div>
@@ -291,7 +291,7 @@ mdc: true
   <div class="content grid grid-cols-[3fr_2fr] items-center gap-12">
     <div>
       <p class="eyebrow">WATCH IT WORK</p>
-      <h1 class="serif text-5xl text-warm mt-2">Now the fun part — <em class="accent">do it with me.</em></h1>
+      <h1 class="serif text-5xl text-warm mt-2">Now the fun part, <em class="accent">do it with me.</em></h1>
       <div class="flex flex-col gap-5 mt-10">
         <div class="step"><span>1</span>Capture a contact from a profile, one click</div>
         <div class="step"><span>2</span>Draft a personalized email in your voice</div>

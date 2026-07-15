@@ -4,7 +4,7 @@
   "scenes": [
     {
       "id": "s01",
-      "title": "Open — voice command (side view)",
+      "title": "Open: voice command (side view)",
       "asset": "assets/generated/yeti-tommy-trojan-speak-v1.mp4",
       "description": "Cold open: side view at Tommy Trojan, yeti speaks the command into his phone. No text overlay.",
       "vo": "Yeti (spoken, no caption): “Find me hiring managers at Doogle.”",
@@ -13,12 +13,12 @@
     },
     {
       "id": "s02",
-      "title": "Scout responds — on his phone",
+      "title": "Scout responds, on his phone",
       "asset": "assets/generated/scout-chat-onit-v1.mp4",
-      "description": "Macro of the phone in his paw: 'On it — drafting your outreach.' types out. This IS what's on his phone.",
+      "description": "Macro of the phone in his paw: 'On it, drafting your outreach.' types out. This IS what's on his phone.",
       "vo": "",
       "durationSec": 3.5,
-      "notes": "Standalone UI insert cut per Nick — phone content lives in these in-paw shots."
+      "notes": "Standalone UI insert cut per Nick; phone content lives in these in-paw shots."
     },
     {
       "id": "s03",
@@ -31,12 +31,12 @@
     },
     {
       "id": "s04",
-      "title": "Send — blur into the icon",
+      "title": "Send: blur into the icon",
       "asset": "assets/generated/mail-icon-zoom-transition-v1.mp4",
       "description": "Dive into the send icon; clip ENDS in a full blue flare that match-cuts into the flight.",
       "vo": "",
       "durationSec": 4,
-      "notes": "Play full length — do not trim the flare."
+      "notes": "Play full length; do not trim the flare."
     },
     {
       "id": "s05",
@@ -58,7 +58,7 @@
     },
     {
       "id": "s07",
-      "title": "Zoom out — LA skyline, mail into buildings",
+      "title": "Zoom out: LA skyline, mail into buildings",
       "asset": "assets/generated/la-skyline-mail-trails-day-v1.mp4",
       "description": "Wide daytime aerial: trails dive into towers, camera pulls back.",
       "vo": "",
@@ -87,7 +87,7 @@
       "id": "s10",
       "title": "Reply flies back (same transition)",
       "asset": "assets/generated/mail-return-campus-day-v1.mp4",
-      "description": "Green envelope arcs from the skyline back to campus — mirrors the outbound blur transition.",
+      "description": "Green envelope arcs from the skyline back to campus, mirrors the outbound blur transition.",
       "vo": "",
       "durationSec": 4,
       "notes": "Full length so the arc lands before the cut."
@@ -97,7 +97,7 @@
       "title": "Yeti tells the class",
       "asset": "assets/generated/yeti-class-tell-classmates-v1.mp4",
       "description": "Cut straight to the yeti: eyes widen, he spins to the students behind him, then points at the screen.",
-      "vo": "Yeti: “Oh my god. Wait — I got an interview!”",
+      "vo": "Yeti: “Oh my god. Wait. I got an interview!”",
       "durationSec": 6,
       "notes": "New clip per Nick's ending."
     },
@@ -117,7 +117,7 @@
       "description": "Brand end card.",
       "vo": "Say it. Scout does it. / Try Offerloop free / offerloop.ai",
       "durationSec": 4,
-      "notes": "Rendered by Remotion endCard scene — no asset."
+      "notes": "Rendered by Remotion endCard scene; no asset."
     }
   ]
 }

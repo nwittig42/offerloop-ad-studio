@@ -5,7 +5,7 @@ import {MockStage} from './MockStage';
 const GRAYTXT = '#6B7385';
 const BODY = `Hi Emily,
 
-I’m Nick, a junior at USC studying Business Administration with a focus on fintech. I noticed your team just expanded the Technology Analyst program — congratulations.
+I’m Nick, a junior at USC studying Business Administration with a focus on fintech. I noticed your team just expanded the Technology Analyst program , congratulations.
 
 Your path from engineering into leading recruiting for the program stood out to me. I’d love 15 minutes to hear how you think about candidates who…`;
 
@@ -48,7 +48,7 @@ export const EmailDraft: React.FC = () => {
         </div>
         <div style={{position: 'absolute', left: 140, top: 116, fontWeight: 700, fontSize: 26, color: colors.ink}}>Emily Dawson</div>
         <div style={{position: 'absolute', left: 140, top: 152, fontSize: 20, color: GRAYTXT}}>
-          Hiring Manager — Technology Analyst Program
+          Hiring Manager, Technology Analyst Program
         </div>
 
         <div style={{position: 'absolute', left: 56, top: 208, width: 888, height: 2, background: '#E5E7EF'}} />
