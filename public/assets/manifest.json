@@ -1018,13 +1018,13 @@
       "job_id": "ae699f23-5648-44d4-bd82-3871ce7b259a"
     },
     {
-      "filename": "assets/generated/scout-voice-campus/scout-orb-hero-dark-v1.png",
+      "filename": "assets/generated/scout-voice-campus/scout-orb-hero-dark-v2.png",
       "kind": "image",
-      "description": "Cinematic restyle of the Scout app icon/splash (from Nick screenshot): chibi Scout yeti avatar (glasses, orange beak-nose, neckerchief \u2014 matches the in-app avatar) centered in a swirling indigo/periwinkle aurora-glass orb with warm core, rim light, particles and bokeh; misty pine ridge behind, orb glow pooling on the fog; serif \"Scout\" wordmark + tagline \"Your recruiting agent, in your pocket.\" All text crisp. 2752x1536.",
+      "description": "Cinematic restyle of the Scout app icon/splash (from Nick screenshot): FACE-ONLY chibi Scout avatar (round glasses, orange beak-nose, tiny paws at chin \u2014 exact app-icon crop, no body) filling the warm core of a glass orb wrapped in orbiting periwinkle light ribbons, particles/bokeh, misty pine ridge + fog behind, orb glow pooling below; serif \"Scout\" wordmark + tagline \"Your recruiting agent, in your pocket.\" v1 (full-body avatar) rejected by Nick and deleted. 2752x1536.",
       "source": "higgsfield",
       "model": "nano_banana_pro (2k, 16:9; ref = Scout home-screen crop from promo-saas-v2 t=4s for avatar identity)",
-      "prompt": "Hero key art: exact chibi yeti avatar from reference inside a luminous layered aurora-glass orb (indigo/periwinkle ribbons, warm white core, rim highlight, particles/bokeh) over #0D1424 canvas with misty pine/mountain silhouette; serif Scout wordmark and tagline beneath; color as light only, Apple-keynote-meets-Linear.",
-      "job_id": "9dd55a82-6226-400f-92a0-8dc689f0b2df"
+      "prompt": "Hero key art: ONLY the face of the chibi yeti avatar from reference (head crop, no body/arms/legs) inside a luminous aurora-glass orb with warm core, indigo/periwinkle ribbons, rim light, particles; #0D1424 canvas, misty pines; serif Scout wordmark + tagline.",
+      "job_id": "ccf119de-d03e-43f7-9b2e-bb5af1d0cbb1"
     }
   ]
 }
