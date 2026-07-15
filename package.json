@@ -6,7 +6,9 @@
   "scripts": {
     "studio": "remotion studio",
     "render": "remotion render",
-    "storyboard": "node tools/storyboard/server.mjs"
+    "storyboard": "node tools/storyboard/server.mjs",
+    "decks": "slidev decks/classroom-demo/slides.md --port 3222 --open",
+    "decks:export": "slidev export decks/classroom-demo/slides.md --format pptx --output out/classroom-demo.pptx"
   },
   "dependencies": {
     "@remotion/cli": "^4.0.0",
@@ -17,7 +19,10 @@
     "remotion": "^4.0.0"
   },
   "devDependencies": {
+    "@slidev/cli": "^52.18.0",
+    "@slidev/theme-default": "^0.25.0",
     "@types/react": "^19.0.0",
+    "playwright-chromium": "^1.61.1",
     "typescript": "^5.5.0"
   }
 }
