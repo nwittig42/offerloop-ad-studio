@@ -970,6 +970,15 @@
       "model": "nano_banana_pro (1k, 16:9; refs = yeti-canonical-face-front.png + yeti-canonical-face-profile.png + usc-bovard-across-quad.jpg)",
       "prompt": "Cinematic live-action still on a sunny university campus quad (red-brick Romanesque buildings, brick walkway, green lawn, students in soft-focus background). Canonical yeti with round black-rimmed glasses and navy backpack, lifting a smartphone up to his mouth like speaking a voice command, mouth slightly open mid-sentence. Camera off to the side, 3/4 side profile at chest height. Warm golden afternoon sunlight, shallow depth of field.",
       "job_id": "f39eab65-ad6e-49cc-a05c-75fe9932cb1c"
+    },
+    {
+      "filename": "assets/generated/yeti-quad-birdseye-scout-responding-still-v1.png",
+      "kind": "image",
+      "description": "STILL v1 (keyframe candidate): bird's-eye top-down over the canonical yeti (navy backpack) holding phone face-up on the quad lawn; screen shows the promo Scout app UI responding to his voice command \u2014 quoted \"Apply to jobs and email employees at those companies\" + status \"On it \u2014 applying & drafting emails...\", orb + bottom nav preserved. Quirk: his head is not visible between backpack and arms. 1376x768.",
+      "source": "higgsfield",
+      "model": "nano_banana_pro (1k, 16:9; refs = Scout home screen crop from promo-saas-v2 t=4s + yeti-quad-phone-to-mouth-glasses-backpack-still-v1.png)",
+      "prompt": "Bird's-eye view straight down: same yeti (glasses, navy backpack) holding smartphone face-up, screen legible showing the dark-blue Scout app UI in a responding state \u2014 transcribed voice command \"Apply to jobs and email employees at those companies\" with status \"On it \u2014 applying & drafting emails...\"; grass, brick walkway edge, students in corner, golden afternoon light.",
+      "job_id": "3bc4f692-a279-4d91-a55a-786da113b78e"
     }
   ]
 }
