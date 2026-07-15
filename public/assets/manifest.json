@@ -988,6 +988,15 @@
       "model": "nano_banana_pro (1k, 16:9; refs = swipe-card screen crop from promo-saas-v2 t=20.5s + yeti-quad-phone-to-mouth-glasses-backpack-still-v1.png)",
       "prompt": "Over-the-shoulder from behind the yeti (glasses) on a cozy couch at evening, holding phone; screen reproduces the Offerloop swipe UI exactly (Technology Intern, Marshall Wace, $150,000 pro rata pill, Internship pills, action row, bottom nav); other thumb mid swipe-right-to-apply, card nudged right with blue trailing glow.",
       "job_id": "cfd56394-52a8-41ee-9614-203acea4e134"
+    },
+    {
+      "filename": "assets/generated/scout-voice-campus/yeti-class-interview-email-ecstatic-still-v1.png",
+      "kind": "image",
+      "description": "STILL v1 (keyframe candidate): canonical yeti (glasses) in a lecture classroom, ecstatic \u2014 jaw dropped, fists clenched \u2014 as his laptop shows Gmail with a red banner \"Interview Invitation \u2014 Jane Street\" (legible); laptop angled toward camera as if he spun it to show classmates, one classmate leaning in grinning, others in soft focus. Front 3/4 angle, screen glow on face. 1376x768.",
+      "source": "higgsfield",
+      "model": "nano_banana_pro (1k, 16:9; refs = yeti-canonical-face-front.png + yeti-quad-phone-to-mouth-glasses-backpack-still-v1.png)",
+      "prompt": "University classroom, front three-quarter angle across the desk: canonical yeti with round black glasses at his laptop, screen revealing Gmail notification \"Interview Invitation \u2014 Jane Street\"; his face lighting up ecstatic (huge eyes, open-mouth grin, fists up), classmate leaning over starting to smile, warm daylight, shallow depth of field.",
+      "job_id": "48341c63-8635-400c-b4dc-e88f7634a7ee"
     }
   ]
 }
