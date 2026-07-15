@@ -1034,6 +1034,15 @@
       "model": "nano_banana_pro (2k, 16:9; ref = Scout home-screen crop from promo-saas-v2 t=4s)",
       "prompt": "Same as scout-orb-hero-dark-v2 but with only the serif Scout wordmark beneath the orb \u2014 no tagline, no other text.",
       "job_id": "78ea3ac2-446c-4687-ae7e-757c0fccef37"
+    },
+    {
+      "filename": "assets/generated/scout-voice-campus/meet-scout-chat-slide-dark-v1.png",
+      "kind": "image",
+      "description": "Dark SaaS restyle of the \"Meet Scout \u00b7 Your copilot / Just describe what you're after.\" website slide, with the right side replaced by a floating Ask Scout chat (styled after scout-demo-4b-contacts) showing the apply flow: user bubble \"Hey \u2014 go ahead and apply to all 15.\", Scout \"On it \u2014 applying to 15 matched roles now...\", three job rows with green Applied pills (Technology Intern/Marshall Wace, AI Residency Intern/1X, Growth Account Executive/Airbyte), \"+ 12 more in queue...\", input bar. Hand-drawn Scout mascot waves from behind the panel; DATA ENGINE stats strip at bottom (2.2B contacts, 3M+ recruiters, 300K live jobs). All text crisp. 2752x1536.",
+      "source": "higgsfield",
+      "model": "nano_banana_pro (2k, 16:9; refs = scout-demo-4b-contacts.png chat UI + figma scout-peekaboo-wave.png mascot)",
+      "prompt": "Dark navy slide per ad-lighting: left column eyebrow/serif headline/body/four glass pills; right floating glassy Ask Scout panel with apply-to-15 conversation and three Applied job rows; sketch mascot waving behind panel; slim DATA ENGINE stats strip.",
+      "job_id": "9a62d60b-11b5-44a8-81c4-7dcc4bbe2d3c"
     }
   ]
 }
