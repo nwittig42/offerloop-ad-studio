@@ -1032,6 +1032,15 @@
       "job_id": "9b741c7c-de9d-456f-8a61-c58211f14e46"
     },
     {
+      "filename": "assets/generated/scout-voice-campus/person-couch-swipe-apply-pass-wide-v2-blurred.mp4",
+      "kind": "video",
+      "duration": 5.04,
+      "description": "Blurred + slightly darkened variant of person-couch-swipe-apply-pass-wide-v2.mp4 (same ffmpeg recipe as the yeti couch heroes: gblur sigma=6, brightness -0.04, sat 0.95, h264 faststart, silent) for hero-background use.",
+      "source": "higgsfield",
+      "model": "seedance_2_0 + ffmpeg post",
+      "job_id": "9b741c7c-de9d-456f-8a61-c58211f14e46"
+    },
+    {
       "filename": "assets/generated/scout-voice-campus/scout-can-feature-grid-dark-v2.png",
       "kind": "image",
       "description": "SaaS-styled restyle of the \"Scout can\" website feature grid (from Nick screenshot): dark navy canvas, indigo/periwinkle glow-as-light, misty pine silhouette at bottom, serif headline \"One assistant. The entire job search.\" with italic gradient accent, 4x2 glassmorphic cards (all eight titles/subtitles rendered exactly), hero glow outline on Apply to jobs. All text crisp. v1 discarded (hard-edged glow blob). 2752x1536.",
