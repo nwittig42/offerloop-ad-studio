@@ -1009,6 +1009,29 @@
       "job_id": "6886b274-48d1-4c8b-b927-a0ae87c29dd7"
     },
     {
+      "filename": "assets/generated/scout-voice-campus/person-couch-ots-swipe-apply-wide-still-v1.png",
+      "kind": "image",
+      "description": "STILL v1 (keyframe): human variant of the couch swipe beat, wider framing. OTS from behind a young man in a grey hoodie on his couch at evening (lamp, monstera, throw blanket); phone shows the Offerloop swipe UI with the Technology Intern @ Marshall Wace job card, finger mid swipe-right. Start image for the person-couch-swipe-apply-pass-wide clips. 1376x768. Created 2026-07-15, manifested retroactively.",
+      "source": "higgsfield"
+    },
+    {
+      "filename": "assets/generated/scout-voice-campus/person-couch-swipe-apply-pass-wide-v1.mp4",
+      "kind": "video",
+      "duration": 5.04,
+      "description": "CLIP v1 (SUPERSEDED by v2, Nick rejected): animated from person-couch-ots-swipe-apply-wide-still-v1. First swipe on the job card is good, but the following cards show a man-in-a-suit headshot (LinkedIn-profile-style card) instead of more jobs. Keep only as reference. 1080p 16:9 silent. Created 2026-07-15, manifested retroactively.",
+      "source": "higgsfield"
+    },
+    {
+      "filename": "assets/generated/scout-voice-campus/person-couch-swipe-apply-pass-wide-v2.mp4",
+      "kind": "video",
+      "duration": 5.04,
+      "description": "CLIP v2 (fixes v1's person-on-screen problem; silent, 1080p 16:9): same OTS person-on-couch framing from the wide still; thumb swipes the job card RIGHT (blue glow, green \"Applied\" toast inside the phone), the next card is ANOTHER white job listing card, swiped LEFT to pass (compensation pill flashes red as the dismiss tint), a further job card snaps in. Every card on screen is a text-only job card; no faces/headshots at any point (verified frame-by-frame at 2fps). Nits at close zoom: usual small-text garble, a ghost card floats past the phone bezel during swipes, Applied toast appears on two consecutive frames.",
+      "source": "higgsfield",
+      "model": "seedance_2_0 (std, 1080p, 5s, no audio; start_image = person-couch-ots-swipe-apply-wide-still-v1.png)",
+      "prompt": "Locked-off over-the-shoulder shot, exactly the framing of the start image: a young man relaxing on a couch in warm evening lamplight holding a smartphone showing a job-application app. MAIN ACTION: his thumb swipes the current white job listing card to the RIGHT; the card slides off the right edge with a soft blue glow and a small green Applied check toast pops on screen. The next card that snaps in behind it is ANOTHER WHITE JOB LISTING CARD, identical layout: job title text, company name, salary pill, tag pills, red X and blue send buttons at the bottom. He glances at it and swipes this card to the LEFT; it slides off the left edge with a faint red tint to pass, and one more white job listing card snaps in behind it. CRITICAL: every card on the phone is a text-only job listing card in the same UI style. Absolutely NO photos of people, NO faces, NO headshots, NO profile pictures, NO portraits anywhere on the phone screen at any moment. No em dashes in any rendered text. Camera stays locked, room stays calm, snappy Tinder-style swipes, UI crisp and stable, silent, single continuous shot.",
+      "job_id": "9b741c7c-de9d-456f-8a61-c58211f14e46"
+    },
+    {
       "filename": "assets/generated/scout-voice-campus/scout-can-feature-grid-dark-v2.png",
       "kind": "image",
       "description": "SaaS-styled restyle of the \"Scout can\" website feature grid (from Nick screenshot): dark navy canvas, indigo/periwinkle glow-as-light, misty pine silhouette at bottom, serif headline \"One assistant. The entire job search.\" with italic gradient accent, 4x2 glassmorphic cards (all eight titles/subtitles rendered exactly), hero glow outline on Apply to jobs. All text crisp. v1 discarded (hard-edged glow blob). 2752x1536.",
