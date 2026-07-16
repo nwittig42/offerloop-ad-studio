@@ -1092,6 +1092,12 @@
       "description": "Nick's 3-minute hands-on screen recording of the OFFERLOOP iOS app (440x960, with audio) - NOT Sorce, despite living in the appstore reference folder. Tours every surface: Feed (swipeable job cards w/ credits counter, X/send buttons), Inbox (live agent statuses: researching/writing outreach, Your turn pills), Your Draft (email + Send + View in Gmail), LinkedIn profile overlay, dark Scout orb screen (voice search 'Draft 1 engineers at Stripe', suggestion pills, on-it toasts), Network (YOUR GRIND 3 sent/0 replies/58 reached, companies grid, milestones), company pages (okta/anthropic: 'role you swiped', Find my next contact -10cr, Auto-apply to this role, Applied roles w/ Needs-your-input pills), Meeting prep coffee library (Prepped people, prep doc w/ raw-markdown bug), Profile (4815 credits ELITE, application profile, target roles). Primary UI source for App Store screenshot frames.",
       "durationSec": 187.5,
       "source": "dropped"
+    },
+    {
+      "filename": "assets/references/appstore/frames/",
+      "kind": "image-set",
+      "description": "20 hand-picked frames (440x960 PNG) from the Offerloop app screen recording, named tNNN-<surface>.png where NNN = seconds into sorce-app-screen-recording.mp4. Best moment per app surface, chosen by scanning the full video at 2s intervals: t000 feed DoorDash card w/ Auto-apply btn; t006 feed LangChain Marketing Ops card (clean); t013 feed Airwallex card w/ $150k-220k chip + Drafted-to-1-person toast; t031 inbox live agent statuses; t041 martha draft w/ Send + View in Gmail; t044 inbox Sent toast; t056 Scout idle orb; t062 Scout voice transcript; t065 Scout Ready-to-search + 4 pills + Run it as-is; t093 Scout found-chris researching progress; t104 Scout done, Open Inbox; t108 chris bala draft (Stripe Sessions body); t120 Network YOUR GRIND 3/0/58 + companies grid (real logos); t124 okta role-you-swiped + Auto-apply; t134 Anthropic Auto-applying toast; t140 Needs-your-input modal (auto-apply asks 2 questions); t158 Applications tracker w/ Auto-applying/Needs-verification/Apply-on-the-site pills; t162 coffee library (satya nadella row present, avoid in marketing); t164 prep Why-you-two-connect (raw markdown bug visible); t180 Profile w/ Application profile. CAUTION: every frame has the red recording dot in the status bar; crop or redraw the status bar before any marketing use.",
+      "source": "dropped"
     }
   ]
 }
