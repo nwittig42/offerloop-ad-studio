@@ -1,4 +1,5 @@
 import React from 'react';
+import {Img, staticFile} from 'remotion';
 import {colors, fonts} from '../../brand/theme';
 
 // Shared primitives for the 1320x2868 App Store screenshot panels.
@@ -403,6 +404,22 @@ export const PlaneGlyph: React.FC<{size?: number; color?: string}> = ({size = 22
   <svg width={size} height={size} viewBox="0 0 24 24" style={{display: 'block'}}>
     <path d="M3.4 11.1 20.6 3.6c0.7-0.3 1.4 0.4 1.1 1.1l-7.5 17.2c-0.3 0.8-1.4 0.7-1.7-0.1l-2.1-6.6-6.9-2.4c-0.8-0.3-0.8-1.4 0.1-1.7z" fill={color} />
   </svg>
+);
+
+/** Watercolor mountain ridge along the panel bottom; reads as paper texture. */
+export const Ridge: React.FC<{opacity?: number; dark?: boolean}> = ({opacity = 0.08, dark}) => (
+  <Img
+    src={staticFile('assets/figma/mountains-forest-bg.png')}
+    style={{
+      position: 'absolute',
+      bottom: -50,
+      left: -140,
+      width: PANEL_W + 280,
+      opacity,
+      filter: dark ? 'saturate(0.4) brightness(0.9)' : 'saturate(0.55)',
+      pointerEvents: 'none',
+    }}
+  />
 );
 
 /** Scout's glowing orb, pure CSS (crisp at any scale). */

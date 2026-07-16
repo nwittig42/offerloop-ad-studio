@@ -293,6 +293,52 @@ export const CompaniesScreen: React.FC = () => {
   );
 };
 
+/** Dark Scout chat screen: voice prompt in, agent working. From recording t062-t093. */
+export const ScoutChatScreen: React.FC = () => (
+  <div style={{position: 'absolute', inset: 0, background: 'linear-gradient(180deg, #0C1528 0%, #14213D 60%, #101B33 100%)', fontFamily: fonts.body}}>
+    <div style={{position: 'absolute', top: 58, left: 0, right: 0, textAlign: 'center', fontFamily: fonts.heading, fontSize: 21, color: '#E9EFFF'}}>Scout</div>
+    {/* orb */}
+    <div style={{position: 'absolute', top: 116, left: 215 - 70, width: 140, height: 140}}>
+      <div style={{position: 'absolute', inset: -46, borderRadius: '50%', background: 'radial-gradient(circle, rgba(96,130,255,0.45) 0%, rgba(96,130,255,0) 70%)'}} />
+      <div style={{position: 'absolute', inset: 0, borderRadius: '50%', background: 'radial-gradient(circle at 38% 32%, #F2F6FF 0%, #B9CBFA 28%, #5F7EF0 62%, #1B2A6E 100%)', boxShadow: '0 0 46px rgba(96,130,255,0.5)'}} />
+    </div>
+    {/* user bubble */}
+    <div style={{position: 'absolute', top: 320, right: 18, maxWidth: 300, background: APP_BLUE, color: '#fff', borderRadius: '18px 18px 4px 18px', padding: '13px 16px', fontSize: 15.5, fontWeight: 600, lineHeight: 1.45}}>
+      Find me engineers at Stripe to connect with
+    </div>
+    {/* scout reply */}
+    <div style={{position: 'absolute', top: 424, left: 18, maxWidth: 320, background: 'rgba(255,255,255,0.07)', border: '1px solid rgba(255,255,255,0.13)', color: '#E9EFFF', borderRadius: '18px 18px 18px 4px', padding: '13px 16px', fontSize: 15.5, fontWeight: 500, lineHeight: 1.45}}>
+      On it, drafting the right person at Stripe.
+    </div>
+    {/* progress card */}
+    <div style={{position: 'absolute', top: 540, left: 18, right: 18, background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.12)', borderRadius: 16, padding: '15px 17px'}}>
+      <div style={{display: 'flex', alignItems: 'center', gap: 9, fontSize: 14.5, fontWeight: 700, color: '#E9EFFF'}}>
+        <span style={{fontSize: 13}}>✦</span> Outreach · Stripe
+      </div>
+      <div style={{fontSize: 13, color: 'rgba(233,239,255,0.65)', marginTop: 6}}>Found chris bala, researching their background</div>
+      <div style={{marginTop: 11, height: 5, borderRadius: 3, background: 'rgba(255,255,255,0.12)'}}>
+        <div style={{width: '62%', height: '100%', borderRadius: 3, background: APP_BLUE}} />
+      </div>
+    </div>
+    {/* input bar */}
+    <div style={{position: 'absolute', bottom: 104, left: 18, right: 18, height: 46, borderRadius: 23, background: 'rgba(255,255,255,0.07)', border: '1px solid rgba(255,255,255,0.13)', display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '0 8px 0 18px'}}>
+      <span style={{fontSize: 13.5, color: 'rgba(233,239,255,0.5)'}}>Tap and ask Scout for anything</span>
+      <div style={{width: 32, height: 32, borderRadius: 16, background: APP_BLUE, display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
+        <PlaneGlyph size={15} />
+      </div>
+    </div>
+    {/* dark tab bar */}
+    <div style={{position: 'absolute', bottom: 0, left: 0, right: 0, height: 84, background: 'rgba(10,17,34,0.9)', borderTop: '1px solid rgba(255,255,255,0.08)', display: 'flex', justifyContent: 'space-around', alignItems: 'center', paddingBottom: 14}}>
+      {['Feed', 'Inbox', 'Scout', 'Network', 'Profile'].map((n) => (
+        <div key={n} style={{display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 4}}>
+          <div style={{width: 20, height: 20, borderRadius: n === 'Scout' ? 4 : 10, background: n === 'Scout' ? '#7B96F7' : 'rgba(233,239,255,0.3)', transform: n === 'Scout' ? 'rotate(45deg) scale(0.8)' : undefined}} />
+          <span style={{fontSize: 10.5, fontWeight: n === 'Scout' ? 700 : 500, color: n === 'Scout' ? '#B9CBFA' : 'rgba(233,239,255,0.4)'}}>{n}</span>
+        </div>
+      ))}
+    </div>
+  </div>
+);
+
 /** Status pill used by the applications tracker card. */
 export const StatusPill: React.FC<{label: string; tone: 'green' | 'amber' | 'blue'; size?: number}> = ({label, tone, size = 13}) => {
   const map = {

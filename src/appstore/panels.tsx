@@ -3,6 +3,7 @@ import {Img, staticFile} from 'remotion';
 import {colors, fonts} from '../../brand/theme';
 import {
   APP_BLUE,
+  Ridge,
   Avatar,
   Chip,
   DarkCanvas,
@@ -31,6 +32,7 @@ const At: React.FC<{x?: number; y?: number; z?: number; style?: React.CSSPropert
 
 export const Panel01Hook: React.FC = () => (
   <LightCanvas>
+    <Ridge />
     <At x={M} y={210}>
       <Headline lines={[[{t: 'Your job search,'}], [{t: 'handled.', tint: true}]]} size={128} />
     </At>
@@ -69,6 +71,7 @@ export const Panel01Hook: React.FC = () => (
 
 export const Panel02Apply: React.FC = () => (
   <LightCanvas>
+    <Ridge />
     <At x={M} y={180}>
       <Kicker>Apply</Kicker>
       <Headline lines={[[{t: 'Applications'}], [{t: 'finish themselves.', tint: true}]]} style={{marginTop: 26}} />
@@ -119,6 +122,7 @@ const gmailGlyph = (
 
 export const Panel03Reach: React.FC = () => (
   <LightCanvas>
+    <Ridge />
     <At x={M} y={180}>
       <Kicker>Reach</Kicker>
       <Headline lines={[[{t: 'Real outreach, sent'}], [{t: 'from '}, {t: 'your Gmail.', tint: true}]]} style={{marginTop: 26}} />
@@ -242,6 +246,7 @@ export const Panel05Research: React.FC = () => {
   ];
   return (
     <LightCanvas>
+      <Ridge />
       <At x={M} y={180}>
         <Kicker>Research</Kicker>
         <Headline lines={[[{t: 'It finds the '}, {t: 'right', tint: true}], [{t: 'person', tint: true}, {t: ' first.'}]]} style={{marginTop: 26}} />
@@ -279,6 +284,7 @@ export const Panel06Prepare: React.FC = () => {
   ];
   return (
     <LightCanvas>
+      <Ridge />
       <At x={M} y={180}>
         <Kicker>Prepare</Kicker>
         <Headline lines={[[{t: 'Walk in already'}], [{t: 'prepped.', tint: true}]]} style={{marginTop: 26}} />
@@ -321,6 +327,7 @@ export const Panel07Track: React.FC = () => {
   ];
   return (
     <LightCanvas>
+      <Ridge />
       <At x={520} y={340} z={2} style={{transform: 'rotate(6deg)'}}>
         <PhoneFrame scale={2.2}>
           <CompaniesScreen />

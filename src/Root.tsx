@@ -1,6 +1,6 @@
 import {Composition, Still} from 'remotion';
 import {PlanPlayer} from './compositions/PlanPlayer';
-import {appStorePanels, PANEL_H, PANEL_W} from './appstore';
+import {appStorePanels, appStorePanelsV2, PANEL_H, PANEL_W} from './appstore';
 import {makePlanMetadata} from './plan/validate';
 import {planDurationInFrames, planFps} from './plan/timing';
 import type {EditPlan} from './plan/types';
@@ -30,7 +30,7 @@ export const Root: React.FC = () => {
           calculateMetadata={makePlanMetadata(plan)}
         />
       ))}
-      {appStorePanels.map(({id, component}) => (
+      {[...appStorePanels, ...appStorePanelsV2].map(({id, component}) => (
         <Still key={id} id={id} component={component} width={PANEL_W} height={PANEL_H} />
       ))}
     </>
