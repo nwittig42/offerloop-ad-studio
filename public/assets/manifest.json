@@ -1089,7 +1089,7 @@
     {
       "filename": "assets/references/appstore/sorce-app-screen-recording.mp4",
       "kind": "video",
-      "description": "Nick's 3-minute hands-on screen recording of the Sorce iOS app (440x960, with audio): what the real app looks and feels like end to end. Companion to the six sorce-appstore-current-screen_*.png shots; use to study the actual product UI, swipe interactions, and flows the App Store screenshots stylize.",
+      "description": "Nick's 3-minute hands-on screen recording of the OFFERLOOP iOS app (440x960, with audio) - NOT Sorce, despite living in the appstore reference folder. Tours every surface: Feed (swipeable job cards w/ credits counter, X/send buttons), Inbox (live agent statuses: researching/writing outreach, Your turn pills), Your Draft (email + Send + View in Gmail), LinkedIn profile overlay, dark Scout orb screen (voice search 'Draft 1 engineers at Stripe', suggestion pills, on-it toasts), Network (YOUR GRIND 3 sent/0 replies/58 reached, companies grid, milestones), company pages (okta/anthropic: 'role you swiped', Find my next contact -10cr, Auto-apply to this role, Applied roles w/ Needs-your-input pills), Meeting prep coffee library (Prepped people, prep doc w/ raw-markdown bug), Profile (4815 credits ELITE, application profile, target roles). Primary UI source for App Store screenshot frames.",
       "durationSec": 187.5,
       "source": "dropped"
     }
