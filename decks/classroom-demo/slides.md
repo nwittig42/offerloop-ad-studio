@@ -1,7 +1,7 @@
 ---
 theme: default
 title: Offerloop Classroom Demo
-info: Offerloop classroom demo deck: web-native rebuild of the original .pptx
+info: "Offerloop classroom demo deck: web-native rebuild of the original .pptx"
 colorSchema: dark
 transition: fade
 fonts:
