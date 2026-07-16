@@ -7,6 +7,7 @@
     "studio": "remotion studio",
     "render": "remotion render",
     "storyboard": "node tools/storyboard/server.mjs",
+    "appstore": "node tools/appstore/render.mjs",
     "decks": "(sleep 3 && open http://localhost:3222/deck-viewer.html) & slidev decks/classroom-demo/slides.md --port 3222",
     "decks:export": "slidev export decks/classroom-demo/slides.md --format pptx --output out/classroom-demo.pptx"
   },
