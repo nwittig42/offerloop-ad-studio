@@ -6,12 +6,16 @@ import {planDurationInFrames, planFps} from './plan/timing';
 import type {EditPlan} from './plan/types';
 import {yetiUsingScoutPlan} from '../plans/yeti-using-scout.plan';
 import {trueViewPlan} from '../plans/trueview.plan';
+import {productHuntPlan} from '../plans/product-hunt.plan';
+import {atsNewsHookPlan} from '../plans/ats-news-hook.plan';
 
 // Every composition is the generic PlanPlayer pointed at a plan file.
 // To ship a new video: add plans/<name>.plan.ts and point a slot at it here.
 const slots: Array<{id: string; width: number; height: number; plan: EditPlan}> = [
+  {id: 'ProductHuntLaunch', width: 1920, height: 1080, plan: productHuntPlan},
   {id: 'TrueViewAd', width: 1920, height: 1080, plan: trueViewPlan},
   {id: 'YetiUsingScout', width: 1920, height: 1080, plan: yetiUsingScoutPlan},
+  {id: 'AtsNewsHook', width: 1080, height: 1920, plan: atsNewsHookPlan},
 ];
 
 export const Root: React.FC = () => {

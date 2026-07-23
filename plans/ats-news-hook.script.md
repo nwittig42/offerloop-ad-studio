@@ -1,6 +1,6 @@
 # ATS news supercut: script v1
 
-**Status:** Draft. Needs Nick's approval before generating anchor clips or building the plan.
+**Status:** Hook section (0:00-0:07 beats) BUILT 2026-07-22. Nick approved generating; 5 anchor clips + 2 typo re-rolls generated (seedance_2_0, ~369 credits), plan `ats-news-hook.plan.ts`, composition `AtsNewsHook` (1080x1920), preview `out/ats-news-hook.mp4` (~14s; the anchor's natural read of the setup lines takes 7.3s, so the hook runs longer than the scripted 7s). Turn + receipt + close beats below are NOT built yet.
 
 **Format:** Vertical phone ad (1080x1920, 9:16) for Reels / TikTok / Shorts. News-supercut hook (the "everyone is talking about it" trope), then the Offerloop turn.
 **Length:** ~25s. **Audio:** ON. The anchors speak; this is the rare Offerloop cut with sound. Music slams in at the turn (see ad-sound: silence under the hook makes the news audio feel found, not produced).
