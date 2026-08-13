@@ -22,6 +22,8 @@ import {Captions} from '../components/Captions';
 import {EndCard} from '../components/EndCard';
 import {HookText} from '../components/HookText';
 import {LowerThird} from '../components/LowerThird';
+import {PanelStage, GlowCanvas} from '../components/PanelStage';
+import {SwipeHand} from '../components/SwipeHand';
 import {TimerCounter} from '../components/TimerCounter';
 import {mockups} from '../components/mock';
 
@@ -86,11 +88,26 @@ const OverlayRenderer: React.FC<{
           text={overlay.text}
           position={overlay.position}
           color={overlay.color}
+          highlight={overlay.highlight}
+          highlightColor={overlay.highlightColor}
+          font={overlay.font}
           wordByWord={overlay.wordByWord}
           typewriter={overlay.typewriter}
           sizeScale={overlay.sizeScale}
           offsetY={overlay.offsetY}
           durationInFrames={durationInFrames}
+        />
+      ) : overlay.kind === 'swipeHand' ? (
+        <SwipeHand
+          src={overlay.src}
+          direction={overlay.direction}
+          fromXPct={overlay.fromXPct}
+          travelPct={overlay.travelPct}
+          yPct={overlay.yPct}
+          sizePct={overlay.sizePct}
+          opacity={overlay.opacity}
+          cycleSec={overlay.cycleSec}
+          repeat={overlay.repeat}
         />
       ) : overlay.kind === 'timer' ? (
         <TimerCounter
@@ -114,6 +131,11 @@ const SceneContent: React.FC<{scene: Scene}> = ({scene}) => {
   switch (scene.type) {
     case 'video':
       {
+        // Floating-panel cinematic treatment (tilt + glow + shadow) for crisp
+        // real recordings that are not full 16:9.
+        if (scene.treatment === 'panel') {
+          return <PanelStage scene={scene} />;
+        }
         // Constant slow push-in (unless opted out) so there's always motion
         // carrying through the crossfades. Blur plates keep their fixed
         // overscan on top of it.
@@ -129,16 +151,43 @@ const SceneContent: React.FC<{scene: Scene}> = ({scene}) => {
               scene.trimStartSec ? Math.round(scene.trimStartSec * fps) : undefined
             }
             muted={scene.muted ?? true}
+            playbackRate={scene.playbackRate}
             style={{
               width: '100%',
               height: '100%',
               objectFit: scene.fit ?? 'cover',
-              filter: scene.blur ? `blur(${scene.blur}px)` : undefined,
+              filter: [
+                scene.blur ? `blur(${scene.blur}px)` : '',
+                scene.grayscale ? 'grayscale(0.9) contrast(0.95)' : '',
+              ]
+                .filter(Boolean)
+                .join(' ') || undefined,
               transform: `scale(${push * overscan})`,
             }}
           />
         );
       }
+    case 'canvas':
+      return (
+        <AbsoluteFill style={{backgroundColor: scene.backgroundColor ?? colors.background}}>
+          {scene.variant === 'ridge' ? (
+            <>
+              <Img
+                src={staticFile('assets/figma/mountains-forest-bg.png')}
+                style={{width: '100%', height: '100%', objectFit: 'cover', opacity: 0.9}}
+              />
+              {/* Soft center wash so ink text stays legible over the ridge. */}
+              <AbsoluteFill
+                style={{
+                  background:
+                    'radial-gradient(ellipse 60% 50% at 50% 48%, rgba(245,246,248,0.72) 0%, rgba(245,246,248,0.25) 55%, rgba(245,246,248,0) 80%)',
+                }}
+              />
+            </>
+          ) : null}
+          {scene.variant === 'glow' || scene.variant === undefined ? <GlowCanvas /> : null}
+        </AbsoluteFill>
+      );
     case 'image':
       return (
         <AbsoluteFill

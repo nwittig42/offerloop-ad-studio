@@ -1,6 +1,7 @@
 import {Composition, Still} from 'remotion';
 import {PlanPlayer} from './compositions/PlanPlayer';
 import {appStorePanels, appStorePanelsV2, PANEL_H, PANEL_W} from './appstore';
+import {SwipeHandDemo} from './components/SwipeHand';
 import {makePlanMetadata} from './plan/validate';
 import {planDurationInFrames, planFps} from './plan/timing';
 import type {EditPlan} from './plan/types';
@@ -34,6 +35,15 @@ export const Root: React.FC = () => {
           calculateMetadata={makePlanMetadata(plan)}
         />
       ))}
+      {/* Gesture-timing bench for the ghost swipe hand (3 loops at 30fps). */}
+      <Composition
+        id="SwipeHandDemo"
+        component={SwipeHandDemo}
+        durationInFrames={144}
+        fps={30}
+        width={1920}
+        height={1080}
+      />
       {[...appStorePanels, ...appStorePanelsV2].map(({id, component}) => (
         <Still key={id} id={id} component={component} width={PANEL_W} height={PANEL_H} />
       ))}
