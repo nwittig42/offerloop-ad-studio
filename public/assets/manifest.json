@@ -1371,7 +1371,7 @@
     {
       "filename": "assets/generated/tap-hand-3d-black-v1.mp4",
       "kind": "video",
-      "description": "Tap-gesture hand, variant 1 of 2 (the LOOPABLE one). Matte porcelain-ish 3D right hand on black, index finger extended up-left, other fingers curled, forearm running off the bottom-right corner. Locked camera, hand in frame for the full 5s, tiny press-and-return of the fingertip. Measured loop seam delta 0.43 (first vs last frame) so it loops cleanly; mean interframe motion 0.66, i.e. very subtle, reads as a held pointer rather than an emphatic tap. DEVIATIONS from brief: background is lifted near-black at RGB 19,19,19 rather than pure 0 (needs a levels crush before a straight black key); skin is warm beige at 183,174,163 rather than the pale off-white porcelain asked for; the wrist is not cut cleanly, the forearm continues off the bottom-right frame edge. 5.04s 1440x1440 24fps, silent.",
+      "description": "REJECTED by Nick (wrong brief: solid photoreal hand on black, wanted a near-transparent grey ghost hand on white). Superseded by the tap-hand-ghost-* family. Tap-gesture hand, variant 1 of 2 (the LOOPABLE one). Matte porcelain-ish 3D right hand on black, index finger extended up-left, other fingers curled, forearm running off the bottom-right corner. Locked camera, hand in frame for the full 5s, tiny press-and-return of the fingertip. Measured loop seam delta 0.43 (first vs last frame) so it loops cleanly; mean interframe motion 0.66, i.e. very subtle, reads as a held pointer rather than an emphatic tap. DEVIATIONS from brief: background is lifted near-black at RGB 19,19,19 rather than pure 0 (needs a levels crush before a straight black key); skin is warm beige at 183,174,163 rather than the pale off-white porcelain asked for; the wrist is not cut cleanly, the forearm continues off the bottom-right frame edge. 5.04s 1440x1440 24fps, silent.",
       "duration": 5.04,
       "source": "higgsfield",
       "model": "seedance_2_5 (t2v, 1080p, 1:1, generate_audio false)",
@@ -1381,12 +1381,102 @@
     {
       "filename": "assets/generated/tap-hand-3d-black-v2.mp4",
       "kind": "video",
-      "description": "Tap-gesture hand, variant 2 of 2 (the ENTRANCE one). Same matte 3D hand and black frame as v1, but the shot starts on an empty frame: the fist rises in from the bottom, the index finger unfurls to a full extended point, holds, then curls back. Background is TRUE black at RGB 0,0,0 so it keys or screens perfectly. Motion is roughly 9x v1 (mean interframe 6.01 vs 0.66). NOT loopable, loop seam delta 37.3. DEVIATIONS from brief: the hand is fully out of frame at the start rather than always present, and the gesture is an enter-and-point rather than a tap-in-place; skin is warm cream at 200,190,180 rather than pale porcelain; forearm runs off the bottom frame edge instead of a clean wrist cut. 5.04s 1440x1440 24fps, silent.",
+      "description": "REJECTED by Nick (wrong brief: solid photoreal hand on black, wanted a near-transparent grey ghost hand on white). Superseded by the tap-hand-ghost-* family. Tap-gesture hand, variant 2 of 2 (the ENTRANCE one). Same matte 3D hand and black frame as v1, but the shot starts on an empty frame: the fist rises in from the bottom, the index finger unfurls to a full extended point, holds, then curls back. Background is TRUE black at RGB 0,0,0 so it keys or screens perfectly. Motion is roughly 9x v1 (mean interframe 6.01 vs 0.66). NOT loopable, loop seam delta 37.3. DEVIATIONS from brief: the hand is fully out of frame at the start rather than always present, and the gesture is an enter-and-point rather than a tap-in-place; skin is warm cream at 200,190,180 rather than pale porcelain; forearm runs off the bottom frame edge instead of a clean wrist cut. 5.04s 1440x1440 24fps, silent.",
       "duration": 5.04,
       "source": "higgsfield",
       "model": "seedance_2_5 (t2v, 1080p, 1:1, generate_audio false)",
       "job_id": "78c512fd-dbb2-4f4a-933f-e770f17c7712",
       "prompt": "A single photorealistic 3D-rendered human right hand, floating, cut off cleanly at the wrist with no arm and no sleeve. Smooth matte material in a very pale off-white, almost porcelain, soft neutral grey shading in the creases, no visible skin texture, freckles, hair or nail detail. Soft diffuse studio lighting from the upper left, gentle falloff, no hard specular highlights. Index finger fully extended pointing up and slightly to the left as if about to press a button just above the fingertip; other three fingers loosely curled into the palm, thumb relaxed against the middle finger; palm away from camera, back of hand toward viewer, wrist entering from the bottom right at a gentle diagonal. Motion: the hand pushes the fingertip forward and slightly up in a single deliberate tap, holds for a beat, then draws back to the start. Slow, calm, loopable. Wrist and forearm stay still, nothing else in frame moves. Background: pure solid black, flat and empty, no gradient, no vignette, no floor, no cast shadow, no reflection, no props, no text. Camera locked off, static, no pan, no zoom, no parallax, no depth of field change. Silent. Avoid: arm, sleeve, clothing, jewelry, watch, nail polish, skin pores, veins, two hands, other body parts, phone, screen, button, UI, text, watermark, logo, cast shadow, ground plane, gradient background, white background, grey background, motion blur, camera movement, depth of field, lens flare, bokeh."
+    },
+    {
+      "filename": "assets/generated/tap-hand-ghost-a.png",
+      "kind": "image",
+      "description": "APPROVED tap-hand still (Nick picked A). Ghost press hand: anatomically real human right hand, index finger extended pointing up-left mid-press, other fingers softly curled, thumb out, wrist dissolving to nothing with no arm. Rendered almost fully transparent in pale neutral grey on flat white, plate is pure 255 and the darkest crease only reaches 144, so it is a whisper. 2048x2048. This is the start frame for tap-hand-ghost-press-v1.mp4. Key it with tap-hand-ghost-a-alpha.png rather than compositing the white plate.",
+      "source": "higgsfield",
+      "model": "nano_banana_pro / nano_banana_2 (1:1, 2k)",
+      "job_id": "5cefe1a0-2bc2-4ffa-89b4-4b21ac7fb119",
+      "prompt": "A single human right hand making a tap gesture, floating in empty space, on a completely flat pure white background. ANATOMICALLY REAL: the proportions, knuckles, joint creases, tendon lines, fingernail shapes and finger tapering of an actual adult human hand, drawn from life, not a cartoon, not a mannequin, not a doll, not a stylized icon. But rendered as a GHOST: almost fully transparent, a very faint pale neutral grey, extremely low opacity like breath on glass, so the white background reads clearly straight through the whole hand. Pose: index finger fully extended and pointing up and slightly to the left, mid-tap, as if pressing a button just above the fingertip; other three fingers loosely curled, thumb relaxed against the middle finger; back of the hand toward the viewer, tilted about 40 degrees, entering from the lower right. ONLY THE HAND: no forearm, no arm, no wrist stump, no sleeve, no body; it dissolves softly to nothing just past the wrist. No drop shadow, no contact shadow, no reflection, no glow, no outline, no gradient. No skin tone, no colour, no veins, no hair, no phone, no screen, no button, no cursor, no UI, no props, no text, no watermark, no logo. Whole hand inside the frame, nothing cropped."
+    },
+    {
+      "filename": "assets/generated/tap-hand-ghost-a-alpha.png",
+      "kind": "image",
+      "description": "TRANSPARENT version of the approved tap hand, the one to actually composite. Keyed from tap-hand-ghost-a.png: luminance became alpha with the exact-over-white mapping (plate 255 to fill luminance 146, linear, 5% floor to kill plate noise), fill is flat neutral cool grey #8A93A3, so it composites normally on light or dark instead of multiplying a white box onto the shot. Coverage 14.7% of frame, mean alpha 37/255, i.e. genuinely faint. Verified clean over #F5F6F8, #1E2D4D and #4A60A8. 2048x2048 RGBA.",
+      "source": "derived",
+      "model": "local key from tap-hand-ghost-a.png (Pillow)",
+      "prompt": "n/a (derived asset)"
+    },
+    {
+      "filename": "assets/generated/tap-hand-ghost-press-v1.mp4",
+      "kind": "video",
+      "description": "THE ASSET: approved ghost hand pressing, on white. Animated from tap-hand-ghost-a.png. The hand holds its pose and presses: index fingertip pushes forward and slightly up, holds, returns. Chosen over v2 because opacity stays constant through the clip (ink 2.9 to 3.8 vs v2's 2.5 to 8.8 densifying) and it loops (first-vs-last-frame delta 0.77 vs v2's 3.50). Motion is deliberately small, mean interframe 0.10. White plate sits at 251-252, hand bottoms out at 148. 5.04s 1440x1440 24fps, silent. For compositing use tap-hand-ghost-press-alpha.webm instead.",
+      "duration": 5.04,
+      "source": "higgsfield",
+      "model": "seedance_2_5 (omni_reference, start_image = tap-hand-ghost-a.png, 1080p, 1:1, generate_audio false)",
+      "job_id": "dcdf177c-07d5-49d2-8e2e-bcf50afe3c5f",
+      "prompt": "The exact hand from the start image, completely unchanged: the same barely visible almost fully transparent pale grey ghost hand, the same real human anatomy, the same index finger extended pointing up and slightly to the left, the same softly curled fingers, the same soft dissolving wrist with no arm and no stump, the same very low opacity. The only thing that happens is the press: the index fingertip pushes forward and slightly up as if pressing an invisible button just above it, holds for a beat, then draws smoothly back to exactly the starting pose. The rest of the hand barely moves. Slow, calm, loopable, it ends exactly where it began. The hand stays fully inside the frame at all times, never leaves the shot, never gets cropped, never grows a forearm or a sleeve, never becomes more opaque. The frame is completely empty flat pure white with absolutely nothing in it: no phone, no screen, no button, no cursor, no table, no surface, no objects, no shadow, no reflection, no text, no logo, no gradient, no vignette. Camera perfectly locked off and static, no zoom, no pan, no parallax. Clean minimal interface gesture animation, silent."
+    },
+    {
+      "filename": "assets/generated/tap-hand-ghost-press-alpha.webm",
+      "kind": "video",
+      "description": "THE COMPOSITING ASSET: the approved press with a real alpha channel and no background at all. Keyed per frame from tap-hand-ghost-press-v1.mp4 (luma to alpha, plate 252 to fill luminance 146, 5% floor), flat #8A93A3 fill, encoded VP9 yuva420p in WebM. 309KB, 5.04s 1440x1440 24fps, silent. Chromium and Firefox decode the alpha, so it drops straight into Remotion; Safari does not, and ffprobe reports pix_fmt yuv420p on it, which is normal for WebM alpha (verify by compositing, not by reading pix_fmt). Verified over #F5F6F8, #1E2D4D and #4A60A8 with no plate box. For editors outside the browser use the ProRes .mov instead.",
+      "duration": 5.04,
+      "source": "derived",
+      "model": "local key + libvpx-vp9 yuva420p from job dcdf177c-07d5-49d2-8e2e-bcf50afe3c5f",
+      "prompt": "n/a (derived asset)"
+    },
+    {
+      "filename": "assets/generated/tap-hand-ghost-press-alpha.mov",
+      "kind": "video",
+      "description": "Same keyed press as the WebM but ProRes 4444 (yuva444p12le), 45MB. For Premiere, After Effects and Final Cut, which cannot decode WebM alpha. Identical frames and alpha to tap-hand-ghost-press-alpha.webm. 5.04s 1440x1440 24fps, silent.",
+      "duration": 5.04,
+      "source": "derived",
+      "model": "local key + prores_ks 4444 from job dcdf177c-07d5-49d2-8e2e-bcf50afe3c5f",
+      "prompt": "n/a (derived asset)"
+    },
+    {
+      "filename": "assets/generated/tap-hand-ghost-press-v2.mp4",
+      "kind": "video",
+      "description": "NOT CHOSEN. Second variant of the ghost press from the same start image. Bigger, more legible press motion (mean interframe 0.19 vs v1's 0.10) but the hand densifies noticeably through the clip (ink 2.5 to 8.8) so it stops being a whisper, and it does not loop (seam 3.50). Kept as the fallback if v1's press reads as too subtle in a cut. 5.04s 1440x1440 24fps, silent.",
+      "duration": 5.04,
+      "source": "higgsfield",
+      "model": "seedance_2_5 (omni_reference, start_image = tap-hand-ghost-a.png, 1080p, 1:1, generate_audio false)",
+      "job_id": "670c90b9-8724-4932-ab14-0f1e9eb1fd9e",
+      "prompt": "The exact hand from the start image, completely unchanged: the same barely visible almost fully transparent pale grey ghost hand, the same real human anatomy, the same index finger extended pointing up and slightly to the left, the same softly curled fingers, the same soft dissolving wrist with no arm and no stump, the same very low opacity. The only thing that happens is the press: the index fingertip pushes forward and slightly up as if pressing an invisible button just above it, holds for a beat, then draws smoothly back to exactly the starting pose. The rest of the hand barely moves. Slow, calm, loopable, it ends exactly where it began. The hand stays fully inside the frame at all times, never leaves the shot, never gets cropped, never grows a forearm or a sleeve, never becomes more opaque. The frame is completely empty flat pure white with absolutely nothing in it: no phone, no screen, no button, no cursor, no table, no surface, no objects, no shadow, no reflection, no text, no logo, no gradient, no vignette. Camera perfectly locked off and static, no zoom, no pan, no parallax. Clean minimal interface gesture animation, silent."
+    },
+    {
+      "filename": "assets/generated/tap-hand-ghost-b.png",
+      "kind": "image",
+      "description": "NOT CHOSEN. Tap-hand still variant B: same pose as A but noticeably more present, an x-ray-ish translucent grey where the curled fingers read through the palm. Reads better at small sizes than A, Nick found it too solid. 2048x2048. Keyed version at tap-hand-ghost-b-alpha.png. Two videos were generated from this still before A was chosen (jobs 09610190-7b6f-4d42-9645-2bb7a4832d6e and 2494da1c-7d7a-4b6f-8a27-68184f1465f0) and were never downloaded.",
+      "source": "higgsfield",
+      "model": "nano_banana_pro / nano_banana_2 (1:1, 2k)",
+      "job_id": "f81d5262-170b-4614-9349-e2ad54319b99",
+      "prompt": "A single human right hand making a tap gesture, floating in empty space, on a completely flat pure white background. ANATOMICALLY REAL: the proportions, knuckles, joint creases, tendon lines, fingernail shapes and finger tapering of an actual adult human hand, drawn from life, not a cartoon, not a mannequin, not a doll, not a stylized icon. But rendered as a GHOST: almost fully transparent, a very faint pale neutral grey, extremely low opacity like breath on glass, so the white background reads clearly straight through the whole hand. Pose: index finger fully extended and pointing up and slightly to the left, mid-tap, as if pressing a button just above the fingertip; other three fingers loosely curled, thumb relaxed against the middle finger; back of the hand toward the viewer, tilted about 40 degrees, entering from the lower right. ONLY THE HAND: no forearm, no arm, no wrist stump, no sleeve, no body; it dissolves softly to nothing just past the wrist. No drop shadow, no contact shadow, no reflection, no glow, no outline, no gradient. No skin tone, no colour, no veins, no hair, no phone, no screen, no button, no cursor, no UI, no props, no text, no watermark, no logo. Whole hand inside the frame, nothing cropped."
+    },
+    {
+      "filename": "assets/generated/tap-hand-ghost-b-alpha.png",
+      "kind": "image",
+      "description": "NOT CHOSEN. Keyed alpha version of tap-hand-ghost-b.png (plate 254 to 133, gamma 1.1, 2% floor, #8A93A3 fill). Coverage 21.2%, mean alpha 83/255, so roughly twice as present as the approved A alpha. 2048x2048 RGBA.",
+      "source": "derived",
+      "model": "local key from tap-hand-ghost-b.png (Pillow)",
+      "prompt": "n/a (derived asset)"
+    },
+    {
+      "filename": "assets/generated/tap-hand-ghost-c.png",
+      "kind": "image",
+      "description": "NOT CHOSEN. Tap-hand still variant C: hand angled down and forward, finger pressing toward the viewer, very faint. Rejected because the ghosted curled fingers overlap into a tangle that reads as extra fingers. 2048x2048.",
+      "source": "higgsfield",
+      "model": "nano_banana_pro / nano_banana_2 (1:1, 2k)",
+      "job_id": "c6c1ff09-807e-4426-ad49-43943ce625c1",
+      "prompt": "A single human right hand making a tap gesture, floating in empty space, on a completely flat pure white background. ANATOMICALLY REAL: the proportions, knuckles, joint creases, tendon lines, fingernail shapes and finger tapering of an actual adult human hand, drawn from life, not a cartoon, not a mannequin, not a doll, not a stylized icon. But rendered as a GHOST: almost fully transparent, a very faint pale neutral grey, extremely low opacity like breath on glass, so the white background reads clearly straight through the whole hand. Pose: index finger fully extended and pointing up and slightly to the left, mid-tap, as if pressing a button just above the fingertip; other three fingers loosely curled, thumb relaxed against the middle finger; back of the hand toward the viewer, tilted about 40 degrees, entering from the lower right. ONLY THE HAND: no forearm, no arm, no wrist stump, no sleeve, no body; it dissolves softly to nothing just past the wrist. No drop shadow, no contact shadow, no reflection, no glow, no outline, no gradient. No skin tone, no colour, no veins, no hair, no phone, no screen, no button, no cursor, no UI, no props, no text, no watermark, no logo. Whole hand inside the frame, nothing cropped."
+    },
+    {
+      "filename": "assets/generated/tap-hand-ghost-d.png",
+      "kind": "image",
+      "description": "NOT CHOSEN, but the most convincing hand anatomy of the four. Tap-hand still variant D: hand descending from upper right, index pressing down. The model ignored the transparency instruction entirely and rendered an opaque porcelain-white hand with a cast shadow, so it only reads by its shadow on white. Useful reference if a solid hand is ever wanted. 2048x2048.",
+      "source": "higgsfield",
+      "model": "nano_banana_pro / nano_banana_2 (1:1, 2k)",
+      "job_id": "fb683a03-44f1-4989-9045-d772210ace65",
+      "prompt": "A single human right hand making a tap gesture, floating in empty space, on a completely flat pure white background. ANATOMICALLY REAL: the proportions, knuckles, joint creases, tendon lines, fingernail shapes and finger tapering of an actual adult human hand, drawn from life, not a cartoon, not a mannequin, not a doll, not a stylized icon. But rendered as a GHOST: almost fully transparent, a very faint pale neutral grey, extremely low opacity like breath on glass, so the white background reads clearly straight through the whole hand. Pose: index finger fully extended and pointing up and slightly to the left, mid-tap, as if pressing a button just above the fingertip; other three fingers loosely curled, thumb relaxed against the middle finger; back of the hand toward the viewer, tilted about 40 degrees, entering from the lower right. ONLY THE HAND: no forearm, no arm, no wrist stump, no sleeve, no body; it dissolves softly to nothing just past the wrist. No drop shadow, no contact shadow, no reflection, no glow, no outline, no gradient. No skin tone, no colour, no veins, no hair, no phone, no screen, no button, no cursor, no UI, no props, no text, no watermark, no logo. Whole hand inside the frame, nothing cropped."
     }
   ]
 }
