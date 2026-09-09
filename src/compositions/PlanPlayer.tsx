@@ -144,7 +144,7 @@ const SceneContent: React.FC<{scene: Scene}> = ({scene}) => {
             ? 1
             : interpolate(frame, [0, durationInFrames], [1, 1.06]);
         const overscan = scene.blur ? 1.06 : 1;
-        return (
+        const video = (
           <OffthreadVideo
             src={staticFile(scene.src)}
             trimBefore={
@@ -152,6 +152,8 @@ const SceneContent: React.FC<{scene: Scene}> = ({scene}) => {
             }
             muted={scene.muted ?? true}
             playbackRate={scene.playbackRate}
+            // Keyed WebM only: without this Remotion composites the matte on black.
+            transparent={scene.transparent}
             style={{
               width: '100%',
               height: '100%',
@@ -165,6 +167,13 @@ const SceneContent: React.FC<{scene: Scene}> = ({scene}) => {
               transform: `scale(${push * overscan})`,
             }}
           />
+        );
+        // Only wrap when a stage color is asked for, so full-bleed clips keep
+        // their existing bare-canvas behavior.
+        return scene.backgroundColor ? (
+          <AbsoluteFill style={{backgroundColor: scene.backgroundColor}}>{video}</AbsoluteFill>
+        ) : (
+          video
         );
       }
     case 'canvas':

@@ -134,6 +134,14 @@ export type VideoScene = SceneBase & {
   glow?: boolean;
   /** panel only: privacy redaction rects (e.g. over emails), in panel-percent coords. */
   masks?: PanelMask[];
+  /**
+   * Source carries an alpha channel (keyed WebM): keep it transparent instead
+   * of flattening the matte onto black. Pair with backgroundColor to stand a
+   * cut-out asset on the brand canvas.
+   */
+  transparent?: boolean;
+  /** Stage color behind the clip (defaults to nothing, i.e. the bare canvas). */
+  backgroundColor?: string;
 };
 
 export type ImageScene = SceneBase & {
