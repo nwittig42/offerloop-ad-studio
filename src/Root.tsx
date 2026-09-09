@@ -10,6 +10,7 @@ import {trueViewPlan} from '../plans/trueview.plan';
 import {productHuntPlan} from '../plans/product-hunt.plan';
 import {atsNewsHookPlan} from '../plans/ats-news-hook.plan';
 import {yetiRaveDancePlan} from '../plans/yeti-rave-dance.plan';
+import {yetiDrumPlan} from '../plans/yeti-drum.plan';
 
 // Every composition is the generic PlanPlayer pointed at a plan file.
 // To ship a new video: add plans/<name>.plan.ts and point a slot at it here.
@@ -19,6 +20,7 @@ const slots: Array<{id: string; width: number; height: number; plan: EditPlan}> 
   {id: 'YetiUsingScout', width: 1920, height: 1080, plan: yetiUsingScoutPlan},
   {id: 'AtsNewsHook', width: 1080, height: 1920, plan: atsNewsHookPlan},
   {id: 'YetiRaveDance', width: 1080, height: 1920, plan: yetiRaveDancePlan},
+  {id: 'YetiDrum', width: 1080, height: 1920, plan: yetiDrumPlan},
 ];
 
 export const Root: React.FC = () => {
