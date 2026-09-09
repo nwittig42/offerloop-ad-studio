@@ -22,7 +22,17 @@ mdc: true
       <p class="mt-16 text-sm text-muted" style="text-shadow: 0 1px 14px #0D1424, 0 0 6px #0D1424">Presented by <span class="text-warm">[Your name]</span> · Offerloop Campus Ambassador</p>
     </div>
     <div class="flex justify-center">
-      <img src="/assets/decks/classroom-demo/s01-02-1eac6328.png" class="w-72 drop-shadow-2xl" />
+      <!-- Dancing yeti, keyed to real transparency so he stands on the slide's
+           background art rather than in a box. Browser only: the pptx export
+           captures stills, so this reads as a frozen pose there. -->
+      <video
+        src="/assets/generated/yeti-rave-dance-alpha.webm"
+        class="w-48 drop-shadow-2xl"
+        autoplay
+        muted
+        loop
+        playsinline
+      ></video>
     </div>
   </div>
 </div>
