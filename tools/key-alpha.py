@@ -61,10 +61,19 @@ def unpremultiply(channel: Image.Image, alpha: Image.Image) -> Image.Image:
 
     Needs real per-pixel division across two images, so it goes through
     ImageMath - an 8-bit ImageChops.multiply cannot apply a factor above 1.
+
+    Fully transparent pixels are forced to black rather than left to the
+    division. A plate pixel that is dark but not zero (the yeti render carried
+    a floor up to luma 39) divides by an alpha of zero, clamps to 255, and
+    fills the transparent region with white. Nothing shows it while alpha is
+    honoured, but 4:2:0 chroma subsampling averages that white into the
+    subject's edge pixels, so a lossy encode grows a light halo.
     """
     return ImageMath.lambda_eval(
         lambda a: a["convert"](
-            a["min"](a["float"](a["c"]) * 255 / a["max"](a["float"](a["a"]), 1), 255), "L"
+            a["min"](a["float"](a["c"]) * 255 / a["max"](a["float"](a["a"]), 1), 255)
+            * (a["float"](a["a"]) > 0),
+            "L",
         ),
         c=channel,
         a=alpha,
