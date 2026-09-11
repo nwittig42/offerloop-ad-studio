@@ -1,0 +1,122 @@
+import React from 'react';
+import {AbsoluteFill} from 'remotion';
+import {CarouselCardFrame} from '../components/CarouselCardFrame';
+import {GlobeScale} from '../components/GlobeScale';
+import {colors, fonts} from '../../brand/theme';
+import {igLaunchV2Cards, type CardCopy} from '../../plans/ig-launch-v2.cards';
+
+/**
+ * Deck position 5 (scale): ANYONE. above, the LA-to-globe animation in a
+ * square panel below it, and the contact count under that in red.
+ *
+ * The animation is the GlobeScale component rendered in place, not the
+ * out/globe-scale.mp4 file played back. Same pixels either way, minus a second
+ * encode, and the timing stays editable from one place.
+ */
+
+// Vertical budget on a 1350-tall card; the footer lockup reaches ~1210.
+/** Top of the headline. */
+const TOP = 168;
+/** Top of the square panel. */
+const PANEL_TOP = 322;
+const PANEL = 760;
+/** Top of the red line, clearing the panel's bottom at 1082. */
+const COUNT_TOP = 1108;
+
+/**
+ * Nick asked for this line in red. There is no red anywhere in the brand
+ * palette, so it is defined here rather than pulled from the theme, and it is
+ * deliberately not being promoted into brand/theme.ts on the strength of one
+ * slide.
+ */
+const RED = '#D92D20';
+
+export const IgLaunchGlobeCard: React.FC<{index?: number}> = ({index = 0}) => {
+  const card: CardCopy = igLaunchV2Cards[index] ?? igLaunchV2Cards[0];
+  return (
+    <CarouselCardFrame>
+      <AbsoluteFill
+        style={{
+          top: TOP,
+          height: 'auto',
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+        }}
+      >
+        {card.headline ? (
+          <div
+            style={{
+              fontFamily: fonts.heading,
+              fontWeight: 700,
+              fontSize: card.size ?? 168,
+              lineHeight: 1.05,
+              letterSpacing: '-0.03em',
+              color: colors.secondaryDark,
+              textAlign: 'center',
+            }}
+          >
+            {card.headline.map((line) => (
+              <div key={line}>{line}</div>
+            ))}
+          </div>
+        ) : null}
+      </AbsoluteFill>
+
+      <div
+        style={{
+          position: 'absolute',
+          left: 0,
+          right: 0,
+          top: PANEL_TOP,
+          display: 'flex',
+          justifyContent: 'center',
+        }}
+      >
+        <div
+          style={{
+            width: PANEL,
+            height: PANEL,
+            borderRadius: 28,
+            overflow: 'hidden',
+            // Required: GlobeScale is an AbsoluteFill, which would otherwise
+            // position against the card and paint over the whole thing.
+            position: 'relative',
+            boxShadow:
+              '0 40px 100px rgba(17,32,64,0.32), 0 8px 24px rgba(17,32,64,0.18)',
+          }}
+        >
+          <GlobeScale width={PANEL} height={PANEL} />
+        </div>
+      </div>
+
+      <AbsoluteFill
+        style={{
+          top: COUNT_TOP,
+          height: 'auto',
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+        }}
+      >
+        {card.support ? (
+          <div
+            style={{
+              fontFamily: fonts.heading,
+              fontWeight: 700,
+              fontSize: 56,
+              lineHeight: 1.15,
+              letterSpacing: '-0.02em',
+              color: RED,
+              textAlign: 'center',
+            }}
+          >
+            {card.support.map((line) => (
+              <div key={line}>{line}</div>
+            ))}
+          </div>
+        ) : null}
+      </AbsoluteFill>
+    </CarouselCardFrame>
+  );
+};

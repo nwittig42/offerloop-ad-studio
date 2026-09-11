@@ -46,7 +46,8 @@ export type CardCopy = {
    * scrim, revealed word by word. See src/compositions/IgLaunchHookCard.tsx.
    */
   video?: {
-    src: string;
+    /** Omitted by the 'globe' layout, which draws its animation in place. */
+    src?: string;
     durationSec: number;
     /**
      * Frame the deck's `<n>-<slug>.png` poster is grabbed at. The preview
@@ -62,7 +63,7 @@ export type CardCopy = {
    * (IgLaunchPhonesCard). 'phone' is one hero phone with headline and support
    * stacked above it (IgLaunchPhoneCard).
    */
-  layout?: 'phones' | 'phone' | 'panel';
+  layout?: 'phones' | 'phone' | 'panel' | 'globe';
   /**
    * The outer two phones. Either can hold a clip as well as a still, so set
    * `video: true` when `src` is an mp4. The middle phone always plays the
@@ -163,10 +164,20 @@ export const igLaunchV2Cards: CardCopy[] = [
     },
   },
   {
+    // Deck position 5. ANYONE. over the LA-to-globe animation, count in red
+    // beneath it. 7s, the longest card in the deck, because the zoom needs
+    // the room to read as one continuous move.
+    //
+    // `video` has no src: the animation is the GlobeScale component drawn in
+    // place rather than a file, so there is nothing to load. The field is
+    // still what marks this a motion card, and posterFrame still picks the
+    // deck still.
     slug: 'scale',
     headline: ['ANYONE.'],
     size: 168,
     support: ['1.5 billion contacts.'],
+    layout: 'globe',
+    video: {durationSec: 7, posterFrame: 126},
   },
   {
     // The one card that most needs its receipt: a real drafted email with the

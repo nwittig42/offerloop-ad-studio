@@ -89,7 +89,7 @@ export const IgLaunchPhoneCard: React.FC<{index?: number}> = ({index = 0}) => {
           filter: 'drop-shadow(0 30px 44px rgba(8,14,32,0.45))',
         }}
       >
-        {card.video ? <PhoneFrame src={card.video.src} width={PHONE_W} video /> : null}
+        {card.video?.src ? <PhoneFrame src={card.video.src} width={PHONE_W} video /> : null}
       </div>
     </CarouselCardFrame>
   );

@@ -2268,6 +2268,24 @@
       "source": "dropped",
       "model": "n/a (screen recording; ffmpeg cut at 12s + 2.77x speed + downscale)",
       "prompt": "n/a"
+    },
+    {
+      "filename": "assets/generated/pro-avatar-1.png",
+      "kind": "image",
+      "description": "Nine professional headshots (pro-avatar-1 through -9), 256x256 each, cropped from one 3x3 gpt_image_2 grid. Diverse, business attire, plain light grey backgrounds, matched lighting. Five of them pin to LA dots in the GlobeScale animation; the rest are spare. Fully synthetic, so no real person's likeness.",
+      "source": "higgsfield",
+      "model": "gpt_image_2 (1:1, 2k) + ffmpeg crop to 9",
+      "job_id": "32f0bc39-2778-49a4-a07a-4569ddfc7d93",
+      "prompt": "A clean 3 by 3 grid of nine separate professional headshot photographs on a plain light grey background, evenly spaced. Nine different people, diverse in ethnicity, gender and age, twenties and thirties, business or business casual attire, facing camera, neutral friendly expression, soft even studio lighting, photorealistic corporate headshot style, consistent across all nine. No text, no labels, no borders, no watermarks."
+    },
+    {
+      "filename": "out/globe-scale.mp4",
+      "kind": "video",
+      "description": "REFERENCE COPY of the scale beat, 1080x1080, 7s: hovering over coastal LA with blue dots and five headshots appearing, one continuous zoom out through the US to the whole world as dots fill the land, land going solid blue, the globe spinning hard, then dissipating. Built procedurally in Remotion (src/components/GlobeScale.tsx) from world-atlas coastlines and d3-geo, NOT generated - the beats are choreographed to the frame and no video model would hit them. The ig-launch-v2 scale card draws the component in place rather than playing this file, so this render is only for viewing outside Studio. Re-render with: npx remotion render GlobeScale.",
+      "duration": 7.0,
+      "source": "derived",
+      "model": "remotion render GlobeScale (d3-geo geoOrthographic + world-atlas land-50m/110m)",
+      "prompt": "n/a (procedural)"
     }
   ]
 }

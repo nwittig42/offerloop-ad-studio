@@ -101,7 +101,7 @@ export const IgLaunchPanelCard: React.FC<{index?: number}> = ({index = 0}) => {
             outlineOffset: -1,
           }}
         >
-          {card.video ? (
+          {card.video?.src ? (
             <OffthreadVideo
               src={staticFile(card.video.src)}
               muted

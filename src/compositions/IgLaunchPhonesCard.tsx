@@ -98,7 +98,7 @@ const PhoneRow: React.FC<{card: CardCopy}> = ({card}) => {
           filter: 'drop-shadow(0 30px 40px rgba(8,14,32,0.45))',
         }}
       >
-        {card.video ? <PhoneFrame src={card.video.src} width={PHONE.mid} video /> : null}
+        {card.video?.src ? <PhoneFrame src={card.video.src} width={PHONE.mid} video /> : null}
       </div>
       {card.phones ? (
         <PhoneFrame

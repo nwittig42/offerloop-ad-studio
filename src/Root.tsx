@@ -19,6 +19,8 @@ import {IgLaunchHookCard} from './compositions/IgLaunchHookCard';
 import {IgLaunchPhonesCard} from './compositions/IgLaunchPhonesCard';
 import {IgLaunchPhoneCard} from './compositions/IgLaunchPhoneCard';
 import {IgLaunchPanelCard} from './compositions/IgLaunchPanelCard';
+import {IgLaunchGlobeCard} from './compositions/IgLaunchGlobeCard';
+import {GlobeScale, GLOBE_FPS, GLOBE_DURATION} from './components/GlobeScale';
 import {
   IgLaunchOutro,
   igLaunchOutroDurationInFrames,
@@ -39,6 +41,7 @@ const MOTION_CARD = {
   phones: IgLaunchPhonesCard,
   phone: IgLaunchPhoneCard,
   panel: IgLaunchPanelCard,
+  globe: IgLaunchGlobeCard,
 } as const;
 import {makePlanMetadata} from './plan/validate';
 import {planDurationInFrames, planFps} from './plan/timing';
@@ -158,6 +161,17 @@ export const Root: React.FC = () => {
         fps={igLaunchOutroFps}
         width={CARD_W}
         height={CARD_H}
+      />
+      {/* The scale beat on its own: LA to the globe in 7s, square. Also
+          embedded in the ig-launch-v2 scale card, which plays the component
+          directly rather than this render, so there is no extra encode. */}
+      <Composition
+        id="GlobeScale"
+        component={GlobeScale}
+        durationInFrames={GLOBE_DURATION}
+        fps={GLOBE_FPS}
+        width={1080}
+        height={1080}
       />
       {/* Gesture-timing bench for the ghost swipe hand (3 loops at 30fps). */}
       <Composition
