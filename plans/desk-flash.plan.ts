@@ -1,22 +1,24 @@
 import type {EditPlan} from '../src/plan/types';
 
-// Short hook fragment, not a standalone video: the grind timelapse with the
+// Short hook fragment, not a standalone video: a grind timelapse with the
 // three tabs of the busywork stack punching through it and vanishing again.
 //
-// The base plate is one continuous take of nick-desk-timelapse-v1.mp4 (day
-// fading to night, lamp clicking on, coffee cups stacking up). It is cut into
-// five segments whose trimStartSec values chain, so the daylight keeps falling
-// straight through the interruptions and the flashes read as breaking into a
-// single unbroken shot rather than restarting it.
+// The base plate is one continuous take of desk-timelapse-apartment-v1.mp4 —
+// a Higgsfield generation, nobody we know, an apartment bedroom rather than
+// Nick's room, running bright afternoon -> golden hour -> dusk -> night with
+// the desk lamp cutting in around 6s and papers stacking up across the desk.
+// It is cut into five segments whose trimStartSec values chain, so the light
+// keeps falling straight through the interruptions and the flashes read as
+// breaking into a single unbroken shot rather than restarting it.
 //
 // Rhythm follows the anthem cold-open pattern from the ad-pacing skill: a hold
-// long enough to register the grind, then gaps that contract (2.17s -> 1.58s
-// -> 1.21s -> 0.79s), a six-frame triple-flash cluster as the climax, and a
-// 2.25s release on the night footage so it does not end on a busy frame.
+// long enough to register the grind, then gaps that contract (2.42s -> 1.83s
+// -> 1.42s -> 1.00s), a six-frame triple-flash cluster as the climax, and a
+// 2.75s release on the night footage so it does not end on a busy frame.
 //
 // Flashes are hard cuts by design: transitionIn stays unset, because a
 // crossfade into a bright full-screen UI double-exposes to mush and would kill
-// the pop. Single flashes are 3 frames, the cluster runs 2 frames apiece.
+// the pop.
 //
 // Everything is blurred. The timelapse sits at 5px (a soft, tired,
 // out-of-focus haze) and the flash plates at 14px, so a viewer clocks *which*
@@ -24,12 +26,13 @@ import type {EditPlan} from '../src/plan/types';
 // are the levers to tune if Nick wants it sharper or mushier.
 //
 // Source is 24fps and the plan runs at 24, so a plan frame is a source frame
-// and the frame counts below are exact.
+// and the frame counts below are exact. The take is 241 frames; the segments
+// consume 226 of them.
 const fps = 24;
 /** Frames, as seconds — keeps the flash lengths frame-exact rather than rounded. */
 const f = (frames: number) => frames / fps;
 
-const DESK = 'assets/generated/nick-desk-timelapse-v1.mp4';
+const DESK = 'assets/generated/desk-timelapse-apartment-v1.mp4';
 const TIMELAPSE_BLUR = 5;
 const FLASH_BLUR = 14;
 
@@ -63,26 +66,26 @@ const flash = (id: string, src: string, frames: number) =>
   });
 
 const GMAIL = 'assets/generated/gmail-rejections-browser-crop-v1.png';
-const TRACKER = 'assets/generated/desk-flash-excel-plate-v1.png';
+const EXCEL = 'assets/generated/desk-flash-excel-plate-v1.png';
 const LINKEDIN = 'assets/generated/desk-flash-linkedin-plate-v1.png';
 
 export const deskFlashPlan: EditPlan = {
   id: 'desk-flash',
   fps,
   scenes: [
-    // Hold: daylight, head down, nothing yet.
-    desk('desk-a', 0, 52),
+    // Hold: afternoon sun, head down, nothing yet.
+    desk('desk-a', 0, 58),
     flash('flash-gmail', GMAIL, 3),
-    desk('desk-b', f(52), 38),
-    flash('flash-tracker', TRACKER, 3),
-    desk('desk-c', f(90), 29),
+    desk('desk-b', f(58), 44),
+    flash('flash-excel', EXCEL, 3),
+    desk('desk-c', f(102), 34),
     flash('flash-linkedin', LINKEDIN, 3),
-    desk('desk-d', f(119), 19),
+    desk('desk-d', f(136), 24),
     // Climax: all three at once, two frames each.
     flash('cluster-gmail', GMAIL, 2),
-    flash('cluster-tracker', TRACKER, 2),
+    flash('cluster-excel', EXCEL, 2),
     flash('cluster-linkedin', LINKEDIN, 2),
-    // Release: lamp on, cups stacked, quiet.
-    desk('desk-e', f(138), 54),
+    // Release: lamp on, papers stacked, quiet.
+    desk('desk-e', f(160), 66),
   ],
 };
