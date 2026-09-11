@@ -13,6 +13,9 @@
  * ('networking is a pain in the ass.'). Nick asked for slide 2 only, so
  * whether hook-again follows it is his call.
  */
+/** One phone in the slide-3 row: a still by default, a clip with `video`. */
+export type PhoneSlot = {src: string; video?: boolean};
+
 export type CardCopy = {
   slug: string;
   /** Small line above the headline, set in Inter, uppercase and tracked out. */
@@ -57,8 +60,13 @@ export type CardCopy = {
    * sent. Rendered by src/compositions/IgLaunchPhonesCard.tsx.
    */
   layout?: 'phones';
-  /** Stills for the outer two phones; the middle one plays `video`. */
-  phones?: {left: string; right: string};
+  /**
+   * The outer two phones. Either can hold a clip as well as a still, so set
+   * `video: true` when `src` is an mp4. The middle phone always plays the
+   * card's own `video.src`. Any clip here should be the same length as the
+   * card, or it will loop out of step with it.
+   */
+  phones?: {left: PhoneSlot; right: PhoneSlot};
 };
 
 /** Deck position of the first entry below; card 1 is the cover from cover.py. */
@@ -94,18 +102,19 @@ export const igLaunchV2Cards: CardCopy[] = [
     size: 46,
     support: ['swipe, and it emails them.', 'introducing you.'],
     layout: 'phones',
-    // Middle phone. Nick's screen recording, trimmed to the typing and sped
-    // to 5s so this card matches the hook card's length.
+    // Middle phone: the swipe itself, which is the motion worth putting in
+    // the centre - cards flying off to Passed and to Drafting your email.
     video: {
-      src: 'assets/recordings/scout-prompt-typing.mp4',
+      src: 'assets/recordings/app-swipe-draft.mp4',
       durationSec: 5,
-      posterFrame: 110,
+      posterFrame: 64,
     },
-    // Outer two are real app surfaces either side of that prompt: the person
-    // card you swipe, and the inbox the drafts land in.
+    // Left is the Scout prompt being typed (it was the middle phone until the
+    // swipe clip arrived), right is the inbox those drafts land in. Both
+    // clips are cut to exactly 5s so all three phones loop in step.
     phones: {
-      left: 'assets/generated/offerloop-phone-people-still.png',
-      right: 'assets/generated/offerloop-phone-inbox-still.png',
+      left: {src: 'assets/recordings/scout-prompt-typing.mp4', video: true},
+      right: {src: 'assets/generated/offerloop-phone-inbox-still.png'},
     },
   },
   {

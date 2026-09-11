@@ -2229,7 +2229,7 @@
     {
       "filename": "assets/generated/offerloop-phone-people-still.png",
       "kind": "image",
-      "description": "Frame at 10s of assets/recordings/ios-app-swipe-person.mp4, 1206x2622: the People tab person card (Alex Gillman, Asset Management Analyst, Goldman Sachs, USC alum) with 'Draft it / Send it' and the red X / blue tick. Left phone of ig-launch-v2 slide 3. No email addresses in frame.",
+      "description": "UNUSED since the swipe clip took the middle phone and the Scout clip moved left. Frame at 10s of assets/recordings/ios-app-swipe-person.mp4, 1206x2622: the People tab person card (Alex Gillman, Asset Management Analyst, Goldman Sachs, USC alum) with 'Draft it / Send it' and the red X / blue tick. No email addresses in frame.",
       "source": "derived",
       "model": "ffmpeg frame extract from assets/recordings/ios-app-swipe-person.mp4",
       "prompt": "n/a (derived asset)"
@@ -2241,6 +2241,15 @@
       "source": "derived",
       "model": "ffmpeg frame extract from assets/recordings/ios-app-swipe-person.mp4",
       "prompt": "n/a (derived asset)"
+    },
+    {
+      "filename": "assets/recordings/app-swipe-draft.mp4",
+      "kind": "recording",
+      "description": "Nick's iPhone capture of the People tab swipe mechanic: person cards (Andrew Aline, Aaron Phogat, Aashi Tailor and others, with firm, school and 'Strong fit' chips) swiped left to a 'Passed' stamp and right to 'Drafting your email / Lands in your Inbox'. Source 1206x2622 60fps 10.55s; trimmed 2.0-9.5s (skipping the static opening) and sped 1.5x to exactly 5.00s / 120 frames at 24fps, scaled to 600x1304. MIDDLE phone of ig-launch-v2 slide 3 - this is the swiping motion. No email addresses in frame.",
+      "duration": 5.0,
+      "source": "dropped",
+      "model": "n/a (screen recording; ffmpeg trim + 1.5x speed + downscale)",
+      "prompt": "n/a"
     }
   ]
 }

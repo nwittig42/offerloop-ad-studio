@@ -83,7 +83,13 @@ const PhoneRow: React.FC<{card: CardCopy}> = ({card}) => {
         gap: PHONE.gap,
       }}
     >
-      {card.phones ? <PhoneFrame src={card.phones.left} width={PHONE.side} /> : null}
+      {card.phones ? (
+        <PhoneFrame
+          src={card.phones.left.src}
+          width={PHONE.side}
+          video={card.phones.left.video}
+        />
+      ) : null}
       {/* Wrapper carries the extra lift and shadow so the middle phone sits
           forward of the other two without changing its own frame. */}
       <div
@@ -94,7 +100,13 @@ const PhoneRow: React.FC<{card: CardCopy}> = ({card}) => {
       >
         {card.video ? <PhoneFrame src={card.video.src} width={PHONE.mid} video /> : null}
       </div>
-      {card.phones ? <PhoneFrame src={card.phones.right} width={PHONE.side} /> : null}
+      {card.phones ? (
+        <PhoneFrame
+          src={card.phones.right.src}
+          width={PHONE.side}
+          video={card.phones.right.video}
+        />
+      ) : null}
     </div>
   );
 };
