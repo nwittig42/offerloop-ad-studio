@@ -213,6 +213,7 @@ const SceneContent: React.FC<{scene: Scene}> = ({scene}) => {
                 width: '100%',
                 height: '100%',
                 objectFit: scene.fit ?? 'contain',
+                objectPosition: scene.objectPosition,
                 filter: scene.blur ? `blur(${scene.blur}px)` : undefined,
                 // Blur samples transparent pixels past the edge, so overscan
                 // past the frame rather than letting a soft rim show.

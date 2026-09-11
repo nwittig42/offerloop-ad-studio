@@ -2189,6 +2189,15 @@
       "model": "seedance_2_0 (std, 1080p, 16:9, 10s, no reference)",
       "job_id": "abdf5556-e73f-4c3a-8182-cf3ac0989e13",
       "prompt": "Locked-off timelapse, static tripod camera, absolutely no camera movement. A young woman in her early twenties sits at a small wooden desk in a bright modern apartment bedroom, working on a laptop. Cream knit sweater, dark hair tied back. Behind her a large window with sheer curtains looking out on city rooftops; a shelf of books and a trailing pothos plant, a small framed print, a corkboard with pinned notes. Over the clip the daylight slides from bright afternoon through warm golden hour to deep blue evening and then night, and a small desk lamp switches on partway through. She works in fast accelerated motion, hands and torso blurring with speed. Mugs, a water bottle and stacked papers gradually accumulate (full prompt in job)."
+    },
+    {
+      "filename": "assets/generated/desk-timelapse-apartment-fast-v1.mp4",
+      "kind": "video",
+      "description": "desk-timelapse-apartment-v1.mp4 sped 2.6x locally (241 frames -> 93) so the whole afternoon-to-night light arc fits inside the 5s desk-flash carousel background. Sped up front rather than via Remotion playbackRate so a plan frame is a file frame and the segment trims stay exact. Silent.",
+      "duration": 3.88,
+      "source": "derived",
+      "model": "ffmpeg setpts=PTS/2.6 from assets/generated/desk-timelapse-apartment-v1.mp4",
+      "prompt": "n/a (derived asset)"
     }
   ]
 }

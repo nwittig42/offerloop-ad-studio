@@ -154,6 +154,12 @@ export type ImageScene = SceneBase & {
   blur?: number;
   /** Extra scale on top of the fit, e.g. 1.08 to punch a flash frame in. */
   scale?: number;
+  /**
+   * CSS object-position, e.g. 'left center'. Only bites when 'cover' crops —
+   * which is how a 16:9 plate survives a 4:5 composition with the side of the
+   * image that identifies it (a sidebar, a nav bar) still in frame.
+   */
+  objectPosition?: string;
   backgroundColor?: string;
 };
 

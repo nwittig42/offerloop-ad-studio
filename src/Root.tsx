@@ -43,6 +43,8 @@ const slots: Array<{id: string; width: number; height: number; plan: EditPlan}> 
   {id: 'YetiRaveDance', width: 1080, height: 1920, plan: yetiRaveDancePlan},
   {id: 'YetiDrum', width: 1080, height: 1920, plan: yetiDrumPlan},
   {id: 'DeskFlash', width: 1920, height: 1080, plan: deskFlashPlan},
+  // Same plan cropped to the carousel card shape (see CARD_W/CARD_H).
+  {id: 'DeskFlashCarousel', width: 1080, height: 1350, plan: deskFlashPlan},
 ];
 
 export const Root: React.FC = () => {
