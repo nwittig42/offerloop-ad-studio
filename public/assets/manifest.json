@@ -10,7 +10,7 @@
     {
       "filename": "assets/carousels/ig-launch-blue/1-cover.png",
       "kind": "image",
-      "description": "Restyled slide 1 of 8, cover, re-laid out 2026-09-10: the LAUNCH eyebrow, the 'free month of Pro' pill and the 'iOS, free to start' line are gone, and what is left ('so... what is Offerloop?' with the orange squiggle, then 'your job search. on autopilot.') is centred in the frame with the serif headline set to 78 percent of its original size. Frosted-glass Offerloop badge top left, swipe pill bottom right, blue mesh gradient ground.",
+      "description": "Restyled slide 1 of 8, cover, re-laid out 2026-09-10 after the PINNED reference cover: the LAUNCH eyebrow, the 'free month of Pro' pill and the 'iOS, free to start' line are gone; 'so... what is' runs as one small lead-in line (41px ascender, the reference's size mapped onto this canvas) over 'Offerloop?' at 78 percent of its original size with the orange squiggle; 'your job search. on autopilot.' under it; the whole stack centred. The swipe pill is replaced by the Offerloop lockup in white plus a white keep-swiping arrow along the bottom. Frosted-glass badge top left, blue mesh gradient ground.",
       "source": "derived",
       "model": "local rebuild: tools/carousel/cover.py lifts the type off the grey source slide, rescales and re-centres it (edited grey kept at assets/carousels/_edits/1-cover.png), then tools/carousel/restyle.py puts it on the mesh",
       "prompt": "n/a (derived asset)"
