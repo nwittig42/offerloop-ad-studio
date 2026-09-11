@@ -132,15 +132,20 @@ export const CarouselCardFrame: React.FC<{
   arrow?: boolean;
   badge?: boolean;
   /**
+   * Off for a card that is itself the lockup: the outro sets the wordmark as
+   * its hero, and the footer would print a second one underneath it.
+   */
+  footer?: boolean;
+  /**
    * Stands in for the mesh ground — a video plate, say. The badge and footer
    * still render on top, so a motion card keeps the chrome the stills have.
    */
   ground?: React.ReactNode;
-}> = ({children, arrow = true, badge = true, ground}) => (
+}> = ({children, arrow = true, badge = true, footer = true, ground}) => (
   <AbsoluteFill>
     {ground ?? <CarouselGround />}
     {badge ? <Badge /> : null}
     {children}
-    <CarouselFooter arrow={arrow} />
+    {footer ? <CarouselFooter arrow={arrow} /> : null}
   </AbsoluteFill>
 );

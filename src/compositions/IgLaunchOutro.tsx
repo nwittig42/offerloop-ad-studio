@@ -1,51 +1,114 @@
 import React from 'react';
-import {AbsoluteFill, Img, staticFile, useCurrentFrame, useVideoConfig} from 'remotion';
+import {AbsoluteFill, Img, interpolate, staticFile, useCurrentFrame} from 'remotion';
 import {CarouselCardFrame} from '../components/CarouselCardFrame';
+import {colors, fonts} from '../../brand/theme';
 
 /**
- * Card 9: the mark alone, turning about its vertical axis.
+ * The closing card: the lockup with a gleam crossing it, and the line under
+ * it.
  *
- * One constant-speed revolution across the whole composition, so the last
- * frame lands exactly where the first one started and Instagram's loop has no
- * seam. Constant speed is the point: any easing makes the restart visible.
+ * This replaced the spinning icon mark. The lockup is the hero here, so the
+ * frame's own footer lockup is switched off rather than printing a second one
+ * below it.
  *
- * The mark is a flat PNG, so it goes edge-on at 90 and 270 degrees and the far
- * side reads mirrored. That is what a spinning sign does, and it is why the
- * icon carries the spin rather than the lockup, whose wordmark would read
- * backwards for half of every turn.
+ * The lockup sits in its native navy and blue, not the white the footer uses.
+ * A gleam is a bright streak, and on a white mark there is nothing brighter
+ * for it to be: the effect only reads against a dark glyph.
  */
 
 export const igLaunchOutroFps = 30;
-export const igLaunchOutroDurationInFrames = 120; // one turn, 4s
+export const igLaunchOutroDurationInFrames = 120; // 4s
 
-const MARK = 420;
+const LOCKUP = 'assets/figma/offerloop-lockup-trim.png';
+/** The export is 526x129. */
+const LOCKUP_W = 620;
+const LOCKUP_H = Math.round((LOCKUP_W * 129) / 526);
+
+/**
+ * The sweep runs f14 to f66 and is clear of the mark at both ends of the
+ * composition, so the Instagram loop shows one clean pass per cycle rather
+ * than a streak parked mid-glyph at the cut.
+ */
+const GLEAM = {from: 14, to: 66, width: 26};
+
+const Gleam: React.FC = () => {
+  const frame = useCurrentFrame();
+  // Travels from fully left of the mark to fully right of it.
+  const x = interpolate(frame, [GLEAM.from, GLEAM.to], [-GLEAM.width - 10, 110], {
+    extrapolateLeft: 'clamp',
+    extrapolateRight: 'clamp',
+  });
+  return (
+    <div
+      style={{
+        position: 'absolute',
+        inset: 0,
+        overflow: 'hidden',
+        // Masked by the lockup's own alpha, so the streak only lights the
+        // glyphs and never crosses the space between them as a visible band.
+        WebkitMaskImage: `url("${staticFile(LOCKUP)}")`,
+        maskImage: `url("${staticFile(LOCKUP)}")`,
+        WebkitMaskSize: '100% 100%',
+        maskSize: '100% 100%',
+        WebkitMaskRepeat: 'no-repeat',
+        maskRepeat: 'no-repeat',
+      }}
+    >
+      <div
+        style={{
+          position: 'absolute',
+          // Overhangs vertically so the skew cannot expose a corner.
+          top: '-40%',
+          bottom: '-40%',
+          left: `${x}%`,
+          width: `${GLEAM.width}%`,
+          background:
+            'linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.96) 50%, rgba(255,255,255,0) 100%)',
+          transform: 'skewX(-16deg)',
+        }}
+      />
+    </div>
+  );
+};
 
 export const IgLaunchOutro: React.FC = () => {
-  const frame = useCurrentFrame();
-  const {durationInFrames} = useVideoConfig();
-  const turn = (frame / durationInFrames) * 360;
   return (
-    <CarouselCardFrame arrow={false} badge={false}>
+    <CarouselCardFrame arrow={false} badge={false} footer={false}>
       <AbsoluteFill
         style={{
           alignItems: 'center',
           justifyContent: 'center',
-          // The footer sits low, so centring on the frame would read as
-          // hanging. Lift the mark to the optical centre of the open field.
-          paddingBottom: 180,
-          perspective: 1600,
+          flexDirection: 'column',
+          gap: 54,
+          // Barely lifted. The other cards need a big lift to clear the
+          // footer lockup, but this one switches the footer off, so a large
+          // one just leaves the whole lower half of the card empty.
+          paddingBottom: 24,
         }}
       >
-        <Img
-          src={staticFile('assets/figma/offerloop-icon-trim.png')}
+        <div
           style={{
-            width: MARK,
-            height: 'auto',
-            transform: `rotateY(${turn}deg)`,
-            transformStyle: 'preserve-3d',
-            filter: 'drop-shadow(0 18px 34px rgba(30,45,77,0.22))',
+            position: 'relative',
+            width: LOCKUP_W,
+            height: LOCKUP_H,
+            filter: 'drop-shadow(0 16px 30px rgba(30,45,77,0.20))',
           }}
-        />
+        >
+          <Img src={staticFile(LOCKUP)} style={{width: '100%', height: '100%'}} />
+          <Gleam />
+        </div>
+        <div
+          style={{
+            fontFamily: fonts.heading,
+            fontWeight: 700,
+            fontSize: 60,
+            letterSpacing: '-0.02em',
+            color: colors.secondaryDark,
+            textAlign: 'center',
+          }}
+        >
+          A New Way To Job Search
+        </div>
       </AbsoluteFill>
     </CarouselCardFrame>
   );

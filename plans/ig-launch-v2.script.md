@@ -25,7 +25,7 @@ skill).
 | 4 | search | search and find anyone. | motion |
 | 5 | scale | ANYONE. / 1.5 billion contacts. (red) | motion |
 | 6 | personal | No two emails are the same, (red) we find what you have in common and personalize every email (red) | |
-| 7 | outro | [icon mark, spinning about its vertical axis] | motion |
+| 7 | outro | [lockup, gleam crossing it] / A New Way To Job Search | motion |
 
 Every card comes from `ig-launch-v2.cards.ts`, whose first entry is deck
 position 1 (`IG_LAUNCH_CARD_OFFSET`). The lifted-type cover that used to be
