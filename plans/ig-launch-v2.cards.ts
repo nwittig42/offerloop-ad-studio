@@ -55,11 +55,12 @@ export type CardCopy = {
     posterFrame: number;
   };
   /**
-   * Lays the card out as a row of three phones with the `video` clip in the
-   * middle one, headline group above and copy below, per the reference Nick
-   * sent. Rendered by src/compositions/IgLaunchPhonesCard.tsx.
+   * 'phones' is the row of three with the `video` clip in the middle one,
+   * headline group above and copy below, per the reference Nick sent
+   * (IgLaunchPhonesCard). 'phone' is one hero phone with headline and support
+   * stacked above it (IgLaunchPhoneCard).
    */
-  layout?: 'phones';
+  layout?: 'phones' | 'phone';
   /**
    * The outer two phones. Either can hold a clip as well as a still, so set
    * `video: true` when `src` is an mp4. The middle phone always plays the
@@ -118,10 +119,24 @@ export const igLaunchV2Cards: CardCopy[] = [
     },
   },
   {
+    // Deck position 4. Headline is unchanged - Nick named the slide by this
+    // copy rather than rewriting it - and the cover-letter line is new below
+    // it. The dashed media placeholder is gone: this is a motion card now,
+    // with his Apply-tab capture in one hero phone.
+    //
+    // Note the clip shows the swipe-to-apply flow (APPLY stamp, 'Applying for
+    // you'), not a cover letter being written; nowhere in the source recording
+    // does a cover letter appear on screen.
     slug: 'apply',
     headline: ['or swipe, and it', 'applies to the job.'],
-    size: 96,
-    media: {label: 'the apply flow'},
+    size: 72,
+    support: ['it even writes a custom cover letter'],
+    layout: 'phone',
+    video: {
+      src: 'assets/recordings/app-apply-autoapply.mp4',
+      durationSec: 5,
+      posterFrame: 30,
+    },
   },
   {
     slug: 'search',

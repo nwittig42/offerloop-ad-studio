@@ -2250,6 +2250,15 @@
       "source": "dropped",
       "model": "n/a (screen recording; ffmpeg trim + 1.5x speed + downscale)",
       "prompt": "n/a"
+    },
+    {
+      "filename": "assets/recordings/app-apply-autoapply.mp4",
+      "kind": "recording",
+      "description": "Nick's iPhone capture of the Apply tab: job cards (Vercel, Perpay, K2 Space, AlixPartners) swiped right to a green APPLY stamp and 'Applying for you / Track it in Network', with compensation and role-type chips. Source 440x960 30fps 23.2s (lower res than the other captures, so the phone renders at 352px to stay near 1:1); trimmed 11.5-21.5s and sped 2x to exactly 5.00s / 120 frames at 24fps. Hero phone of ig-launch-v2 slide 4. Window chosen to skip the modal at ~9s reading 'Nice - you're on a roll', which contains an em dash. No cover letter appears anywhere in the source clip.",
+      "duration": 5.0,
+      "source": "dropped",
+      "model": "n/a (screen recording; ffmpeg trim + 2x speed)",
+      "prompt": "n/a"
     }
   ]
 }

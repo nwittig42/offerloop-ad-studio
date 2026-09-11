@@ -17,6 +17,7 @@ import {
 import {IgLaunchCard} from './compositions/IgLaunchCard';
 import {IgLaunchHookCard} from './compositions/IgLaunchHookCard';
 import {IgLaunchPhonesCard} from './compositions/IgLaunchPhonesCard';
+import {IgLaunchPhoneCard} from './compositions/IgLaunchPhoneCard';
 import {
   IgLaunchOutro,
   igLaunchOutroDurationInFrames,
@@ -120,7 +121,13 @@ export const Root: React.FC = () => {
           <Composition
             key={card.slug}
             id={id}
-            component={card.layout === 'phones' ? IgLaunchPhonesCard : IgLaunchHookCard}
+            component={
+              card.layout === 'phones'
+                ? IgLaunchPhonesCard
+                : card.layout === 'phone'
+                  ? IgLaunchPhoneCard
+                  : IgLaunchHookCard
+            }
             durationInFrames={Math.round(card.video.durationSec * CARD_FPS)}
             fps={CARD_FPS}
             width={CARD_W}
