@@ -2,11 +2,11 @@
 """Re-lay out slide 1 of the ig-launch carousel.
 
 Against the original: the LAUNCH eyebrow, the "free month of Pro" pill, the
-"iOS - free to start" line, the orange rule and the "your job search. on
-autopilot." subhead are all gone. What is left is "so... what is" as one
-small lead-in line over a big "Offerloop?", centred, with the full Offerloop
-lockup in white and a white arrow along the bottom where the swipe pill used
-to be - the shape of the reference cover Nick sent (the PINNED slide).
+"iOS - free to start" line, the orange rule, the question mark and the "your
+job search. on autopilot." subhead are all gone. What is left is "so... what
+is" as one small lead-in line over the Offerloop lockup, centred, with the
+same lockup in white and a white arrow along the bottom where the swipe pill
+used to be - the shape of the reference cover Nick sent (the PINNED slide).
 
 The deck arrived as finished PNGs with no source, so the type is moved as
 pixels rather than re-set - no font in the repo matches the deck's serif, and
@@ -24,12 +24,12 @@ row's is added back, glyphs included: a shift of a level or two inside a dark
 letter is invisible, and the seam goes away. The glyphs' own antialiasing
 rides along untouched.
 
-The white lockup is the one exception: it cannot go into the grey slide,
-because restyle.py's flood would read white as ground and eat it. It is
-lifted as a coverage mask instead (each pixel's distance from the ground over
-the strongest distance near it, which normalises the near-black wordmark and
-the mid-blue icon to the same solid silhouette) and composited onto the
-finished blue frame.
+Only the lead-in line goes through that path. Both lockups are composited
+onto the finished blue frame instead, after restyle: the flood that turns the
+grey ground into gradient reads bright pixels as ground, so a white mark laid
+into the grey slide would simply be eaten, and the counters of a colour one
+would be filled with gradient at the wrong shading. The white version is the
+lockup's own alpha filled white, so it keeps every counter open.
 
 Sizes come off the reference, mapped across canvases - both are 4:5, so the
 lead-in line's 36px ascender on its 1198px-tall frame is 41px here.
@@ -41,7 +41,7 @@ import sys
 from pathlib import Path
 
 import numpy as np
-from PIL import Image, ImageDraw, ImageFilter
+from PIL import Image, ImageDraw
 
 sys.path.insert(0, str(Path(__file__).parent))
 import restyle  # noqa: E402  (same directory)
@@ -57,20 +57,22 @@ CLEAN = slice(600, 820)
 
 # Ink boxes measured off the source, (x0, y0, x1, y1), tight to the last
 # antialiased pixel. Blocks not listed here are dropped.
-LOCKUP = (76, 99, 290, 146)  # icon + "Offerloop", reused white at the bottom
 LEAD_A = (73, 337, 234, 404)  # "so..."      - both sit on their own baseline
 LEAD_B = (68, 446, 375, 542)  # "what is"      at the block's bottom row
-HEAD = (75, 583, 522, 705)  # "Offerloop?", cap line to the p's descender
 # The orange rule sits under the headline and the two p descenders reach into
 # its band, so it goes by colour rather than by a row cut. The ground itself
 # runs about five levels bluer than it is red, so anything warmer than that
 # is rule, including its antialiased fringe; the blue type never is.
 SQUIGGLE = (60, 686, 545, 730)
 
-HEAD_SCALE = 0.78
+# The product lockup, which replaces the typeset "Offerloop?" as the hero.
+# 620px is 57% of the frame: the reference's word runs to 69%, and the lockup
+# is a wider, quieter shape than a single word set in a display serif.
+LOGO = Path("public/assets/figma/offerloop-logo-lockup.png")
+LOGO_W = 620
 LEAD_SCALE = 0.43  # 41px ascender, the reference's lead-in mapped to 1350px
 WORD_SPACE = 26  # ink gap between the two lead words, source px
-LEAD_TO_HEAD = 36  # lead baseline down to the cap line of "Offerloop?"
+LEAD_TO_LOGO = 36  # lead baseline down to the top of the lockup
 # The stack is centred between the badge and the footer, then lifted a
 # little: a block on true centre reads as sitting low.
 CENTRE_X = 540
@@ -79,7 +81,7 @@ PAD = 3  # ground carried around each lifted block
 
 # Footer lockup, sitting where the swipe pill used to.
 FOOT_Y = 1254
-FOOT_SCALE = 1.0
+FOOT_W = 220
 ARROW_GAP = 44  # lockup right edge to the start of the shaft
 ARROW_LEN = 86
 ARROW_WEIGHT = 5
@@ -139,56 +141,50 @@ def ink_size(box: tuple, scale: float) -> tuple[float, float]:
     return (box[2] - box[0]) * scale, (box[3] - box[1]) * scale
 
 
-def build(rgb: np.ndarray, ramp: np.ndarray) -> Image.Image:
-    h, w, _ = rgb.shape
+def logo(width: int, white: bool = False) -> Image.Image:
+    """The lockup at a given width, optionally as a white silhouette.
 
-    # Start from clean ground and put back only what stays: the top lockup,
-    # which restyle erases and drops the frosted badge onto.
-    canvas = np.repeat(ramp[:, None, :], w, axis=1)
-    x0, y0, x1, y1 = LOCKUP
-    canvas[y0 - PAD : y1 + PAD, x0 - PAD : x1 + PAD] = rgb[
-        y0 - PAD : y1 + PAD, x0 - PAD : x1 + PAD
-    ]
+    Trimmed on a threshold rather than getbbox(): the export carries stray
+    alpha-1 pixels out to all four edges, so getbbox() returns the whole
+    612x408 canvas and every size below would be measured on the padding
+    instead of on the mark.
+    """
+    im = Image.open(LOGO).convert("RGBA")
+    alpha = np.asarray(im.getchannel("A"))
+    ys, xs = np.where(alpha > 8)
+    im = im.crop((xs.min(), ys.min(), xs.max() + 1, ys.max() + 1))
+    im = im.resize((width, round(width * im.height / im.width)), Image.LANCZOS)
+    if white:
+        im = Image.merge("RGBA", (*Image.new("RGB", im.size, "white").split(), im.getchannel("A")))
+    return im
 
+
+def layout() -> dict:
+    """Where the lead-in and the lockup sit, as one stack centred on the frame."""
     aw, ah = ink_size(LEAD_A, LEAD_SCALE)
     bw, bh = ink_size(LEAD_B, LEAD_SCALE)
     space = WORD_SPACE * LEAD_SCALE
-    hw, hh = ink_size(HEAD, HEAD_SCALE)
+    mark = logo(LOGO_W)
+    stack = ah + LEAD_TO_LOGO + mark.height
+    baseline = CENTRE_Y - stack / 2 + ah
+    return {
+        "left": CENTRE_X - (aw + space + bw) / 2,
+        "a_top": baseline - ah,
+        "b_left": CENTRE_X - (aw + space + bw) / 2 + aw + space,
+        "b_top": baseline - bh,
+        "logo": mark,
+        "logo_top": round(baseline + LEAD_TO_LOGO),
+    }
 
-    stack = ah + LEAD_TO_HEAD + hh
-    top = CENTRE_Y - stack / 2
 
-    # Lead-in: two words on one line, hung from a shared baseline.
-    baseline = top + ah
-    left = CENTRE_X - (aw + space + bw) / 2
-    place(canvas, ramp, lift(rgb, ramp, LEAD_A, LEAD_SCALE), left, baseline - ah)
-    place(
-        canvas, ramp, lift(rgb, ramp, LEAD_B, LEAD_SCALE), left + aw + space, baseline - bh
-    )
-
-    head_top = baseline + LEAD_TO_HEAD
-    place(canvas, ramp, lift(rgb, ramp, HEAD, HEAD_SCALE), CENTRE_X - hw / 2, head_top)
-
+def build(rgb: np.ndarray, ramp: np.ndarray, plan: dict) -> Image.Image:
+    """The grey slide: clean ground plus the lead-in line, which is the only
+    part that has to survive restyle's flood."""
+    h, w, _ = rgb.shape
+    canvas = np.repeat(ramp[:, None, :], w, axis=1)
+    place(canvas, ramp, lift(rgb, ramp, LEAD_A, LEAD_SCALE), plan["left"], plan["a_top"])
+    place(canvas, ramp, lift(rgb, ramp, LEAD_B, LEAD_SCALE), plan["b_left"], plan["b_top"])
     return Image.fromarray(np.clip(canvas, 0, 255).astype(np.uint8))
-
-
-def coverage(rgb: np.ndarray, ramp: np.ndarray, box: tuple) -> Image.Image:
-    """Lift a block as an alpha mask: how covered each pixel is by ink.
-
-    Distance from the ground alone would make the mid-blue icon translucent
-    next to the near-black wordmark. Dividing by the strongest distance in the
-    neighbourhood normalises every stroke to solid whatever colour it was,
-    while the antialiased rim, which is genuinely part-covered, stays partial.
-    """
-    x0, y0, x1, y1 = box
-    crop = rgb[y0:y1, x0:x1]
-    d = np.abs(crop - ramp[y0:y1][:, None, :]).max(2)
-    img = Image.fromarray(np.clip(d, 0, 255).astype(np.uint8))
-    peak = np.asarray(
-        img.filter(ImageFilter.MaxFilter(21)).filter(ImageFilter.GaussianBlur(4))
-    ).astype(np.float64)
-    alpha = np.clip(d / np.maximum(peak, 1.0), 0, 1)
-    return Image.fromarray((alpha * 255).astype(np.uint8))
 
 
 def arrow(width: int, height: int) -> Image.Image:
@@ -210,24 +206,21 @@ def arrow(width: int, height: int) -> Image.Image:
     return mask.resize((width, height), Image.LANCZOS)
 
 
-def footer(frame: Image.Image, rgb: np.ndarray, ramp: np.ndarray) -> Image.Image:
-    """Lockup in white plus the keep-swiping arrow, along the bottom."""
+def marks(frame: Image.Image, plan: dict) -> Image.Image:
+    """The hero lockup, and the white one with its arrow along the bottom."""
     out = frame.convert("RGBA")
-    mask = coverage(rgb, ramp, LOCKUP)
-    lw, lh = ink_size(LOCKUP, FOOT_SCALE)
-    lw, lh = round(lw), round(lh)
-    if FOOT_SCALE != 1.0:
-        mask = mask.resize((lw, lh), Image.LANCZOS)
-    left = round(CENTRE_X - lw / 2)
-    white = Image.new("RGBA", (lw, lh), (255, 255, 255, 255))
-    out.paste(white, (left, round(FOOT_Y - lh / 2)), mask)
+    mark = plan["logo"]
+    out.alpha_composite(mark, (round(CENTRE_X - mark.width / 2), plan["logo_top"]))
+
+    foot = logo(FOOT_W, white=True)
+    left = round(CENTRE_X - foot.width / 2)
+    out.alpha_composite(foot, (left, round(FOOT_Y - foot.height / 2)))
 
     ah = ARROW_HEAD[1] * 2 + ARROW_WEIGHT * 2
-    tip = arrow(ARROW_LEN, ah)
     out.paste(
         Image.new("RGBA", (ARROW_LEN, ah), (255, 255, 255, 255)),
-        (left + lw + ARROW_GAP, round(FOOT_Y - ah / 2)),
-        tip,
+        (left + foot.width + ARROW_GAP, round(FOOT_Y - ah / 2)),
+        arrow(ARROW_LEN, ah),
     )
     return out.convert("RGB")
 
@@ -237,15 +230,16 @@ def main() -> int:
     ramp = ground_ramp(rgb)
     drop_squiggle(rgb, ramp)
 
+    plan = layout()
     GREY_OUT.parent.mkdir(parents=True, exist_ok=True)
-    grey = build(rgb, ramp)
+    grey = build(rgb, ramp, plan)
     grey.save(GREY_OUT)
     print(f"  grey  -> {GREY_OUT}")
     if "--grey-only" in sys.argv:
         return 0
 
     bg = restyle.mesh(grey.width, grey.height)
-    footer(restyle.restyle(GREY_OUT, bg), rgb, ramp).save(BLUE_OUT)
+    marks(restyle.restyle(GREY_OUT, bg), plan).save(BLUE_OUT)
     print(f"  blue  -> {BLUE_OUT}")
 
     deck = sorted(p for p in BLUE_OUT.parent.glob("*.png") if p.name[0].isdigit())
