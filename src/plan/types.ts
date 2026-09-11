@@ -150,6 +150,10 @@ export type ImageScene = SceneBase & {
   fit?: 'cover' | 'contain';
   /** Slow push-in for static assets. */
   kenBurns?: boolean;
+  /** Gaussian blur in px; slightly scales up to hide the soft edges. */
+  blur?: number;
+  /** Extra scale on top of the fit, e.g. 1.08 to punch a flash frame in. */
+  scale?: number;
   backgroundColor?: string;
 };
 

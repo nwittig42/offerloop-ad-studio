@@ -2162,6 +2162,23 @@
       "source": "derived",
       "model": "Remotion render (CarouselProof-03-Email)",
       "prompt": "n/a (derived asset)"
+    },
+    {
+      "filename": "assets/generated/desk-flash-excel-plate-v1.png",
+      "kind": "image",
+      "description": "Clean Excel contacts-tracker plate, 1920x1080: 'Networking Outreach Tracker.xlsx' with the full green ribbon and 18 rows of fictional contacts (Name / Company / Role / Email / Reached Out / Replied / Coffee Chat / Notes). All names, firms and emails invented, so no PII. Built as the spreadsheet flash frame in the desk-flash plan; replaced a masked frame of Nick's real Google Sheets tracker, whose marshall.usc.edu emails had to be blurred out.",
+      "source": "higgsfield",
+      "model": "gpt_image_2 (16:9, 2k) + ffmpeg crop/scale to 1920x1080",
+      "job_id": "8e3792f8-170c-4013-b039-786557d7cd34",
+      "prompt": "Clean realistic screenshot of Microsoft Excel on desktop, showing a networking outreach contacts tracker spreadsheet. Full Excel interface: green title bar, the ribbon with Home / Insert / Draw / Page Layout / Formulas / Data tabs, formula bar, column letters A through H, numbered rows, sheet tab reading 'Contacts'. Header row bold on light green fill: Name, Company, Role, Email, Reached Out, Replied, Coffee Chat, Notes. At least 18 filled rows of fictional people (full prompt in job)."
+    },
+    {
+      "filename": "assets/generated/desk-flash-linkedin-plate-v1.png",
+      "kind": "image",
+      "description": "LinkedIn flash plate, 1920x1080: frame at 3.4s of Nick's real Chrome tab-cycling capture ('Google Chrome.mp4'), showing the LinkedIn Jobs page with the blue top nav and 'in' mark, 'Jobs based on your preferences', and the Apply / Save buttons. Cropped 1860x1046 from the top and scaled up. Chosen over the generated linkedin-profile-tall.png because the real capture carries the nav bar and logo, which is what makes it read as LinkedIn inside a 3-frame flash.",
+      "source": "derived",
+      "model": "ffmpeg frame extract + crop/scale from assets/generated/Google Chrome.mp4",
+      "prompt": "n/a (derived asset)"
     }
   ]
 }
