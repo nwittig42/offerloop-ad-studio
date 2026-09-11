@@ -1,22 +1,14 @@
 import React from 'react';
-import {
-  AbsoluteFill,
-  OffthreadVideo,
-  interpolate,
-  spring,
-  staticFile,
-  useCurrentFrame,
-  useVideoConfig,
-} from 'remotion';
+import {AbsoluteFill, OffthreadVideo, staticFile} from 'remotion';
 import {CarouselCardFrame} from '../components/CarouselCardFrame';
 import {SpinningClock} from '../components/SpinningClock';
 import {fonts} from '../../brand/theme';
 import {igLaunchV2Cards, type CardCopy} from '../../plans/ig-launch-v2.cards';
 
 /**
- * The one motion card in ig-launch-v2 (deck position 2): the desk timelapse
- * plays full-bleed where the other cards have the mesh ground, with the
- * headline reversed out in white and popped in word by word.
+ * Deck position 1: the desk timelapse plays full-bleed where the other cards
+ * have the mesh ground, with the headline reversed out in white over it and a
+ * clock turning behind the letters.
  *
  * Copy still comes from plans/ig-launch-v2.cards.ts, and the chrome still
  * comes from CarouselCardFrame, so the badge top left and the white lockup and
@@ -47,79 +39,33 @@ const BAND = {top: 180, bottom: 210};
  * framing them.
  */
 const CLOCK = 660;
-/** Frames between word pops, and the spring each word rides in on. */
-const WORD_STAGGER = 4;
-const WORD_DELAY = 8;
-
-const Word: React.FC<{text: string; index: number}> = ({text, index}) => {
-  const frame = useCurrentFrame();
-  const {fps} = useVideoConfig();
-  const local = frame - (WORD_DELAY + index * WORD_STAGGER);
-  // Slight overshoot, so each word lands rather than fades up.
-  const pop = spring({
-    frame: local,
-    fps,
-    config: {damping: 13, mass: 0.5, stiffness: 120},
-    durationInFrames: 22,
-  });
-  const opacity = interpolate(local, [0, 5], [0, 1], {
-    extrapolateLeft: 'clamp',
-    extrapolateRight: 'clamp',
-  });
-  return (
-    <span
-      style={{
-        display: 'inline-block',
-        opacity,
-        transform: `translateY(${(1 - pop) * 26}px) scale(${0.88 + pop * 0.12})`,
-      }}
-    >
-      {text}
-    </span>
-  );
-};
-
-const KineticHeadline: React.FC<{lines: string[]; size: number}> = ({lines, size}) => {
-  const frame = useCurrentFrame();
-  const {durationInFrames} = useVideoConfig();
-  // Once the last word has landed the line would sit dead for ~4s, which the
-  // ad-typography skill warns against, so the whole block keeps drifting up a
-  // few px for the rest of the card.
-  const drift = interpolate(frame, [0, durationInFrames], [0, -12]);
-  // Word index has to run across lines, not restart per line, or the second
-  // line pops before the first finishes.
-  let wordIndex = 0;
-  return (
-    <div
-      style={{
-        fontFamily: fonts.heading,
-        fontWeight: 700,
-        fontSize: size,
-        lineHeight: 1.12,
-        letterSpacing: '-0.02em',
-        color: '#FFFFFF',
-        textAlign: 'center',
-        transform: `translateY(${drift}px)`,
-      }}
-    >
-      {lines.map((line) => {
-        const words = line.split(' ');
-        return (
-          <div key={line}>
-            {words.map((word, i) => (
-              <React.Fragment key={word}>
-                <Word text={word} index={wordIndex++} />
-                {/* Between words only. A trailing space counts toward the line
-                    box and pulls centred text off centre by half a space. */}
-                {i < words.length - 1 ? ' ' : null}
-              </React.Fragment>
-            ))}
-          </div>
-        );
-      })}
-    </div>
-  );
-};
+/**
+ * The headline, fully present from frame 0.
+ *
+ * It used to pop in word by word and then drift, which is the usual answer to
+ * type that would otherwise sit dead. Not here: this is deck position 1, and
+ * Instagram takes a carousel's grid thumbnail from the first slide, so any
+ * reveal means the thumbnail shows a half-written headline. Held still, frame
+ * 0 is the finished card. The plate behind it is a timelapse with a clock
+ * running, so the card is in no danger of feeling static.
+ */
+const Headline: React.FC<{lines: string[]; size: number}> = ({lines, size}) => (
+  <div
+    style={{
+      fontFamily: fonts.heading,
+      fontWeight: 700,
+      fontSize: size,
+      lineHeight: 1.12,
+      letterSpacing: '-0.02em',
+      color: '#FFFFFF',
+      textAlign: 'center',
+    }}
+  >
+    {lines.map((line) => (
+      <div key={line}>{line}</div>
+    ))}
+  </div>
+);
 
 export const IgLaunchHookCard: React.FC<{index?: number}> = ({index = 0}) => {
   const card: CardCopy = igLaunchV2Cards[index] ?? igLaunchV2Cards[0];
@@ -167,7 +113,7 @@ export const IgLaunchHookCard: React.FC<{index?: number}> = ({index = 0}) => {
           <SpinningClock size={CLOCK} />
         </div>
         {card.headline ? (
-          <KineticHeadline lines={card.headline} size={card.size ?? 92} />
+          <Headline lines={card.headline} size={card.size ?? 92} />
         ) : null}
       </AbsoluteFill>
     </CarouselCardFrame>

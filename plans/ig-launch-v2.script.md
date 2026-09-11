@@ -43,6 +43,26 @@ resolve it with "now it's not."; both cards were cut, so it now runs hook,
 product, proof, mark, ending on the spinning icon rather than on a payoff
 line.
 
+## Captions
+
+The live copy is `public/assets/carousels/ig-launch-v2/caption.txt`, which the
+preview server reads. That folder is gitignored, so the current set is kept
+here too rather than living only in an ignored directory.
+
+Per slide:
+
+1. hook: you can spend a whole night on this and send four emails. finding them, checking the address is real, writing something they would actually reply to.
+2. intro: so we built offerloop. you swipe on someone, it finds their email, writes the intro and sends it. that is the whole product.
+3. apply: swipe the other way and it applies to the job for you. cover letter written for that role, not recycled.
+4. search: it works where you already are. open anyone's profile and it surfaces the people at that firm worth talking to.
+5. scale: 1.5 billion contacts. start with your city, end anywhere.
+6. personal: every email comes from what you two actually share. same school, same desk, a post they wrote last week. no two go out the same.
+7. outro: offerloop. a new way to job search. on the App Store, link in bio.
+
+Alternates for 1 and 2 are in caption.txt below the rule. An earlier set opened
+on "the job market is rough right now"; Nick was unsure of it twice, so it is
+now only an alternate.
+
 ## Open items
 
 - **Card 3 is doing double duty** (naming the product and teaching the first
