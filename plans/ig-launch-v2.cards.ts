@@ -62,7 +62,7 @@ export type CardCopy = {
    * (IgLaunchPhonesCard). 'phone' is one hero phone with headline and support
    * stacked above it (IgLaunchPhoneCard).
    */
-  layout?: 'phones' | 'phone';
+  layout?: 'phones' | 'phone' | 'panel';
   /**
    * The outer two phones. Either can hold a clip as well as a still, so set
    * `video: true` when `src` is an mp4. The middle phone always plays the
@@ -144,10 +144,23 @@ export const igLaunchV2Cards: CardCopy[] = [
     },
   },
   {
+    // Deck position 4. Desktop capture, not a phone one: the Chrome extension
+    // open on a LinkedIn profile, pulling people at the same firm. So it takes
+    // the landscape panel layout rather than a phone frame, and the dashed
+    // media placeholder is gone.
+    //
+    // 4s, where the other motion cards run 5s. Nick asked for a cut from 12s
+    // at 3x; the source ends at 23.08s, leaving 11.08s, so 3x would have made
+    // 3.69s. Speed is 2.77x instead to hit the 4s he asked for.
     slug: 'search',
     headline: ['search and', 'find anyone.'],
     size: 104,
-    media: {label: 'a search, typed'},
+    layout: 'panel',
+    video: {
+      src: 'assets/recordings/extension-find-lead.mp4',
+      durationSec: 4,
+      posterFrame: 24,
+    },
   },
   {
     slug: 'scale',

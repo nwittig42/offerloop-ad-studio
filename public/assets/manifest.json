@@ -2259,6 +2259,15 @@
       "source": "dropped",
       "model": "n/a (screen recording; ffmpeg trim + 2x speed)",
       "prompt": "n/a"
+    },
+    {
+      "filename": "assets/recordings/extension-find-lead.mp4",
+      "kind": "recording",
+      "description": "Nick's desktop capture of the Offerloop Chrome extension open on a LinkedIn profile (Carter McNeal, IB Associate at Goldman Sachs): the side panel shows Find Email / Meeting Prep and an ALSO AT Goldman Sachs list with Find email buttons, scrolling. Source 2938x1666 60fps 23.08s; cut from 12s per Nick, and since only 11.08s remained, sped 2.77x rather than his 3x to land exactly 4.000s / 96 frames at 24fps (3x would have given 3.69s). Scaled to 1400x794, ~1.4x its 1000px panel width. Panel of ig-launch-v2 slide 4. LinkedIn profile URLs visible, no email addresses.",
+      "duration": 4.0,
+      "source": "dropped",
+      "model": "n/a (screen recording; ffmpeg cut at 12s + 2.77x speed + downscale)",
+      "prompt": "n/a"
     }
   ]
 }

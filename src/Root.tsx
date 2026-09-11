@@ -18,6 +18,7 @@ import {IgLaunchCard} from './compositions/IgLaunchCard';
 import {IgLaunchHookCard} from './compositions/IgLaunchHookCard';
 import {IgLaunchPhonesCard} from './compositions/IgLaunchPhonesCard';
 import {IgLaunchPhoneCard} from './compositions/IgLaunchPhoneCard';
+import {IgLaunchPanelCard} from './compositions/IgLaunchPanelCard';
 import {
   IgLaunchOutro,
   igLaunchOutroDurationInFrames,
@@ -28,6 +29,17 @@ import {CARD_W, CARD_H} from './components/CarouselCardFrame';
 
 /** Motion carousel cards run at 24, matching the clips cut for them. */
 const CARD_FPS = 24;
+
+/**
+ * Which component renders a motion card, by its `layout`. A card with no
+ * layout is the hook: full-bleed clip behind kinetic type.
+ */
+const MOTION_CARD = {
+  hook: IgLaunchHookCard,
+  phones: IgLaunchPhonesCard,
+  phone: IgLaunchPhoneCard,
+  panel: IgLaunchPanelCard,
+} as const;
 import {makePlanMetadata} from './plan/validate';
 import {planDurationInFrames, planFps} from './plan/timing';
 import type {EditPlan} from './plan/types';
@@ -120,13 +132,7 @@ export const Root: React.FC = () => {
           <Composition
             key={card.slug}
             id={id}
-            component={
-              card.layout === 'phones'
-                ? IgLaunchPhonesCard
-                : card.layout === 'phone'
-                  ? IgLaunchPhoneCard
-                  : IgLaunchHookCard
-            }
+            component={MOTION_CARD[card.layout ?? 'hook']}
             durationInFrames={Math.round(card.video.durationSec * CARD_FPS)}
             fps={CARD_FPS}
             width={CARD_W}
