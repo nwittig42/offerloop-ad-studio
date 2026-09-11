@@ -27,6 +27,7 @@ const MIME = {
   '.gif': 'image/gif',
   '.svg': 'image/svg+xml',
   '.txt': 'text/plain; charset=utf-8',
+  '.mp4': 'video/mp4',
 };
 
 const json = (res, status, body) => {
@@ -36,13 +37,49 @@ const json = (res, status, body) => {
 
 const safeName = (name) => /^[a-z0-9][a-z0-9-]{0,80}$/.test(name);
 
-const serveFile = (res, filePath) => {
+/**
+ * `range` is the request's Range header. Video needs it: Chrome asks for byte
+ * ranges, and a server that only ever answers 200 with the whole body makes
+ * playback and scrubbing flaky. Images ignore it and take the plain path.
+ */
+const serveFile = (res, filePath, range) => {
   if (!existsSync(filePath) || !statSync(filePath).isFile()) {
     res.writeHead(404);
     return res.end('Not found');
   }
   const type = MIME[path.extname(filePath).toLowerCase()] ?? 'application/octet-stream';
-  res.writeHead(200, {'Content-Type': type, 'Cache-Control': 'no-cache'});
+  const {size} = statSync(filePath);
+  const match = range?.match(/^bytes=(\d*)-(\d*)$/);
+  if (match && type.startsWith('video/') && (match[1] || match[2])) {
+    // Three forms, and the suffix one is easy to get wrong: `bytes=N-` is
+    // from N to the end, `bytes=N-M` is that span, and `bytes=-N` is the LAST
+    // N bytes, not the first N. Chrome's media loader uses the suffix form to
+    // grab the moov atom when it sits at the end of an mp4 (anything not
+    // muxed with +faststart, which includes Remotion's output). Answer that
+    // with the head of the file instead and the video hangs at readyState 0
+    // forever, with no error fired.
+    const suffix = !match[1] && match[2];
+    const start = suffix ? Math.max(0, size - Number(match[2])) : Number(match[1]);
+    const end = suffix || !match[2] ? size - 1 : Number(match[2]);
+    if (start >= size || end >= size || start > end) {
+      res.writeHead(416, {'Content-Range': `bytes */${size}`});
+      return res.end();
+    }
+    res.writeHead(206, {
+      'Content-Type': type,
+      'Content-Length': end - start + 1,
+      'Content-Range': `bytes ${start}-${end}/${size}`,
+      'Accept-Ranges': 'bytes',
+      'Cache-Control': 'no-cache',
+    });
+    return createReadStream(filePath, {start, end}).pipe(res);
+  }
+  res.writeHead(200, {
+    'Content-Type': type,
+    'Content-Length': size,
+    'Accept-Ranges': 'bytes',
+    'Cache-Control': 'no-cache',
+  });
   createReadStream(filePath).pipe(res);
 };
 
@@ -54,11 +91,18 @@ const readDeck = async (name) => {
   const slides = entries
     .filter((f) => /^\d+-.+\.(png|jpe?g|webp)$/i.test(f))
     .sort((a, b) => parseInt(a, 10) - parseInt(b, 10))
-    .map((file) => ({
-      file,
-      url: `/carousels/${name}/${file}`,
-      label: file.replace(/^\d+-/, '').replace(/\.[^.]+$/, ''),
-    }));
+    .map((file) => {
+      // A slide with a sibling mp4 is a motion card: the png is only its
+      // poster, and the video is what actually gets posted, so the viewer
+      // should play that rather than show the still.
+      const mp4 = file.replace(/\.[^.]+$/, '.mp4');
+      return {
+        file,
+        url: `/carousels/${name}/${file}`,
+        video: entries.includes(mp4) ? `/carousels/${name}/${mp4}` : null,
+        label: file.replace(/^\d+-/, '').replace(/\.[^.]+$/, ''),
+      };
+    });
   const extras = entries.filter((f) => f.startsWith('_') && /\.(png|jpe?g|webp)$/i.test(f));
   const captionPath = path.join(dir, 'caption.txt');
   const caption = existsSync(captionPath) ? await readFile(captionPath, 'utf8') : '';
@@ -104,7 +148,7 @@ const server = http.createServer(async (req, res) => {
       res.writeHead(403);
       return res.end('Forbidden');
     }
-    return serveFile(res, filePath);
+    return serveFile(res, filePath, req.headers.range);
   }
 
   res.writeHead(404);
