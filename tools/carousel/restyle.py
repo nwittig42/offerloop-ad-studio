@@ -21,6 +21,8 @@ need the erase. Content pushed past the bottom edge is cropped, which is fine
 
 Usage:
   .venv-key/bin/python tools/carousel/restyle.py <src_dir> <out_dir>
+  .venv-key/bin/python tools/carousel/restyle.py --bg <out.png> [w h]
+  .venv-key/bin/python tools/carousel/restyle.py --sheet <deck_dir>
 """
 import sys
 from pathlib import Path
@@ -37,6 +39,9 @@ LOOSE = 185
 CHROMA = 40
 SHADOW_CUT = 0.93  # below this a ground pixel is shading, not clean ground
 FIELD_SIGMA = 40.0  # px; separates the old ground's blooms from real shadows
+RECLAIM_TOL = 0.012  # how far above the old ground a hole may sit
+RECLAIM_JUMP = 16  # px of glyph stroke the reclaim may step across
+RECLAIM_STEPS = 40  # growth passes once it is inside a counter
 
 # Mesh blobs: (cx, cy, radius, hex) in fractions of the frame. Kept light on
 # purpose - the slides' type is navy and has to keep its contrast.
@@ -105,6 +110,23 @@ def mesh(w: int, h: int) -> np.ndarray:
     return acc / wsum[..., None]
 
 
+def candidates(rgb: np.ndarray) -> np.ndarray:
+    """Pixels bright and neutral enough to be the old grey ground."""
+    mx = rgb.max(2)
+    return (mx >= LOOSE) & ((mx - rgb.min(2)) <= CHROMA)
+
+
+def dilate(mask: np.ndarray, r: int) -> np.ndarray:
+    """Grow a mask by r px, as a separable box sum over the integral image."""
+    a = mask.astype(np.float64)
+    for axis in (0, 1):
+        a = np.swapaxes(a, 0, axis)
+        cs = np.cumsum(np.pad(a, ((r + 1, r), (0, 0))), axis=0)
+        a = cs[2 * r + 1 :] - cs[: -(2 * r + 1)]
+        a = np.swapaxes(a, 0, axis)
+    return a > 0
+
+
 def ground_region(rgb: np.ndarray) -> np.ndarray:
     """Bool mask of the original ground, flood-filled in from the border.
 
@@ -113,9 +135,7 @@ def ground_region(rgb: np.ndarray) -> np.ndarray:
     let the flood walk straight into the device and punch a hole through it.
     The bottom strips of real ground are still reached, around via the sides.
     """
-    mx = rgb.max(2)
-    mn = rgb.min(2)
-    candidate = (mx >= LOOSE) & ((mx - mn) <= CHROMA)
+    candidate = candidates(rgb)
 
     h, w = candidate.shape
     # 255 = floodable candidate. Pad so one corner seed reaches every edge.
@@ -195,7 +215,37 @@ def split(path: Path) -> tuple[np.ndarray, np.ndarray, np.ndarray]:
     rgb = np.asarray(Image.open(path).convert("RGB")).astype(np.float64)
     ground = ground_region(rgb)
     luma = rgb @ (0.2126, 0.7152, 0.0722)
-    shade = np.clip(luma / ground_field(luma, ground), 0.0, 1.0)
+    field = ground_field(luma, ground)
+
+    # Reclaim ground the border flood could not reach: the counters inside an
+    # O or a p are ringed by their own glyph, so the flood goes around them
+    # and they keep the old near-white, printing as white holes in the type
+    # once the background behind is blue. Two tests keep the mockups out of
+    # this. A counter never runs brighter than the old ground (it is the old
+    # ground - measured at ratio 1.000), where a phone's white screen sits
+    # ~4% above it; and a counter is only a stroke width from real ground,
+    # where a screen is walled off from it by the whole bezel.
+    #
+    # The cut is one-sided on purpose. Bracketing it around 1.0 rejects the
+    # antialiased ring where each counter meets its glyph, and that ring then
+    # stays behind as a pale halo tracing every letter.
+    allowed = candidates(rgb) & ~ground & (luma / field <= 1.0 + RECLAIM_TOL)
+    holes = allowed & dilate(ground, RECLAIM_JUMP)
+
+    # One jump only gets a foothold just inside the stroke; the middle of a
+    # big counter sits further from ground than any jump we could take
+    # without also stepping through a phone bezel. So grow the foothold
+    # through connected qualifying pixels instead. That fills a counter
+    # whatever its size, and cannot start anywhere the ratio test has not
+    # already allowed, so the white screens never get a foothold to grow.
+    for _ in range(RECLAIM_STEPS):
+        grown = allowed & dilate(holes, 2)
+        if grown.sum() == holes.sum():
+            break
+        holes = grown
+    ground = ground | holes
+
+    shade = np.clip(luma / field, 0.0, 1.0)
     return rgb, ground, shade
 
 
@@ -346,7 +396,37 @@ def contact_sheet(slides: list[Image.Image], dst: Path) -> None:
     sheet.save(dst / "_contact-sheet.png")
 
 
+def write_bg(argv: list[str]) -> int:
+    """Dump the mesh on its own, so renderers outside this script (the
+    Remotion carousel cards) sit on exactly the same ground as the restyle."""
+    dst = Path(argv[0])
+    w, h = (int(argv[1]), int(argv[2])) if len(argv) > 2 else (1080, 1350)
+    dst.parent.mkdir(parents=True, exist_ok=True)
+    Image.fromarray(np.clip(mesh(w, h), 0, 255).astype(np.uint8)).save(dst)
+    print(f"mesh {w}x{h} -> {dst}")
+    return 0
+
+
+def write_sheet(argv: list[str]) -> int:
+    """Rebuild a deck's contact sheet from whatever slides are on disk."""
+    d = Path(argv[0])
+    slides = sorted(
+        (p for p in d.glob("*.png") if p.name[0].isdigit()),
+        key=lambda p: int(p.name.split("-", 1)[0]),
+    )
+    if not slides:
+        print(f"no numbered slides in {d}", file=sys.stderr)
+        return 1
+    contact_sheet([Image.open(p).convert("RGB") for p in slides], d)
+    print(f"sheet ({len(slides)} slides) -> {d / '_contact-sheet.png'}")
+    return 0
+
+
 def main() -> int:
+    if sys.argv[1:2] == ["--bg"]:
+        return write_bg(sys.argv[2:])
+    if sys.argv[1:2] == ["--sheet"]:
+        return write_sheet(sys.argv[2:])
     if len(sys.argv) < 3:
         print(__doc__)
         return 2

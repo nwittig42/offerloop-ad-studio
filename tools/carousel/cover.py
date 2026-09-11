@@ -36,6 +36,7 @@ lead-in line's 36px ascender on its 1198px-tall frame is 41px here.
 
 Usage:
   .venv-key/bin/python tools/carousel/cover.py [--grey-only]
+  .venv-key/bin/python tools/carousel/cover.py --trim
 """
 import sys
 from pathlib import Path
@@ -69,6 +70,13 @@ SQUIGGLE = (60, 686, 545, 730)
 # 620px is 57% of the frame: the reference's word runs to 69%, and the lockup
 # is a wider, quieter shape than a single word set in a display serif.
 LOGO = Path("public/assets/figma/offerloop-logo-lockup.png")
+ICON = Path("public/assets/figma/offerloop-icon.png")
+# Alpha-trimmed twins for the Remotion cards, which lay the marks out in CSS
+# and would otherwise size and space them by the export's transparent padding.
+TRIMMED = {
+    LOGO: Path("public/assets/figma/offerloop-lockup-trim.png"),
+    ICON: Path("public/assets/figma/offerloop-icon-trim.png"),
+}
 LOGO_W = 620
 LEAD_SCALE = 0.43  # 41px ascender, the reference's lead-in mapped to 1350px
 WORD_SPACE = 26  # ink gap between the two lead words, source px
@@ -159,6 +167,18 @@ def logo(width: int, white: bool = False) -> Image.Image:
     return im
 
 
+def write_trimmed() -> int:
+    """Write the alpha-trimmed twins the Remotion cards load."""
+    for src, dst in TRIMMED.items():
+        im = Image.open(src).convert("RGBA")
+        a = np.asarray(im.getchannel("A"))
+        ys, xs = np.where(a > 8)
+        out = im.crop((xs.min(), ys.min(), xs.max() + 1, ys.max() + 1))
+        out.save(dst)
+        print(f"  trim  -> {dst} {out.width}x{out.height}")
+    return 0
+
+
 def layout() -> dict:
     """Where the lead-in and the lockup sit, as one stack centred on the frame."""
     aw, ah = ink_size(LEAD_A, LEAD_SCALE)
@@ -226,6 +246,9 @@ def marks(frame: Image.Image, plan: dict) -> Image.Image:
 
 
 def main() -> int:
+    if "--trim" in sys.argv:
+        return write_trimmed()
+
     rgb = np.asarray(Image.open(SRC).convert("RGB")).astype(np.float64)
     ramp = ground_ramp(rgb)
     drop_squiggle(rgb, ramp)

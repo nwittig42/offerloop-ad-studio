@@ -15,6 +15,22 @@
       "prompt": "n/a (copied from the Offerloop product repo)"
     },
     {
+      "filename": "assets/figma/offerloop-lockup-trim.png",
+      "kind": "image",
+      "description": "offerloop-logo-lockup.png trimmed to its ink, 526x129 RGBA. The export pads out to 612x408 with stray alpha-1 pixels, which would make the Remotion cards size and space the mark by its padding. Written by `cover.py --trim`.",
+      "source": "derived",
+      "model": "local trim (tools/carousel/cover.py --trim)",
+      "prompt": "n/a (derived asset)"
+    },
+    {
+      "filename": "assets/figma/offerloop-icon-trim.png",
+      "kind": "image",
+      "description": "offerloop-icon.png trimmed to its ink, 122x122 RGBA. Same reason as the lockup trim; this is what sits in the frosted badge and what spins on card 9. Written by `cover.py --trim`.",
+      "source": "derived",
+      "model": "local trim (tools/carousel/cover.py --trim)",
+      "prompt": "n/a (derived asset)"
+    },
+    {
       "filename": "assets/carousels/ig-launch-blue/1-cover.png",
       "kind": "image",
       "description": "Restyled slide 1 of 8, cover, re-laid out 2026-09-10 after the PINNED reference cover. Two elements: 'so... what is' as a small serif lead-in (41px ascender, the reference's size mapped onto this canvas) over the Offerloop lockup at 620px wide, the pair centred at 48 percent of frame height. Along the bottom, the same lockup filled white at 220px plus a white keep-swiping arrow, where the swipe pill used to be. Gone from the original slide: the LAUNCH eyebrow, the 'free month of Pro' pill, the 'iOS, free to start' line, the typeset 'Offerloop?' with its question mark and orange rule, and the 'your job search. on autopilot.' subhead. Frosted-glass badge top left, blue mesh gradient ground.",
@@ -163,6 +179,110 @@
       "description": "Instagram caption for the ig-launch carousel: a lowercase conversational primary take plus a more polished ALT below a --- rule. The ALT contains an em dash and must be fixed before posting (see the no-em-dashes skill).",
       "source": "dropped",
       "prompt": "n/a (dropped by Nick, offerloop-ig-launch.zip)"
+    },
+    {
+      "filename": "assets/carousels/_edits/mesh-1080x1350.png",
+      "kind": "image",
+      "description": "The carousel's blue mesh ground on its own, 1080x1350, dumped by `restyle.py --bg`. The Remotion cards use this rather than a CSS gradient so they sit on exactly the same ground as the restyled deck instead of an approximation of it.",
+      "source": "derived",
+      "model": "local mesh (tools/carousel/restyle.py --bg)",
+      "prompt": "n/a (derived asset)"
+    },
+    {
+      "filename": "assets/carousels/ig-launch-v2/1-hook.png",
+      "kind": "image",
+      "description": "ig-launch-v2 carousel slide: 'networking is a pain in the ass.' Lora 700 at 104px, two lines, centred. Card 1 of the bookend; card 7 is the same render again and the two must stay identical. Blue mesh ground, frosted badge top left, white lockup and swipe arrow along the bottom.",
+      "source": "derived",
+      "model": "Remotion still (IgLaunchCard, tools/carousel/render.mjs)",
+      "prompt": "n/a (derived asset)"
+    },
+    {
+      "filename": "assets/carousels/ig-launch-v2/2-intro.png",
+      "kind": "image",
+      "description": "ig-launch-v2 carousel slide: INTRODUCING over the Offerloop lockup at 500px, then 'a dating app for professional connections.' at 64px and 'swipe, and it emails them. introducing you.' in Inter. The one card carrying both the name and the first gesture. Blue mesh ground, frosted badge top left, white lockup and swipe arrow along the bottom.",
+      "source": "derived",
+      "model": "Remotion still (IgLaunchCard, tools/carousel/render.mjs)",
+      "prompt": "n/a (derived asset)"
+    },
+    {
+      "filename": "assets/carousels/ig-launch-v2/3-apply.png",
+      "kind": "image",
+      "description": "ig-launch-v2 carousel slide: 'or swipe, and it applies to the job.' at 96px. Reads off card 2's swipe, so the two cannot be reordered. Blue mesh ground, frosted badge top left, white lockup and swipe arrow along the bottom.",
+      "source": "derived",
+      "model": "Remotion still (IgLaunchCard, tools/carousel/render.mjs)",
+      "prompt": "n/a (derived asset)"
+    },
+    {
+      "filename": "assets/carousels/ig-launch-v2/4-search.png",
+      "kind": "image",
+      "description": "ig-launch-v2 carousel slide: 'search and find anyone.' at 104px. Blue mesh ground, frosted badge top left, white lockup and swipe arrow along the bottom.",
+      "source": "derived",
+      "model": "Remotion still (IgLaunchCard, tools/carousel/render.mjs)",
+      "prompt": "n/a (derived asset)"
+    },
+    {
+      "filename": "assets/carousels/ig-launch-v2/5-scale.png",
+      "kind": "image",
+      "description": "ig-launch-v2 carousel slide: 'ANYONE.' in Lora 700 at 168px, running nearly the full width, over '1.5 billion contacts.' in Inter. The escalation beat off card 4. Blue mesh ground, frosted badge top left, white lockup and swipe arrow along the bottom.",
+      "source": "derived",
+      "model": "Remotion still (IgLaunchCard, tools/carousel/render.mjs)",
+      "prompt": "n/a (derived asset)"
+    },
+    {
+      "filename": "assets/carousels/ig-launch-v2/6-personal.png",
+      "kind": "image",
+      "description": "ig-launch-v2 carousel slide: 'it finds what you actually have in common.' at 76px over 'so every email is different.' Replaces the script's original spec sentence; wants a real drafted email under it. Blue mesh ground, frosted badge top left, white lockup and swipe arrow along the bottom.",
+      "source": "derived",
+      "model": "Remotion still (IgLaunchCard, tools/carousel/render.mjs)",
+      "prompt": "n/a (derived asset)"
+    },
+    {
+      "filename": "assets/carousels/ig-launch-v2/7-hook-again.png",
+      "kind": "image",
+      "description": "ig-launch-v2 carousel slide: Card 1 rendered again, unchanged. The repeat is the deck's structure: it sets up card 8. Blue mesh ground, frosted badge top left, white lockup and swipe arrow along the bottom.",
+      "source": "derived",
+      "model": "Remotion still (IgLaunchCard, tools/carousel/render.mjs)",
+      "prompt": "n/a (derived asset)"
+    },
+    {
+      "filename": "assets/carousels/ig-launch-v2/8-payoff.png",
+      "kind": "image",
+      "description": "ig-launch-v2 carousel slide: \"now it's not.\" at 128px. The payoff the whole deck exists for. Blue mesh ground, frosted badge top left, white lockup and swipe arrow along the bottom.",
+      "source": "derived",
+      "model": "Remotion still (IgLaunchCard, tools/carousel/render.mjs)",
+      "prompt": "n/a (derived asset)"
+    },
+    {
+      "filename": "assets/carousels/ig-launch-v2/9-outro.png",
+      "kind": "image",
+      "description": "ig-launch-v2 card 9 frozen at frame 0, the mark face-on. Stand-in so the carousel preview server (which lists images only) has a ninth slide; the mp4 below is what gets posted.",
+      "source": "derived",
+      "model": "Remotion still (IgLaunch-09-outro, frame 0)",
+      "prompt": "n/a (derived asset)"
+    },
+    {
+      "filename": "assets/carousels/ig-launch-v2/9-outro.mp4",
+      "kind": "video",
+      "description": "ig-launch-v2 card 9: the Offerloop mark turning once about its vertical axis, 1080x1350, 30fps, 4s, silent. Constant speed and exactly one revolution, so the last frame lands on the first and Instagram's loop has no seam. No badge and no arrow; the footer lockup is the only other thing on it.",
+      "source": "derived",
+      "model": "Remotion render (IgLaunch-09-outro)",
+      "prompt": "n/a (derived asset)"
+    },
+    {
+      "filename": "assets/carousels/ig-launch-v2/_contact-sheet.png",
+      "kind": "image",
+      "description": "Contact sheet of the nine ig-launch-v2 cards, 4 across. Reference only, not a slide.",
+      "source": "derived",
+      "model": "restyle.py --sheet",
+      "prompt": "n/a (derived asset)"
+    },
+    {
+      "filename": "assets/carousels/ig-launch-v2/caption.txt",
+      "kind": "text",
+      "description": "Instagram caption for the ig-launch-v2 carousel, in the deck's lowercase voice and bookended the same way the cards are. No em dashes.",
+      "source": "derived",
+      "model": "written",
+      "prompt": "n/a (derived asset)"
     },
     {
       "filename": "assets/generated/swipe-hand-swiping-v1.mp4",
