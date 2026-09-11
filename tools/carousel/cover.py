@@ -1,11 +1,12 @@
 #!/usr/bin/env python
 """Re-lay out slide 1 of the ig-launch carousel.
 
-Against the original: the LAUNCH eyebrow, the "free month of Pro" pill and
-the "iOS - free to start" line are gone; "so... what is" runs as one small
-lead-in line over a big "Offerloop?"; the stack is centred; and the swipe
-pill at the bottom is replaced by the full Offerloop lockup in white with a
-white arrow, following the reference cover Nick sent (the PINNED slide).
+Against the original: the LAUNCH eyebrow, the "free month of Pro" pill, the
+"iOS - free to start" line, the orange rule and the "your job search. on
+autopilot." subhead are all gone. What is left is "so... what is" as one
+small lead-in line over a big "Offerloop?", centred, with the full Offerloop
+lockup in white and a white arrow along the bottom where the swipe pill used
+to be - the shape of the reference cover Nick sent (the PINNED slide).
 
 The deck arrived as finished PNGs with no source, so the type is moved as
 pixels rather than re-set - no font in the repo matches the deck's serif, and
@@ -59,16 +60,17 @@ CLEAN = slice(600, 820)
 LOCKUP = (76, 99, 290, 146)  # icon + "Offerloop", reused white at the bottom
 LEAD_A = (73, 337, 234, 404)  # "so..."      - both sit on their own baseline
 LEAD_B = (68, 446, 375, 542)  # "what is"      at the block's bottom row
-HEAD = (72, 583, 536, 720)  # "Offerloop?" + the orange squiggle under it
-BODY1 = (73, 756, 407, 798)  # "your job search."
-BODY2 = (74, 812, 335, 854)  # "on autopilot."
+HEAD = (75, 583, 522, 705)  # "Offerloop?", cap line to the p's descender
+# The orange rule sits under the headline and the two p descenders reach into
+# its band, so it goes by colour rather than by a row cut. The ground itself
+# runs about five levels bluer than it is red, so anything warmer than that
+# is rule, including its antialiased fringe; the blue type never is.
+SQUIGGLE = (60, 686, 545, 730)
 
 HEAD_SCALE = 0.78
 LEAD_SCALE = 0.43  # 41px ascender, the reference's lead-in mapped to 1350px
 WORD_SPACE = 26  # ink gap between the two lead words, source px
 LEAD_TO_HEAD = 36  # lead baseline down to the cap line of "Offerloop?"
-HEAD_TO_BODY = 40  # squiggle down to the body
-BODY_GAP = 56  # body line tops
 # The stack is centred between the badge and the footer, then lifted a
 # little: a block on true centre reads as sitting low.
 CENTRE_X = 540
@@ -88,6 +90,15 @@ SS = 4  # supersampling for the drawn arrow
 def ground_ramp(rgb: np.ndarray) -> np.ndarray:
     """The ground colour of every row, read off the empty columns."""
     return np.median(rgb[:, CLEAN, :], axis=1)
+
+
+def drop_squiggle(rgb: np.ndarray, ramp: np.ndarray) -> None:
+    """Erase the orange rule in place, leaving the descenders over it alone."""
+    x0, y0, x1, y1 = SQUIGGLE
+    band = rgb[y0:y1, x0:x1]
+    warm = (band[:, :, 0] - band[:, :, 2]) > -2
+    ground = np.broadcast_to(ramp[y0:y1][:, None, :], band.shape)
+    rgb[y0:y1, x0:x1] = np.where(warm[..., None], ground, band)
 
 
 def lift(rgb: np.ndarray, ramp: np.ndarray, box: tuple, scale: float):
@@ -143,10 +154,8 @@ def build(rgb: np.ndarray, ramp: np.ndarray) -> Image.Image:
     bw, bh = ink_size(LEAD_B, LEAD_SCALE)
     space = WORD_SPACE * LEAD_SCALE
     hw, hh = ink_size(HEAD, HEAD_SCALE)
-    b1w, b1h = ink_size(BODY1, 1.0)
-    b2w, b2h = ink_size(BODY2, 1.0)
 
-    stack = ah + LEAD_TO_HEAD + hh + HEAD_TO_BODY + BODY_GAP + b2h
+    stack = ah + LEAD_TO_HEAD + hh
     top = CENTRE_Y - stack / 2
 
     # Lead-in: two words on one line, hung from a shared baseline.
@@ -159,12 +168,6 @@ def build(rgb: np.ndarray, ramp: np.ndarray) -> Image.Image:
 
     head_top = baseline + LEAD_TO_HEAD
     place(canvas, ramp, lift(rgb, ramp, HEAD, HEAD_SCALE), CENTRE_X - hw / 2, head_top)
-
-    body_top = head_top + hh + HEAD_TO_BODY
-    place(canvas, ramp, lift(rgb, ramp, BODY1, 1.0), CENTRE_X - b1w / 2, body_top)
-    place(
-        canvas, ramp, lift(rgb, ramp, BODY2, 1.0), CENTRE_X - b2w / 2, body_top + BODY_GAP
-    )
 
     return Image.fromarray(np.clip(canvas, 0, 255).astype(np.uint8))
 
@@ -232,6 +235,7 @@ def footer(frame: Image.Image, rgb: np.ndarray, ramp: np.ndarray) -> Image.Image
 def main() -> int:
     rgb = np.asarray(Image.open(SRC).convert("RGB")).astype(np.float64)
     ramp = ground_ramp(rgb)
+    drop_squiggle(rgb, ramp)
 
     GREY_OUT.parent.mkdir(parents=True, exist_ok=True)
     grey = build(rgb, ramp)
