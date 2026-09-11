@@ -10,9 +10,9 @@
     {
       "filename": "assets/carousels/ig-launch-blue/1-cover.png",
       "kind": "image",
-      "description": "Restyled slide 1 of 8, cover: 'so... what is Offerloop?' in Lora over the light grey brand ground, 'your job search. on autopilot.' subhead, 'free month of Pro' pill, 'iOS, free to start'. Restyled onto the blue mesh gradient with the frosted-glass Offerloop badge top left.",
+      "description": "Restyled slide 1 of 8, cover, re-laid out 2026-09-10: the LAUNCH eyebrow, the 'free month of Pro' pill and the 'iOS, free to start' line are gone, and what is left ('so... what is Offerloop?' with the orange squiggle, then 'your job search. on autopilot.') is centred in the frame with the serif headline set to 78 percent of its original size. Frosted-glass Offerloop badge top left, swipe pill bottom right, blue mesh gradient ground.",
       "source": "derived",
-      "model": "local restyle from assets/carousels/ig-launch (tools/carousel/restyle.py)",
+      "model": "local rebuild: tools/carousel/cover.py lifts the type off the grey source slide, rescales and re-centres it (edited grey kept at assets/carousels/_edits/1-cover.png), then tools/carousel/restyle.py puts it on the mesh",
       "prompt": "n/a (derived asset)"
     },
     {
@@ -74,7 +74,7 @@
     {
       "filename": "assets/carousels/ig-launch-blue/_contact-sheet.png",
       "kind": "image",
-      "description": "Contact sheet of the eight restyled ig-launch-blue slides, 4 across. Reference only, not a slide.",
+      "description": "Contact sheet of the eight restyled ig-launch-blue slides, 4 across. Reference only, not a slide. Regenerated after the slide 1 re-layout.",
       "source": "derived",
       "model": "local restyle from assets/carousels/ig-launch (tools/carousel/restyle.py)",
       "prompt": "n/a (derived asset)"
