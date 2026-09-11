@@ -7,7 +7,7 @@
 import http from 'node:http';
 import path from 'node:path';
 import {fileURLToPath} from 'node:url';
-import {readFile, readdir} from 'node:fs/promises';
+import {readFile, readdir, stat} from 'node:fs/promises';
 import {createReadStream, existsSync, statSync} from 'node:fs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -62,7 +62,14 @@ const readDeck = async (name) => {
   const extras = entries.filter((f) => f.startsWith('_') && /\.(png|jpe?g|webp)$/i.test(f));
   const captionPath = path.join(dir, 'caption.txt');
   const caption = existsSync(captionPath) ? await readFile(captionPath, 'utf8') : '';
-  return {name, slides, caption, contactSheet: extras[0] ? `/carousels/${name}/${extras[0]}` : null};
+  const {mtimeMs} = await stat(dir);
+  return {
+    name,
+    slides,
+    caption,
+    mtimeMs,
+    contactSheet: extras[0] ? `/carousels/${name}/${extras[0]}` : null,
+  };
 };
 
 const server = http.createServer(async (req, res) => {
@@ -84,6 +91,8 @@ const server = http.createServer(async (req, res) => {
       const deck = await readDeck(name);
       if (deck.slides.length) carousels.push(deck);
     }
+    // Newest deck first, so a fresh restyle is what opens.
+    carousels.sort((a, b) => b.mtimeMs - a.mtimeMs);
     return json(res, 200, {carousels});
   }
 

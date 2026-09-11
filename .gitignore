@@ -8,3 +8,4 @@ node_modules/
 
 # python venv for the alpha keyer (tools/key-alpha.py)
 .venv-key/
+__pycache__/

@@ -1,6 +1,93 @@
 {
   "assets": [
     {
+      "filename": "assets/figma/offerloop-icon.png",
+      "kind": "image",
+      "description": "The Offerloop icon mark on transparent alpha, 150x138 RGBA - the blue gradient loop-and-arrow glyph, no wordmark. Lifted from the product repo (connect-grow-hire/src/assets/offerloopiconlogo.png) because the Figma file still has no standalone logo. This is what sits inside the frosted badge the carousel restyle draws.",
+      "source": "dropped",
+      "prompt": "n/a (copied from the Offerloop product repo)"
+    },
+    {
+      "filename": "assets/carousels/ig-launch-blue/1-cover.png",
+      "kind": "image",
+      "description": "Restyled slide 1 of 8, cover: 'so... what is Offerloop?' in Lora over the light grey brand ground, 'your job search. on autopilot.' subhead, 'free month of Pro' pill, 'iOS, free to start'. Restyled onto the blue mesh gradient with the frosted-glass Offerloop badge top left.",
+      "source": "derived",
+      "model": "local restyle from assets/carousels/ig-launch (tools/carousel/restyle.py)",
+      "prompt": "n/a (derived asset)"
+    },
+    {
+      "filename": "assets/carousels/ig-launch-blue/2-people.png",
+      "kind": "image",
+      "description": "Restyled slide 2 of 8, PEOPLE: 'Swipe right on a person. It emails them.' over a tilted iPhone showing the People tab mid-swipe, with 'Email found' and 'Draft written' status chips. Restyled onto the blue mesh gradient with the frosted-glass Offerloop badge top left.",
+      "source": "derived",
+      "model": "local restyle from assets/carousels/ig-launch (tools/carousel/restyle.py)",
+      "prompt": "n/a (derived asset)"
+    },
+    {
+      "filename": "assets/carousels/ig-launch-blue/3-apply.png",
+      "kind": "image",
+      "description": "Restyled slide 3 of 8, APPLY: 'Flip to Apply. Swipe right. It applies.' over the Apply tab on a tilted iPhone, with 'Applied - Verkada' and 'Drafted to the hiring manager' chips and a hand-drawn arrow. Restyled onto the blue mesh gradient with the frosted-glass Offerloop badge top left.",
+      "source": "derived",
+      "model": "local restyle from assets/carousels/ig-launch (tools/carousel/restyle.py)",
+      "prompt": "n/a (derived asset)"
+    },
+    {
+      "filename": "assets/carousels/ig-launch-blue/4-inbox.png",
+      "kind": "image",
+      "description": "Restyled slide 4 of 8, INBOX: 'Every reply, one inbox.' over the unified inbox screen with All / Your turn / Waiting / Replied filters and threaded replies. Restyled onto the blue mesh gradient with the frosted-glass Offerloop badge top left.",
+      "source": "derived",
+      "model": "local restyle from assets/carousels/ig-launch (tools/carousel/restyle.py)",
+      "prompt": "n/a (derived asset)"
+    },
+    {
+      "filename": "assets/carousels/ig-launch-blue/5-scout.png",
+      "kind": "image",
+      "description": "Restyled slide 5 of 8, SCOUT: 'Meet Scout, your job search agent.' with 'Find people at Goldman' and 'Email the recruiter' prompt chips above the Scout orb screen. Restyled onto the blue mesh gradient with the frosted-glass Offerloop badge top left.",
+      "source": "derived",
+      "model": "local restyle from assets/carousels/ig-launch (tools/carousel/restyle.py)",
+      "prompt": "n/a (derived asset)"
+    },
+    {
+      "filename": "assets/carousels/ig-launch-blue/6-prepare.png",
+      "kind": "image",
+      "description": "Restyled slide 6 of 8, PREPARE: 'Walk in already prepped.' with a LinkedIn glyph, a prep card reading the contact's profile and recent news, and the meeting-prep screen below. Restyled onto the blue mesh gradient with the frosted-glass Offerloop badge top left.",
+      "source": "derived",
+      "model": "local restyle from assets/carousels/ig-launch (tools/carousel/restyle.py)",
+      "prompt": "n/a (derived asset)"
+    },
+    {
+      "filename": "assets/carousels/ig-launch-blue/7-track.png",
+      "kind": "image",
+      "description": "Restyled slide 7 of 8, TRACK: 'Everything, tracked in one place.' over the Companies board with logo tiles, Outreach sent / Replies / Applications tabs. Restyled onto the blue mesh gradient with the frosted-glass Offerloop badge top left.",
+      "source": "derived",
+      "model": "local restyle from assets/carousels/ig-launch (tools/carousel/restyle.py)",
+      "prompt": "n/a (derived asset)"
+    },
+    {
+      "filename": "assets/carousels/ig-launch-blue/8-cta.png",
+      "kind": "image",
+      "description": "Restyled slide 8 of 8, CTA: 'Try it free.' with 'one month of Pro, on us.', the App Store badge, 'link in bio' and the offerloop.ai wordmark. Restyled onto the blue mesh gradient with the frosted-glass Offerloop badge top left.",
+      "source": "derived",
+      "model": "local restyle from assets/carousels/ig-launch (tools/carousel/restyle.py)",
+      "prompt": "n/a (derived asset)"
+    },
+    {
+      "filename": "assets/carousels/ig-launch-blue/_contact-sheet.png",
+      "kind": "image",
+      "description": "Contact sheet of the eight restyled ig-launch-blue slides, 4 across. Reference only, not a slide.",
+      "source": "derived",
+      "model": "local restyle from assets/carousels/ig-launch (tools/carousel/restyle.py)",
+      "prompt": "n/a (derived asset)"
+    },
+    {
+      "filename": "assets/carousels/ig-launch-blue/caption.txt",
+      "kind": "text",
+      "description": "Instagram caption for the ig-launch carousel, copied forward from the original deck. The ALT take below the --- rule still contains an em dash and must be fixed before posting.",
+      "source": "derived",
+      "model": "local restyle from assets/carousels/ig-launch (tools/carousel/restyle.py)",
+      "prompt": "n/a (derived asset)"
+    },
+    {
       "filename": "assets/carousels/ig-launch/1-cover.png",
       "kind": "image",
       "description": "Slide 1 of 8, cover: 'so... what is Offerloop?' in Lora over the light grey brand ground, 'your job search. on autopilot.' subhead, 'free month of Pro' pill, 'iOS, free to start'.",
