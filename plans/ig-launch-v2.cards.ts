@@ -6,12 +6,12 @@
  * is the deck order - starting at deck position 2, because card 1 is the
  * lifted-type cover that tools/carousel/cover.py builds.
  *
- * The hook and hook-again cards were deliberately identical - the deck's whole
- * structure is that bookend. They have DIVERGED: hook is now the motion card
- * reading 'Networking Takes Forever' and hook-again still reads 'networking is
- * a pain in the ass.' Nick asked for slide 2 only, so this is left for him to
- * call: either hook-again takes the new line too, or the bookend is dropped on
- * purpose.
+ * The hook and hook-again cards are the deck's bookend and were deliberately
+ * identical. They still say the same sentence, but they no longer match:
+ * hook is the motion card, set title case and censored ('Networking is a Pain
+ * in the A**'), while hook-again is a still, lowercase and uncensored
+ * ('networking is a pain in the ass.'). Nick asked for slide 2 only, so
+ * whether hook-again follows it is his call.
  */
 export type CardCopy = {
   slug: string;
@@ -40,7 +40,17 @@ export type CardCopy = {
    * full-bleed as the ground, headline reversed out in white over a navy
    * scrim, revealed word by word. See src/compositions/IgLaunchHookCard.tsx.
    */
-  video?: {src: string; durationSec: number};
+  video?: {
+    src: string;
+    durationSec: number;
+    /**
+     * Frame the deck's `<n>-<slug>.png` poster is grabbed at. The preview
+     * server only renders images, so this still is what 3131 shows for the
+     * slide - it has to be a frame where the headline has finished popping in,
+     * not frame 0.
+     */
+    posterFrame: number;
+  };
 };
 
 /** Deck position of the first entry below; card 1 is the cover from cover.py. */
@@ -49,12 +59,17 @@ export const IG_LAUNCH_CARD_OFFSET = 2;
 export const igLaunchV2Cards: CardCopy[] = [
   {
     // Deck position 2, and the only motion card: the desk timelapse plays
-    // behind the line rather than the mesh ground. Nick's casing, kept as he
-    // wrote it - note the rest of the deck sets its headlines lowercase.
+    // behind the line rather than the mesh ground, with a spinning clock
+    // watermarked between the two. Nick's casing and his asterisks, kept as he
+    // wrote them - note the rest of the deck sets its headlines lowercase.
     slug: 'hook',
-    headline: ['Networking', 'Takes Forever'],
-    size: 104,
-    video: {src: 'assets/clips/desk-timelapse-carousel-5s.mp4', durationSec: 5},
+    headline: ['Networking is a', 'Pain in the A**'],
+    size: 96,
+    video: {
+      src: 'assets/clips/desk-timelapse-carousel-5s.mp4',
+      durationSec: 5,
+      posterFrame: 100,
+    },
   },
   {
     slug: 'intro',

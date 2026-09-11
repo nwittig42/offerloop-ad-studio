@@ -9,6 +9,7 @@ import {
   useVideoConfig,
 } from 'remotion';
 import {CarouselCardFrame} from '../components/CarouselCardFrame';
+import {SpinningClock} from '../components/SpinningClock';
 import {fonts} from '../../brand/theme';
 import {igLaunchV2Cards, type CardCopy} from '../../plans/ig-launch-v2.cards';
 
@@ -40,8 +41,14 @@ const SCRIM = {
 };
 
 const BAND = {top: 180, bottom: 210};
+/**
+ * Clock diameter. Sized to sit behind both headline lines and overhang them
+ * slightly, so it reads as a face the words are set over rather than a ring
+ * framing them.
+ */
+const CLOCK = 660;
 /** Frames between word pops, and the spring each word rides in on. */
-const WORD_STAGGER = 6;
+const WORD_STAGGER = 4;
 const WORD_DELAY = 8;
 
 const Word: React.FC<{text: string; index: number}> = ({text, index}) => {
@@ -146,6 +153,19 @@ export const IgLaunchHookCard: React.FC<{index?: number}> = ({index = 0}) => {
           justifyContent: 'center',
         }}
       >
+        {/* Behind the letters, centred on the type block rather than the
+            frame, so it stays put if the band moves. */}
+        <div
+          style={{
+            position: 'absolute',
+            left: '50%',
+            top: '50%',
+            transform: 'translate(-50%, -50%)',
+            pointerEvents: 'none',
+          }}
+        >
+          <SpinningClock size={CLOCK} />
+        </div>
         {card.headline ? (
           <KineticHeadline lines={card.headline} size={card.size ?? 92} />
         ) : null}
