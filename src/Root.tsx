@@ -32,6 +32,7 @@ import {atsNewsHookPlan} from '../plans/ats-news-hook.plan';
 import {yetiRaveDancePlan} from '../plans/yeti-rave-dance.plan';
 import {yetiDrumPlan} from '../plans/yeti-drum.plan';
 import {deskFlashPlan} from '../plans/desk-flash.plan';
+import {deskTimelapsePlan} from '../plans/desk-timelapse.plan';
 
 // Every composition is the generic PlanPlayer pointed at a plan file.
 // To ship a new video: add plans/<name>.plan.ts and point a slot at it here.
@@ -45,6 +46,9 @@ const slots: Array<{id: string; width: number; height: number; plan: EditPlan}> 
   {id: 'DeskFlash', width: 1920, height: 1080, plan: deskFlashPlan},
   // Same plan cropped to the carousel card shape (see CARD_W/CARD_H).
   {id: 'DeskFlashCarousel', width: 1080, height: 1350, plan: deskFlashPlan},
+  // The same background with no app pop-ups, for quieter cards.
+  {id: 'DeskTimelapse', width: 1920, height: 1080, plan: deskTimelapsePlan},
+  {id: 'DeskTimelapseCarousel', width: 1080, height: 1350, plan: deskTimelapsePlan},
 ];
 
 export const Root: React.FC = () => {

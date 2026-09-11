@@ -2198,6 +2198,15 @@
       "source": "derived",
       "model": "ffmpeg setpts=PTS/2.6 from assets/generated/desk-timelapse-apartment-v1.mp4",
       "prompt": "n/a (derived asset)"
+    },
+    {
+      "filename": "assets/generated/desk-timelapse-apartment-5s-v1.mp4",
+      "kind": "video",
+      "description": "desk-timelapse-apartment-v1.mp4 sped 2x locally (241 frames -> 121) to fill a clean 5s. Base for the DeskTimelapse / DeskTimelapseCarousel plate, the no-pop-ups version of the desk-flash carousel background. Sped 2x rather than the flash cut's 2.6x because with no pop-ups eating frames the whole five seconds is footage, so the light arc plays slightly slower. Silent.",
+      "duration": 5.04,
+      "source": "derived",
+      "model": "ffmpeg setpts=PTS/2.0 from assets/generated/desk-timelapse-apartment-v1.mp4",
+      "prompt": "n/a (derived asset)"
     }
   ]
 }
