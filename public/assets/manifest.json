@@ -2286,6 +2286,14 @@
       "source": "derived",
       "model": "remotion render GlobeScale (d3-geo geoOrthographic + world-atlas land-50m/110m)",
       "prompt": "n/a (procedural)"
+    },
+    {
+      "filename": "assets/generated/email-personalization-annotated.png",
+      "kind": "image",
+      "description": "Nick's annotated Gmail compose window, 1275x1234: a real drafted outreach email to a Morgan Stanley recruiter, with the borrowed details ringed in red and green and labelled INFO / recipient info / SIMILARITY / alignment. The receipt for ig-launch-v2 slide 6. The recipient's work email in the To row is boxblurred out in this saved copy; masking emails is the standing call.",
+      "source": "derived",
+      "model": "ChatGPT-generated annotation over Nick's screenshot; ffmpeg boxblur over the To row",
+      "prompt": "n/a (supplied asset)"
     }
   ]
 }

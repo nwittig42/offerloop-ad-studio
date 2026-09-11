@@ -58,12 +58,20 @@ export type CardCopy = {
     posterFrame: number;
   };
   /**
+   * Substrings of `headline` to tint red. Matched per line, longest first, so
+   * overlapping phrases cannot double-tint. Same idea as the plan schema's
+   * hookText `highlight`.
+   */
+  redParts?: string[];
+  /** Still image for the 'image' layout. */
+  image?: {src: string};
+  /**
    * 'phones' is the row of three with the `video` clip in the middle one,
    * headline group above and copy below, per the reference Nick sent
    * (IgLaunchPhonesCard). 'phone' is one hero phone with headline and support
    * stacked above it (IgLaunchPhoneCard).
    */
-  layout?: 'phones' | 'phone' | 'panel' | 'globe';
+  layout?: 'phones' | 'phone' | 'panel' | 'globe' | 'image';
   /**
    * The outer two phones. Either can hold a clip as well as a still, so set
    * `video: true` when `src` is an mp4. The middle phone always plays the
@@ -180,12 +188,22 @@ export const igLaunchV2Cards: CardCopy[] = [
     video: {durationSec: 7, posterFrame: 126},
   },
   {
-    // The one card that most needs its receipt: a real drafted email with the
-    // shared detail visible in it proves the claim the words only assert.
+    // The one card that most needs its receipt, and now it has one: Nick's
+    // annotated draft, with the borrowed details ringed and labelled, proves
+    // the claim the words only assert. The dashed placeholder is gone.
+    //
+    // The recipient's address is blurred in the saved asset. It was a real
+    // person's work email, and masking emails is the standing call.
     slug: 'personal',
-    headline: ['it finds what you', 'actually have in common.'],
-    size: 76,
-    media: {label: 'a drafted email'},
+    headline: [
+      'No two emails are the same,',
+      'we find what you have in common',
+      'and personalize every email',
+    ],
+    size: 54,
+    redParts: ['No two emails are the same', 'every email'],
+    layout: 'image',
+    image: {src: 'assets/generated/email-personalization-annotated.png'},
   },
   {
     slug: 'hook-again',

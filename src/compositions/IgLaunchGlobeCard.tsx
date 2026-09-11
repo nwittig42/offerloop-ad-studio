@@ -1,6 +1,6 @@
 import React from 'react';
 import {AbsoluteFill} from 'remotion';
-import {CarouselCardFrame} from '../components/CarouselCardFrame';
+import {CarouselCardFrame, CAROUSEL_RED} from '../components/CarouselCardFrame';
 import {GlobeScale} from '../components/GlobeScale';
 import {colors, fonts} from '../../brand/theme';
 import {igLaunchV2Cards, type CardCopy} from '../../plans/ig-launch-v2.cards';
@@ -27,14 +27,6 @@ const PANEL_TOP = 372;
 const PANEL = 710;
 /** Top of the red line, clearing the panel's bottom at 1082. */
 const COUNT_TOP = 1108;
-
-/**
- * Nick asked for this line in red. There is no red anywhere in the brand
- * palette, so it is defined here rather than pulled from the theme, and it is
- * deliberately not being promoted into brand/theme.ts on the strength of one
- * slide.
- */
-const RED = '#D92D20';
 
 export const IgLaunchGlobeCard: React.FC<{index?: number}> = ({index = 0}) => {
   const card: CardCopy = igLaunchV2Cards[index] ?? igLaunchV2Cards[0];
@@ -112,7 +104,7 @@ export const IgLaunchGlobeCard: React.FC<{index?: number}> = ({index = 0}) => {
               fontSize: 56,
               lineHeight: 1.15,
               letterSpacing: '-0.02em',
-              color: RED,
+              color: CAROUSEL_RED,
               textAlign: 'center',
             }}
           >

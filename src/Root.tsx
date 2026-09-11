@@ -20,6 +20,7 @@ import {IgLaunchPhonesCard} from './compositions/IgLaunchPhonesCard';
 import {IgLaunchPhoneCard} from './compositions/IgLaunchPhoneCard';
 import {IgLaunchPanelCard} from './compositions/IgLaunchPanelCard';
 import {IgLaunchGlobeCard} from './compositions/IgLaunchGlobeCard';
+import {IgLaunchImageCard} from './compositions/IgLaunchImageCard';
 import {GlobeScale, GLOBE_FPS, GLOBE_DURATION} from './components/GlobeScale';
 import {
   IgLaunchOutro,
@@ -33,16 +34,30 @@ import {CARD_W, CARD_H} from './components/CarouselCardFrame';
 const CARD_FPS = 24;
 
 /**
- * Which component renders a motion card, by its `layout`. A card with no
- * layout is the hook: full-bleed clip behind kinetic type.
+ * Which component renders a card, by its `layout`. Split by whether the card
+ * moves: a card carrying `video` is a Composition and looks itself up in
+ * MOTION, everything else is a Still and looks itself up in STILL. A layout
+ * belongs to exactly one of the two maps, so asking for a motion layout on a
+ * still card (or the reverse) fails to typecheck rather than rendering the
+ * wrong component.
  */
 const MOTION_CARD = {
+  /** No layout means the hook: full-bleed clip behind kinetic type. */
   hook: IgLaunchHookCard,
   phones: IgLaunchPhonesCard,
   phone: IgLaunchPhoneCard,
   panel: IgLaunchPanelCard,
   globe: IgLaunchGlobeCard,
 } as const;
+
+const STILL_CARD = {
+  /** No layout means the plain typeset card. */
+  plain: IgLaunchCard,
+  image: IgLaunchImageCard,
+} as const;
+
+type MotionLayout = keyof typeof MOTION_CARD;
+type StillLayout = keyof typeof STILL_CARD;
 import {makePlanMetadata} from './plan/validate';
 import {planDurationInFrames, planFps} from './plan/timing';
 import type {EditPlan} from './plan/types';
@@ -126,16 +141,17 @@ export const Root: React.FC = () => {
           Numbering starts at 1 since the lifted-type cover was cut.
 
           A card carrying `video` is a motion card and renders as a real
-          Composition on IgLaunchHookCard; everything else stays a Still. Both
-          keep the same IgLaunch-NN-slug id, so the preview server's ordering
-          does not care which a card is. */}
+          Composition; everything else stays a Still. Either way the component
+          comes from the card's `layout`, and either way the id is the same
+          IgLaunch-NN-slug, so the preview server's ordering does not care
+          which a card is. */}
       {igLaunchV2Cards.map((card, index) => {
         const id = `IgLaunch-${String(index + IG_LAUNCH_CARD_OFFSET).padStart(2, '0')}-${card.slug}`;
         return card.video ? (
           <Composition
             key={card.slug}
             id={id}
-            component={MOTION_CARD[card.layout ?? 'hook']}
+            component={MOTION_CARD[(card.layout ?? 'hook') as MotionLayout]}
             durationInFrames={Math.round(card.video.durationSec * CARD_FPS)}
             fps={CARD_FPS}
             width={CARD_W}
@@ -146,7 +162,7 @@ export const Root: React.FC = () => {
           <Still
             key={card.slug}
             id={id}
-            component={IgLaunchCard}
+            component={STILL_CARD[(card.layout ?? 'plain') as StillLayout]}
             width={CARD_W}
             height={CARD_H}
             defaultProps={{index}}

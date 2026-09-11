@@ -16,6 +16,14 @@ import {AbsoluteFill, Img, staticFile} from 'remotion';
 export const CARD_W = 1080;
 export const CARD_H = 1350;
 
+/**
+ * Nick asks for red on some cards. There is no red anywhere in the brand
+ * palette, so it lives here beside the other carousel constants rather than
+ * being promoted into brand/theme.ts, which would make it look like a brand
+ * colour. Two cards use it, so it is shared rather than copied.
+ */
+export const CAROUSEL_RED = '#D92D20';
+
 const BADGE = {size: 132, x: 64, y: 52, icon: 0.6};
 const FOOT_Y = 1254;
 const FOOT_W = 220;
