@@ -17,24 +17,30 @@ the blue mesh ground with the frosted badge top left and the white lockup plus
 swipe arrow along the bottom. No em dashes anywhere (see the no-em-dashes
 skill).
 
-| # | Card | Copy |
-|---|------|------|
-| 1 | cover | so... what is / [lockup] |
-| 2 | hook | networking is a pain in the ass. |
-| 3 | intro | INTRODUCING / [lockup] / a dating app for professional connections. / swipe, and it emails them. introducing you. |
-| 4 | apply | or swipe, and it applies to the job. |
-| 5 | search | search and find anyone. |
-| 6 | scale | ANYONE. / 1.5 billion contacts. |
-| 7 | personal | it finds what you actually have in common. / so every email is different. |
-| 8 | hook again | networking is a pain in the ass. |
-| 9 | payoff | now it's not. |
-| 10 | outro | [icon mark, spinning about its vertical axis] |
+| # | Card | Copy | |
+|---|------|------|---|
+| 1 | hook | Networking is a Pain in the A** | motion |
+| 2 | intro | SO WE BUILT / [lockup] / a dating app for professional connections. / swipe, and it emails them. introducing you. | motion |
+| 3 | apply | or swipe, and it applies to the job. / it even writes a custom cover letter | motion |
+| 4 | search | search and find anyone. | |
+| 5 | scale | ANYONE. / 1.5 billion contacts. | |
+| 6 | personal | it finds what you actually have in common. / so every email is different. | |
+| 7 | hook again | networking is a pain in the ass. | |
+| 8 | payoff | now it's not. | |
+| 9 | outro | [icon mark, spinning about its vertical axis] | motion |
 
-Card 1 is the only one not typeset in Remotion. Its lead-in is type lifted off
-the original ig-launch cover, so it keeps that deck's serif rather than being
-re-set in Lora; `tools/carousel/cover.py` builds it and the render script runs
-it first. Everything from card 2 on comes from `ig-launch-v2.cards.ts`, whose
-first entry is deck position 2 (`IG_LAUNCH_CARD_OFFSET`).
+Every card comes from `ig-launch-v2.cards.ts`, whose first entry is deck
+position 1 (`IG_LAUNCH_CARD_OFFSET`). The lifted-type cover that used to be
+card 1 was cut; `tools/carousel/cover.py` still builds it and the
+`carousel:cover` task still runs, but the render script no longer calls it.
+
+Cards marked motion render as real compositions rather than stills, and the
+deck folder carries an mp4 beside the png for each: the mp4 is what gets
+posted, the png is only what the preview server can display. Slides 1 to 3
+each run exactly 5.00s at 24fps.
+
+The hook / hook-again bookend has diverged: card 1 is title case and censored,
+card 7 is still lowercase and uncensored. Nick's call whether card 7 follows.
 
 ## Open items
 

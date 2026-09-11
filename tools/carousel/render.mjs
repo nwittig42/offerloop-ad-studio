@@ -1,7 +1,10 @@
-// Renders the ig-launch-v2 carousel: the lifted-type cover from cover.py,
-// the typeset cards as stills, then the last card twice - a still so the
-// preview server has something to show, and the mp4 of the spin, which is what
-// actually gets posted as the tenth slide.
+// Renders the ig-launch-v2 carousel: the typeset cards as stills, then the
+// last card twice - a still so the preview server has something to show, and
+// the mp4 of the spin, which is what actually gets posted as the last slide.
+//
+// The lifted-type cover that cover.py built was cut from the deck, so the
+// cards now start at position 1 and this script no longer calls it. The
+// script and its npm task (carousel:cover) are still there if it comes back.
 //
 // A card carrying `video` in the cards file is a motion card and gets the same
 // two-file treatment as the outro: the mp4 is the slide that gets posted, and
@@ -20,14 +23,19 @@ import {mkdirSync, readFileSync, statSync} from 'node:fs';
 
 const OUT = 'public/assets/carousels/ig-launch-v2';
 const CARDS = 'plans/ig-launch-v2.cards.ts';
-const OUTRO = {id: 'IgLaunch-10-outro', file: '10-outro'};
-// Card 1 is the lifted-type cover; cover.py owns it, so the typeset cards
-// start at deck position 2.
-const OFFSET = 2;
+const OUTRO = {id: 'IgLaunch-09-outro', file: '9-outro'};
 
 const cardsSrc = readFileSync(CARDS, 'utf8');
 const slugs = [...cardsSrc.matchAll(/^\s*slug: '([a-z0-9-]+)'/gm)].map((m) => m[1]);
 if (!slugs.length) throw new Error(`no slugs found in ${CARDS}`);
+
+// Deck position of the first card, read off the cards file rather than
+// restated here: Root.tsx builds composition ids from the same constant, and
+// if the two ever disagreed this script would render every slide to the wrong
+// filename.
+const offsetMatch = cardsSrc.match(/IG_LAUNCH_CARD_OFFSET\s*=\s*(\d+)/);
+if (!offsetMatch) throw new Error(`no IG_LAUNCH_CARD_OFFSET found in ${CARDS}`);
+const OFFSET = Number(offsetMatch[1]);
 
 // Which cards are motion cards, and where their poster frame is. Read off the
 // same file as the slugs rather than restated here, so a card becoming (or
@@ -61,12 +69,6 @@ const wanted = ({file}) =>
   !filters.length || filters.some((f) => file.replace(/^\d+-/, '').startsWith(f));
 
 mkdirSync(OUT, {recursive: true});
-
-// Card 1 is not typeset: it is the original deck's cover with its type lifted,
-// rescaled and re-centred, so it comes from the python side.
-if (!filters.length || filters.some((f) => 'cover'.startsWith(f))) {
-  execSync('.venv-key/bin/python tools/carousel/cover.py', {stdio: 'inherit'});
-}
 
 const report = (out) => console.log(`✓ ${out} (${Math.round(statSync(out).size / 1024)} KB)`);
 

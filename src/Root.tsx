@@ -108,8 +108,7 @@ export const Root: React.FC = () => {
         height={1080}
       />
       {/* ig-launch-v2 carousel: one slot per card, copy from the cards file.
-          Numbering starts at 2 - card 1 is the lifted-type cover, built by
-          tools/carousel/cover.py rather than here.
+          Numbering starts at 1 since the lifted-type cover was cut.
 
           A card carrying `video` is a motion card and renders as a real
           Composition on IgLaunchHookCard; everything else stays a Still. Both
@@ -147,7 +146,7 @@ export const Root: React.FC = () => {
       })}
       {/* Last card: the mark turning about its vertical axis, one seamless loop. */}
       <Composition
-        id="IgLaunch-10-outro"
+        id="IgLaunch-09-outro"
         component={IgLaunchOutro}
         durationInFrames={igLaunchOutroDurationInFrames}
         fps={igLaunchOutroFps}

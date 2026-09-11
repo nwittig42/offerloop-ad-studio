@@ -1,10 +1,12 @@
 /**
  * ig-launch-v2 carousel cards. Script and rationale: ig-launch-v2.script.md.
  *
- * One entry per slide, rendered by the IgLaunchCard still (src/compositions).
- * `slug` becomes the filename the preview server sorts on, so the order here
- * is the deck order - starting at deck position 2, because card 1 is the
- * lifted-type cover that tools/carousel/cover.py builds.
+ * One entry per slide, rendered by the IgLaunchCard still (src/compositions)
+ * unless the card sets `layout`. `slug` becomes the filename the preview
+ * server sorts on, so the order here is the deck order, starting at deck
+ * position 1: the lifted-type cover that used to hold that slot was cut at
+ * Nick's request. tools/carousel/cover.py still exists and still works, it
+ * just is not part of the deck any more.
  *
  * The hook and hook-again cards are the deck's bookend and were deliberately
  * identical. They still say the same sentence, but they no longer match:
@@ -70,8 +72,11 @@ export type CardCopy = {
   phones?: {left: PhoneSlot; right: PhoneSlot};
 };
 
-/** Deck position of the first entry below; card 1 is the cover from cover.py. */
-export const IG_LAUNCH_CARD_OFFSET = 2;
+/**
+ * Deck position of the first entry below. 1 since the cover was cut; the
+ * outro that follows these cards is position 9.
+ */
+export const IG_LAUNCH_CARD_OFFSET = 1;
 
 export const igLaunchV2Cards: CardCopy[] = [
   {
