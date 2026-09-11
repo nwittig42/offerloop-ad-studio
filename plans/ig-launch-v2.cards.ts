@@ -51,6 +51,14 @@ export type CardCopy = {
      */
     posterFrame: number;
   };
+  /**
+   * Lays the card out as a row of three phones with the `video` clip in the
+   * middle one, headline group above and copy below, per the reference Nick
+   * sent. Rendered by src/compositions/IgLaunchPhonesCard.tsx.
+   */
+  layout?: 'phones';
+  /** Stills for the outer two phones; the middle one plays `video`. */
+  phones?: {left: string; right: string};
 };
 
 /** Deck position of the first entry below; card 1 is the cover from cover.py. */
@@ -72,12 +80,33 @@ export const igLaunchV2Cards: CardCopy[] = [
     },
   },
   {
+    // Deck position 3. Nick's 'so we built' replaces 'introducing', and the
+    // group moves to the top of the card to clear room for the phone row.
+    // The Eyebrow component uppercases, so this reads as SO WE BUILT.
+    //
+    // The old headline and support copy are all still here, just moved below
+    // the phones into one block, which is where the reference card puts its
+    // copy. Nothing was cut.
     slug: 'intro',
-    eyebrow: 'introducing',
+    eyebrow: 'so we built',
     mark: true,
     headline: ['a dating app for', 'professional connections.'],
-    size: 64,
+    size: 46,
     support: ['swipe, and it emails them.', 'introducing you.'],
+    layout: 'phones',
+    // Middle phone. Nick's screen recording, trimmed to the typing and sped
+    // to 5s so this card matches the hook card's length.
+    video: {
+      src: 'assets/recordings/scout-prompt-typing.mp4',
+      durationSec: 5,
+      posterFrame: 110,
+    },
+    // Outer two are real app surfaces either side of that prompt: the person
+    // card you swipe, and the inbox the drafts land in.
+    phones: {
+      left: 'assets/generated/offerloop-phone-people-still.png',
+      right: 'assets/generated/offerloop-phone-inbox-still.png',
+    },
   },
   {
     slug: 'apply',

@@ -2216,6 +2216,31 @@
       "source": "derived",
       "model": "remotion render DeskTimelapseCarousel",
       "prompt": "n/a (derived asset)"
+    },
+    {
+      "filename": "assets/recordings/scout-prompt-typing.mp4",
+      "kind": "recording",
+      "description": "Nick's iPhone capture of the Scout tab: typing 'Find me 20 jobs that match my resume and apply to them' into the prompt bar, suggestion chips above (Draft 2 consultants at McKinsey, Engineers at Google, Associates at Evercore in New York), keyboard up, ending on the completed prompt. Source was 1206x2622 60fps 11.6s; trimmed 0.4-9.9s and sped 1.9x to land exactly 5.00s / 120 frames at 24fps, then scaled to 600x1304 (2x its ~276px display size in the card). Middle phone of ig-launch-v2 slide 3. Deliberately stops before the reply at ~10.2s, which contains em dashes.",
+      "duration": 5.0,
+      "source": "dropped",
+      "model": "n/a (screen recording; ffmpeg trim + 1.9x speed + downscale)",
+      "prompt": "n/a"
+    },
+    {
+      "filename": "assets/generated/offerloop-phone-people-still.png",
+      "kind": "image",
+      "description": "Frame at 10s of assets/recordings/ios-app-swipe-person.mp4, 1206x2622: the People tab person card (Alex Gillman, Asset Management Analyst, Goldman Sachs, USC alum) with 'Draft it / Send it' and the red X / blue tick. Left phone of ig-launch-v2 slide 3. No email addresses in frame.",
+      "source": "derived",
+      "model": "ffmpeg frame extract from assets/recordings/ios-app-swipe-person.mp4",
+      "prompt": "n/a (derived asset)"
+    },
+    {
+      "filename": "assets/generated/offerloop-phone-inbox-still.png",
+      "kind": "image",
+      "description": "Frame at 19s of assets/recordings/ios-app-swipe-person.mp4, 1206x2622: the Inbox, 47 conversations with All / Your turn 44 / Drafts 47 / Sent tabs, a NEEDS YOU list of drafted intros and a BEING WRITTEN section. Right phone of ig-launch-v2 slide 3. No email addresses in frame.",
+      "source": "derived",
+      "model": "ffmpeg frame extract from assets/recordings/ios-app-swipe-person.mp4",
+      "prompt": "n/a (derived asset)"
     }
   ]
 }

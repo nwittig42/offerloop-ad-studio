@@ -16,6 +16,7 @@ import {
 } from './compositions/CarouselProofEmail';
 import {IgLaunchCard} from './compositions/IgLaunchCard';
 import {IgLaunchHookCard} from './compositions/IgLaunchHookCard';
+import {IgLaunchPhonesCard} from './compositions/IgLaunchPhonesCard';
 import {
   IgLaunchOutro,
   igLaunchOutroDurationInFrames,
@@ -119,7 +120,7 @@ export const Root: React.FC = () => {
           <Composition
             key={card.slug}
             id={id}
-            component={IgLaunchHookCard}
+            component={card.layout === 'phones' ? IgLaunchPhonesCard : IgLaunchHookCard}
             durationInFrames={Math.round(card.video.durationSec * CARD_FPS)}
             fps={CARD_FPS}
             width={CARD_W}
