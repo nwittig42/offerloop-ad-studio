@@ -20,28 +20,32 @@ import {igLaunchV2Cards, type CardCopy} from '../../plans/ig-launch-v2.cards';
  * the stills either side.
  */
 
-// Vertical budget, top to bottom, on a 1350-tall card. The three blocks have
-// to clear each other and the shared chrome: the badge ends at y 184, and the
-// footer lockup is centred on 1254 and 54 tall, so nothing may reach past
-// ~1210. The first pass ran the copy to 1276 and 'introducing you.' printed
-// straight through the footer lockup.
-/** Top of the headline group. */
-const TOP = 200;
-/** Vertical centre of the phone row: spans 395 to 995. */
-const ROW_Y = 695;
-/** Top of the copy block, which runs ~195 tall and lands just short of 1210. */
-const COPY_TOP = 1012;
+// Vertical budget, top to bottom, on a 1350-tall card. The blocks have to
+// clear each other and the shared chrome: the footer lockup is centred on
+// 1254 and 54 tall, so nothing may reach past ~1210. An early pass ran the
+// copy to 1276 and printed 'introducing you.' straight through that lockup.
+//
+// The top group starts above the badge's baseline (the badge ends at y 184),
+// which is fine because every line in the group is centred and none is wider
+// than ~430, so nothing reaches the badge's x 64-196.
+/** Top of the headline group: eyebrow, lockup, then the headline. Ends ~426. */
+const TOP = 140;
+/** Vertical centre of the phone row: the middle phone spans 460 to 1096. */
+const ROW_Y = 778;
+/** Top of the support block, ~78 tall, landing just short of 1210. */
+const COPY_TOP = 1132;
 
 const LOCKUP_W = 430;
 /** The lockup export is 526x129. */
 const LOCKUP_ASPECT = 526 / 129;
 
 /**
- * Widths, with the middle one larger. Heights follow from PHONE_ASPECT, so the
- * middle phone is 600 tall and the outer two 554 — which is what has to fit
- * the 600px the budget above leaves for the row.
+ * Widths, with the middle one larger. Heights follow from PHONE_ASPECT: 635
+ * for the middle and 587 for the outer two, fitting the ~636px the budget
+ * above leaves. The three widths plus gaps come to 896, inside the 920 the
+ * card's 80px side padding allows.
  */
-const PHONE = {mid: 276, side: 255, gap: 34};
+const PHONE = {mid: 292, side: 270, gap: 32};
 
 const Eyebrow: React.FC<{text: string}> = ({text}) => (
   <div
@@ -117,27 +121,10 @@ export const IgLaunchPhonesCard: React.FC<{index?: number}> = ({index = 0}) => {
             style={{width: LOCKUP_W, height: LOCKUP_W / LOCKUP_ASPECT}}
           />
         ) : null}
-      </AbsoluteFill>
-
-      <PhoneRow card={card} />
-
-      {/* Copy block: the card's headline and support, set as one group the way
-          the reference stacks its lines under the phones. */}
-      <AbsoluteFill
-        style={{
-          top: COPY_TOP,
-          height: 'auto',
-          paddingLeft: 80,
-          paddingRight: 80,
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
-          gap: 12,
-        }}
-      >
         {card.headline ? (
           <div
             style={{
+              marginTop: 4,
               fontFamily: fonts.heading,
               fontWeight: 700,
               fontSize: card.size ?? 46,
@@ -152,6 +139,23 @@ export const IgLaunchPhonesCard: React.FC<{index?: number}> = ({index = 0}) => {
             ))}
           </div>
         ) : null}
+      </AbsoluteFill>
+
+      <PhoneRow card={card} />
+
+      {/* Under the phones: the support lines only. The headline sits in the top
+          group with the lockup. */}
+      <AbsoluteFill
+        style={{
+          top: COPY_TOP,
+          height: 'auto',
+          paddingLeft: 80,
+          paddingRight: 80,
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+        }}
+      >
         {card.support ? (
           <div
             style={{
