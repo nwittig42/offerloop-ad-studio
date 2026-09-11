@@ -45,11 +45,16 @@ first entry is deck position 2 (`IG_LAUNCH_CARD_OFFSET`).
   other answering. Deliberate, but worth a look on a phone.
 - **1.5 billion contacts** is the most screenshot-able and most challengeable
   line in the deck. Verify the number before posting.
-- **Cards 4 to 7 are type only.** Each one is claiming something the product
-  actually does on screen, and the `ad-story-structure` rule is receipts, not
-  claims. Card 4 wants the apply confirmation, card 5 or 6 wants the search
-  result count, card 7 wants a real drafted email with the shared detail in it.
-  Drop those screenshots into `public/assets/recordings/` and they can be
-  placed under the type.
+- **Cards 4, 5 and 7 hold an empty 600x600 media slot** for the recordings:
+  the apply flow, a search being typed, and a real drafted email with the
+  shared detail visible in it. The size is off the reference card Nick sent
+  (55% of frame width, square), which is also the shape the carousel clips are
+  already cut to. Drop a file under `public/` and set `media.src` on the card
+  to fill one.
+- **Cards 3 and 6 have no slot, on purpose.** Card 3 is already carrying the
+  name, the metaphor and the first gesture, and card 6 is the big-type
+  escalation beat that works because it is empty. Both are one line in the
+  cards file if that call turns out wrong; card 3 would want splitting in two
+  rather than compressing.
 - **Card 10 renders twice**: a still for the preview tool, and an mp4 of the
   spin, which is what actually gets posted as the last slide.

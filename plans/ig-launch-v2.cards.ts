@@ -21,6 +21,16 @@ export type CardCopy = {
   support?: string[];
   /** Draw the lockup above the headline (the intro card). */
   mark?: boolean;
+  /**
+   * A square slot under the headline for a screen recording, sized off the
+   * reference card Nick sent: 600x600, which is 55% of the frame width, the
+   * same proportion that card gives its media block.
+   *
+   * With no `src` it renders as a labelled dashed placeholder, so the deck can
+   * be laid out and reviewed before the footage exists. Give it a `src` under
+   * public/ and it renders the real thing.
+   */
+  media?: {src?: string; label?: string};
 };
 
 /** Deck position of the first entry below; card 1 is the cover from cover.py. */
@@ -44,11 +54,13 @@ export const igLaunchV2Cards: CardCopy[] = [
     slug: 'apply',
     headline: ['or swipe, and it', 'applies to the job.'],
     size: 96,
+    media: {label: 'the apply flow'},
   },
   {
     slug: 'search',
     headline: ['search and', 'find anyone.'],
     size: 104,
+    media: {label: 'a search, typed'},
   },
   {
     slug: 'scale',
@@ -57,10 +69,12 @@ export const igLaunchV2Cards: CardCopy[] = [
     support: ['1.5 billion contacts.'],
   },
   {
+    // The one card that most needs its receipt: a real drafted email with the
+    // shared detail visible in it proves the claim the words only assert.
     slug: 'personal',
     headline: ['it finds what you', 'actually have in common.'],
     size: 76,
-    support: ['so every email is different.'],
+    media: {label: 'a drafted email'},
   },
   {
     slug: 'hook-again',

@@ -215,7 +215,7 @@
     {
       "filename": "assets/carousels/ig-launch-v2/4-apply.png",
       "kind": "image",
-      "description": "ig-launch-v2 carousel slide: 'or swipe, and it applies to the job.' at 96px. Reads off card 3's swipe, so the two cannot be reordered. Blue mesh ground, frosted badge top left, white lockup and swipe arrow along the bottom.",
+      "description": "ig-launch-v2 carousel slide: 'or swipe, and it applies to the job.' at 96px. Reads off card 3's swipe, so the two cannot be reordered. Holds an empty 600x600 dashed media slot (55 percent of frame width, square, sized off the reference card) waiting on the apply flow recording. Blue mesh ground, frosted badge top left, white lockup and swipe arrow along the bottom.",
       "source": "derived",
       "model": "Remotion still (IgLaunchCard, tools/carousel/render.mjs)",
       "prompt": "n/a (derived asset)"
@@ -223,7 +223,7 @@
     {
       "filename": "assets/carousels/ig-launch-v2/5-search.png",
       "kind": "image",
-      "description": "ig-launch-v2 carousel slide: 'search and find anyone.' at 104px. Blue mesh ground, frosted badge top left, white lockup and swipe arrow along the bottom.",
+      "description": "ig-launch-v2 carousel slide: 'search and find anyone.' at 104px. Holds an empty 600x600 dashed media slot (55 percent of frame width, square, sized off the reference card) waiting on a recording of a search being typed. Blue mesh ground, frosted badge top left, white lockup and swipe arrow along the bottom.",
       "source": "derived",
       "model": "Remotion still (IgLaunchCard, tools/carousel/render.mjs)",
       "prompt": "n/a (derived asset)"
@@ -239,7 +239,7 @@
     {
       "filename": "assets/carousels/ig-launch-v2/7-personal.png",
       "kind": "image",
-      "description": "ig-launch-v2 carousel slide: 'it finds what you actually have in common.' at 76px over 'so every email is different.' Replaces the script's original spec sentence; wants a real drafted email under it. Blue mesh ground, frosted badge top left, white lockup and swipe arrow along the bottom.",
+      "description": "ig-launch-v2 carousel slide: 'it finds what you actually have in common.' at 76px over 'so every email is different.' Replaces the script's original spec sentence Holds an empty 600x600 dashed media slot (55 percent of frame width, square, sized off the reference card) waiting on a real drafted email with the shared detail in it. Blue mesh ground, frosted badge top left, white lockup and swipe arrow along the bottom.",
       "source": "derived",
       "model": "Remotion still (IgLaunchCard, tools/carousel/render.mjs)",
       "prompt": "n/a (derived asset)"
