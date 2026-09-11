@@ -15,11 +15,16 @@ import {igLaunchV2Cards, type CardCopy} from '../../plans/ig-launch-v2.cards';
  */
 
 // Vertical budget on a 1350-tall card; the footer lockup reaches ~1210.
-/** Top of the headline. */
+/** Top of the headline. ANYONE. at 168px on 1.05 leading ends at ~344. */
 const TOP = 168;
-/** Top of the square panel. */
-const PANEL_TOP = 322;
-const PANEL = 760;
+/**
+ * Top of the square panel, and its size. The panel used to start at 322,
+ * which is above where the headline ends, so ANYONE. sat right on its top
+ * edge. Now it starts at 372 and is 710 rather than 760, which opens a 28px
+ * gap above it and keeps a matching 26px below, before the red line at 1108.
+ */
+const PANEL_TOP = 372;
+const PANEL = 710;
 /** Top of the red line, clearing the panel's bottom at 1082. */
 const COUNT_TOP = 1108;
 
