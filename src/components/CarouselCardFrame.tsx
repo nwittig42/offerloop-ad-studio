@@ -123,9 +123,14 @@ export const CarouselCardFrame: React.FC<{
   children?: React.ReactNode;
   arrow?: boolean;
   badge?: boolean;
-}> = ({children, arrow = true, badge = true}) => (
+  /**
+   * Stands in for the mesh ground — a video plate, say. The badge and footer
+   * still render on top, so a motion card keeps the chrome the stills have.
+   */
+  ground?: React.ReactNode;
+}> = ({children, arrow = true, badge = true, ground}) => (
   <AbsoluteFill>
-    <CarouselGround />
+    {ground ?? <CarouselGround />}
     {badge ? <Badge /> : null}
     {children}
     <CarouselFooter arrow={arrow} />

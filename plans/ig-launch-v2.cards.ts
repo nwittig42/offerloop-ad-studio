@@ -6,8 +6,12 @@
  * is the deck order - starting at deck position 2, because card 1 is the
  * lifted-type cover that tools/carousel/cover.py builds.
  *
- * The hook and hook-again cards are deliberately identical: the deck's whole
- * structure is that bookend. Keep them in sync.
+ * The hook and hook-again cards were deliberately identical - the deck's whole
+ * structure is that bookend. They have DIVERGED: hook is now the motion card
+ * reading 'Networking Takes Forever' and hook-again still reads 'networking is
+ * a pain in the ass.' Nick asked for slide 2 only, so this is left for him to
+ * call: either hook-again takes the new line too, or the bookend is dropped on
+ * purpose.
  */
 export type CardCopy = {
   slug: string;
@@ -31,6 +35,12 @@ export type CardCopy = {
    * public/ and it renders the real thing.
    */
   media?: {src?: string; label?: string};
+  /**
+   * Renders this card as a motion card instead of a still: the clip plays
+   * full-bleed as the ground, headline reversed out in white over a navy
+   * scrim, revealed word by word. See src/compositions/IgLaunchHookCard.tsx.
+   */
+  video?: {src: string; durationSec: number};
 };
 
 /** Deck position of the first entry below; card 1 is the cover from cover.py. */
@@ -38,9 +48,13 @@ export const IG_LAUNCH_CARD_OFFSET = 2;
 
 export const igLaunchV2Cards: CardCopy[] = [
   {
+    // Deck position 2, and the only motion card: the desk timelapse plays
+    // behind the line rather than the mesh ground. Nick's casing, kept as he
+    // wrote it - note the rest of the deck sets its headlines lowercase.
     slug: 'hook',
-    headline: ['networking is', 'a pain in the ass.'],
+    headline: ['Networking', 'Takes Forever'],
     size: 104,
+    video: {src: 'assets/clips/desk-timelapse-carousel-5s.mp4', durationSec: 5},
   },
   {
     slug: 'intro',

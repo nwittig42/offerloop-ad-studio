@@ -2207,6 +2207,15 @@
       "source": "derived",
       "model": "ffmpeg setpts=PTS/2.0 from assets/generated/desk-timelapse-apartment-v1.mp4",
       "prompt": "n/a (derived asset)"
+    },
+    {
+      "filename": "assets/clips/desk-timelapse-carousel-5s.mp4",
+      "kind": "video",
+      "description": "The DeskTimelapseCarousel render (1080x1350, 5s, no app pop-ups) staged under public/ so the ig-launch-v2 motion card can staticFile it. Plays full-bleed as the ground of deck position 2 behind 'Networking Takes Forever'. Re-copy from out/desk-timelapse-carousel-v1.mp4 if that plan changes.",
+      "duration": 5.06,
+      "source": "derived",
+      "model": "remotion render DeskTimelapseCarousel",
+      "prompt": "n/a (derived asset)"
     }
   ]
 }

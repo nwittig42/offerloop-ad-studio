@@ -15,6 +15,7 @@ import {
   carouselProofEmailFps,
 } from './compositions/CarouselProofEmail';
 import {IgLaunchCard} from './compositions/IgLaunchCard';
+import {IgLaunchHookCard} from './compositions/IgLaunchHookCard';
 import {
   IgLaunchOutro,
   igLaunchOutroDurationInFrames,
@@ -22,6 +23,9 @@ import {
 } from './compositions/IgLaunchOutro';
 import {igLaunchV2Cards, IG_LAUNCH_CARD_OFFSET} from '../plans/ig-launch-v2.cards';
 import {CARD_W, CARD_H} from './components/CarouselCardFrame';
+
+/** Motion carousel cards run at 24, matching the clips cut for them. */
+const CARD_FPS = 24;
 import {makePlanMetadata} from './plan/validate';
 import {planDurationInFrames, planFps} from './plan/timing';
 import type {EditPlan} from './plan/types';
@@ -101,19 +105,38 @@ export const Root: React.FC = () => {
         width={1080}
         height={1080}
       />
-      {/* ig-launch-v2 carousel: one still per card, copy from the cards file.
+      {/* ig-launch-v2 carousel: one slot per card, copy from the cards file.
           Numbering starts at 2 - card 1 is the lifted-type cover, built by
-          tools/carousel/cover.py rather than here. */}
-      {igLaunchV2Cards.map((card, index) => (
-        <Still
-          key={card.slug}
-          id={`IgLaunch-${String(index + IG_LAUNCH_CARD_OFFSET).padStart(2, '0')}-${card.slug}`}
-          component={IgLaunchCard}
-          width={CARD_W}
-          height={CARD_H}
-          defaultProps={{index}}
-        />
-      ))}
+          tools/carousel/cover.py rather than here.
+
+          A card carrying `video` is a motion card and renders as a real
+          Composition on IgLaunchHookCard; everything else stays a Still. Both
+          keep the same IgLaunch-NN-slug id, so the preview server's ordering
+          does not care which a card is. */}
+      {igLaunchV2Cards.map((card, index) => {
+        const id = `IgLaunch-${String(index + IG_LAUNCH_CARD_OFFSET).padStart(2, '0')}-${card.slug}`;
+        return card.video ? (
+          <Composition
+            key={card.slug}
+            id={id}
+            component={IgLaunchHookCard}
+            durationInFrames={Math.round(card.video.durationSec * CARD_FPS)}
+            fps={CARD_FPS}
+            width={CARD_W}
+            height={CARD_H}
+            defaultProps={{index}}
+          />
+        ) : (
+          <Still
+            key={card.slug}
+            id={id}
+            component={IgLaunchCard}
+            width={CARD_W}
+            height={CARD_H}
+            defaultProps={{index}}
+          />
+        );
+      })}
       {/* Last card: the mark turning about its vertical axis, one seamless loop. */}
       <Composition
         id="IgLaunch-10-outro"
