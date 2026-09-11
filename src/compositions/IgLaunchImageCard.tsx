@@ -16,14 +16,15 @@ import {igLaunchV2Cards, type CardCopy} from '../../plans/ig-launch-v2.cards';
 // Vertical budget on a 1350-tall card; the footer lockup reaches ~1210.
 /** Top of the copy. Three lines at 54px on 1.2 leading end at ~365. */
 const TOP = 172;
-/** Top of the image, leaving a gap under the copy. */
-const IMAGE_TOP = 402;
 /**
- * Image width. The asset is 1275x1234, so nearly square: 810 wide makes it
- * 784 tall, which is the most that fits between IMAGE_TOP and the footer.
+ * The band the image is fitted into, and the widest it may be. Fitting to a
+ * band rather than pinning a width means swapping in a differently shaped
+ * asset cannot distort it or push it through the footer: the v2 email is
+ * square where v1 was 1.03:1, and at a pinned 810 wide that would have run to
+ * 1212 and printed over the lockup.
  */
-const IMAGE_W = 810;
-const IMAGE_ASPECT = 1275 / 1234;
+const BAND = {top: 402, bottom: 1186};
+const MAX_W = 920;
 
 type Seg = {text: string; red: boolean};
 
@@ -63,6 +64,13 @@ const tint = (line: string, reds: string[]): Seg[] => {
 export const IgLaunchImageCard: React.FC<{index?: number}> = ({index = 0}) => {
   const card: CardCopy = igLaunchV2Cards[index] ?? igLaunchV2Cards[0];
   const reds = card.redParts ?? [];
+  // Fit to the band's height, then pull back if that makes it too wide.
+  const bandH = BAND.bottom - BAND.top;
+  const byHeight = {w: bandH * (card.image?.aspect ?? 1), h: bandH};
+  const fitted =
+    byHeight.w <= MAX_W
+      ? byHeight
+      : {w: MAX_W, h: MAX_W / (card.image?.aspect ?? 1)};
   return (
     <CarouselCardFrame>
       <AbsoluteFill
@@ -106,7 +114,7 @@ export const IgLaunchImageCard: React.FC<{index?: number}> = ({index = 0}) => {
           position: 'absolute',
           left: 0,
           right: 0,
-          top: IMAGE_TOP,
+          top: BAND.top,
           display: 'flex',
           justifyContent: 'center',
         }}
@@ -115,8 +123,8 @@ export const IgLaunchImageCard: React.FC<{index?: number}> = ({index = 0}) => {
           <Img
             src={staticFile(card.image.src)}
             style={{
-              width: IMAGE_W,
-              height: IMAGE_W / IMAGE_ASPECT,
+              width: fitted.w,
+              height: fitted.h,
               borderRadius: 22,
               boxShadow:
                 '0 40px 100px rgba(17,32,64,0.28), 0 8px 24px rgba(17,32,64,0.16)',

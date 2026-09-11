@@ -60,8 +60,13 @@ export type CardCopy = {
    * hookText `highlight`.
    */
   redParts?: string[];
-  /** Still image for the 'image' layout. */
-  image?: {src: string};
+  /**
+   * Still image for the 'image' layout. `aspect` is width/height of the asset
+   * and is required: the card fits the image to a fixed band from it, so a
+   * swap to a differently shaped file cannot silently distort or push past
+   * the footer.
+   */
+  image?: {src: string; aspect: number};
   /**
    * 'phones' is the row of three with the `video` clip in the middle one,
    * headline group above and copy below, per the reference Nick sent
@@ -201,7 +206,9 @@ export const igLaunchV2Cards: CardCopy[] = [
     size: 54,
     redParts: ['No two emails are the same', 'every email'],
     layout: 'image',
-    image: {src: 'assets/generated/email-personalization-annotated.png'},
+    // v2: same draft, more of the borrowed details ringed and labelled.
+    // 1254x1254, where v1 was 1275x1234.
+    image: {src: 'assets/generated/email-personalization-annotated-v2.png', aspect: 1},
   },
   // The last card is the spinning mark, rendered by IgLaunchOutro rather than
   // from this list; it carries no type at all.

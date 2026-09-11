@@ -2290,7 +2290,15 @@
     {
       "filename": "assets/generated/email-personalization-annotated.png",
       "kind": "image",
-      "description": "Nick's annotated Gmail compose window, 1275x1234: a real drafted outreach email to a Morgan Stanley recruiter, with the borrowed details ringed in red and green and labelled INFO / recipient info / SIMILARITY / alignment. The receipt for ig-launch-v2 slide 6. The recipient's work email in the To row is boxblurred out in this saved copy; masking emails is the standing call.",
+      "description": "SUPERSEDED by email-personalization-annotated-v2.png, which has more annotations. Nick's annotated Gmail compose window, 1275x1234: a real drafted outreach email to a Morgan Stanley recruiter, with the borrowed details ringed in red and green and labelled INFO / recipient info / SIMILARITY / alignment. The receipt for ig-launch-v2 slide 6. The recipient's work email in the To row is boxblurred out in this saved copy; masking emails is the standing call.",
+      "source": "derived",
+      "model": "ChatGPT-generated annotation over Nick's screenshot; ffmpeg boxblur over the To row",
+      "prompt": "n/a (supplied asset)"
+    },
+    {
+      "filename": "assets/generated/email-personalization-annotated-v2.png",
+      "kind": "image",
+      "description": "v2 of Nick's annotated Gmail compose window, 1254x1254 (square, where v1 was 1275x1234): the same drafted outreach email to a Morgan Stanley recruiter, with more of the borrowed details ringed and labelled (recipient info, personalization, shared background, similarity, alignment). Live on ig-launch-v2 slide 6, replacing v1. The recipient's work email in the To row is boxblurred out; masking emails is the standing call.",
       "source": "derived",
       "model": "ChatGPT-generated annotation over Nick's screenshot; ffmpeg boxblur over the To row",
       "prompt": "n/a (supplied asset)"
