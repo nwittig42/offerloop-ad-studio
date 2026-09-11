@@ -22,12 +22,10 @@ skill).
 | 1 | hook | Networking is a Pain in the A** | motion |
 | 2 | intro | SO WE BUILT / [lockup] / a dating app for professional connections. / swipe, and it emails them. introducing you. | motion |
 | 3 | apply | or swipe, and it applies to the job. / it even writes a custom cover letter | motion |
-| 4 | search | search and find anyone. | |
-| 5 | scale | ANYONE. / 1.5 billion contacts. | |
-| 6 | personal | it finds what you actually have in common. / so every email is different. | |
-| 7 | hook again | networking is a pain in the ass. | |
-| 8 | payoff | now it's not. | |
-| 9 | outro | [icon mark, spinning about its vertical axis] | motion |
+| 4 | search | search and find anyone. | motion |
+| 5 | scale | ANYONE. / 1.5 billion contacts. (red) | motion |
+| 6 | personal | No two emails are the same, (red) we find what you have in common and personalize every email (red) | |
+| 7 | outro | [icon mark, spinning about its vertical axis] | motion |
 
 Every card comes from `ig-launch-v2.cards.ts`, whose first entry is deck
 position 1 (`IG_LAUNCH_CARD_OFFSET`). The lifted-type cover that used to be
@@ -36,11 +34,14 @@ card 1 was cut; `tools/carousel/cover.py` still builds it and the
 
 Cards marked motion render as real compositions rather than stills, and the
 deck folder carries an mp4 beside the png for each: the mp4 is what gets
-posted, the png is only what the preview server can display. Slides 1 to 3
-each run exactly 5.00s at 24fps.
+posted, the png is only what the preview server can display. Lengths differ by
+what the footage needs: slides 1 to 3 are 5.00s, slide 4 is 4.00s, slide 5 is
+7.00s because the LA-to-globe zoom needs the room to read as one move.
 
-The hook / hook-again bookend has diverged: card 1 is title case and censored,
-card 7 is still lowercase and uncensored. Nick's call whether card 7 follows.
+The bookend is gone. The deck used to repeat the hook near the end and then
+resolve it with "now it's not."; both cards were cut, so it now runs hook,
+product, proof, mark, ending on the spinning icon rather than on a payoff
+line.
 
 ## Open items
 

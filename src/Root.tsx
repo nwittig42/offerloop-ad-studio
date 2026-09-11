@@ -171,7 +171,7 @@ export const Root: React.FC = () => {
       })}
       {/* Last card: the mark turning about its vertical axis, one seamless loop. */}
       <Composition
-        id="IgLaunch-09-outro"
+        id="IgLaunch-07-outro"
         component={IgLaunchOutro}
         durationInFrames={igLaunchOutroDurationInFrames}
         fps={igLaunchOutroFps}

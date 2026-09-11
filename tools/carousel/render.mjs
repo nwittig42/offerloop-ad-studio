@@ -23,7 +23,7 @@ import {mkdirSync, readFileSync, statSync} from 'node:fs';
 
 const OUT = 'public/assets/carousels/ig-launch-v2';
 const CARDS = 'plans/ig-launch-v2.cards.ts';
-const OUTRO = {id: 'IgLaunch-09-outro', file: '9-outro'};
+const OUTRO = {id: 'IgLaunch-07-outro', file: '7-outro'};
 
 const cardsSrc = readFileSync(CARDS, 'utf8');
 const slugs = [...cardsSrc.matchAll(/^\s*slug: '([a-z0-9-]+)'/gm)].map((m) => m[1]);

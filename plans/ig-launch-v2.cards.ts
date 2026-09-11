@@ -8,12 +8,9 @@
  * Nick's request. tools/carousel/cover.py still exists and still works, it
  * just is not part of the deck any more.
  *
- * The hook and hook-again cards are the deck's bookend and were deliberately
- * identical. They still say the same sentence, but they no longer match:
- * hook is the motion card, set title case and censored ('Networking is a Pain
- * in the A**'), while hook-again is a still, lowercase and uncensored
- * ('networking is a pain in the ass.'). Nick asked for slide 2 only, so
- * whether hook-again follows it is his call.
+ * The deck used to bookend: a hook-again card repeating slide 1, then a
+ * "now it's not." payoff. Both were cut at Nick's request, so the deck now
+ * runs hook, product, proof, mark, with no restatement and no payoff line.
  */
 /** One phone in the slide-3 row: a still by default, a clip with `video`. */
 export type PhoneSlot = {src: string; video?: boolean};
@@ -204,16 +201,6 @@ export const igLaunchV2Cards: CardCopy[] = [
     redParts: ['No two emails are the same', 'every email'],
     layout: 'image',
     image: {src: 'assets/generated/email-personalization-annotated.png'},
-  },
-  {
-    slug: 'hook-again',
-    headline: ['networking is', 'a pain in the ass.'],
-    size: 104,
-  },
-  {
-    slug: 'payoff',
-    headline: ["now it's not."],
-    size: 128,
   },
   // The last card is the spinning mark, rendered by IgLaunchOutro rather than
   // from this list; it carries no type at all.
