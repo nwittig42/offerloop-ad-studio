@@ -50,7 +50,7 @@ import restyle  # noqa: E402  (same directory)
 CAROUSELS = Path("public/assets/carousels")
 SRC = CAROUSELS / "ig-launch" / "1-cover.png"
 GREY_OUT = CAROUSELS / "_edits" / "1-cover.png"
-BLUE_OUT = CAROUSELS / "ig-launch-blue" / "1-cover.png"
+BLUE_OUT = CAROUSELS / "ig-launch-v2" / "1-cover.png"
 
 # Columns that are empty on every row, so the ground ramp can be read off
 # them: the headline stops at x536 and the old swipe pill started at x838.

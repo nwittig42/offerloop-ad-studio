@@ -20,7 +20,7 @@ import {
   igLaunchOutroDurationInFrames,
   igLaunchOutroFps,
 } from './compositions/IgLaunchOutro';
-import {igLaunchV2Cards} from '../plans/ig-launch-v2.cards';
+import {igLaunchV2Cards, IG_LAUNCH_CARD_OFFSET} from '../plans/ig-launch-v2.cards';
 import {CARD_W, CARD_H} from './components/CarouselCardFrame';
 import {makePlanMetadata} from './plan/validate';
 import {planDurationInFrames, planFps} from './plan/timing';
@@ -93,20 +93,22 @@ export const Root: React.FC = () => {
         width={1080}
         height={1080}
       />
-      {/* ig-launch-v2 carousel: one still per card, copy from the cards file. */}
+      {/* ig-launch-v2 carousel: one still per card, copy from the cards file.
+          Numbering starts at 2 - card 1 is the lifted-type cover, built by
+          tools/carousel/cover.py rather than here. */}
       {igLaunchV2Cards.map((card, index) => (
         <Still
           key={card.slug}
-          id={`IgLaunch-${String(index + 1).padStart(2, '0')}-${card.slug}`}
+          id={`IgLaunch-${String(index + IG_LAUNCH_CARD_OFFSET).padStart(2, '0')}-${card.slug}`}
           component={IgLaunchCard}
           width={CARD_W}
           height={CARD_H}
           defaultProps={{index}}
         />
       ))}
-      {/* Card 9: the mark turning about its vertical axis, one seamless loop. */}
+      {/* Last card: the mark turning about its vertical axis, one seamless loop. */}
       <Composition
-        id="IgLaunch-09-outro"
+        id="IgLaunch-10-outro"
         component={IgLaunchOutro}
         durationInFrames={igLaunchOutroDurationInFrames}
         fps={igLaunchOutroFps}

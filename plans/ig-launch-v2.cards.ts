@@ -2,11 +2,12 @@
  * ig-launch-v2 carousel cards. Script and rationale: ig-launch-v2.script.md.
  *
  * One entry per slide, rendered by the IgLaunchCard still (src/compositions).
- * `slug` becomes the filename the preview server sorts on, so the numbering
- * here is the deck order.
+ * `slug` becomes the filename the preview server sorts on, so the order here
+ * is the deck order - starting at deck position 2, because card 1 is the
+ * lifted-type cover that tools/carousel/cover.py builds.
  *
- * Cards 1 and 7 are deliberately identical: the deck's whole structure is that
- * bookend. Keep them in sync.
+ * The hook and hook-again cards are deliberately identical: the deck's whole
+ * structure is that bookend. Keep them in sync.
  */
 export type CardCopy = {
   slug: string;
@@ -18,9 +19,12 @@ export type CardCopy = {
   size?: number;
   /** Inter lines under the headline. */
   support?: string[];
-  /** Draw the lockup as the headline instead of type (card 2). */
+  /** Draw the lockup above the headline (the intro card). */
   mark?: boolean;
 };
+
+/** Deck position of the first entry below; card 1 is the cover from cover.py. */
+export const IG_LAUNCH_CARD_OFFSET = 2;
 
 export const igLaunchV2Cards: CardCopy[] = [
   {
@@ -68,6 +72,6 @@ export const igLaunchV2Cards: CardCopy[] = [
     headline: ["now it's not."],
     size: 128,
   },
-  // Card 9 is the spinning mark, rendered by IgLaunchOutro rather than from
-  // this list; it carries no type at all.
+  // The last card is the spinning mark, rendered by IgLaunchOutro rather than
+  // from this list; it carries no type at all.
 ];

@@ -1,19 +1,23 @@
-// Renders the ig-launch-v2 carousel: eight type cards as stills, plus card 9
-// twice - a still so the preview server has something to show, and the mp4 of
-// the spin, which is what actually gets posted as the last slide.
+// Renders the ig-launch-v2 carousel: the lifted-type cover from cover.py,
+// eight typeset cards as stills, then the last card twice - a still so the
+// preview server has something to show, and the mp4 of the spin, which is what
+// actually gets posted as the tenth slide.
 //
 // Slugs are read out of plans/ig-launch-v2.cards.ts rather than repeated here,
 // so re-ordering the deck is a one-file change.
 //
 // Usage:
-//   npm run carousel:cards          -> the whole deck
+//   npm run carousel:cards          -> the whole deck, cover included
 //   npm run carousel:cards -- hook  -> only cards whose slug starts with that
 import {execSync} from 'node:child_process';
 import {mkdirSync, readFileSync, statSync} from 'node:fs';
 
 const OUT = 'public/assets/carousels/ig-launch-v2';
 const CARDS = 'plans/ig-launch-v2.cards.ts';
-const OUTRO = {id: 'IgLaunch-09-outro', file: '9-outro'};
+const OUTRO = {id: 'IgLaunch-10-outro', file: '10-outro'};
+// Card 1 is the lifted-type cover; cover.py owns it, so the typeset cards
+// start at deck position 2.
+const OFFSET = 2;
 
 const slugs = [...readFileSync(CARDS, 'utf8').matchAll(/^\s*slug: '([a-z0-9-]+)'/gm)].map(
   (m) => m[1],
@@ -21,8 +25,8 @@ const slugs = [...readFileSync(CARDS, 'utf8').matchAll(/^\s*slug: '([a-z0-9-]+)'
 if (!slugs.length) throw new Error(`no slugs found in ${CARDS}`);
 
 const cards = slugs.map((slug, i) => ({
-  id: `IgLaunch-${String(i + 1).padStart(2, '0')}-${slug}`,
-  file: `${i + 1}-${slug}`,
+  id: `IgLaunch-${String(i + OFFSET).padStart(2, '0')}-${slug}`,
+  file: `${i + OFFSET}-${slug}`,
 }));
 
 const filters = process.argv.slice(2);
@@ -30,6 +34,12 @@ const wanted = ({file}) =>
   !filters.length || filters.some((f) => file.replace(/^\d+-/, '').startsWith(f));
 
 mkdirSync(OUT, {recursive: true});
+
+// Card 1 is not typeset: it is the original deck's cover with its type lifted,
+// rescaled and re-centred, so it comes from the python side.
+if (!filters.length || filters.some((f) => 'cover'.startsWith(f))) {
+  execSync('.venv-key/bin/python tools/carousel/cover.py', {stdio: 'inherit'});
+}
 
 const report = (out) => console.log(`✓ ${out} (${Math.round(statSync(out).size / 1024)} KB)`);
 
