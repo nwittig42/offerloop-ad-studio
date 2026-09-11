@@ -1,13 +1,17 @@
 import React from 'react';
 import {AbsoluteFill} from 'remotion';
-import {CarouselCardFrame, CAROUSEL_RED} from '../components/CarouselCardFrame';
+import {CarouselCardFrame, CAROUSEL_RED, CARD_W, CARD_H} from '../components/CarouselCardFrame';
 import {GlobeScale} from '../components/GlobeScale';
-import {colors, fonts} from '../../brand/theme';
+import {fonts} from '../../brand/theme';
 import {igLaunchV2Cards, type CardCopy} from '../../plans/ig-launch-v2.cards';
 
 /**
- * Deck position 5 (scale): ANYONE. above, the LA-to-globe animation in a
- * square panel below it, and the contact count under that in red.
+ * Deck position 5 (scale): the LA-to-globe animation as the whole ground, with
+ * ANYONE. reversed out in white over it and the contact count in red below.
+ *
+ * The animation used to sit in a square panel on the mesh. As the ground it
+ * replaces the mesh entirely, which is why the type here is white while every
+ * other card sets its headline in navy.
  *
  * The animation is the GlobeScale component rendered in place, not the
  * out/globe-scale.mp4 file played back. Same pixels either way, minus a second
@@ -15,23 +19,32 @@ import {igLaunchV2Cards, type CardCopy} from '../../plans/ig-launch-v2.cards';
  */
 
 // Vertical budget on a 1350-tall card; the footer lockup reaches ~1210.
-/** Top of the headline. ANYONE. at 168px on 1.05 leading ends at ~344. */
-const TOP = 168;
+/** Top of the headline. ANYONE. at 190px on 1.05 leading ends at ~356. */
+const TOP = 156;
+/** Top of the red line, which ends ~1190. */
+const COUNT_TOP = 1126;
+
 /**
- * Top of the square panel, and its size. The panel used to start at 322,
- * which is above where the headline ends, so ANYONE. sat right on its top
- * edge. Now it starts at 372 and is 710 rather than 760, which opens a 28px
- * gap above it and keeps a matching 26px below, before the red line at 1108.
+ * The ground is footage now, and it travels from a dark city map to a bright
+ * blue globe. White type holds over the dark end on its own but loses contrast
+ * against lit land, and the red line and the white footer lockup have the same
+ * problem, so the top and bottom are deepened. The middle is left alone: that
+ * is where the globe is, and a veil over the whole frame would only dull it.
  */
-const PANEL_TOP = 372;
-const PANEL = 710;
-/** Top of the red line, clearing the panel's bottom at 1082. */
-const COUNT_TOP = 1108;
+const SCRIM =
+  'linear-gradient(to bottom, rgba(4,9,22,0.74) 0%, rgba(4,9,22,0.20) 24%, rgba(4,9,22,0) 42%, rgba(4,9,22,0) 62%, rgba(4,9,22,0.36) 78%, rgba(4,9,22,0.80) 100%)';
 
 export const IgLaunchGlobeCard: React.FC<{index?: number}> = ({index = 0}) => {
   const card: CardCopy = igLaunchV2Cards[index] ?? igLaunchV2Cards[0];
   return (
-    <CarouselCardFrame>
+    <CarouselCardFrame
+      ground={
+        <AbsoluteFill>
+          <GlobeScale width={CARD_W} height={CARD_H} showLabel={false} />
+          <AbsoluteFill style={{background: SCRIM}} />
+        </AbsoluteFill>
+      }
+    >
       <AbsoluteFill
         style={{
           top: TOP,
@@ -46,10 +59,10 @@ export const IgLaunchGlobeCard: React.FC<{index?: number}> = ({index = 0}) => {
             style={{
               fontFamily: fonts.heading,
               fontWeight: 700,
-              fontSize: card.size ?? 168,
+              fontSize: card.size ?? 190,
               lineHeight: 1.05,
               letterSpacing: '-0.03em',
-              color: colors.secondaryDark,
+              color: '#FFFFFF',
               textAlign: 'center',
             }}
           >
@@ -59,33 +72,6 @@ export const IgLaunchGlobeCard: React.FC<{index?: number}> = ({index = 0}) => {
           </div>
         ) : null}
       </AbsoluteFill>
-
-      <div
-        style={{
-          position: 'absolute',
-          left: 0,
-          right: 0,
-          top: PANEL_TOP,
-          display: 'flex',
-          justifyContent: 'center',
-        }}
-      >
-        <div
-          style={{
-            width: PANEL,
-            height: PANEL,
-            borderRadius: 28,
-            overflow: 'hidden',
-            // Required: GlobeScale is an AbsoluteFill, which would otherwise
-            // position against the card and paint over the whole thing.
-            position: 'relative',
-            boxShadow:
-              '0 40px 100px rgba(17,32,64,0.32), 0 8px 24px rgba(17,32,64,0.18)',
-          }}
-        >
-          <GlobeScale width={PANEL} height={PANEL} />
-        </div>
-      </div>
 
       <AbsoluteFill
         style={{

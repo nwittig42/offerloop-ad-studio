@@ -153,7 +153,17 @@ export const GLOBE_DURATION = T.end;
  * the globe rendered oversized and off-centre inside a 760px square. The
  * panel must also be position:relative, or the AbsoluteFill here escapes it.
  */
-export const GlobeScale: React.FC<{width?: number; height?: number}> = (props) => {
+export const GlobeScale: React.FC<{
+  width?: number;
+  height?: number;
+  /**
+   * The LOS ANGELES caption. On the standalone clip it is what tells you where
+   * the opening beat is. Off when this is a card's ground: the scale card sets
+   * ANYONE. as its headline, and the caption collided with it at the top of
+   * the frame and read as an accident rather than a label.
+   */
+  showLabel?: boolean;
+}> = (props) => {
   const frame = useCurrentFrame();
   const cfg = useVideoConfig();
   const width = props.width ?? cfg.width;
@@ -299,10 +309,13 @@ export const GlobeScale: React.FC<{width?: number; height?: number}> = (props) =
 
   // Names the opening location, because a coastline with no streets on it does
   // not say Los Angeles on its own.
-  const labelOn = interpolate(frame, [6, 16, T.laHold, T.laHold + 12], [0, 1, 1, 0], {
-    extrapolateLeft: 'clamp',
-    extrapolateRight: 'clamp',
-  });
+  const labelOn =
+    (props.showLabel ?? true)
+      ? interpolate(frame, [6, 16, T.laHold, T.laHold + 12], [0, 1, 1, 0], {
+          extrapolateLeft: 'clamp',
+          extrapolateRight: 'clamp',
+        })
+      : 0;
 
   return (
     <AbsoluteFill style={{backgroundColor: C.ocean, overflow: 'hidden'}}>

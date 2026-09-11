@@ -169,9 +169,10 @@ export const igLaunchV2Cards: CardCopy[] = [
     },
   },
   {
-    // Deck position 5. ANYONE. over the LA-to-globe animation, count in red
-    // beneath it. 7s, the longest card in the deck, because the zoom needs
-    // the room to read as one continuous move.
+    // Deck position 5. ANYONE. in white over the LA-to-globe animation, which
+    // is the card's whole ground rather than a panel on it, with the count in
+    // red near the foot. 7s, the longest card in the deck, because the zoom
+    // needs the room to read as one continuous move.
     //
     // `video` has no src: the animation is the GlobeScale component drawn in
     // place rather than a file, so there is nothing to load. The field is
@@ -179,7 +180,7 @@ export const igLaunchV2Cards: CardCopy[] = [
     // deck still.
     slug: 'scale',
     headline: ['ANYONE.'],
-    size: 168,
+    size: 190,
     support: ['1.5 billion contacts.'],
     layout: 'globe',
     video: {durationSec: 7, posterFrame: 126},

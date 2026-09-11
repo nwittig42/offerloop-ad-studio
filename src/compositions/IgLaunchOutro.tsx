@@ -9,7 +9,7 @@ import {colors, fonts} from '../../brand/theme';
  *
  * This replaced the spinning icon mark. The lockup is the hero here, so the
  * frame's own footer lockup is switched off rather than printing a second one
- * below it.
+ * below it. The badge stays, so the icon is top left as on every other card.
  *
  * The lockup sits in its native navy and blue, not the white the footer uses.
  * A gleam is a bright streak, and on a white mark there is nothing brighter
@@ -21,7 +21,7 @@ export const igLaunchOutroDurationInFrames = 120; // 4s
 
 const LOCKUP = 'assets/figma/offerloop-lockup-trim.png';
 /** The export is 526x129. */
-const LOCKUP_W = 620;
+const LOCKUP_W = 720;
 const LOCKUP_H = Math.round((LOCKUP_W * 129) / 526);
 
 /**
@@ -73,7 +73,10 @@ const Gleam: React.FC = () => {
 
 export const IgLaunchOutro: React.FC = () => {
   return (
-    <CarouselCardFrame arrow={false} badge={false} footer={false}>
+    // Badge on, so the icon sits top left like every other card. Arrow off
+    // (nothing left to swipe to) and footer off, because this card is the
+    // lockup and the footer would print a second one below it.
+    <CarouselCardFrame arrow={false} footer={false}>
       <AbsoluteFill
         style={{
           alignItems: 'center',
@@ -101,7 +104,7 @@ export const IgLaunchOutro: React.FC = () => {
           style={{
             fontFamily: fonts.heading,
             fontWeight: 700,
-            fontSize: 60,
+            fontSize: 70,
             letterSpacing: '-0.02em',
             color: colors.secondaryDark,
             textAlign: 'center',
