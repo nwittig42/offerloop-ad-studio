@@ -29,15 +29,21 @@ const inch = (n: number) => n * DPI;
 const MARGIN = inch(0.55);
 
 /**
- * Where the two how-to columns send the reader. offerloop.ai is the domain
- * every other asset in this repo uses, so the app link is real. The extension
- * link is a stand-in: no Chrome Web Store URL exists anywhere in the repo yet.
- * Nick is sending both, so they live here rather than inline, and swapping
- * them is a one line change each.
+ * Where the two how-to columns send the reader. Both store URLs are live and
+ * confirmed by Nick. Neither is typeable off a printed page, so each column
+ * leads with the action and prints the URL underneath at small size, which is
+ * what `action` and `url` are for. If QR codes land later they replace `url`,
+ * not `action`.
  */
 const LINKS = {
-  app: 'offerloop.ai',
-  extension: 'offerloop.ai/extension',
+  app: {
+    action: 'Download on the App Store',
+    url: 'apps.apple.com/us/app/offerloop/id6789441106',
+  },
+  extension: {
+    action: 'Search Offerloop in the Chrome Web Store',
+    url: 'chromewebstore.google.com/detail/offerloop/aabnjgecmobcnnhkilbeocggbmgilpcl',
+  },
 };
 
 /**
@@ -66,6 +72,7 @@ const TYPE = {
   statNumber: 148,
   statLabel: 36,
   link: 38,
+  url: 23,
 };
 const GAP = inch(0.14);
 
@@ -285,19 +292,36 @@ const Shot: React.FC<{src?: string; label: string}> = ({src, label}) =>
     </div>
   );
 
-/** The "go here" line that closes each how-to column. */
-const LinkLine: React.FC<{prefix: string; href: string}> = ({prefix, href}) => (
-  <div
-    style={{
-      marginTop: inch(0.04),
-      fontFamily: fonts.body,
-      fontSize: TYPE.link,
-      lineHeight: 1.3,
-      color: colors.secondaryDark,
-    }}
-  >
-    {prefix}{' '}
-    <span style={{fontWeight: 700, color: colors.primary}}>{href}</span>
+/**
+ * The "go here" block that closes each how-to column: the action in reading
+ * size, the full URL under it small. The URL is there to be scanned by eye or
+ * typed in a pinch, not to be the instruction.
+ */
+const LinkLine: React.FC<{action: string; url: string}> = ({action, url}) => (
+  <div style={{marginTop: inch(0.05)}}>
+    <div
+      style={{
+        fontFamily: fonts.body,
+        fontWeight: 700,
+        fontSize: TYPE.link,
+        lineHeight: 1.25,
+        color: colors.primary,
+      }}
+    >
+      {action}
+    </div>
+    <div
+      style={{
+        marginTop: 6,
+        fontFamily: fonts.body,
+        fontSize: TYPE.url,
+        lineHeight: 1.3,
+        color: '#7C88A4',
+        wordBreak: 'break-all',
+      }}
+    >
+      {url}
+    </div>
   </div>
 );
 
@@ -410,7 +434,7 @@ export const Brochure: React.FC = () => (
                 Swipe on people. Offerloop emails them for you, and replies come
                 to your inbox.
               </Step>
-              <LinkLine prefix="Get it at" href={LINKS.app} />
+              <LinkLine action={LINKS.app.action} url={LINKS.app.url} />
             </div>
             <div>
               <ColHead>The Chrome extension</ColHead>
@@ -425,7 +449,10 @@ export const Brochure: React.FC = () => (
                 Click the Offerloop icon. It pulls their email and writes the
                 intro for you.
               </Step>
-              <LinkLine prefix="Add it at" href={LINKS.extension} />
+              <LinkLine
+                action={LINKS.extension.action}
+                url={LINKS.extension.url}
+              />
             </div>
           </Cols>
         </Panel>
@@ -440,7 +467,20 @@ export const Brochure: React.FC = () => (
           alignItems: 'center',
         }}
       >
-        <WhiteLockup width={inch(1.85)} />
+        <WhiteLockup width={inch(1.7)} />
+        <div
+          style={{
+            marginLeft: inch(0.26),
+            paddingLeft: inch(0.26),
+            borderLeft: '3px solid rgba(255,255,255,0.45)',
+            fontFamily: fonts.body,
+            fontWeight: 700,
+            fontSize: 42,
+            color: colors.white,
+          }}
+        >
+          offerloop.ai
+        </div>
       </div>
     </div>
   </AbsoluteFill>
