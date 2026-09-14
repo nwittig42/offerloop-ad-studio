@@ -29,6 +29,7 @@ import {
 } from './compositions/IgLaunchOutro';
 import {igLaunchV2Cards, IG_LAUNCH_CARD_OFFSET} from '../plans/ig-launch-v2.cards';
 import {CARD_W, CARD_H} from './components/CarouselCardFrame';
+import {Brochure, PAGE_W, PAGE_H} from './compositions/Brochure';
 
 /** Motion carousel cards run at 24, matching the clips cut for them. */
 const CARD_FPS = 24;
@@ -198,6 +199,8 @@ export const Root: React.FC = () => {
         width={1920}
         height={1080}
       />
+      {/* Print piece, not a slide: letter paper at 300dpi. */}
+      <Still id="Brochure" component={Brochure} width={PAGE_W} height={PAGE_H} />
       {[...appStorePanels, ...appStorePanelsV2].map(({id, component}) => (
         <Still key={id} id={id} component={component} width={PANEL_W} height={PANEL_H} />
       ))}
