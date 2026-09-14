@@ -53,8 +53,14 @@ const LINKS = {
  * before the captures exist. Same idea as CardCopy.media on the carousels.
  */
 const SHOTS: {app?: string; extension?: string} = {
-  app: undefined,
-  extension: undefined,
+  // Frames cut from Nick's two screen recordings (the .mov sources sit beside
+  // them). Each is cropped to its useful region rather than shown whole: the
+  // app frame drops the iOS status bar and the tab bar, the extension frame
+  // drops the empty profile skeleton below the fold. Their shapes are still
+  // far apart, 0.6 against 2.6, which is why the slot below fits by height and
+  // lets each one find its own width.
+  app: 'assets/recordings/brochure-app-card.png',
+  extension: 'assets/recordings/brochure-extension-panel.png',
 };
 
 /**
@@ -63,26 +69,31 @@ const SHOTS: {app?: string; extension?: string} = {
  * passes ran off the bottom of the page. Change one and check the foot again.
  */
 const TYPE = {
-  title: 122,
+  title: 108,
   standfirst: 47,
   eyebrow: 32,
   body: 44,
   colHead: 40,
   step: 42,
-  statNumber: 148,
+  statNumber: 132,
   statLabel: 36,
   link: 38,
   url: 23,
 };
-const GAP = inch(0.14);
+const GAP = inch(0.1);
 
 const BADGE = {size: 268, icon: 0.58};
 
 const PANEL_RADIUS = 36;
-const PANEL_PAD = inch(0.28);
+const PANEL_PAD = inch(0.26);
 
-/** Height of both screenshot slots. Equal, so the two how-to columns align. */
-const SHOT_H = inch(1.4);
+/**
+ * Height of both screenshot slots. Equal, so the two how-to columns stay
+ * aligned even though the images inside them are shaped nothing alike: the
+ * phone capture fills the height and stays narrow, the desktop capture fills
+ * the width and sits centred in the leftover height.
+ */
+const SHOT_H = inch(1.85);
 
 const Badge: React.FC = () => (
   <div
@@ -177,7 +188,7 @@ const ColHead: React.FC<{children: React.ReactNode; muted?: boolean}> = ({
       fontWeight: 700,
       fontSize: TYPE.colHead,
       color: muted ? '#8792AC' : colors.primary,
-      marginBottom: inch(0.11),
+      marginBottom: inch(0.1),
     }}
   >
     {children}
@@ -218,7 +229,7 @@ const Step: React.FC<{n: number; children: React.ReactNode}> = ({n, children}) =
       display: 'flex',
       alignItems: 'flex-start',
       gap: inch(0.16),
-      marginBottom: inch(0.13),
+      marginBottom: inch(0.1),
     }}
   >
     <div
@@ -266,7 +277,7 @@ const Shot: React.FC<{src?: string; label: string}> = ({src, label}) =>
         width: '100%',
         height: SHOT_H,
         objectFit: 'contain',
-        borderRadius: 24,
+        borderRadius: 18,
       }}
     />
   ) : (
@@ -338,7 +349,7 @@ export const Brochure: React.FC = () => (
       style={{
         position: 'absolute',
         inset: 0,
-        padding: `${inch(0.52)}px ${MARGIN}px ${inch(0.36)}px`,
+        padding: `${inch(0.52)}px ${MARGIN}px ${inch(0.28)}px`,
         display: 'flex',
         flexDirection: 'column',
       }}
@@ -378,9 +389,9 @@ export const Brochure: React.FC = () => (
             <div>
               <ColHead muted>The old way</ColHead>
               <Body muted>
-                Scroll LinkedIn for hours. Find the companies. Find the right
-                people. Hunt down their emails. Write every message from
-                scratch. Then start over. It is slow and boring.
+                Scroll LinkedIn for hours. Find the companies, find the right
+                people, hunt down their emails, write every message from
+                scratch. Then start over.
               </Body>
             </div>
             <div>
@@ -410,11 +421,10 @@ export const Brochure: React.FC = () => (
           </Cols>
           <div style={{marginTop: inch(0.2)}}>
             <Body>
-              Applying cold barely works. Your resume lands in a pile of a
-              thousand and nobody is looking for it. Knowing one person changes
-              that: you get a call, you make an impression, and your
-              application gets flagged. Doing that by hand takes forever.
-              Offerloop does it in minutes.
+              Applying cold barely works. Knowing one person changes that: you
+              get a call, you make an impression, and your application gets
+              flagged. Doing that by hand takes forever. Offerloop does it in
+              minutes.
             </Body>
           </div>
         </Panel>
@@ -461,7 +471,7 @@ export const Brochure: React.FC = () => (
       <div
         style={{
           marginTop: 'auto',
-          paddingTop: inch(0.22),
+          paddingTop: inch(0.16),
           display: 'flex',
           justifyContent: 'center',
           alignItems: 'center',
