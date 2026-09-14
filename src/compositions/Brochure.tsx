@@ -378,7 +378,10 @@ export const Brochure: React.FC = () => (
             />
             <Stat
               value="8,000+"
-              label="college students signed up in our first week"
+              // Website users, not app signups: the app and the Chrome
+              // extension are brand new, so nothing here dates the 8,000 to
+              // them or to a launch window.
+              label="college students already using Offerloop"
             />
           </Cols>
           <div style={{marginTop: inch(0.2)}}>
