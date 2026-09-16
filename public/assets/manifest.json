@@ -31,6 +31,13 @@
       "prompt": "n/a (derived asset)"
     },
     {
+      "filename": "assets/figma/offerloop-icon.svg",
+      "kind": "image",
+      "description": "The Offerloop loop mark as vector, 1024 viewBox, one path with a horizontal navy-to-cyan gradient. Traced from offerloop-icon-trim.png by tools/glass-badge/trace-icon.py because no vector of the mark exists in Figma and the 122x122 raster goes soft above about 200px. Sits within 0.5% of the source by area. This is what GlassBadge renders now, and it is the file to reach for anywhere the mark is needed without the glass disc. Committed copy lives at export/glass-badge/offerloop-icon.svg, since public/assets is gitignored.",
+      "source": "dropped",
+      "prompt": "n/a (potrace of assets/figma/offerloop-icon-trim.png, see tools/glass-badge/trace-icon.py)"
+    },
+    {
       "filename": "assets/carousels/ig-launch-blue/1-cover.png",
       "kind": "image",
       "description": "Restyled slide 1 of 8, cover, re-laid out 2026-09-10 after the PINNED reference cover. Two elements: 'so... what is' as a small serif lead-in (41px ascender, the reference's size mapped onto this canvas) over the Offerloop lockup at 620px wide, the pair centred at 48 percent of frame height. Along the bottom, the same lockup filled white at 220px plus a white keep-swiping arrow, where the swipe pill used to be. Gone from the original slide: the LAUNCH eyebrow, the 'free month of Pro' pill, the 'iOS, free to start' line, the typeset 'Offerloop?' with its question mark and orange rule, and the 'your job search. on autopilot.' subhead. Frosted-glass badge top left, blue mesh gradient ground.",

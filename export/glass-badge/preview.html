@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Offerloop glass badge</title>
+<style>
+  :root {
+    --ink: #1E2D4D;
+    --paper: #F5F6F8;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    padding: 48px 32px 96px;
+    background: var(--paper);
+    color: var(--ink);
+    font: 15px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+  }
+  h1 { font-size: 22px; margin: 0 0 6px; }
+  p.lede { margin: 0 0 40px; max-width: 62ch; opacity: .7; }
+  h2 { font-size: 13px; letter-spacing: .09em; text-transform: uppercase; opacity: .55; margin: 40px 0 12px; }
+  .note { max-width: 62ch; opacity: .65; margin: 8px 0 0; font-size: 13px; }
+
+  /* The badge, as a pure-CSS twin of GlassBadge.tsx. Fractions of --d match
+     the component's R map, so this page is a real preview and not a mockup. */
+  .badge {
+    --d: 132px;
+    width: var(--d); height: var(--d);
+    flex: none;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.36);
+    backdrop-filter: blur(calc(var(--d) * 0.105)) saturate(140%);
+    -webkit-backdrop-filter: blur(calc(var(--d) * 0.105)) saturate(140%);
+    border: calc(var(--d) * 0.0224) solid rgba(255,255,255,0.6);
+    box-shadow: 0 calc(var(--d) * 0.097) calc(var(--d) * 0.216) calc(var(--d) * -0.06) rgba(34,48,92,0.34);
+    display: flex; align-items: center; justify-content: center;
+  }
+  .badge img { width: calc(var(--d) * 0.58); height: auto; display: block; }
+  .badge.tight img { width: calc(var(--d) * 0.74); }
+
+  .stage {
+    border-radius: 18px;
+    padding: 40px;
+    display: flex; align-items: center; gap: 36px; flex-wrap: wrap;
+    min-height: 200px;
+  }
+  .mesh { background: radial-gradient(120% 90% at 55% 8%, #FDFEFF 0%, #DCE6F8 34%, #A8BEEA 72%, #7E9AD8 100%); }
+  .photo {
+    background:
+      radial-gradient(60% 70% at 15% 20%, rgba(255,214,120,.95), transparent 60%),
+      radial-gradient(70% 80% at 85% 30%, rgba(90,200,220,.9), transparent 62%),
+      linear-gradient(140deg, #2F5D4A, #123027);
+  }
+  .plain { background: var(--paper); border: 1px dashed rgba(30,45,77,.2); }
+  .row { display: flex; align-items: flex-end; gap: 28px; flex-wrap: wrap; }
+  figure { margin: 0; text-align: center; }
+  figcaption { font-size: 12px; opacity: .6; margin-top: 10px; }
+</style>
+</head>
+<body>
+
+<h1>Offerloop glass badge</h1>
+<p class="lede">
+  The disc is translucent and blurs whatever sits behind it, so it picks up the
+  colour of the surface it lands on. Scroll through the backgrounds below: it is
+  the same markup every time.
+</p>
+
+<h2>On the carousel mesh</h2>
+<div class="stage mesh">
+  <div class="badge" style="--d: 180px"><img src="offerloop-icon.svg" alt="Offerloop"></div>
+  <div class="badge" style="--d: 132px"><img src="offerloop-icon.svg" alt=""></div>
+  <div class="badge" style="--d: 88px"><img src="offerloop-icon.svg" alt=""></div>
+  <div class="badge tight" style="--d: 48px"><img src="offerloop-icon.svg" alt=""></div>
+</div>
+<p class="note">Its home ground. The 48px one uses the tighter 0.74 mark.</p>
+
+<h2>On a photograph</h2>
+<div class="stage photo">
+  <div class="badge" style="--d: 180px"><img src="offerloop-icon.svg" alt=""></div>
+  <div class="badge" style="--d: 132px; background: rgba(255,255,255,0.52)"><img src="offerloop-icon.svg" alt=""></div>
+</div>
+<p class="note">
+  The second raises the white veil to 0.52. Over a busy or saturated background
+  the default 0.36 lets too much through and the mark loses contrast.
+</p>
+
+<h2>On dark</h2>
+<div class="stage" style="background: radial-gradient(90% 90% at 20% 0%, #2A3E6E, #0F1A30)">
+  <div class="badge" style="--d: 180px"><img src="offerloop-icon.svg" alt=""></div>
+  <div class="badge" style="--d: 132px; background: rgba(255,255,255,0.82)"><img src="offerloop-icon.svg" alt=""></div>
+</div>
+<p class="note">
+  The default veil survives on dark but goes muddy, since the navy half of the
+  mark is competing with a dark disc. The second pushes the veil to 0.82, which
+  turns the glass back into a light plate and gives the mark its contrast back.
+</p>
+
+<h2>On flat paper</h2>
+<div class="stage plain">
+  <div class="badge" style="--d: 180px"><img src="offerloop-icon.svg" alt=""></div>
+</div>
+<p class="note">
+  Nothing behind it to blur, so the glass collapses to a pale disc and only the
+  rim and shadow give it edges. This is exactly what the baked alpha PNG looks
+  like, and the reason it exists as a warning rather than a default.
+</p>
+
+<h2>Baked sizes</h2>
+<div class="row">
+  <figure><img src="offerloop-badge-disc-180.png" width="180" alt=""><figcaption>disc 180</figcaption></figure>
+  <figure><img src="offerloop-badge-tile-512.png" width="180" alt=""><figcaption>tile 512</figcaption></figure>
+  <figure><img src="offerloop-badge-favicon-32.png" width="32" alt=""><figcaption>favicon 32</figcaption></figure>
+</div>
+
+</body>
+</html>

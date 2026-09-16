@@ -30,6 +30,7 @@ import {
 import {igLaunchV2Cards, IG_LAUNCH_CARD_OFFSET} from '../plans/ig-launch-v2.cards';
 import {CARD_W, CARD_H} from './components/CarouselCardFrame';
 import {Brochure, PAGE_W, PAGE_H} from './compositions/Brochure';
+import {glassBadgeStills, EXPORT_SIZE} from './compositions/GlassBadgeExport';
 
 /** Motion carousel cards run at 24, matching the clips cut for them. */
 const CARD_FPS = 24;
@@ -201,6 +202,11 @@ export const Root: React.FC = () => {
       />
       {/* Print piece, not a slide: letter paper at 300dpi. */}
       <Still id="Brochure" component={Brochure} width={PAGE_W} height={PAGE_H} />
+      {/* Glass badge bakes. Square, all three at EXPORT_SIZE; the size ramp
+          comes from tools/glass-badge/bake.py, not from more compositions. */}
+      {glassBadgeStills.map(({id, component}) => (
+        <Still key={id} id={id} component={component} width={EXPORT_SIZE} height={EXPORT_SIZE} />
+      ))}
       {[...appStorePanels, ...appStorePanelsV2].map(({id, component}) => (
         <Still key={id} id={id} component={component} width={PANEL_W} height={PANEL_H} />
       ))}

@@ -13,7 +13,9 @@
     "carousel": "node tools/carousel/server.mjs",
     "carousel:restyle": ".venv-key/bin/python tools/carousel/restyle.py public/assets/carousels/ig-launch public/assets/carousels/ig-launch-blue",
     "carousel:cards": "node tools/carousel/render.mjs",
-    "carousel:cover": ".venv-key/bin/python tools/carousel/cover.py"
+    "carousel:cover": ".venv-key/bin/python tools/carousel/cover.py",
+    "badge:trace": ".venv-key/bin/python tools/glass-badge/trace-icon.py",
+    "badge:bake": "mkdir -p out/glass-badge && for id in GlassBadgeDisc GlassBadgeTile GlassBadgeAlpha GlassBadgeFavicon; do npx remotion still \"$id\" \"out/glass-badge/${id#GlassBadge}.png\" --image-format=png || exit 1; done && .venv-key/bin/python tools/glass-badge/bake.py"
   },
   "dependencies": {
     "@remotion/cli": "^4.0.0",
