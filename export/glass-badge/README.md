@@ -17,6 +17,8 @@ or a social profile.
   circle, 1024 / 512 / 256 / 180.
 - `offerloop-badge-tile-*.png` — full-bleed square, badge centred, shadow
   intact, 1024 / 512.
+- `offerloop-badge-float-*.png` — the tile with the blue surround knocked out.
+  Same disc, same shadow, transparent everywhere else, 1024 / 512 / 256.
 - `offerloop-badge-alpha-*.png` — the glass over nothing, 1024 / 512. Read the
   warning below before reaching for it.
 - `offerloop-badge-favicon-32.png`, `favicon.ico` — tab sizes, mark set larger.
@@ -26,6 +28,7 @@ or a social profile.
 | Use | File |
 | --- | --- |
 | App Store, Product Hunt, anywhere square | `tile-1024` |
+| Dropping onto a deck, doc, or any layout | `float-1024` |
 | X / LinkedIn / Slack avatar | `disc-1024` |
 | apple-touch-icon | `disc-180` |
 | Browser tab | `favicon.ico` plus `favicon-32` |
@@ -41,8 +44,12 @@ of the mesh on the carousels.
 A PNG has no behind. So every baked file here had to answer "blur what?" and
 each answers it differently:
 
-- **disc** and **tile** bake the carousel mesh in. Self-contained, and they look
-  exactly like the carousels, but they carry that blue with them.
+- **disc**, **tile** and **float** bake the carousel mesh in. Self-contained,
+  and they look exactly like the carousels, but they carry that blue with them.
+  `float` is `tile` with the surround removed: the glass samples the same mesh
+  pixels, so the two discs are identical, but the shadow is painted onto alpha
+  rather than onto blue. It is the one to reach for on an unknown background,
+  since the disc stays light enough to read on both white and navy.
 - **alpha** has nothing behind it, so the glass collapses into a flat 36% white
   puck with a rim. It is not a bug and it is not fixable in a raster. Use it
   only when the badge has to sit on a background too varied to bake, and expect

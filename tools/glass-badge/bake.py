@@ -1,8 +1,8 @@
-"""Turn the four glass badge renders into the shipping size ramp.
+"""Turn the five glass badge renders into the shipping size ramp.
 
 Both halves run together:  npm run badge:bake
 
-That renders the four squares at EXPORT_SIZE into out/glass-badge/, which is
+That renders the five squares at EXPORT_SIZE into out/glass-badge/, which is
 gitignored because they are intermediates, then runs this script to write the
 shipping ramp into export/glass-badge/.
 
@@ -23,6 +23,7 @@ OUT = 'export/glass-badge/offerloop-badge-{}-{}.png'
 RAMP = {
     'Disc': ('disc', [1024, 512, 256, 180]),
     'Tile': ('tile', [1024, 512]),
+    'Float': ('float', [1024, 512, 256]),
     'Alpha': ('alpha', [1024, 512]),
     'Favicon': ('favicon', [32]),
 }
