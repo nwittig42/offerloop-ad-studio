@@ -1,6 +1,27 @@
 # Product Hunt launch film: script v1
 
 **Status:** Approved structure (Nick, 2026-07-20). Ready to map footage.
+
+> **Build reconciliation (2026-07-20, evening).** Shot the 7 real recordings and
+> built `plans/product-hunt.plan.ts` + composition `ProductHuntLaunch`. Nick's
+> locked calls after seeing the footage:
+> - **Decoupled data spine.** The recordings each demo a different real company
+>   (Roblox / Kevin Jiang, Cresta / joshua levin, Goldman / dave han, mixed job
+>   board), not one Stripe/PM hero. Film stays silent + benefit-framed, so
+>   on-screen lines are company-agnostic and each clip carries its own receipt.
+>   No re-record. (Original Stripe data spine below is superseded.)
+> - **Capability run is 6 beats**, not 8: Apply, Find people, Reach hiring
+>   manager, Cover letter, Prep, Track. **Research-the-company cut** (Nick: skip
+>   it). **Tailor-resume cut** (feature not working). The 3 numbers ride in
+>   Apply (500,000) / Find (2.2 billion) / Reach (3 million).
+> - **Privacy: mask emails only.** Real third-party emails are frosted in the
+>   panel (find/reach/track); names + companies stay visible.
+> - **Cover-letter clip (2.75s)** slowed to 0.5x in Remotion, no re-record.
+> - Look: recordings float as tilted browser panels (-8 / +6) over a drifting
+>   brand-canvas glow; framing beats share the same light canvas. Runtime ~44s.
+>
+> **Open for Nick before final export:** confirm the 3 numbers (500k / 2.2B /
+> 3M); the pain beat currently reuses a ChatGPT-tab grab as "the old way."
 **Format:** "Introducing X" product film (see ad-story-structure Format 1), compressed for Product Hunt.
 **Length:** ~50s. **Audio:** none. All words appear on screen (silent, kinetic text).
 **Visual bed:** hybrid. Real product screen recordings under the capability run, brand-canvas kinetic type for the framing beats. Cinematic tilt / zoom / push-in / glow added in Remotion (record footage flat and crisp; motion is added in post).
@@ -55,6 +76,22 @@ Legend: **BOLD** = words on screen. *italic* = visual bed under them.
 
 ### 0:18-0:38 The capability run (the eight, ~2.2s each)
 *Real product footage under each line where it exists, SaaS kinetic cards where it does not. One card lights up at a time.*
+
+Shipped 6-beat run (see reconciliation note above). On-screen text is
+company-agnostic; the real receipt runs underneath each line.
+
+| # | On screen (as shipped) | Real clip + receipt |
+|---|-----------|-----------|
+| 1 | **Apply to any of 500,000 jobs.** | apply-to-jobs: applications Running then Submitted |
+| 2 | **Find anyone. 2.2 billion professionals.** | find-people: Kevin Jiang / Roblox card (email masked) |
+| 3 | **Reach 3 million recruiters.** | reach-hiring-manager: joshua levin / Cresta card (email masked) |
+| 4 | **A cover letter that reads like you.** | write-cover-letter: generated letter + PDF (0.5x slow) |
+| 5 | **Walk into every coffee chat prepped.** | prep-coffee-chat: branded Meeting Prep + "Prep Ready" |
+| 6 | **Track every contact and conversation.** | track-everything: inbox pipeline CRM (email masked) |
+
+*Cut: "Know the company before you reach out" (Research, no footage, Nick cut) and "Tailor your resume" (feature not working).*
+
+Original 8-line plan (superseded, kept for reference):
 
 | # | On screen | Visual bed |
 |---|-----------|-----------|

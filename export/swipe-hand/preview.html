@@ -1,0 +1,40 @@
+<!doctype html>
+<meta charset="utf-8" />
+<title>Swipe hand</title>
+<style>
+  body {
+    margin: 0;
+    min-height: 100vh;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  /* Same keyframes and variables the component uses, so this file previews the
+     real motion without React. */
+  .stage {
+    --swipe-hand-travel: 180px;
+    --swipe-hand-coast: 201px;
+    --swipe-hand-rotate: 7deg;
+    --swipe-hand-opacity: 0.62;
+  }
+  @keyframes swipe-hand-gesture {
+    0%   { opacity: 0; transform: translate3d(0, -26px, 0) rotate(0deg) scale(1.05); }
+    16%  { opacity: var(--swipe-hand-opacity); transform: translate3d(0, 0, 0) rotate(0deg) scale(1); }
+    24%  { opacity: var(--swipe-hand-opacity); transform: translate3d(0, 0, 0) rotate(0deg) scale(0.955); }
+    62%  { opacity: var(--swipe-hand-opacity); transform: translate3d(var(--swipe-hand-travel), 0, 0) rotate(var(--swipe-hand-rotate)) scale(0.955); }
+    74%  { opacity: 0; transform: translate3d(var(--swipe-hand-coast), -22px, 0) rotate(var(--swipe-hand-rotate)) scale(1.02); }
+    100% { opacity: 0; transform: translate3d(var(--swipe-hand-coast), -22px, 0) rotate(var(--swipe-hand-rotate)) scale(1.02); }
+  }
+  .swipe-hand-img {
+    width: 260px;
+    height: auto;
+    display: block;
+    opacity: 0;
+    transform-origin: 22% 18%;
+    animation: swipe-hand-gesture 1.6s infinite cubic-bezier(0.4, 0, 0.2, 1) both;
+  }
+</style>
+<div class="stage">
+  <img class="swipe-hand-img" src="./swipe-hand-ghost-alpha.png" alt="" />
+</div>

@@ -1,0 +1,117 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Email Personalization</title>
+<link href="https://fonts.googleapis.com/css2?family=Lora:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #F5F6F8; --ink: #112F54; --dark: #1E2D4D; --muted: #5B6785;
+    --p100: #E3E5EC; --p200: #C4CADD; --p300: #9CA8CD; --p400: #6C7FBA; --p500: #4B61A8; --p600: #3D4F89;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; width: 1920px; height: 1080px; overflow: hidden; }
+  body { background: var(--bg); font-family: 'Inter', sans-serif; color: var(--dark); position: relative; }
+  body.transparent { background: transparent; }
+  svg.bg { position: absolute; inset: 0; }
+  .abs { position: absolute; }
+  h1 { position: absolute; top: 44px; left: 0; width: 100%; margin: 0; text-align: center;
+       font-family: 'Lora', serif; font-weight: 700; font-size: 64px; letter-spacing: -0.02em; color: var(--ink); }
+  .side { font-weight: 700; font-size: 22px; letter-spacing: .14em; text-transform: uppercase; color: var(--p500); text-align: center; }
+  .card { background: #fff; border-radius: 22px; box-shadow: 0 12px 32px rgba(30,45,77,.12); }
+  .src { width: 190px; height: 170px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 16px; }
+  .src .cap { font-weight: 600; font-size: 22px; color: var(--dark); }
+  .doc { width: 64px; height: 80px; border-radius: 8px; border: 3px solid var(--p400); padding: 12px 9px; display: flex; flex-direction: column; gap: 7px; }
+  .doc i { display: block; height: 5px; border-radius: 3px; background: var(--p300); }
+  .doc i:first-child { width: 60%; background: var(--p500); }
+  .li { width: 76px; height: 76px; border-radius: 14px; background: #0A66C2; color: #fff; font-weight: 700; font-size: 46px;
+        display: flex; align-items: center; justify-content: center; letter-spacing: -2px; }
+  .chip { position: absolute; transform: translate(-50%, -50%); white-space: nowrap; border-radius: 999px;
+          font-weight: 600; font-size: 24px; padding: 12px 24px; }
+  .chip.solo { background: rgba(255,255,255,.9); color: var(--muted); }
+  .chip.match { background: var(--p500); color: #fff; box-shadow: 0 8px 22px rgba(75,97,168,.45); font-size: 26px; }
+  .avatar { position: absolute; transform: translate(-50%, -50%); width: 92px; height: 92px; border-radius: 50%;
+            background: #fff; box-shadow: 0 8px 20px rgba(30,45,77,.14); display: flex; align-items: center; justify-content: center; }
+  .email { left: 510px; top: 752px; width: 900px; padding: 30px 40px 34px; }
+  .email .row { display: flex; align-items: center; gap: 14px; font-size: 21px; color: var(--muted); padding-bottom: 16px; border-bottom: 2px solid var(--p100); }
+  .email .row b { color: var(--dark); font-weight: 600; }
+  .email p { margin: 18px 0 0; font-size: 28px; line-height: 1.5; color: var(--dark); }
+  mark { background: #DDE3F5; color: var(--p600); font-weight: 700; border-radius: 8px; padding: 1px 5px; }
+  .edit { position: absolute; right: -28px; top: -26px; display: flex; align-items: center; gap: 10px; background: var(--dark); color: #fff;
+          font-weight: 600; font-size: 22px; padding: 12px 22px; border-radius: 999px; box-shadow: 0 10px 24px rgba(30,45,77,.3); }
+</style>
+</head>
+<body>
+<script>if (location.hash === '#transparent') document.body.classList.add('transparent');</script>
+<svg class="bg" width="1920" height="1080" viewBox="0 0 1920 1080">
+  <defs>
+    <marker id="ar" viewBox="0 0 12 12" refX="7" refY="6" markerUnits="userSpaceOnUse" markerWidth="22" markerHeight="22" orient="auto">
+      <path d="M1 1 L10 6 L1 11 Z" fill="#6C7FBA"/>
+    </marker>
+    <marker id="arD" viewBox="0 0 12 12" refX="7" refY="6" markerUnits="userSpaceOnUse" markerWidth="26" markerHeight="26" orient="auto">
+      <path d="M1 1 L10 6 L1 11 Z" fill="#4B61A8"/>
+    </marker>
+  </defs>
+  <!-- Venn: you + your contact -->
+  <circle cx="790" cy="430" r="265" fill="#B6C3E8" fill-opacity=".45" stroke="#9CA8CD" stroke-width="3"/>
+  <circle cx="1130" cy="430" r="265" fill="#B6C3E8" fill-opacity=".45" stroke="#9CA8CD" stroke-width="3"/>
+  <!-- inputs into left circle -->
+  <path d="M345 300 C 430 300, 470 340, 535 370" fill="none" stroke="#6C7FBA" stroke-width="4" stroke-dasharray="2 12" stroke-linecap="round" marker-end="url(#ar)"/>
+  <path d="M345 560 C 430 560, 470 520, 535 490" fill="none" stroke="#6C7FBA" stroke-width="4" stroke-dasharray="2 12" stroke-linecap="round" marker-end="url(#ar)"/>
+  <!-- databases into right circle -->
+  <path d="M1575 430 L 1405 430" fill="none" stroke="#6C7FBA" stroke-width="4" stroke-dasharray="2 12" stroke-linecap="round" marker-end="url(#ar)"/>
+  <!-- overlap down to email -->
+  <path d="M960 668 L 960 730" fill="none" stroke="#4B61A8" stroke-width="5" stroke-linecap="round" marker-end="url(#arD)"/>
+  <!-- database stack -->
+  <g transform="translate(1690 420)" fill="none" stroke="#6C7FBA" stroke-width="4">
+    <path d="M-62 -70 V70 A62 18 0 0 0 62 70 V-70" fill="#fff"/>
+    <ellipse cx="0" cy="-70" rx="62" ry="18" fill="#fff"/>
+    <path d="M-62 -23 A62 18 0 0 0 62 -23"/>
+    <path d="M-62 23 A62 18 0 0 0 62 23"/>
+  </g>
+</svg>
+
+<h1>No two emails the same.</h1>
+
+<!-- side labels -->
+<div class="abs side" style="left:640px; top:216px; width:200px; white-space:nowrap;">You</div>
+<div class="abs side" style="left:1020px; top:216px; width:300px; white-space:nowrap;">Your contact</div>
+
+<!-- your inputs -->
+<div class="abs card src" style="left:150px; top:215px;"><div class="doc"><i></i><i></i><i></i><i></i><i></i></div><div class="cap">Resume</div></div>
+<div class="abs card src" style="left:150px; top:475px;"><div class="li">in</div><div class="cap">LinkedIn</div></div>
+
+<!-- contact data -->
+<div class="abs" style="left:1600px; top:535px; width:180px; text-align:center; font-weight:600; font-size:22px; color:var(--dark);">Contact data</div>
+
+<!-- avatars -->
+<div class="avatar" style="left:700px; top:300px;">
+  <svg width="48" height="48" viewBox="0 0 24 24" fill="#4B61A8"><circle cx="12" cy="8" r="4.2"/><path d="M3.5 21c0-4.4 3.8-7.2 8.5-7.2s8.5 2.8 8.5 7.2z"/></svg>
+</div>
+<div class="avatar" style="left:1220px; top:300px;">
+  <svg width="48" height="48" viewBox="0 0 24 24" fill="#1E2D4D"><circle cx="12" cy="8" r="4.2"/><path d="M3.5 21c0-4.4 3.8-7.2 8.5-7.2s8.5 2.8 8.5 7.2z"/></svg>
+</div>
+
+<!-- traits only you have -->
+<div class="chip solo" style="left:665px; top:430px;">Finance Club</div>
+<div class="chip solo" style="left:680px; top:530px;">Python</div>
+<!-- traits only they have -->
+<div class="chip solo" style="left:1255px; top:430px;">Wharton MBA</div>
+<div class="chip solo" style="left:1240px; top:530px;">Tennis</div>
+
+<!-- the overlap -->
+<div class="chip match" style="left:960px; top:340px;">USC</div>
+<div class="chip match" style="left:960px; top:440px;">Chicago</div>
+<div class="chip match" style="left:960px; top:540px;">Goldman</div>
+
+<!-- the email -->
+<div class="abs card email">
+  <div class="edit">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20h4L19 9l-4-4L4 16z"/><path d="M13.5 6.5l4 4"/></svg>
+    Edit it however you like
+  </div>
+  <div class="row"><b>To:</b> Sarah Kim <span style="margin-left:auto"><b>Subject:</b> Fellow Trojan from Chicago</span></div>
+  <p>Hi Sarah, I saw you're a <mark>USC</mark> grad who also grew up in <mark>Chicago</mark>. I'm interning at <mark>Goldman</mark> this summer, where you got your start...</p>
+</div>
+</body>
+</html>

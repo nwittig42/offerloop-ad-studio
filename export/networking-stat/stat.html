@@ -1,0 +1,86 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Networking Stat</title>
+<link href="https://fonts.googleapis.com/css2?family=Lora:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #F5F6F8; --ink: #112F54; --dark: #1E2D4D; --muted: #5B6785; --faint: #8A93AB;
+    --auto: #4B61A8; --manual: #DDE1EA; --line: #E3E5EC;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; width: 1920px; height: 1080px; overflow: hidden; }
+  body { background: var(--bg); font-family: 'Inter', sans-serif; color: var(--dark); position: relative; }
+  body.transparent { background: transparent; }
+  body.transparent .glow { display: none; }
+  .glow { position: absolute; border-radius: 50%; pointer-events: none; }
+  .glow.l { left: -160px; top: 140px; width: 1100px; height: 900px; background: radial-gradient(closest-side, rgba(182,195,232,.55), rgba(182,195,232,0)); }
+  .glow.r { right: -120px; top: 60px; width: 1100px; height: 1000px; background: radial-gradient(closest-side, rgba(196,202,221,.6), rgba(196,202,221,0)); }
+
+  .hero { position: absolute; left: 130px; top: 0; bottom: 0; width: 660px; display: flex; flex-direction: column; justify-content: center; }
+  .eyebrow { font-weight: 600; font-size: 20px; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+  .big { font-family: 'Lora', serif; font-weight: 700; font-size: 330px; line-height: .9; color: var(--auto); margin: 18px 0 10px -10px; letter-spacing: -.02em; }
+  .big span { font-size: .55em; margin-left: 6px; }
+  .claim { font-family: 'Lora', serif; font-weight: 700; font-size: 52px; line-height: 1.15; color: var(--ink); }
+  .claim em { font-style: normal; color: var(--auto); }
+  .note { margin-top: 30px; font-size: 22px; line-height: 1.5; color: var(--muted); max-width: 580px; }
+
+  .charts { position: absolute; right: 120px; top: 0; bottom: 0; width: 930px; display: flex; flex-direction: column; justify-content: center; gap: 36px; }
+  .card { background: #fff; border: 2px solid var(--line); border-radius: 28px; padding: 34px 44px 26px; box-shadow: 0 14px 34px rgba(30,45,77,.12); }
+  .card h3 { margin: 0 0 24px; font-family: 'Lora', serif; font-weight: 700; font-size: 31px; line-height: 1.2; color: var(--ink); }
+  .row { display: grid; grid-template-columns: 150px 1fr; align-items: center; height: 50px; }
+  .row .name { font-weight: 600; font-size: 20px; color: var(--muted); }
+  .row.hi .name { color: var(--auto); font-weight: 700; }
+  .track { position: relative; height: 30px; }
+  .bar { position: absolute; left: 0; top: 0; height: 30px; border-radius: 15px; background: var(--manual); }
+  .row.hi .bar { background: var(--auto); }
+  .val { position: absolute; top: 50%; transform: translateY(-50%); padding-left: 14px; font-weight: 700; font-size: 21px; color: var(--muted); white-space: nowrap; }
+  .row.hi .val { color: var(--auto); }
+  .tag { display: block; margin-top: 1px; font-weight: 600; font-size: 13px; letter-spacing: .06em; text-transform: uppercase; color: var(--faint); }
+  .row.hi .tag { color: var(--auto); }
+  .foot { display: flex; justify-content: space-between; align-items: baseline; margin-top: 16px; padding-top: 14px; border-top: 2px solid var(--line); }
+  .axis { font-size: 17px; font-weight: 500; color: var(--faint); }
+  .src { font-size: 17px; font-weight: 600; color: var(--muted); }
+  .src b { color: var(--dark); }
+</style>
+</head>
+<body>
+<div class="glow l"></div><div class="glow r"></div>
+
+<div class="hero">
+  <div class="eyebrow">Network before you apply</div>
+  <div class="big">52<span>x</span></div>
+  <div class="claim">more likely to land the job when you <em>network first.</em></div>
+  <div class="note">Referred candidates get interviews at 13x the rate of cold applicants, then turn those interviews into offers nearly 3x as often.</div>
+</div>
+
+<div class="charts" id="charts"></div>
+
+<script>
+if (location.hash === '#transparent') document.body.classList.add('transparent');
+// Ashby data, in Ashby's order. Referral = networked in; Inbound = cold apply.
+const charts = [
+  { title: 'Cold applicants are the least likely to get an interview', axis: 'Application to interview rate', max: 47,
+    rows: [['Agency', 42], ['Internal', 42], ['Referral', 40], ['Sourced', 25], ['Inbound', 3]] },
+  { title: 'Referred candidates are far more likely to get the offer', axis: 'Interview to offer rate', max: 36,
+    rows: [['Internal', 32], ['Referral', 16], ['Agency', 8], ['Sourced', 6], ['Inbound', 6]] },
+];
+const tags = { Referral: 'Networked', Inbound: 'Cold apply' };
+const root = document.getElementById('charts');
+for (const c of charts) {
+  const card = document.createElement('div'); card.className = 'card';
+  card.innerHTML = `<h3>${c.title}</h3>` + c.rows.map(([n, v]) => `
+    <div class="row${n === 'Referral' ? ' hi' : ''}">
+      <div class="name">${n}${tags[n] ? `<span class="tag">${tags[n]}</span>` : ''}</div>
+      <div class="track">
+        <div class="bar" style="width:${Math.max(v / c.max * 100, 4.5)}%"></div>
+        <div class="val" style="left:${Math.max(v / c.max * 100, 4.5)}%">${v}%</div>
+      </div>
+    </div>`).join('') +
+    `<div class="foot"><span class="axis">${c.axis}</span><span class="src">Source: <b>Ashby</b></span></div>`;
+  root.appendChild(card);
+}
+</script>
+</body>
+</html>

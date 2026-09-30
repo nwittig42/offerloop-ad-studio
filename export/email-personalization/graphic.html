@@ -1,0 +1,99 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Email Personalization</title>
+<link href="https://fonts.googleapis.com/css2?family=Lora:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #F5F6F8; --ink: #112F54; --dark: #1E2D4D; --muted: #5B6785;
+    --p100: #E3E5EC; --p200: #C4CADD; --p300: #9CA8CD; --p400: #6C7FBA; --p500: #4B61A8; --p600: #3D4F89;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; width: 1920px; height: 1080px; overflow: hidden; }
+  body { background: transparent; font-family: 'Inter', sans-serif; color: var(--dark); position: relative; }
+  body.transparent { background: transparent; }
+  svg.bg { position: absolute; inset: 0; }
+  .abs { position: absolute; }
+  h1 { position: absolute; top: 34px; left: 0; width: 100%; margin: 0; text-align: center;
+       font-family: 'Lora', serif; font-weight: 700; font-size: 58px; letter-spacing: -0.02em; color: #D62839; }
+  .side { font-weight: 700; font-size: 22px; letter-spacing: .14em; text-transform: uppercase; color: var(--p500); text-align: center; }
+  .card { background: #fff; border-radius: 22px; box-shadow: 0 12px 32px rgba(30,45,77,.12); }
+  .src { width: 190px; height: 170px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 16px; }
+  .src .cap { font-weight: 600; font-size: 22px; color: var(--dark); }
+  .doc { width: 64px; height: 80px; border-radius: 8px; border: 3px solid var(--p400); padding: 12px 9px; display: flex; flex-direction: column; gap: 7px; }
+  .doc i { display: block; height: 5px; border-radius: 3px; background: var(--p300); }
+  .doc i:first-child { width: 60%; background: var(--p500); }
+  .li { width: 76px; height: 76px; border-radius: 14px; background: #0A66C2; color: #fff; font-weight: 700; font-size: 46px;
+        display: flex; align-items: center; justify-content: center; letter-spacing: -2px; }
+  .chip { position: absolute; transform: translate(-50%, -50%); white-space: nowrap; border-radius: 999px;
+          font-weight: 600; font-size: 21px; padding: 10px 20px; }
+  .chip.solo { background: rgba(255,255,255,.9); color: var(--muted); }
+  .chip.match { background: var(--p500); color: #fff; box-shadow: 0 8px 22px rgba(75,97,168,.45); font-size: 23px; padding: 11px 20px; }
+  .avatar { position: absolute; transform: translate(-50%, -50%); width: 92px; height: 92px; border-radius: 50%;
+            background: #fff; box-shadow: 0 8px 20px rgba(30,45,77,.14); display: flex; align-items: center; justify-content: center; }
+  .email { left: 440px; top: 775px; width: 1040px; padding: 26px 40px 30px; }
+  .email .row { display: flex; align-items: center; gap: 14px; font-size: 21px; color: var(--muted); padding-bottom: 16px; border-bottom: 2px solid var(--p100); }
+  .email .row b { color: var(--dark); font-weight: 600; }
+  .email p { margin: 14px 0 0; font-size: 25px; line-height: 1.5; color: var(--dark); }
+  mark { white-space: nowrap; background: #DDE3F5; color: var(--p600); font-weight: 700; border-radius: 8px; padding: 1px 5px; }
+  .edit { position: absolute; right: -28px; top: -26px; display: flex; align-items: center; gap: 10px; background: var(--dark); color: #fff;
+          font-weight: 600; font-size: 22px; padding: 12px 22px; border-radius: 999px; box-shadow: 0 10px 24px rgba(30,45,77,.3); }
+</style>
+</head>
+<body>
+<script>if (location.hash === '#transparent') document.body.classList.add('transparent');</script>
+<style>
+  .who { position: absolute; transform: translate(-50%, -50%); display: flex; align-items: center; gap: 12px; white-space: nowrap; }
+  .who .av { width: 54px; height: 54px; border-radius: 50%; background: #fff; box-shadow: 0 6px 16px rgba(30,45,77,.14); display: flex; align-items: center; justify-content: center; }
+</style>
+<svg class="bg" width="1920" height="1080" viewBox="0 0 1920 1080">
+  <defs>
+    <marker id="ar" viewBox="0 0 12 12" refX="7" refY="6" markerUnits="userSpaceOnUse" markerWidth="22" markerHeight="22" orient="auto"><path d="M1 1 L10 6 L1 11 Z" fill="#6C7FBA"/></marker>
+    <marker id="arD" viewBox="0 0 12 12" refX="7" refY="6" markerUnits="userSpaceOnUse" markerWidth="26" markerHeight="26" orient="auto"><path d="M1 1 L10 6 L1 11 Z" fill="#4B61A8"/></marker>
+  </defs>
+  <circle cx="795" cy="440" r="290" fill="#B6C3E8" fill-opacity=".45" stroke="#9CA8CD" stroke-width="3"/>
+  <circle cx="1125" cy="440" r="290" fill="#B6C3E8" fill-opacity=".45" stroke="#9CA8CD" stroke-width="3"/>
+  <path d="M345 300 C 420 300, 460 330, 522 370" fill="none" stroke="#6C7FBA" stroke-width="4" stroke-dasharray="2 12" stroke-linecap="round" marker-end="url(#ar)"/>
+  <path d="M345 560 C 420 560, 460 540, 522 510" fill="none" stroke="#6C7FBA" stroke-width="4" stroke-dasharray="2 12" stroke-linecap="round" marker-end="url(#ar)"/>
+  <path d="M1575 430 L 1432 430" fill="none" stroke="#6C7FBA" stroke-width="4" stroke-dasharray="2 12" stroke-linecap="round" marker-end="url(#ar)"/>
+  <path d="M960 700 L 960 755" fill="none" stroke="#4B61A8" stroke-width="5" stroke-linecap="round" marker-end="url(#arD)"/>
+  <g transform="translate(1690 420)" fill="none" stroke="#6C7FBA" stroke-width="4">
+    <path d="M-62 -70 V70 A62 18 0 0 0 62 70 V-70" fill="#fff"/>
+    <ellipse cx="0" cy="-70" rx="62" ry="18" fill="#fff"/>
+    <path d="M-62 -23 A62 18 0 0 0 62 -23"/>
+    <path d="M-62 23 A62 18 0 0 0 62 23"/>
+  </g>
+</svg>
+
+<h1>No two emails the same.</h1>
+
+<div class="who" style="left:735px; top:245px;"><div class="av"><svg width="30" height="30" viewBox="0 0 24 24" fill="#4B61A8"><circle cx="12" cy="8" r="4.2"/><path d="M3.5 21c0-4.4 3.8-7.2 8.5-7.2s8.5 2.8 8.5 7.2z"/></svg></div><div class="side">You</div></div>
+<div class="who" style="left:1180px; top:245px;"><div class="av"><svg width="30" height="30" viewBox="0 0 24 24" fill="#1E2D4D"><circle cx="12" cy="8" r="4.2"/><path d="M3.5 21c0-4.4 3.8-7.2 8.5-7.2s8.5 2.8 8.5 7.2z"/></svg></div><div class="side">Your contact</div></div>
+
+<div class="abs card src" style="left:150px; top:215px;"><div class="doc"><i></i><i></i><i></i><i></i><i></i></div><div class="cap">Resume</div></div>
+<div class="abs card src" style="left:150px; top:475px;"><div class="li">in</div><div class="cap">LinkedIn</div></div>
+<div class="abs" style="left:1600px; top:535px; width:180px; text-align:center; font-weight:600; font-size:22px; color:var(--dark);">Contact data</div>
+
+<div class="chip solo" style="left:692px; top:330px;">Finance Club</div>
+<div class="chip solo" style="left:692px; top:405px;">Python</div>
+<div class="chip solo" style="left:692px; top:480px;">Econ major</div>
+<div class="chip solo" style="left:692px; top:555px;">Goldman intern</div>
+<div class="chip solo" style="left:1228px; top:330px;">Wharton MBA</div>
+<div class="chip solo" style="left:1228px; top:405px;">Tennis</div>
+<div class="chip solo" style="left:1228px; top:480px;">VP at Blackstone</div>
+<div class="chip solo" style="left:1228px; top:555px;">Marathons</div>
+<div class="chip match" style="left:960px; top:367px;">USC</div>
+<div class="chip match" style="left:960px; top:442px;">Portland, OR</div>
+<div class="chip match" style="left:960px; top:517px;">College soccer</div>
+
+<div class="abs card email">
+  <div class="edit">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20h4L19 9l-4-4L4 16z"/><path d="M13.5 6.5l4 4"/></svg>
+    Edit it however you like
+  </div>
+  <div class="row"><b>To:</b> Sarah Kim <span style="margin-left:auto"><b>Subject:</b> Portland to USC soccer</span></div>
+  <p>Hi Sarah, I noticed you're also from <mark>Portland, Oregon</mark> and played <mark>college soccer</mark> at <mark>USC</mark>. Fight on! As a sophomore coming off summer training camp, I'd love to hear how you balanced practices and travel with recruiting on your way to Blackstone.</p>
+</div>
+</body>
+</html>

@@ -1,0 +1,162 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Recruiting Funnel</title>
+<link href="https://fonts.googleapis.com/css2?family=Lora:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #F5F6F8; --ink: #112F54; --dark: #1E2D4D; --muted: #5B6785;
+    --p300: #9CA8CD; --p400: #6C7FBA; --p500: #4B61A8; --p600: #3D4F89; --p700: #2F3C66;
+  }
+  html, body { margin: 0; width: 1920px; height: 1080px; overflow: hidden; }
+  body { background: var(--bg); font-family: 'Inter', sans-serif; }
+  body.transparent { background: transparent; }
+  body.transparent .glow { display: none; }
+  svg { display: block; }
+  .stage-title { font-family: 'Lora', serif; font-weight: 700; fill: #fff; }
+  .stage-sub { font-family: 'Inter', sans-serif; font-weight: 500; fill: rgba(255,255,255,.86); }
+  .node-title { font-family: 'Inter', sans-serif; font-weight: 700; fill: var(--dark); font-size: 27px; }
+  .node-sub { font-family: 'Inter', sans-serif; font-weight: 500; fill: var(--muted); font-size: 18px; }
+  .center-big { font-family: 'Lora', serif; font-weight: 700; fill: var(--ink); }
+  .label { font-family: 'Inter', sans-serif; font-weight: 600; fill: var(--muted); letter-spacing: .08em; text-transform: uppercase; }
+</style>
+</head>
+<body>
+<svg id="s" width="1920" height="1080" viewBox="0 0 1920 1080" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="glowL" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#B6C3E8" stop-opacity=".55"/><stop offset="1" stop-color="#B6C3E8" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glowR" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#C4CADD" stop-opacity=".6"/><stop offset="1" stop-color="#C4CADD" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="timeline" gradientUnits="userSpaceOnUse" x1="0" y1="130" x2="0" y2="960">
+      <stop offset="0" stop-color="#9CA8CD"/><stop offset="1" stop-color="#2F3C66"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="160%">
+      <feDropShadow dx="0" dy="10" stdDeviation="14" flood-color="#1E2D4D" flood-opacity=".14"/>
+    </filter>
+    <filter id="hot" x="-20%" y="-40%" width="140%" height="180%">
+      <feDropShadow dx="0" dy="0" stdDeviation="18" flood-color="#4B61A8" flood-opacity=".55"/>
+    </filter>
+    <marker id="arrow" viewBox="0 0 12 12" refX="7" refY="6" markerUnits="userSpaceOnUse" markerWidth="22" markerHeight="22" orient="auto-start-reverse">
+      <path d="M1 1 L10 6 L1 11 Z" fill="#4B61A8"/>
+    </marker>
+    <marker id="arrowT" viewBox="0 0 12 12" refX="6" refY="6" markerUnits="userSpaceOnUse" markerWidth="22" markerHeight="22" orient="auto">
+      <path d="M1 1 L10 6 L1 11 Z" fill="#2F3C66"/>
+    </marker>
+  </defs>
+  <g class="glow">
+    <ellipse cx="600" cy="540" rx="620" ry="520" fill="url(#glowL)"/>
+    <ellipse cx="1430" cy="540" rx="520" ry="480" fill="url(#glowR)"/>
+  </g>
+  <g id="timelineG"></g>
+  <g id="funnel"></g>
+  <g id="connector"></g>
+  <g id="loop"></g>
+</svg>
+<script>
+const NS = 'http://www.w3.org/2000/svg';
+const el = (tag, attrs, parent, text) => {
+  const e = document.createElementNS(NS, tag);
+  for (const k in attrs) e.setAttribute(k, attrs[k]);
+  if (text != null) e.textContent = text;
+  parent.appendChild(e); return e;
+};
+if (location.hash === '#transparent') document.body.classList.add('transparent');
+
+// ---------- Funnel ----------
+const cx = 600, fTop = 120, stageH = 152, gap = 16, wTop = 760, wBot = 240;
+const stages = [
+  { t: 'Research',     s: 'Pick the firms, roles, and people to reach', c: '#6C7FBA' },
+  { t: 'Networking',   s: 'The loop, over and over',                    c: '#2F3C66', hot: true },
+  { t: 'Applications', s: 'A tailored resume for every role', c: '#4B61A8' },
+  { t: 'Interviews',   s: 'Prep, practice, follow up',                  c: '#6C7FBA' },
+  { t: 'Offer',        s: '',                                           c: '#9CA8CD' },
+];
+const total = stages.length * stageH + (stages.length - 1) * gap;
+const wAt = y => wTop - (wTop - wBot) * (y - fTop) / total;
+const F = document.getElementById('funnel');
+const stageBoxes = [];
+stages.forEach((st, i) => {
+  const y0 = fTop + i * (stageH + gap), y1 = y0 + stageH;
+  const a = wAt(y0) / 2, b = wAt(y1) / 2, r = 14;
+  const d = `M ${cx - a + r} ${y0} L ${cx + a - r} ${y0} Q ${cx + a} ${y0} ${cx + a - 3} ${y0 + r}
+             L ${cx + b + 3} ${y1 - r} Q ${cx + b} ${y1} ${cx + b - r} ${y1}
+             L ${cx - b + r} ${y1} Q ${cx - b} ${y1} ${cx - b - 3} ${y1 - r}
+             L ${cx - a + 3} ${y0 + r} Q ${cx - a} ${y0} ${cx - a + r} ${y0} Z`;
+  el('path', { d, fill: st.c, filter: st.hot ? 'url(#hot)' : 'url(#shadow)' }, F);
+  const mid = (y0 + y1) / 2;
+  const big = st.t === 'Offer' ? 40 : 46;
+  el('text', { x: cx, y: st.s ? mid - 6 : mid + 14, 'text-anchor': 'middle', class: 'stage-title', 'font-size': big }, F, st.t);
+  if (st.s) el('text', { x: cx, y: mid + 34, 'text-anchor': 'middle', class: 'stage-sub', 'font-size': i > 2 ? 21 : 23 }, F, st.s);
+  stageBoxes.push({ y0, y1, a, b });
+});
+
+// ---------- Timeline (left rail) ----------
+const T = document.getElementById('timelineG');
+const tx = 120, ty0 = fTop + 10, ty1 = fTop + total - 10;
+el('line', { x1: tx, y1: ty0, x2: tx, y2: ty1, stroke: 'url(#timeline)', 'stroke-width': 6, 'stroke-linecap': 'round', 'marker-end': 'url(#arrowT)' }, T);
+[['Sophomore', 'fall', ty0 - 6], ['Junior', 'summer', ty1 + 78]].forEach(([a, b, y]) => {
+  el('text', { x: tx, y: y - 36, 'text-anchor': 'middle', class: 'label', 'font-size': 17 }, T, a);
+  el('text', { x: tx, y: y - 14, 'text-anchor': 'middle', class: 'label', 'font-size': 17 }, T, b);
+});
+const rot = el('text', { x: 0, y: 0, class: 'center-big', 'font-size': 30, 'text-anchor': 'middle', transform: `translate(${tx - 26} ${(ty0 + ty1) / 2}) rotate(-90)`, fill: '#2F3C66' }, T, 'Months of it');
+// tick marks along the rail
+for (let i = 1; i < 12; i++) {
+  const y = ty0 + (ty1 - ty0) * i / 12;
+  el('line', { x1: tx + 6, y1: y, x2: tx + 18, y2: y, stroke: '#9CA8CD', 'stroke-width': 3, 'stroke-linecap': 'round' }, T);
+}
+
+// ---------- Loop ----------
+const L = document.getElementById('loop');
+const lcx = 1430, lcy = 540, R = 300;
+// ring
+el('circle', { cx: lcx, cy: lcy, r: R, fill: 'none', stroke: '#C4CADD', 'stroke-width': 4, 'stroke-dasharray': '2 14', 'stroke-linecap': 'round' }, L);
+// arcs between nodes (clockwise: left -> fTop -> right -> bottom -> left)
+const ang = [225, 315, 45, 135]; // degrees, SVG coords (y down): 270 = fTop
+const pt = (deg, r = R) => [lcx + r * Math.cos(deg * Math.PI / 180), lcy + r * Math.sin(deg * Math.PI / 180)];
+for (let i = 0; i < 4; i++) {
+  const a0 = ang[i] + 27, a1 = ang[i] + 63;
+  const [x0, y0] = pt(a0), [x1, y1] = pt(a1);
+  el('path', { d: `M ${x0} ${y0} A ${R} ${R} 0 0 1 ${x1} ${y1}`, fill: 'none', stroke: '#4B61A8', 'stroke-width': 5, 'stroke-linecap': 'round', 'marker-end': 'url(#arrow)' }, L);
+}
+const icons = {
+  linkedin: g => { el('rect', { x: -22, y: -22, width: 44, height: 44, rx: 9, fill: '#4B61A8' }, g); el('text', { x: 0, y: 11, 'text-anchor': 'middle', 'font-family': 'Inter', 'font-weight': 700, 'font-size': 28, fill: '#fff' }, g, 'in'); },
+  find: g => { el('circle', { cx: -4, cy: -4, r: 14, fill: 'none', stroke: '#4B61A8', 'stroke-width': 5 }, g); el('line', { x1: 7, y1: 7, x2: 19, y2: 19, stroke: '#4B61A8', 'stroke-width': 6, 'stroke-linecap': 'round' }, g); el('text', { x: -4, y: 2, 'text-anchor': 'middle', 'font-family': 'Inter', 'font-weight': 700, 'font-size': 16, fill: '#4B61A8' }, g, '@'); },
+  write: g => { el('rect', { x: -22, y: -15, width: 44, height: 32, rx: 5, fill: 'none', stroke: '#4B61A8', 'stroke-width': 4 }, g); el('path', { d: 'M -20 -12 L 0 4 L 20 -12', fill: 'none', stroke: '#4B61A8', 'stroke-width': 4, 'stroke-linejoin': 'round' }, g); },
+  repeat: g => { el('path', { d: 'M -16 4 A 16 16 0 0 1 14 -8', fill: 'none', stroke: '#4B61A8', 'stroke-width': 5, 'stroke-linecap': 'round' }, g); el('path', { d: 'M 8 -18 L 16 -7 L 3 -3', fill: 'none', stroke: '#4B61A8', 'stroke-width': 5, 'stroke-linecap': 'round', 'stroke-linejoin': 'round' }, g); el('path', { d: 'M 16 -2 A 16 16 0 0 1 -14 10', fill: 'none', stroke: '#4B61A8', 'stroke-width': 5, 'stroke-linecap': 'round' }, g); el('path', { d: 'M -8 20 L -16 9 L -3 5', fill: 'none', stroke: '#4B61A8', 'stroke-width': 5, 'stroke-linecap': 'round', 'stroke-linejoin': 'round' }, g); },
+};
+const nodes = [
+  { deg: 225, t: 'LinkedIn',        s: 'Scroll for the right person', icon: 'linkedin' },
+  { deg: 315, t: 'Find the Email',  s: 'Guess the format, verify it',  icon: 'find' },
+  { deg: 45,  t: 'Write the Email', s: 'Personalize every single one', icon: 'write' },
+  { deg: 135, t: 'Repeat',          s: 'Next person, next firm',       icon: 'repeat' },
+];
+const NW = 372, NH = 112;
+nodes.forEach(n => {
+  const [x, y] = pt(n.deg);
+  const g = el('g', { transform: `translate(${x - NW / 2} ${y - NH / 2})` }, L);
+  el('rect', { width: NW, height: NH, rx: 22, fill: '#fff', filter: 'url(#shadow)' }, g);
+  el('rect', { width: NW, height: NH, rx: 22, fill: 'none', stroke: '#E3E5EC', 'stroke-width': 2 }, g);
+  el('circle', { cx: 58, cy: NH / 2, r: 36, fill: '#EDF0F8' }, g);
+  icons[n.icon](el('g', { transform: `translate(58 ${NH / 2})` }, g));
+  el('text', { x: 110, y: NH / 2 - 6, class: 'node-title' }, g, n.t);
+  el('text', { x: 110, y: NH / 2 + 24, class: 'node-sub' }, g, n.s);
+});
+// center copy
+el('text', { x: lcx, y: lcy - 22, 'text-anchor': 'middle', class: 'center-big', 'font-size': 50 }, L, 'Every night,');
+el('text', { x: lcx, y: lcy + 40, 'text-anchor': 'middle', class: 'center-big', 'font-size': 50, fill: '#4B61A8' }, L, 'for months.');
+el('text', { x: lcx, y: lcy + 92, 'text-anchor': 'middle', class: 'label', 'font-size': 18 }, L, 'Hundreds of times');
+
+// ---------- Connector: Networking stage -> loop ----------
+const C = document.getElementById('connector');
+const sb = stageBoxes[1];
+const sx = cx + (sb.a + sb.b) / 2 + 14, sy = (sb.y0 + sb.y1) / 2;
+const [lx, ly] = pt(225); const ex = lx - NW / 2 - 12;
+el('path', { d: `M ${sx} ${sy} C ${sx + 90} ${sy}, ${ex - 90} ${ly}, ${ex} ${ly}`, fill: 'none', stroke: '#2F3C66', 'stroke-width': 4, 'stroke-dasharray': '10 10', 'stroke-linecap': 'round', 'marker-end': 'url(#arrowT)' }, C);
+el('circle', { cx: sx, cy: sy, r: 8, fill: '#2F3C66' }, C);
+</script>
+</body>
+</html>

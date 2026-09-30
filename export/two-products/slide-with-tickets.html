@@ -1,0 +1,84 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Two Products</title>
+<link href="https://fonts.googleapis.com/css2?family=Lora:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #F5F6F8; --ink: #112F54; --dark: #1E2D4D; --muted: #5B6785; --faint: #8A93AB;
+    --auto: #4B61A8; --line: #E3E5EC;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; width: 1920px; height: 1080px; overflow: hidden; }
+  body { background: var(--bg); font-family: 'Inter', sans-serif; color: var(--dark); position: relative; }
+  body.transparent { background: transparent; }
+  body.transparent .glow { display: none; }
+  .glow { position: absolute; border-radius: 50%; pointer-events: none; }
+  .glow.l { left: -100px; top: 180px; width: 1100px; height: 900px; background: radial-gradient(closest-side, rgba(182,195,232,.55), rgba(182,195,232,0)); }
+  .glow.r { right: -100px; top: 180px; width: 1100px; height: 900px; background: radial-gradient(closest-side, rgba(196,202,221,.6), rgba(196,202,221,0)); }
+
+  .head { position: absolute; top: 64px; left: 0; right: 0; text-align: center; }
+  .eyebrow { font-weight: 600; font-size: 20px; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+  h1 { margin: 10px 0 0; font-family: 'Lora', serif; font-weight: 700; font-size: 64px; color: var(--ink); }
+
+  .cols { position: absolute; top: 230px; bottom: 50px; left: 110px; right: 110px; display: grid; grid-template-columns: 1fr 2px 1fr; gap: 70px; }
+  .divider { background: linear-gradient(transparent, var(--line) 12%, var(--line) 88%, transparent); }
+  .col { display: flex; flex-direction: column; }
+  .label { display: flex; align-items: center; gap: 18px; }
+  .num { font-family: 'Lora', serif; font-weight: 700; font-size: 26px; color: var(--auto); width: 58px; height: 58px; border-radius: 50%; background: #fff; border: 2px solid var(--line); display: grid; place-items: center; }
+  .logo { width: 54px; height: 54px; border-radius: 15px; background: var(--dark); display: grid; place-items: center; }
+  .logo img { width: 30px; height: 30px; filter: invert(1); }
+  .name { font-family: 'Lora', serif; font-weight: 700; font-size: 40px; color: var(--ink); line-height: 1.1; }
+  .sub { font-size: 20px; font-weight: 500; color: var(--muted); margin-top: 4px; }
+
+  .stage { position: relative; flex: 1; margin-top: 30px; }
+  .shot { position: absolute; background: #fff; border: 2px solid var(--line); border-radius: 26px; overflow: hidden; box-shadow: 0 18px 44px rgba(30,45,77,.16); }
+  .shot img { display: block; width: 100%; }
+
+  .app { left: 20px; top: 0; width: 430px; }
+  .tickets { position: absolute; right: -10px; bottom: 0; width: 560px; transform: rotate(-4deg); filter: drop-shadow(0 16px 26px rgba(30,45,77,.22)); }
+  .tickets img { display: block; width: 100%; }
+  .pill { position: absolute; right: 10px; top: -30px; transform: rotate(4deg); white-space: nowrap; background: #fff; border: 2px solid var(--line); border-radius: 999px; padding: 9px 20px; font-weight: 700; font-size: 18px; color: var(--dark); box-shadow: 0 8px 20px rgba(30,45,77,.12); }
+
+  .ext { left: 0; right: 0; top: 50%; transform: translateY(-50%); }
+</style>
+</head>
+<body>
+<div class="glow l"></div><div class="glow r"></div>
+
+<div class="head">
+  <div class="eyebrow">What we'll walk through</div>
+  <h1>Two products</h1>
+</div>
+
+<div class="cols">
+  <div class="col">
+    <div class="label">
+      <div class="num">1</div>
+      <div class="logo"><img src="apple.svg"></div>
+      <div><div class="name">The iOS app</div><div class="sub">Launched on the App Store this week</div></div>
+    </div>
+    <div class="stage">
+      <div class="shot app"><img src="app-shot.jpeg"></div>
+      <div class="tickets"><div class="pill">Coachella ticket giveaway</div><img src="coachella-tickets.png"></div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="col">
+    <div class="label">
+      <div class="num">2</div>
+      <div class="logo"><img src="googlechrome.svg"></div>
+      <div><div class="name">The Chrome extension</div><div class="sub">Works right on LinkedIn</div></div>
+    </div>
+    <div class="stage">
+      <div class="shot ext"><img src="ext-crop.png"></div>
+    </div>
+  </div>
+</div>
+
+<script>if (location.hash === '#transparent') document.body.classList.add('transparent');</script>
+</body>
+</html>
